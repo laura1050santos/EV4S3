@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://du3u5e5blrq5k"]
+
+[ext_resource type="Texture2D" uid="uid://esjtml4h1mhu" path="res://Black Outline Drawing Arrow 3D Effect Point Right.jpeg" id="1_e6k1r"]
+[ext_resource type="Script" uid="uid://unblyxtqyit2" path="res://scripts/rightArrow4.gd" id="2_o1wxb"]
+[ext_resource type="Script" uid="uid://b54g8p7v4uvpm" path="res://scripts/leftArrow4.gd" id="3_o1wxb"]
+
+[node name="cena4" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 644.0
+color = Color(0.41598046, 0.41598043, 0.4159804, 1)
+
+[node name="rightArrow" type="Sprite2D" parent="."]
+position = Vector2(1069, 329.00003)
+scale = Vector2(0.103260845, 0.093846165)
+texture = ExtResource("1_e6k1r")
+script = ExtResource("2_o1wxb")
+
+[node name="leftArrow" type="Sprite2D" parent="."]
+position = Vector2(58, 346.99997)
+rotation = -3.1269257
+scale = Vector2(0.11413044, 0.10307692)
+texture = ExtResource("1_e6k1r")
+script = ExtResource("3_o1wxb")

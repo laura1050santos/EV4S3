@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://r3plls5c0nu"]
+
+[ext_resource type="Texture2D" uid="uid://dohev3itxb5uk" path="res://icon.svg" id="1_iaybm"]
+[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/item_data.gd" id="2_u6jdw"]
+
+[resource]
+script = ExtResource("2_u6jdw")
+item_name = "godotzinho"
+icon = ExtResource("1_iaybm")
+metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

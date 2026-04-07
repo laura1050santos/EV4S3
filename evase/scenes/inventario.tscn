@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://nvea80qtj18n"]
+
+[ext_resource type="Texture2D" uid="uid://8pw7d7v47d6a" path="res://Inventario.jpeg" id="1_q836x"]
+[ext_resource type="Script" uid="uid://bk1g0ggvauylc" path="res://scripts/item_slot.gd" id="2_hswsb"]
+[ext_resource type="Script" uid="uid://bw8sh38ggq7ik" path="res://scripts/inventory.gd" id="2_t2sse"]
+[ext_resource type="Texture2D" uid="uid://dohev3itxb5uk" path="res://icon.svg" id="3_mu20r"]
+[ext_resource type="Texture2D" uid="uid://esjtml4h1mhu" path="res://Black Outline Drawing Arrow 3D Effect Point Right.jpeg" id="4_1ji4w"]
+
+[node name="Inventario" type="Sprite2D" unique_id=2030175741]
+position = Vector2(589, 319.00003)
+rotation = 0.003354011
+scale = Vector2(0.7252294, 0.7097239)
+texture = ExtResource("1_q836x")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1050914594]
+
+[node name="inventory" type="Panel" parent="CanvasLayer" unique_id=1461794080]
+anchors_preset = -1
+anchor_left = 0.845
+anchor_top = 0.51500005
+anchor_right = 0.845
+anchor_bottom = 0.51500005
+offset_left = -71.44006
+offset_top = -258.72003
+offset_right = 72.55994
+offset_bottom = 259.27997
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_t2sse")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/inventory" unique_id=495445096]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -248.0
+offset_right = 54.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 17
+
+[node name="itemSlot" type="Panel" parent="CanvasLayer/inventory/GridContainer" unique_id=1228606469]
+custom_minimum_size = Vector2(112, 109)
+layout_mode = 2
+script = ExtResource("2_hswsb")
+
+[node name="icon" type="TextureRect" parent="CanvasLayer/inventory/GridContainer/itemSlot" unique_id=561639030]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mu20r")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="itemSlot3" type="Panel" parent="CanvasLayer/inventory/GridContainer" unique_id=728027775]
+custom_minimum_size = Vector2(112, 109)
+layout_mode = 2
+script = ExtResource("2_hswsb")
+
+[node name="icon" type="TextureRect" parent="CanvasLayer/inventory/GridContainer/itemSlot3" unique_id=1041577781]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="itemSlot2" type="Panel" parent="CanvasLayer/inventory/GridContainer" unique_id=30609785]
+custom_minimum_size = Vector2(112, 109)
+layout_mode = 2
+script = ExtResource("2_hswsb")
+
+[node name="icon" type="TextureRect" parent="CanvasLayer/inventory/GridContainer/itemSlot2" unique_id=613110089]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="itemSlot4" type="Panel" parent="CanvasLayer/inventory/GridContainer" unique_id=120152961]
+custom_minimum_size = Vector2(112, 109)
+layout_mode = 2
+script = ExtResource("2_hswsb")
+
+[node name="icon" type="TextureRect" parent="CanvasLayer/inventory/GridContainer/itemSlot4" unique_id=1345834371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_1ji4w")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
