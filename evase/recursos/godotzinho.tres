@@ -7,4 +7,5 @@
 script = ExtResource("2_u6jdw")
 item_name = "godotzinho"
 icon = ExtResource("1_iaybm")
+mesh = ExtResource("1_iaybm")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

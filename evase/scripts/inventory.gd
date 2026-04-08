@@ -11,5 +11,5 @@ func _notification(what: int) -> void:
 	if what == Node.NOTIFICATION_DRAG_END:
 		if not is_drag_successful():
 			if data_bk:
-				data_bk.show()
+				data_bk.icon.show()
 				data_bk = null
