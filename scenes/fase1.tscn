@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ckhwohuopfu6i"]
+
+[ext_resource type="Texture2D" uid="uid://esjtml4h1mhu" path="res://Black Outline Drawing Arrow 3D Effect Point Right.jpeg" id="1_elbe8"]
+[ext_resource type="Script" uid="uid://bn41y10sh7gt2" path="res://scripts/seta_esquerda.gd" id="2_q0yem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0yem"]
+size = Vector2(743.04443, 660.9972)
+
+[node name="fase" type="Node2D" unique_id=391231545]
+rotation = 0.003354011
+scale = Vector2(0.72522944, 0.7097239)
+
+[node name="paredes" type="Node" parent="." unique_id=1616933240]
+
+[node name="parede1" type="Node2D" parent="paredes" unique_id=649457082]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="paredes/parede1" unique_id=237239753]
+offset_right = 1150.0
+offset_bottom = 655.0
+
+[node name="setas" type="Node" parent="." unique_id=976764663]
+
+[node name="setaEsquerda" type="Sprite2D" parent="setas" unique_id=1001028190]
+top_level = true
+position = Vector2(65.00001, 319.6655)
+rotation = 3.1415927
+scale = Vector2(0.11005435, 0.12102926)
+texture = ExtResource("1_elbe8")
+script = ExtResource("2_q0yem")
+
+[node name="Area2D" type="Area2D" parent="setas/setaEsquerda" unique_id=1396302652]
+position = Vector2(54.51877, -32.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="setas/setaEsquerda/Area2D" unique_id=1487483117]
+position = Vector2(-27.259403, 29.736038)
+scale = Vector2(0.9999997, 0.9999999)
+shape = SubResource("RectangleShape2D_q0yem")
+
+[connection signal="input_event" from="setas/setaEsquerda/Area2D" to="setas/setaEsquerda" method="_on_area_2d_input_event"]
