@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://2vgtq5p3ixy0"]
 
-[ext_resource type="Texture2D" uid="uid://xxmnp2loxyp" path="res://Ellens Sketchbook on Instagram_ “Scribbly sketch #wip #inktober #pen #pensketch #ink #blackink #uniball #art #sketch #sketchbook #drawing #door #doorway #entrance”.jpeg" id="1_sal0e"]
+[ext_resource type="Texture2D" uid="uid://xxmnp2loxyp" path="res://porta.jpeg" id="1_sal0e"]
+
 
 [node name="zoomObject" type="Node2D"]
 

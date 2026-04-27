@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqttd76hew5ag"]
+
+[ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_nd5rm"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="2_vkmgy"]
+
+[node name="leste" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 85.0
+offset_right = 140.0
+offset_bottom = 134.0
+text = "LESTE
+"
+
+[node name="SetaDireita" parent="." instance=ExtResource("1_nd5rm")]
+destino_cena = "uid://cxhjpnc7drrok"
+
+[node name="SetaEsquerda" parent="." instance=ExtResource("2_vkmgy")]
+destino_cena = "uid://djryii8ewlak6"

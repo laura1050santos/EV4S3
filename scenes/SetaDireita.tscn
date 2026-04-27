@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b502itwqs4700"]
+
+[ext_resource type="Script" uid="uid://ccsodqlbixkb1" path="res://scripts/seta_direita.gd" id="1_3oban"]
+[ext_resource type="Texture2D" uid="uid://bmbrxdvbddyty" path="res://recursos/chevron_right_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" id="2_py1r6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dthxh"]
+
+[node name="SetaDireita" type="Area2D"]
+position = Vector2(816, 222)
+script = ExtResource("1_3oban")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(305, 109)
+shape = SubResource("CircleShape2D_dthxh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(301, 110)
+texture = ExtResource("2_py1r6")

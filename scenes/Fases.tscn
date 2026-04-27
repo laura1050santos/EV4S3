@@ -1,13 +1,14 @@
-[gd_scene format=3 uid="uid://nvea80qtj18n"]
+[gd_scene load_steps=0 format=3 uid="uid://nvea80qtj18n"]
 
 [ext_resource type="Script" uid="uid://bk1g0ggvauylc" path="res://scripts/item_slot.gd" id="2_hswsb"]
 [ext_resource type="Script" uid="uid://bw8sh38ggq7ik" path="res://scripts/inventory.gd" id="2_t2sse"]
 [ext_resource type="Texture2D" uid="uid://dohev3itxb5uk" path="res://icon.svg" id="3_mu20r"]
-[ext_resource type="Texture2D" uid="uid://esjtml4h1mhu" path="res://Black Outline Drawing Arrow 3D Effect Point Right.jpeg" id="4_1ji4w"]
+[ext_resource type="Texture2D" uid="uid://esjtml4h1mhu" path="res://seta.jpeg" id="4_1ji4w"]
 [ext_resource type="Resource" uid="uid://r3plls5c0nu" path="res://recursos/godotzinho.tres" id="4_t6213"]
-[ext_resource type="Resource" uid="uid://bhyalfwygln4" path="res://recursos/seta.tres" id="6_ai134"]
+[ext_resource type="Resource" path="res://recursos/seta.tres" id="6_ai134"]
 [ext_resource type="PackedScene" uid="uid://ckhwohuopfu6i" path="res://scenes/fase1.tscn" id="8_e0qmy"]
 [ext_resource type="Script" uid="uid://yw26bij3lsj4" path="res://scripts/word_drop_area.gd" id="9_q0ogx"]
+
 
 [node name="Fases" type="Sprite2D" unique_id=2030175741]
 position = Vector2(589, 319.00003)

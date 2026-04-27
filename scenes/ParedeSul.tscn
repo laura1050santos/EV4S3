@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxhjpnc7drrok"]
+
+[ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_1234l"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="2_02bjx"]
+
+[node name="Sul" type="Node2D"]
+
+[node name="SetaDireita" parent="." instance=ExtResource("1_1234l")]
+destino_cena = "uid://du3u5e5blrq5k"
+
+[node name="SetaEsquerda" parent="." instance=ExtResource("2_02bjx")]
+destino_cena = "uid://dqttd76hew5ag"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 119.0
+offset_top = 71.0
+offset_right = 167.0
+offset_bottom = 122.0
+text = "SUL
+"

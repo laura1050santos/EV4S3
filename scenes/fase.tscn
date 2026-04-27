@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://cxf0n8iinai4t"]
+[gd_scene load_steps=0 format=3 uid="uid://cxf0n8iinai4t"]
 
-[ext_resource type="Texture2D" uid="uid://esjtml4h1mhu" path="res://Black Outline Drawing Arrow 3D Effect Point Right.jpeg" id="1_tgoi4"]
+[ext_resource type="Texture2D" uid="uid://esjtml4h1mhu" path="res://seta.jpeg" id="1_tgoi4"]
 [ext_resource type="Script" uid="uid://bn41y10sh7gt2" path="res://scripts/seta_esquerda.gd" id="2_imrr5"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0yem"]
 size = Vector2(743.04443, 660.9972)
