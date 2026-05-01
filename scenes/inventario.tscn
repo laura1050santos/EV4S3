@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://bw8sh38ggq7ik" path="res://scripts/inventory.gd" id="2_t2sse"]
 [ext_resource type="Texture2D" uid="uid://dohev3itxb5uk" path="res://icon.svg" id="3_mu20r"]
 [ext_resource type="Resource" uid="uid://r3plls5c0nu" path="res://recursos/godotzinho.tres" id="4_t6213"]
-[ext_resource type="Resource" uid="uid://blcuoi67o7nhf" path="res://recursos/aquario.tres" id="6_ai134"]
-[ext_resource type="Texture2D" uid="uid://cmqlfa5312ifk" path="res://assets/tela_pc1.jpg" id="7_clfm4"]
 [ext_resource type="Script" uid="uid://yw26bij3lsj4" path="res://scripts/word_drop_area.gd" id="9_q0ogx"]
 
 [sub_resource type="Resource" id="Resource_t6213"]
@@ -87,7 +85,6 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(112, 109)
 layout_mode = 2
 script = ExtResource("2_hswsb")
-item = ExtResource("6_ai134")
 
 [node name="icon" type="TextureRect" parent="CanvasLayer/inventory/GridContainer/itemSlot3" unique_id=1041577781]
 custom_minimum_size = Vector2(-0.9, -0.1)
@@ -97,7 +94,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_clfm4")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 

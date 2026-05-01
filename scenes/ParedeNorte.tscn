@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://djryii8ewlak6"]
 
+[ext_resource type="Texture2D" uid="uid://d182m16xm706g" path="res://assets/CenaPorta1.jpg" id="1_d2yv5"]
 [ext_resource type="Script" uid="uid://d4vrp32de30q" path="res://scripts/parede_norte.gd" id="1_rva6f"]
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_x2vm1"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="6_2l4tn"]
@@ -7,17 +8,14 @@
 [node name="Norte" type="Node2D" unique_id=2007205659]
 script = ExtResource("1_rva6f")
 
-[node name="Label" type="Label" parent="." unique_id=1389759565]
-offset_left = 121.0
-offset_top = 54.0
-offset_right = 164.0
-offset_bottom = 103.0
-text = "norte
-"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2071372408]
+position = Vector2(576, 334.00003)
+scale = Vector2(0.5979167, 0.6111111)
+texture = ExtResource("1_d2yv5")
 
 [node name="SetaEsquerda" parent="." unique_id=599593904 instance=ExtResource("6_2l4tn")]
 destino_cena = "uid://du3u5e5blrq5k"
 
 [node name="SetaDireita" parent="." unique_id=1618444909 instance=ExtResource("1_x2vm1")]
-position = Vector2(806, 239)
+position = Vector2(813, 206)
 destino_cena = "uid://dqttd76hew5ag"

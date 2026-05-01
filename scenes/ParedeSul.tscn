@@ -3,20 +3,18 @@
 [ext_resource type="Script" uid="uid://q0mrrpy1knog" path="res://scripts/parede_sul.gd" id="1_02bjx"]
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_1234l"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="2_02bjx"]
+[ext_resource type="Texture2D" uid="uid://bewxv21aoncp5" path="res://assets/cenarios_maiscenarios (1) (1).jpg" id="4_ls4hi"]
 
 [node name="Sul" type="Node2D" unique_id=1763061583]
 script = ExtResource("1_02bjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=362550716]
+position = Vector2(577, 325)
+scale = Vector2(0.6010417, 0.6074074)
+texture = ExtResource("4_ls4hi")
 
 [node name="SetaDireita" parent="." unique_id=1759642448 instance=ExtResource("1_1234l")]
 destino_cena = "uid://du3u5e5blrq5k"
 
 [node name="SetaEsquerda" parent="." unique_id=102547465 instance=ExtResource("2_02bjx")]
 destino_cena = "uid://dqttd76hew5ag"
-
-[node name="Label" type="Label" parent="." unique_id=740895]
-offset_left = 119.0
-offset_top = 71.0
-offset_right = 167.0
-offset_bottom = 122.0
-text = "SUL
-"
