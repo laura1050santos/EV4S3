@@ -1,0 +1,17 @@
+extends Control
+
+func _on_jogar_pressed():
+	get_tree().change_scene_to_file("res://scenes/ParedeNorte.tscn")
+
+func _on_sair_pressed():
+	get_tree().quit()
+
+func _on_creditos_pressed():
+	get_tree().change_scene_to_file("res://scenes/creditos.tscn")
+	
+func _on_configuracao_pressed():
+	get_tree().change_scene_to_file("res://scenes/configuracao.tscn")
+
+
+func _on_continuar_pressed() -> void:
+	pass # Replace with function body.
