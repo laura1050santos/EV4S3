@@ -1,13 +1,15 @@
-[gd_scene load_steps=0 format=3 uid="uid://nvea80qtj18n"]
+[gd_scene format=3 uid="uid://nvea80qtj18n"]
 
 [ext_resource type="Script" uid="uid://bk1g0ggvauylc" path="res://scripts/item_slot.gd" id="2_hswsb"]
 [ext_resource type="Script" uid="uid://bw8sh38ggq7ik" path="res://scripts/inventory.gd" id="2_t2sse"]
 [ext_resource type="Texture2D" uid="uid://dohev3itxb5uk" path="res://icon.svg" id="3_mu20r"]
-[ext_resource type="Texture2D" uid="uid://esjtml4h1mhu" path="res://seta.jpeg" id="4_1ji4w"]
 [ext_resource type="Resource" uid="uid://r3plls5c0nu" path="res://recursos/godotzinho.tres" id="4_t6213"]
-[ext_resource type="Resource" path="res://recursos/seta.tres" id="6_ai134"]
+[ext_resource type="Resource" uid="uid://blcuoi67o7nhf" path="res://recursos/aquario.tres" id="6_ai134"]
+[ext_resource type="Texture2D" uid="uid://cmqlfa5312ifk" path="res://assets/tela_pc1.jpg" id="7_clfm4"]
 [ext_resource type="Script" uid="uid://yw26bij3lsj4" path="res://scripts/word_drop_area.gd" id="9_q0ogx"]
 
+[sub_resource type="Resource" id="Resource_t6213"]
+metadata/__load_path__ = "res://recursos/seta.tres"
 
 [node name="DragDropWorld" type="Sprite2D" unique_id=2030175741]
 position = Vector2(589, 319.00003)
@@ -88,12 +90,14 @@ script = ExtResource("2_hswsb")
 item = ExtResource("6_ai134")
 
 [node name="icon" type="TextureRect" parent="CanvasLayer/inventory/GridContainer/itemSlot3" unique_id=1041577781]
+custom_minimum_size = Vector2(-0.9, -0.1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("7_clfm4")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -117,7 +121,7 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(112, 109)
 layout_mode = 2
 script = ExtResource("2_hswsb")
-item = ExtResource("6_ai134")
+item = SubResource("Resource_t6213")
 
 [node name="icon" type="TextureRect" parent="CanvasLayer/inventory/GridContainer/itemSlot4" unique_id=1345834371]
 layout_mode = 1
@@ -126,6 +130,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_1ji4w")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true

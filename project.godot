@@ -16,8 +16,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="evase"
 run/main_scene="uid://djryii8ewlak6"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Inventario="*uid://nvea80qtj18n"
+Godotzinho="*uid://r3plls5c0nu"
+Aquario="*uid://blcuoi67o7nhf"
 
 [input]
 
