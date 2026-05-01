@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqttd76hew5ag"]
+[gd_scene format=3 uid="uid://dqttd76hew5ag"]
 
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_nd5rm"]
+[ext_resource type="Script" uid="uid://drl1bdoantve4" path="res://scripts/parede_leste.gd" id="1_vkmgy"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="2_vkmgy"]
 
-[node name="leste" type="Node2D"]
+[node name="leste" type="Node2D" unique_id=75511132]
+script = ExtResource("1_vkmgy")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1360609775]
 offset_left = 100.0
 offset_top = 85.0
 offset_right = 140.0
@@ -13,8 +15,8 @@ offset_bottom = 134.0
 text = "LESTE
 "
 
-[node name="SetaDireita" parent="." instance=ExtResource("1_nd5rm")]
+[node name="SetaDireita" parent="." unique_id=1513097482 instance=ExtResource("1_nd5rm")]
 destino_cena = "uid://cxhjpnc7drrok"
 
-[node name="SetaEsquerda" parent="." instance=ExtResource("2_vkmgy")]
+[node name="SetaEsquerda" parent="." unique_id=336124005 instance=ExtResource("2_vkmgy")]
 destino_cena = "uid://djryii8ewlak6"

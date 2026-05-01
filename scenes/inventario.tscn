@@ -11,7 +11,7 @@
 [sub_resource type="Resource" id="Resource_t6213"]
 metadata/__load_path__ = "res://recursos/seta.tres"
 
-[node name="DragDropWorld" type="Sprite2D" unique_id=2030175741]
+[node name="Inventario" type="Sprite2D" unique_id=2030175741]
 position = Vector2(589, 319.00003)
 rotation = 0.003354011
 scale = Vector2(0.7252294, 0.7097239)

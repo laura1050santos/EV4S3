@@ -1,4 +1,6 @@
 extends Control
+# No script da sua CENA (ex: Level1.gd)
+
 
 func _on_jogar_pressed():
 	get_tree().change_scene_to_file("res://scenes/ParedeNorte.tscn")

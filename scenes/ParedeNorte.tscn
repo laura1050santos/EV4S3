@@ -1,39 +1,23 @@
 [gd_scene format=3 uid="uid://djryii8ewlak6"]
 
-[ext_resource type="Texture2D" uid="uid://d182m16xm706g" path="res://assets/CenaPorta1.jpg" id="1_d2yv5"]
+[ext_resource type="Script" uid="uid://d4vrp32de30q" path="res://scripts/parede_norte.gd" id="1_rva6f"]
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_x2vm1"]
-[ext_resource type="Script" uid="uid://cf43kjp0m6453" path="res://scripts/area_2d.gd" id="2_d2yv5"]
-[ext_resource type="Script" uid="uid://d42u1o805uge" path="res://scripts/collision_shape_2d_porta.gd" id="3_x2vm1"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="6_2l4tn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6d6i"]
-size = Vector2(211, 448)
-
 [node name="Norte" type="Node2D" unique_id=2007205659]
+script = ExtResource("1_rva6f")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=761173538]
-position = Vector2(576.8889, 329.5)
-scale = Vector2(0.600926, 0.6009259)
-texture = ExtResource("1_d2yv5")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1220503892]
-position = Vector2(807, 413)
-script = ExtResource("2_d2yv5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1240469450]
-position = Vector2(-231, -45)
-shape = SubResource("RectangleShape2D_p6d6i")
-script = ExtResource("3_x2vm1")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=1242004280]
-position = Vector2(-804.5, -425.5)
-
-[node name="SetaDireita" parent="." unique_id=1618444909 instance=ExtResource("1_x2vm1")]
-position = Vector2(806, 239)
-destino_cena = "uid://dqttd76hew5ag"
+[node name="Label" type="Label" parent="." unique_id=1389759565]
+offset_left = 121.0
+offset_top = 54.0
+offset_right = 164.0
+offset_bottom = 103.0
+text = "norte
+"
 
 [node name="SetaEsquerda" parent="." unique_id=599593904 instance=ExtResource("6_2l4tn")]
 destino_cena = "uid://du3u5e5blrq5k"
 
-[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
-[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[node name="SetaDireita" parent="." unique_id=1618444909 instance=ExtResource("1_x2vm1")]
+position = Vector2(806, 239)
+destino_cena = "uid://dqttd76hew5ag"
