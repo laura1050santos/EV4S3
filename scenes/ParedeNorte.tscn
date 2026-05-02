@@ -5,8 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_x2vm1"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="6_2l4tn"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
+size = Vector2(371.2891, 733.0908)
+
 [node name="Norte" type="Node2D" unique_id=2007205659]
 script = ExtResource("1_rva6f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=846570997]
+position = Vector2(576, 334.00003)
+scale = Vector2(0.5979167, 0.6111111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=51084944]
+position = Vector2(0, 63.818237)
+shape = SubResource("RectangleShape2D_fqgx5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2071372408]
 position = Vector2(576, 334.00003)
@@ -19,3 +30,6 @@ destino_cena = "uid://du3u5e5blrq5k"
 [node name="SetaDireita" parent="." unique_id=1618444909 instance=ExtResource("1_x2vm1")]
 position = Vector2(813, 206)
 destino_cena = "uid://dqttd76hew5ag"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
