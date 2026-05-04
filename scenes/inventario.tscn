@@ -2,15 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bk1g0ggvauylc" path="res://scripts/item_slot.gd" id="2_hswsb"]
 [ext_resource type="Script" uid="uid://bw8sh38ggq7ik" path="res://scripts/inventory.gd" id="2_t2sse"]
-[ext_resource type="Texture2D" uid="uid://dohev3itxb5uk" path="res://icon.svg" id="3_mu20r"]
-[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/item_data.gd" id="5_t2sse"]
 [ext_resource type="Script" uid="uid://yw26bij3lsj4" path="res://scripts/word_drop_area.gd" id="9_q0ogx"]
-
-[sub_resource type="Resource" id="Resource_t6213"]
-script = ExtResource("5_t2sse")
-item_name = "godot"
-icon = ExtResource("3_mu20r")
-metadata/_custom_type_script = "uid://bwi2jwocwo7qv"
 
 [node name="Inventario" type="Sprite2D" unique_id=2030175741]
 position = Vector2(589, 319.00003)
@@ -41,14 +33,15 @@ anchor_left = 0.845
 anchor_top = 0.51500005
 anchor_right = 0.845
 anchor_bottom = 0.51500005
-offset_left = -71.44006
-offset_top = -258.72003
-offset_right = 72.55994
-offset_bottom = 259.27997
+offset_left = -67.44006
+offset_top = -298.72003
+offset_right = 114.55994
+offset_bottom = 313.27997
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
 script = ExtResource("2_t2sse")
 
 [node name="GridContainer" type="GridContainer" parent="canvasLayer/inventory" unique_id=495445096]
@@ -60,19 +53,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -58.0
-offset_top = -248.0
+offset_top = -271.0
 offset_right = 54.0
 offset_bottom = 239.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 12
-theme_override_constants/v_separation = 17
+theme_override_constants/v_separation = 35
 
 [node name="itemSlot" type="Panel" parent="canvasLayer/inventory/GridContainer" unique_id=1228606469]
 custom_minimum_size = Vector2(1, 109)
 layout_mode = 2
 script = ExtResource("2_hswsb")
-item = SubResource("Resource_t6213")
 
 [node name="icon" type="TextureRect" parent="canvasLayer/inventory/GridContainer/itemSlot" unique_id=561639030]
 layout_mode = 1
@@ -81,7 +72,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_mu20r")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 

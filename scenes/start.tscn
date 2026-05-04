@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dc8wxs18e8dcc"]
 
-[ext_resource type="Script" uid="uid://cb6inmgk45fi2" path="res://scenes/start.gd" id="1_u80x2"]
+[ext_resource type="Script" uid="uid://cb6inmgk45fi2" path="res://scripts/start.gd" id="1_u80x2"]
 [ext_resource type="Texture2D" uid="uid://blsjo1y4ljgbf" path="res://assets/StartFundo.png" id="2_u80x2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u80x2"]

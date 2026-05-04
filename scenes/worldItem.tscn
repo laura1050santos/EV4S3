@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://dtjtwamnkpm8m"]
 
-[ext_resource type="Texture2D" uid="uid://dohev3itxb5uk" path="res://icon.svg" id="1_pdjmn"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkfx3"]
 size = Vector2(124.49567, 126.79974)
 
 [node name="Sprite2D" type="Sprite2D" unique_id=772838308]
-texture = ExtResource("1_pdjmn")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1503790501]
 

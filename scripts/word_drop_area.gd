@@ -30,7 +30,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var item_para_dropar = data.item
 	var node = WORLD_ITEM.instantiate()
 	node.set_meta("item_data", item_para_dropar)
-	node.texture = item_para_dropar.icon
+	node.texture = item_para_dropar.mesh
 	
 	get_tree().current_scene.add_child(node)
 	node.global_position = get_global_mouse_position()

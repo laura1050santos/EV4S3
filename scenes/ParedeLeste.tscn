@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dqttd76hew5ag"]
 
+[ext_resource type="Script" uid="uid://cyusdajpoxlmc" path="res://scripts/salas_scripts/parede_leste.gd" id="1_2litd"]
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_nd5rm"]
-[ext_resource type="Script" uid="uid://drl1bdoantve4" path="res://scripts/parede_leste.gd" id="1_vkmgy"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="2_vkmgy"]
 [ext_resource type="Texture2D" uid="uid://cmqlfa5312ifk" path="res://assets/tela_pc1.jpg" id="4_2litd"]
 
 [node name="leste" type="Node2D" unique_id=75511132]
-script = ExtResource("1_vkmgy")
+script = ExtResource("1_2litd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=713544357]
 position = Vector2(575, 325.5)
