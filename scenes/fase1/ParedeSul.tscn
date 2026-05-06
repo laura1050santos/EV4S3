@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cxhjpnc7drrok"]
+
+[ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_1234l"]
+[ext_resource type="Script" uid="uid://cv6fthwtudkv8" path="res://scripts/salas_scripts/parede_sul.gd" id="1_ls4hi"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="2_02bjx"]
+[ext_resource type="Texture2D" uid="uid://6qflflr0g5qx" path="res://assets/64e6e992-c878-4021-90f1-64aa0c90f2a9.jpeg" id="2_ls4hi"]
+
+[node name="Sul" type="Node2D" unique_id=1763061583]
+script = ExtResource("1_ls4hi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=362550716]
+position = Vector2(574.50006, 323.99997)
+scale = Vector2(0.8945312, 0.89320385)
+texture = ExtResource("2_ls4hi")
+
+[node name="SetaDireita" parent="." unique_id=1759642448 instance=ExtResource("1_1234l")]
+destino_cena = "uid://du3u5e5blrq5k"
+
+[node name="SetaEsquerda" parent="." unique_id=102547465 instance=ExtResource("2_02bjx")]
+destino_cena = "uid://dqttd76hew5ag"
