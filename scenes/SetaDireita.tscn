@@ -1,20 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://b502itwqs4700"]
+[gd_scene format=3 uid="uid://b502itwqs4700"]
 
 [ext_resource type="Script" uid="uid://ccsodqlbixkb1" path="res://scripts/seta_direita.gd" id="1_3oban"]
 [ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_3oban"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dthxh"]
+radius = 10.198039
 
-[node name="SetaDireita" type="Area2D"]
+[node name="SetaDireita" type="Area2D" unique_id=1806574924]
 position = Vector2(816, 222)
 script = ExtResource("1_3oban")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(305, 109)
-shape = SubResource("CircleShape2D_dthxh")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(305.00003, 108.99999)
-rotation = -1.5775748
-scale = Vector2(1.1417414, 1.1326294)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1984537135]
+position = Vector2(301, 110)
+rotation = -1.5616103
 texture = ExtResource("2_3oban")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=441038175]
+position = Vector2(300, 111)
+rotation = 0.037215363
+shape = SubResource("CircleShape2D_dthxh")

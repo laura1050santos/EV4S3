@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://csirl8cmaxgie"]
+
+[ext_resource type="PackedScene" uid="uid://64jdbthyeacs" path="res://scenes/setaCima.tscn" id="1_0xtrl"]
+
+[node name="Chao" type="Node2D" unique_id=1198434881]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1761167946]
+
+[node name="SetaCima" parent="." unique_id=698343437 instance=ExtResource("1_0xtrl")]
+destino_cena = "uid://djryii8ewlak6"

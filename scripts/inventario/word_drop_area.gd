@@ -33,7 +33,9 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	node.texture = item_para_dropar.icon
 	
 	get_tree().current_scene.add_child(node)
-	node.global_position = get_global_mouse_position()
+	node.global_position = get_global_mouse_position() 
+	
+	# colocar funcção para arrastar o item diretamente pra a posição e cena original
 	
 	# PEGANDO O NOME DA CENA ATUAL
 	var nome_cena_atual = get_tree().current_scene.name
@@ -54,7 +56,6 @@ func _input(event: InputEvent)-> void:
 			var result = space_state.intersect_point(parameters)
 			
 			if result:
-				print("Clique detectado em objeto físico")
 				var target = result[0].collider
 				# 3. Verificar se é um item coletável (usando Meta igual ao vídeo)
 				if not target.has_meta("item_data") and target.get_parent().has_meta("item_data"):
@@ -62,7 +63,7 @@ func _input(event: InputEvent)-> void:
 					if target.has_meta("item_data"):
 						# ... dentro do seu if target.has_meta("item_data"):
 						var item_pego = target.get_meta("item_data")
-
+						
 						for slot in %GridContainer.get_children():
 							if slot.item == null:
 								slot.item = item_pego
