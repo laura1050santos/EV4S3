@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bs87yg6pua7jj"]
+[gd_scene load_steps=4 format=3 uid="uid://bs87yg6pua7jj"]
 
 [ext_resource type="Script" uid="uid://bn41y10sh7gt2" path="res://scripts/seta_esquerda.gd" id="1_tsqrw"]
-[ext_resource type="Texture2D" uid="uid://bqshqhe6i7nry" path="res://assets/arrow_back_ios_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" id="1_wioaq"]
+[ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_tsqrw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tsqrw"]
 
@@ -14,4 +14,7 @@ position = Vector2(-4, -1)
 shape = SubResource("CircleShape2D_tsqrw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_wioaq")
+position = Vector2(-4, -5.9604645e-07)
+rotation = 1.5574409
+scale = Vector2(1.2916666, 1.375)
+texture = ExtResource("2_tsqrw")
