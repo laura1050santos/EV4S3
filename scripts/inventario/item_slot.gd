@@ -11,14 +11,14 @@ func update_ui():
 		icon.texture = null
 		return
 		
-	icon.texture = item.icon
+	icon.texture = item.inventory_icon
 	tooltip_text = item.item_name
 	icon.show()
 		
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	if not item:
 		return
-	
+	#O EFEITO NN ESTÁ FUNCIONANDO 
 	var preview = duplicate()
 	var c = Control.new()
 	c.add_child(preview)
