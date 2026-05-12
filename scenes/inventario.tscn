@@ -66,7 +66,6 @@ grow_vertical = 2
 theme_override_constants/v_separation = 35
 
 [node name="itemSlot" type="Panel" parent="canvasLayer/inventory/GridContainer" unique_id=1228606469]
-self_modulate = Color(0.35447437, 0.35447437, 0.35447437, 1)
 custom_minimum_size = Vector2(1, 109)
 layout_mode = 2
 size_flags_stretch_ratio = 3.12
@@ -91,13 +90,11 @@ script = ExtResource("5_t2sse")
 metadata/_edit_use_anchors_ = true
 
 [node name="itemSlot3" type="Panel" parent="canvasLayer/inventory/GridContainer" unique_id=728027775]
-self_modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
 custom_minimum_size = Vector2(112, 109)
 layout_mode = 2
 script = ExtResource("2_hswsb")
 
 [node name="icon" type="TextureRect" parent="canvasLayer/inventory/GridContainer/itemSlot3" unique_id=1041577781]
-self_modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
 custom_minimum_size = Vector2(-0.9, -0.1)
 layout_mode = 1
 anchors_preset = -1
@@ -116,7 +113,6 @@ layout_mode = 2
 script = ExtResource("2_hswsb")
 
 [node name="icon" type="TextureRect" parent="canvasLayer/inventory/GridContainer/itemSlot2" unique_id=613110089]
-self_modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,7 +128,6 @@ layout_mode = 2
 script = ExtResource("2_hswsb")
 
 [node name="icon" type="TextureRect" parent="canvasLayer/inventory/GridContainer/itemSlot4" unique_id=1345834371]
-self_modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
