@@ -4,18 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_3oban"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dthxh"]
-radius = 10.198039
+radius = 18.0
 
 [node name="SetaDireita" type="Area2D" unique_id=1806574924]
 position = Vector2(816, 222)
 script = ExtResource("1_3oban")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1984537135]
-position = Vector2(301, 110)
-rotation = -1.5616103
+position = Vector2(309.228, 115.324005)
+rotation = -1.5804943
+scale = Vector2(1.4502958, 1.6813303)
 texture = ExtResource("2_3oban")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=441038175]
-position = Vector2(300, 111)
-rotation = 0.037215363
+position = Vector2(305, 116)
 shape = SubResource("CircleShape2D_dthxh")

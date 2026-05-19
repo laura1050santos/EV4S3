@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt40n0me6w8e5"]
+
+[ext_resource type="Texture2D" uid="uid://bg4fmgvnqceot" path="res://assets/cena-telegrafo-inicial.png" id="1_xysmm"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="2_f1w1o"]
+
+[node name="zoomTele" type="Node2D"]
+
+[node name="CenaTelegrafoInicial" type="Sprite2D" parent="."]
+position = Vector2(576, 326.99994)
+scale = Vector2(0.5958333, 0.6055556)
+texture = ExtResource("1_xysmm")
+
+[node name="SetaEsquerda" parent="." instance=ExtResource("2_f1w1o")]
+destino_cena = "uid://du3u5e5blrq5k"

@@ -1,21 +1,21 @@
-[gd_scene format=3 uid="uid://64jdbthyeacs"]
+[gd_scene load_steps=4 format=3 uid="uid://c86fx5p8gclpc"]
 
-[ext_resource type="Script" uid="uid://y46cadpr4gkh" path="res://scripts/seta_baixo.gd" id="1_45vxc"]
-[ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_i5x1l"]
+[ext_resource type="Script" uid="uid://wtwmlkft77li" path="res://scripts/setaCima.gd" id="1_ychhg"]
+[ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_45vxc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p4yg6"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7oxf2"]
+radius = 17.029387
 
-[node name="SetaCima" type="Area2D" unique_id=698343437]
-position = Vector2(566, 31)
-script = ExtResource("1_45vxc")
-destino_cena = "uid://cksbyo67snwfi"
+[node name="setaCima" type="Area2D"]
+position = Vector2(27, 16)
+script = ExtResource("1_ychhg")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=208441918]
-position = Vector2(-5, -3)
-rotation = -3.120198
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("2_i5x1l")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(514, 47)
+shape = SubResource("CircleShape2D_7oxf2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2116879886]
-position = Vector2(-5, -2)
-shape = SubResource("CircleShape2D_p4yg6")
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(1, -0.99999976)
+rotation = 3.1049733
+scale = Vector2(1.9166666, 1.7916666)
+texture = ExtResource("2_45vxc")

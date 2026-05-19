@@ -34,7 +34,6 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	
 	get_tree().current_scene.add_child(node)
 	node.global_position = get_global_mouse_position() 
-	
 	# colocar funcção para arrastar o item diretamente pra a posição e cena original
 	
 	# PEGANDO O NOME DA CENA ATUAL

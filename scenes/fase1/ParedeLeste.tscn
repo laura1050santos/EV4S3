@@ -2,25 +2,30 @@
 
 [ext_resource type="Script" uid="uid://cyusdajpoxlmc" path="res://scripts/salas_scripts/parede_leste.gd" id="1_2litd"]
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_nd5rm"]
+[ext_resource type="Texture2D" uid="uid://c8uwlx7xvpxpa" path="res://assets/cenapc.png" id="2_k8ayk"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="2_vkmgy"]
-[ext_resource type="Texture2D" uid="uid://cmqlfa5312ifk" path="res://assets/tela_pc1.jpg" id="4_2litd"]
-[ext_resource type="PackedScene" uid="uid://64jdbthyeacs" path="res://scenes/setaCima.tscn" id="5_xd0od"]
+[ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setaCima.tscn" id="5_xd0od"]
+[ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setaBaixo.tscn" id="6_k8ayk"]
 
-[node name="leste" type="Node2D" unique_id=75511132]
+[node name="leste" type="Node2D" unique_id=1514872956]
 script = ExtResource("1_2litd")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=713544357]
-position = Vector2(575, 325.5)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=122520221]
+position = Vector2(574, 324)
 scale = Vector2(0.603125, 0.6009259)
-texture = ExtResource("4_2litd")
+texture = ExtResource("2_k8ayk")
 
-[node name="SetaDireita" parent="." unique_id=1513097482 instance=ExtResource("1_nd5rm")]
+[node name="SetaDireita" parent="." unique_id=1578184254 instance=ExtResource("1_nd5rm")]
+position = Vector2(816, 197)
 destino_cena = "uid://cxhjpnc7drrok"
 
-[node name="SetaEsquerda" parent="." unique_id=336124005 instance=ExtResource("2_vkmgy")]
+[node name="SetaEsquerda" parent="." unique_id=1283995243 instance=ExtResource("2_vkmgy")]
+position = Vector2(30, 307)
 destino_cena = "uid://djryii8ewlak6"
 
-[node name="SetaCima" parent="." unique_id=238559954 instance=ExtResource("5_xd0od")]
+[node name="setaCima" parent="." unique_id=1498824335 instance=ExtResource("5_xd0od")]
+destino_cena = "uid://dcjm6p1qyhtmg"
 
-[node name="SetaBaixo" parent="." unique_id=1562764999 instance=ExtResource("5_xd0od")]
-destino_cena = "uid://dqttd76hew5ag"
+[node name="SetaBaixo" parent="." unique_id=1229194195 instance=ExtResource("6_k8ayk")]
+position = Vector2(128, 334)
+destino_cena = "uid://dmhce3kfm14ep"
