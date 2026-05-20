@@ -35,6 +35,7 @@ position = Vector2(817, 197)
 destino_cena = "uid://dqttd76hew5ag"
 
 [node name="setaCima" parent="." unique_id=197487796 instance=ExtResource("6_26mac")]
+position = Vector2(53, -1)
 destino_cena = "uid://dcjm6p1qyhtmg"
 
 [node name="SetaBaixo" parent="." unique_id=2142969664 instance=ExtResource("5_uinfo")]

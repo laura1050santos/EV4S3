@@ -2,7 +2,6 @@
 extends Control
 
 const WORLD_ITEM = preload("res://scenes/worldItem.tscn")
-
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for info in GlobalSingleton.itens_no_mundo:
@@ -47,7 +46,8 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 
 
 func _input(event: InputEvent)-> void:
-	if event is InputEventMouseButton and event.pressed:
+	#criar função par adicionar uma area para poder calcular se o mouse pegou nessa area ou não
+	if event is InputEventMouseButton and event.double_click :
 			var space_state = get_world_2d().direct_space_state
 			var parameters = PhysicsPointQueryParameters2D.new()
 			parameters.position = get_global_mouse_position()
@@ -73,5 +73,3 @@ func _input(event: InputEvent)-> void:
 
 								target.queue_free()
 								return
-
-	# Assim que a cena carregar, chamamos a função para "limpar e recriar"

@@ -13,12 +13,14 @@ func _ready():
 
 "cena": nome_desta_cena
 
-},#itens que começam na cena
-	
-	]
+},
+#itens que começam na cena
+]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-	lanterna_perspectiva()
-func lanterna_perspectiva():
+
+	
+	
+func lanterna_perspectiva() -> void:
 	var lanterna_res = load("res://recursos/lanterna.tres")
 	for info in GlobalSingleton.itens_no_mundo:
 		if info.data == lanterna_res:
