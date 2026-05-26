@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxrm6pnl5iapo" path="res://scripts/salas_scripts/parede_norte.gd" id="1_fqgx5"]
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_x2vm1"]
+[ext_resource type="PackedScene" uid="uid://1dfa4bseuvs" path="res://scenes/escuro.tscn" id="2_26mac"]
 [ext_resource type="Texture2D" uid="uid://c3swa0pweqle8" path="res://assets/tela porta.png" id="2_lnbbm"]
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setaBaixo.tscn" id="5_uinfo"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="6_2l4tn"]
@@ -21,21 +22,20 @@ scale = Vector2(0.5979167, 0.6111111)
 position = Vector2(0, 63.818237)
 shape = SubResource("RectangleShape2D_fqgx5")
 
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("2_26mac")]
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=98744966]
 position = Vector2(575.63025, 326.08704)
 scale = Vector2(0.6035101, 0.6168279)
 texture = ExtResource("2_lnbbm")
 
 [node name="SetaEsquerda" parent="." unique_id=1967519592 instance=ExtResource("6_2l4tn")]
-position = Vector2(35, 317)
 destino_cena = "uid://du3u5e5blrq5k"
 
 [node name="SetaDireita" parent="." unique_id=1243963864 instance=ExtResource("1_x2vm1")]
-position = Vector2(817, 197)
 destino_cena = "uid://dqttd76hew5ag"
 
 [node name="setaCima" parent="." unique_id=197487796 instance=ExtResource("6_26mac")]
-position = Vector2(53, -1)
 destino_cena = "uid://dcjm6p1qyhtmg"
 
 [node name="SetaBaixo" parent="." unique_id=2142969664 instance=ExtResource("5_uinfo")]

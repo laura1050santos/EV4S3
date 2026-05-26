@@ -7,13 +7,13 @@
 radius = 25.179358
 
 [node name="SetaEsquerda" type="Area2D" unique_id=1927550638]
-position = Vector2(33, 310)
+z_index = 2
+position = Vector2(32, 325)
 script = ExtResource("1_tsqrw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=547202885]
-position = Vector2(-1.0000038, -0.99999905)
-rotation = -4.690716
-scale = Vector2(2.1666667, 2.0833333)
+rotation = -4.712389
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_tsqrw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152067613]
