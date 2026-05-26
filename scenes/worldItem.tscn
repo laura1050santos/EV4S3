@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://dtjtwamnkpm8m"]
 
+[ext_resource type="Script" uid="uid://6xw6brcu7g5e" path="res://scenes/world_item.gd" id="1_emrl0"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkfx3"]
 size = Vector2(124.49567, 126.79974)
 
 [node name="Sprite2D" type="Sprite2D" unique_id=772838308]
+script = ExtResource("1_emrl0")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1503790501]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=486346922]
-position = Vector2(1.3742523, -1.4137115)
+position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_qkfx3")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
