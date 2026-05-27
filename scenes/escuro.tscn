@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1dfa4bseuvs"]
 
 [ext_resource type="Texture2D" uid="uid://by64tunbwosp5" path="res://assets/imagem-preta.png" id="1_k38jg"]
+[ext_resource type="Script" uid="uid://bhhiskcu1on15" path="res://scenes/ligarEDesligar.gd" id="2_geb2j"]
 
 [node name="Escuro" type="Node" unique_id=693554654]
 
@@ -10,3 +11,4 @@ z_index = 1
 position = Vector2(580, 325)
 scale = Vector2(0.62777776, 0.62777776)
 texture = ExtResource("1_k38jg")
+script = ExtResource("2_geb2j")
