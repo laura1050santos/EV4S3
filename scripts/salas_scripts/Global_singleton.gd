@@ -28,5 +28,7 @@ func registrar_cena_visitada(nome_da_cena ):
 func remover_item(item_data):
 	for i in range(itens_no_mundo.size()):
 		if itens_no_mundo[i].data == item_data:
+			print(itens_no_mundo[i].data,item_data )
 			itens_no_mundo.remove_at(i)
+			print(itens_no_mundo,item_data)
 			break

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxrm6pnl5iapo" path="res://scripts/salas_scripts/parede_norte.gd" id="1_fqgx5"]
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/SetaDireita.tscn" id="1_x2vm1"]
-[ext_resource type="PackedScene" uid="uid://1dfa4bseuvs" path="res://scenes/escuro.tscn" id="2_26mac"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="2_26mac"]
 [ext_resource type="Texture2D" uid="uid://c3swa0pweqle8" path="res://assets/tela porta.png" id="2_lnbbm"]
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setaBaixo.tscn" id="5_uinfo"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/SetaEsquerda.tscn" id="6_2l4tn"]

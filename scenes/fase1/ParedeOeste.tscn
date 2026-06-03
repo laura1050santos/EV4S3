@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://jq35mc1vbtca" path="res://assets/salaestar (1).png" id="2_a2k3a"]
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setaCima.tscn" id="5_ryv08"]
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setaBaixo.tscn" id="6_7a4mq"]
-[ext_resource type="Script" uid="uid://bt3l2r4lm5ee3" path="res://scenes/zoom_tele.gd" id="7_a2k3a"]
-[ext_resource type="PackedScene" uid="uid://1dfa4bseuvs" path="res://scenes/escuro.tscn" id="8_c7vib"]
+[ext_resource type="Script" uid="uid://bt3l2r4lm5ee3" path="res://scripts/zoom_tele.gd" id="7_a2k3a"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="8_c7vib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4mq"]
 size = Vector2(90.5, 48)

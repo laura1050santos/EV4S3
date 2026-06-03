@@ -10,7 +10,6 @@ func iniciar_itens_cena(nome_desta_cena,itens_inciais):
 	for info in GlobalSingleton.itens_no_mundo:
 		if info.cena == nome_desta_cena:
 			spawnar_itens(info.data, info.pos)
-			
 
 func spawnar_itens(recurso,posicao):
 	var node = preload("res://scenes/worldItem.tscn").instantiate()
