@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bu3k3qgbffubh" path="res://assets/salaaquario.png" id="2_3wuve"]
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setaCima.tscn" id="5_vfh6l"]
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setaBaixo.tscn" id="6_o2bnt"]
+[ext_resource type="PackedScene" uid="uid://1dfa4bseuvs" path="res://scenes/escuro.tscn" id="7_o2bnt"]
 
 [node name="Sul" type="Node2D" unique_id=1333073255]
 script = ExtResource("1_ls4hi")
@@ -16,7 +17,6 @@ scale = Vector2(0.6025526, 0.6016585)
 texture = ExtResource("2_3wuve")
 
 [node name="SetaDireita" parent="." unique_id=701164572 instance=ExtResource("1_1234l")]
-position = Vector2(816, 197)
 destino_cena = "uid://du3u5e5blrq5k"
 
 [node name="SetaEsquerda" parent="." unique_id=1495955004 instance=ExtResource("2_02bjx")]
@@ -27,3 +27,5 @@ destino_cena = "uid://dcjm6p1qyhtmg"
 
 [node name="SetaBaixo" parent="." unique_id=1909036051 instance=ExtResource("6_o2bnt")]
 destino_cena = "uid://dmhce3kfm14ep"
+
+[node name="Escuro" parent="SetaBaixo" unique_id=693554654 instance=ExtResource("7_o2bnt")]
