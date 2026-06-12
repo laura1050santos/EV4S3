@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dmhce3kfm14ep"]
+
+[ext_resource type="Texture2D" uid="uid://c6vqff80jctae" path="res://assets/cenarios/chao.png" id="1_61tdm"]
+[ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="1_ew8tq"]
+
+[node name="cenaChao" type="Node2D" unique_id=64604598]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1703706985]
+position = Vector2(580.00006, 326.00003)
+scale = Vector2(0.6074074, 0.6074074)
+texture = ExtResource("1_61tdm")
+
+[node name="setaCima" parent="." unique_id=106619735 instance=ExtResource("1_ew8tq")]
+destino_cena = "uid://djryii8ewlak6"

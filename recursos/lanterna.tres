@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://cn2olv5sq5igu"]
+
+[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_fvg52"]
+[ext_resource type="Texture2D" uid="uid://qtk2o76fdyja" path="res://assets/itens/lanternaparede.png" id="1_snr08"]
+[ext_resource type="Texture2D" uid="uid://ddwsoo7se5y3p" path="res://assets/itens/lanterna.png" id="1_uyjbx"]
+[ext_resource type="Texture2D" uid="uid://yp3fxh6hy718" path="res://assets/itens/lanterna-zoom.png" id="2_1hmir"]
+
+[resource]
+script = ExtResource("1_fvg52")
+item_name = "lanterna"
+icon = ExtResource("1_uyjbx")
+inventory_icon = ExtResource("2_1hmir")
+ativo_icon = ExtResource("1_snr08")
+metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://djryii8ewlak6"]
+
+[ext_resource type="Script" uid="uid://cxrm6pnl5iapo" path="res://scripts/salas_scripts/parede_norte.gd" id="1_fqgx5"]
+[ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="1_x2vm1"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="2_26mac"]
+[ext_resource type="Texture2D" uid="uid://c3swa0pweqle8" path="res://assets/cenarios/tela porta.png" id="2_lnbbm"]
+[ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setas/setaBaixo.tscn" id="5_uinfo"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="6_2l4tn"]
+[ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="6_26mac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
+size = Vector2(371.2891, 733.0908)
+
+[node name="Norte" type="Node2D" unique_id=829706663]
+script = ExtResource("1_fqgx5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=423007593]
+position = Vector2(576, 334.00003)
+scale = Vector2(0.5979167, 0.6111111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1528940571]
+position = Vector2(0, 63.818237)
+shape = SubResource("RectangleShape2D_fqgx5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=98744966]
+position = Vector2(576, 338.00003)
+scale = Vector2(0.6035101, 0.6168279)
+texture = ExtResource("2_lnbbm")
+
+[node name="SetaEsquerda" parent="." unique_id=1967519592 instance=ExtResource("6_2l4tn")]
+destino_cena = "uid://du3u5e5blrq5k"
+
+[node name="setaCima" parent="." unique_id=197487796 instance=ExtResource("6_26mac")]
+destino_cena = "uid://dcjm6p1qyhtmg"
+
+[node name="SetaBaixo" parent="." unique_id=2142969664 instance=ExtResource("5_uinfo")]
+destino_cena = "uid://dmhce3kfm14ep"
+
+[node name="SetaDireita" parent="." unique_id=1243963864 instance=ExtResource("1_x2vm1")]
+destino_cena = "uid://dqttd76hew5ag"
+
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("2_26mac")]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

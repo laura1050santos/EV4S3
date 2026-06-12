@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bwytanyxh8aqr"]
+
+[node name="Escuro" type="Node" unique_id=693554654]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2100295126]
+color = Color(0.1905662, 0.1905662, 0.1905662, 1)

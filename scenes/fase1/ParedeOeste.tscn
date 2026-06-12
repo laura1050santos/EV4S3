@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://du3u5e5blrq5k"]
+
+[ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="1_gm2vv"]
+[ext_resource type="Script" uid="uid://4h5mibudxj5i" path="res://scripts/salas_scripts/parede_oeste.gd" id="1_r4qe8"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_02577"]
+[ext_resource type="Texture2D" uid="uid://b3o6ljof8o5mq" path="res://assets/cenarios/salaestar.png" id="2_a2k3a"]
+[ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="5_ryv08"]
+[ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setas/setaBaixo.tscn" id="6_7a4mq"]
+[ext_resource type="Script" uid="uid://bt3l2r4lm5ee3" path="res://scripts/salas_scripts/zoom_tele.gd" id="7_a2k3a"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="8_c7vib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4mq"]
+size = Vector2(90.5, 48)
+
+[node name="Oeste" type="Node2D" unique_id=1991184608]
+script = ExtResource("1_r4qe8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=348728898]
+position = Vector2(576.0161, 325.12503)
+scale = Vector2(0.60102487, 0.6016204)
+texture = ExtResource("2_a2k3a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2021680412]
+script = ExtResource("7_a2k3a")
+destino_cena = "uid://bt40n0me6w8e5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1441696459]
+position = Vector2(611.75, 456)
+shape = SubResource("RectangleShape2D_7a4mq")
+
+[node name="SetaBaixo" parent="." unique_id=789411554 instance=ExtResource("6_7a4mq")]
+destino_cena = "uid://dmhce3kfm14ep"
+
+[node name="setaCima" parent="." unique_id=2008441482 instance=ExtResource("5_ryv08")]
+destino_cena = "uid://dcjm6p1qyhtmg"
+
+[node name="SetaEsquerda" parent="." unique_id=627325203 instance=ExtResource("2_02577")]
+destino_cena = "uid://cxhjpnc7drrok"
+
+[node name="SetaDireita" parent="." unique_id=1058934518 instance=ExtResource("1_gm2vv")]
+destino_cena = "uid://djryii8ewlak6"
+
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("8_c7vib")]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://cdd5k3wmce43f"]
+
+[ext_resource type="Texture2D" uid="uid://bq67oos62xp5x" path="res://assets/itens/malagrande.png" id="1_3ptfa"]
+[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_pdaop"]
+
+[resource]
+script = ExtResource("1_pdaop")
+item_name = "Mala"
+icon = ExtResource("1_3ptfa")
+inventory_icon = ExtResource("1_3ptfa")
+metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

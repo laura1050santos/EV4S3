@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://dc8wxs18e8dcc"]
+
+[ext_resource type="Script" uid="uid://cb6inmgk45fi2" path="res://scenes/start.gd" id="1_u80x2"]
+[ext_resource type="Texture2D" uid="uid://blsjo1y4ljgbf" path="res://assets/StartFundo.png" id="2_u80x2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u80x2"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1nvso"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bodal"]
+bg_color = Color(0.44711733, 0.00043016332, 1.3868182, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdmts"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsp51"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8itgj"]
+bg_color = Color(0.44711733, 0.00043016332, 1.3868182, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0auqf"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8uic"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn317"]
+bg_color = Color(0.44711733, 0.00043016332, 1.3868182, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y16t7"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1pfr"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8nf6"]
+bg_color = Color(0.44711733, 0.00043016332, 1.3868182, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ge6i"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+shadow_color = Color(0, 0, 0, 0.8627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0tym"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgjjs"]
+bg_color = Color(0.44711733, 0.00043016332, 1.3868182, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u80x2"]
+
+[node name="Control" type="Control" unique_id=998847364]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u80x2")
+
+[node name="background" type="TextureRect" parent="." unique_id=135313906]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -36.0
+offset_right = 1157.0
+offset_bottom = 682.0
+texture = ExtResource("2_u80x2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=933914152]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 622.0
+offset_top = 381.0
+offset_right = 863.0
+offset_bottom = 553.0
+theme_override_constants/separation = 8
+
+[node name="jogar" type="Button" parent="VBoxContainer" unique_id=311412173]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_u80x2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1nvso")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bodal")
+text = "JOGAR"
+
+[node name="continuar" type="Button" parent="VBoxContainer" unique_id=1983270962]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_kdmts")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gsp51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8itgj")
+text = "CONTINUAR"
+
+[node name="configuracao" type="Button" parent="VBoxContainer" unique_id=694309656]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0auqf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r8uic")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn317")
+text = "CONFIGURAÇÃO"
+
+[node name="creditos" type="Button" parent="VBoxContainer" unique_id=1774783587]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_y16t7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x1pfr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m8nf6")
+text = "CRÉDITOS"
+
+[node name="sair" type="Button" parent="VBoxContainer" unique_id=493076896]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ge6i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0tym")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pgjjs")
+text = "SAIR"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=414510438]
+sprite_frames = SubResource("SpriteFrames_u80x2")
+
+[connection signal="pressed" from="VBoxContainer/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/configuracao" to="." method="_on_configuracao_pressed"]
+[connection signal="pressed" from="VBoxContainer/creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/sair" to="." method="_on_sair_pressed"]

@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://dc8wxs18e8dcc"]
+
+[ext_resource type="Script" uid="uid://cb6inmgk45fi2" path="res://scripts/start.gd" id="1_u80x2"]
+[ext_resource type="Texture2D" uid="uid://blsjo1y4ljgbf" path="res://assets/cenarios/StartFundo.png" id="2_u80x2"]
+[ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="5_h8eif"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdmts"]
+bg_color = Color(0.123802714, 0.123802714, 0.123802714, 0.8666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsp51"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8itgj"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y16t7"]
+bg_color = Color(0.123802714, 0.123802714, 0.123802714, 0.8666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1pfr"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8nf6"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0auqf"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8uic"]
+bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn317"]
+bg_color = Color(0.44711733, 0.00043016332, 1.3868182, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjq6l"]
+bg_color = Color(0, 0.627451, 0.2, 0.56078434)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6uk5"]
+bg_color = Color(0, 0.33194107, 0.089581706, 0.56078434)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u80x2"]
+
+[node name="Control" type="Control" unique_id=998847364]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u80x2")
+
+[node name="background" type="TextureRect" parent="." unique_id=135313906]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -35.0
+offset_right = 1152.0
+offset_bottom = 683.0
+texture = ExtResource("2_u80x2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="continuar" type="Button" parent="background" unique_id=1983270962]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 603.0
+offset_right = 192.0
+offset_bottom = 631.0
+theme_override_fonts/font = ExtResource("5_h8eif")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_kdmts")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gsp51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8itgj")
+text = "CONTINUAR"
+
+[node name="sair" type="Button" parent="background" unique_id=493076896]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 39.0
+offset_right = 121.0
+offset_bottom = 106.0
+theme_override_font_sizes/font_size = 20
+flat = true
+expand_icon = true
+
+[node name="creditos" type="Button" parent="background" unique_id=1774783587]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 641.0
+offset_right = 193.0
+offset_bottom = 669.0
+theme_override_fonts/font = ExtResource("5_h8eif")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_y16t7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x1pfr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m8nf6")
+text = "CREDITOS"
+
+[node name="configuracao" type="Button" parent="background" unique_id=694309656]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.058000002
+anchor_bottom = -0.058000002
+offset_left = 92.0
+offset_top = 60.644
+offset_right = 182.0
+offset_bottom = 169.64398
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0auqf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r8uic")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn317")
+flat = true
+expand_icon = true
+
+[node name="jogar" type="Button" parent="background" unique_id=311412173]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.051000003
+anchor_bottom = 0.051000003
+offset_left = 687.0
+offset_top = 264.382
+offset_right = 806.0
+offset_bottom = 300.382
+theme_override_fonts/font = ExtResource("5_h8eif")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_hjq6l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e6uk5")
+text = "JOGAR"
+expand_icon = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=414510438]
+sprite_frames = SubResource("SpriteFrames_u80x2")
+
+[connection signal="pressed" from="background/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="background/sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="background/creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="background/configuracao" to="." method="_on_configuracao_pressed"]
+[connection signal="pressed" from="background/jogar" to="." method="_on_jogar_pressed"]
