@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jn368ptmpdlx"
-path="res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"
+uid="uid://dyk1hlvw8bxjg"
+path="res://.godot/imported/gaveta3_aquario.png-1ad91f2e672b03f57a361e9853961195.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenarios/StartFundo.png"
-dest_files=["res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"]
+source_file="res://assets/cenarios/gavetas/gaveta3_aquario.png"
+dest_files=["res://.godot/imported/gaveta3_aquario.png-1ad91f2e672b03f57a361e9853961195.ctex"]
 
 [params]
 

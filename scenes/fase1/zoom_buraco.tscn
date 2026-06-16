@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://6mwfstbrx3wj"]
+
+[ext_resource type="Texture2D" uid="uid://bxkykb2n3jiut" path="res://assets/cenarios/buracozoomfechado.png" id="1_rrvqn"]
+[ext_resource type="Script" uid="uid://rpjqy53irs0w" path="res://scripts/salas_scripts/abrirBuraco.gd" id="2_ckdjj"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_tt6ou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrvqn"]
+size = Vector2(553, 454.5)
+
+[node name="zoomBuraco" type="Node2D" unique_id=1866256705]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=827339385]
+script = ExtResource("2_ckdjj")
+destino_cena = "uid://4n7rpaymc5wm"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1974755394]
+position = Vector2(569, 279.75)
+shape = SubResource("RectangleShape2D_rrvqn")
+
+[node name="Escuro" parent="." unique_id=1752163145 instance=ExtResource("3_tt6ou")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=616055602]
+position = Vector2(573.75, 325)
+scale = Vector2(0.6002604, 0.59814805)
+texture = ExtResource("1_rrvqn")

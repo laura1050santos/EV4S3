@@ -1,4 +1,8 @@
-[gd_scene load_steps=0 format=3 uid="uid://cjcf27vpnn2nw"]
+<<<<<<< HEAD
+[gd_scene format=3 uid="uid://bdj55jsrtjw4s"]
+=======
+[gd_scene load_steps=0 format=3 uid="uid://yqx1jp4cd3ni"]
+>>>>>>> e3ff5ab211e7854e3f8d9944b56aabfb15081900
 
 [ext_resource type="Script" uid="uid://c5k3iv5gjr6gu" path="res://scripts/setas/seta_baixo.gd" id="1_p4yg6"]
 [ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_p4yg6"]

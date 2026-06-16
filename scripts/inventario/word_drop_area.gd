@@ -27,6 +27,7 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	#essa função Nativa do Control é ativada ao soltar um item 
 	var item_para_dropar = data.item
+	print("Item dropado")
 	
 	var node = WORLD_ITEM.instantiate()
 	node.set_meta("item_data", item_para_dropar)
@@ -37,7 +38,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 
 	get_tree().current_scene.add_child(node)
 	node.global_position = get_global_mouse_position() 
-	# colocar funcção para arrastar o item diretamente pra a posição e cena original
+	# colocar função para arrastar o item diretamente pra a posição e cena original
 	var nome_cena_atual = get_tree().current_scene.name
 	
 	# PASSANDO O NOME PARA O SINGLETON

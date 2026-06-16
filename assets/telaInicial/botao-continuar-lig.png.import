@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jn368ptmpdlx"
-path="res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"
+uid="uid://6hhkw5105usj"
+path="res://.godot/imported/botao-continuar-lig.png-3cdfa37e95a42fbcb533fee51116f5f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenarios/StartFundo.png"
-dest_files=["res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"]
+source_file="res://assets/telaInicial/botao-continuar-lig.png"
+dest_files=["res://.godot/imported/botao-continuar-lig.png-3cdfa37e95a42fbcb533fee51116f5f5.ctex"]
 
 [params]
 

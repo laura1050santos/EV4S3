@@ -1,6 +1,10 @@
-[gd_scene load_steps=0 format=3 uid="uid://c86fx5p8gclpc"]
+<<<<<<< HEAD
+[gd_scene format=3 uid="uid://d4mkhb8y1tc8p"]
+=======
+[gd_scene load_steps=0 format=3 uid="uid://bvoprowwg3o30"]
+>>>>>>> e3ff5ab211e7854e3f8d9944b56aabfb15081900
 
-[ext_resource type="Script" uid="uid://wtwmlkft77li" path="res://scripts/setas/setaCima.gd" id="1_ychhg"]
+[ext_resource type="Script" uid="uid://wtwmlkft77li" path="res://scripts/setaCima.gd" id="1_ychhg"]
 [ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_45vxc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7oxf2"]
