@@ -19,7 +19,7 @@ func _notification(what):
 		mouse_filter = Control.MOUSE_FILTER_STOP
 	# Quando o "Drag" termina, a gente volta a ignorar
 	elif what == NOTIFICATION_DRAG_END:
-		mouse_filter = Control.MOUSE_FILTER_IGNORE
+		mouse_filter = Control.MOUSE_FILTER_PASS
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true

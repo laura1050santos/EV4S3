@@ -13,7 +13,6 @@ rotation = 0.003354011
 scale = Vector2(0.7252294, 0.7097239)
 
 [node name="WordDropArea" type="Control" parent="." unique_id=1712967252]
-visible = false
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
