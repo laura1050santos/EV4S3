@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jn368ptmpdlx"
-path="res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"
+uid="uid://d0xo3dbbxn7lu"
+path="res://.godot/imported/botao-creditos-lig.png-19111516a3fbb1f1eed07957668fc9b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenarios/StartFundo.png"
-dest_files=["res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"]
+source_file="res://assets/telaInicial/botao-creditos-lig.png"
+dest_files=["res://.godot/imported/botao-creditos-lig.png-19111516a3fbb1f1eed07957668fc9b2.ctex"]
 
 [params]
 
