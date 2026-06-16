@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://cn2olv5sq5igu"]
+[gd_resource type="Resource" script_class="itemData" load_steps=5 format=3 uid="uid://cn2olv5sq5igu"]
 
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_fvg52"]
 [ext_resource type="Texture2D" uid="uid://qtk2o76fdyja" path="res://assets/itens/lanternaparede.png" id="1_snr08"]

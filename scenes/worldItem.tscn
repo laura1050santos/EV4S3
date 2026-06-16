@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://bm452h5dlcg8j"]
+=======
+[gd_scene load_steps=0 format=3 uid="uid://dqps8w4nbod1w"]
+>>>>>>> e3ff5ab211e7854e3f8d9944b56aabfb15081900
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkfx3"]
 size = Vector2(145.4368, 137.4068)

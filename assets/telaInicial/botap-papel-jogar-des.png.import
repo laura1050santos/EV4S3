@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jn368ptmpdlx"
-path="res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"
+uid="uid://0tgpwp730v4f"
+path="res://.godot/imported/botap-papel-jogar-des.png-dec868151af0ca5d5c3278e82424a02e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenarios/StartFundo.png"
-dest_files=["res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"]
+source_file="res://assets/telaInicial/botap-papel-jogar-des.png"
+dest_files=["res://.godot/imported/botap-papel-jogar-des.png-dec868151af0ca5d5c3278e82424a02e.ctex"]
 
 [params]
 

@@ -21,7 +21,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Inventario="*res://scenes/inventario.tscn"
+Inventario="*uid://nvea80qtj18n"
 GlobalSingleton="*uid://bvlkdajfddeun"
 
 [input]

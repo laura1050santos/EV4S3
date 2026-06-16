@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jn368ptmpdlx"
-path="res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"
+uid="uid://7gmndetamb5y"
+path="res://.godot/imported/buracozoomaberto (1).png-e2d0e27382aee6be67b1f52bf4816264.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenarios/StartFundo.png"
-dest_files=["res://.godot/imported/StartFundo.png-4c7006dbc705d3bc29234c3e8d261247.ctex"]
+source_file="res://assets/cenarios/buracozoomaberto (1).png"
+dest_files=["res://.godot/imported/buracozoomaberto (1).png-e2d0e27382aee6be67b1f52bf4816264.ctex"]
 
 [params]
 
