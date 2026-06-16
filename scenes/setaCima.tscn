@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c86fx5p8gclpc"]
+[gd_scene format=3 uid="uid://d4mkhb8y1tc8p"]
 
 [ext_resource type="Script" uid="uid://wtwmlkft77li" path="res://scripts/setaCima.gd" id="1_ychhg"]
 [ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_45vxc"]

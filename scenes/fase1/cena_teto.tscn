@@ -13,4 +13,3 @@ scale = Vector2(0.60277784, 0.60277784)
 texture = ExtResource("1_26nkf")
 
 [node name="SetaBaixo" parent="." unique_id=24547672 instance=ExtResource("2_26nkf")]
-destino_cena = "uid://djryii8ewlak6"
