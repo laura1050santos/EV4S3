@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="itemData" load_steps=0 format=3 uid="uid://4y1wc574lkhl"]
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://4y1wc574lkhl"]
 
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_202q1"]
 [ext_resource type="Texture2D" uid="uid://moi1v2ckdamc" path="res://assets/cucogrande_resized.png" id="1_ftymy"]

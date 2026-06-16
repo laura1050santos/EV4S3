@@ -12,8 +12,8 @@
 script = ExtResource("1_2litd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=122520221]
-position = Vector2(574, 324)
-scale = Vector2(0.603125, 0.6009259)
+position = Vector2(575.5, 324)
+scale = Vector2(0.60156244, 0.6009259)
 texture = ExtResource("2_k8ayk")
 
 [node name="SetaDireita" parent="." unique_id=1578184254 instance=ExtResource("1_nd5rm")]

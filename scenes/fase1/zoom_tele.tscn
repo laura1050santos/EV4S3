@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bg4fmgvnqceot" path="res://assets/cenarios/cena-telegrafo-inicial.png" id="1_xysmm"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f1w1o"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0qusy"]
 
 [node name="zoomTele" type="Node2D" unique_id=1591257699]
 
@@ -12,3 +13,5 @@ texture = ExtResource("1_xysmm")
 
 [node name="SetaEsquerda" parent="." unique_id=1570841104 instance=ExtResource("2_f1w1o")]
 destino_cena = "uid://du3u5e5blrq5k"
+
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_0qusy")]

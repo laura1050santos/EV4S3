@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="itemData" load_steps=4 format=3 uid="uid://n00yrn8447pg"]
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://n00yrn8447pg"]
 
 [ext_resource type="Texture2D" uid="uid://bj3hv0dagpxhg" path="res://assets/itens/teto-flan.png" id="1_7ql7m"]
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_e0blk"]

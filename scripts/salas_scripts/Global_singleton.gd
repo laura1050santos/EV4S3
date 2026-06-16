@@ -2,6 +2,8 @@ extends Node
 
 var itens_no_mundo = []
 var cenas_visitadas =[]
+
+var sprite_visivel: bool = true # teste da gaveta do aquario
 # Função para registrar um item novo no mundo
 func registrar_item(item_resource, posicao,nome_da_cena):
 	
