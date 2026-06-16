@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bs87yg6pua7jj"]
+
+[ext_resource type="Script" uid="uid://bn41y10sh7gt2" path="res://scripts/seta_esquerda.gd" id="1_tsqrw"]
+[ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_tsqrw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsqrw"]
+radius = 25.179358
+
+[node name="SetaEsquerda" type="Area2D" unique_id=1927550638]
+z_index = 2
+position = Vector2(32, 325)
+script = ExtResource("1_tsqrw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=547202885]
+rotation = -4.712389
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_tsqrw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152067613]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_tsqrw")

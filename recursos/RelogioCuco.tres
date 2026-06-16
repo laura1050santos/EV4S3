@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://4y1wc574lkhl"]
+
+[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_202q1"]
+[ext_resource type="Texture2D" uid="uid://moi1v2ckdamc" path="res://assets/cucogrande_resized.png" id="1_ftymy"]
+[ext_resource type="Texture2D" uid="uid://cfxoum0o1pi7m" path="res://assets/cuco.png" id="2_ufbkx"]
+
+[resource]
+script = ExtResource("1_202q1")
+item_name = "RelogioCuco"
+icon = ExtResource("2_ufbkx")
+inventory_icon = ExtResource("1_ftymy")
+metadata/_custom_type_script = "uid://bwi2jwocwo7qv"
