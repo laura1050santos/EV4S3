@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjcf27vpnn2nw"]
 
-[ext_resource type="Script" uid="uid://c5k3iv5gjr6gu" path="res://scripts/seta_baixo.gd" id="1_p4yg6"]
+[ext_resource type="Script" uid="uid://c5k3iv5gjr6gu" path="res://scripts/setas/seta_baixo.gd" id="1_p4yg6"]
 [ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_p4yg6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4yg6"]

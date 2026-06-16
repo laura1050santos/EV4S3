@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvb26atjckwlq"]
+[gd_scene format=3 uid="uid://cvb26atjckwlq"]
 
 [ext_resource type="Script" path="res://addons/godot-firebase/database/database.gd" id="1"]
 [ext_resource type="Script" path="res://addons/godot-firebase/firestore/firestore.gd" id="2"]

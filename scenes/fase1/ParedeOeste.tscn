@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b3o6ljof8o5mq" path="res://assets/cenarios/salaestar.png" id="2_a2k3a"]
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="5_ryv08"]
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setas/setaBaixo.tscn" id="6_7a4mq"]
-[ext_resource type="Script" uid="uid://bt3l2r4lm5ee3" path="res://scripts/zoom_tele.gd" id="7_a2k3a"]
+[ext_resource type="Script" uid="uid://bt3l2r4lm5ee3" path="res://scripts/salas_scripts/zoom_tele.gd" id="7_a2k3a"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="8_c7vib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4mq"]
 size = Vector2(90.5, 48)
@@ -38,3 +39,5 @@ destino_cena = "uid://cxhjpnc7drrok"
 
 [node name="SetaDireita" parent="." unique_id=1058934518 instance=ExtResource("1_gm2vv")]
 destino_cena = "uid://djryii8ewlak6"
+
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("8_c7vib")]

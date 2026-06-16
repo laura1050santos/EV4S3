@@ -5,13 +5,9 @@ func _ready():
 	var itens_iniciais=[
 
 {
-
 "item": preload("res://recursos/lanterna.tres"),
-
 "pos": Vector2(500, 550),
-
 "cena": nome_desta_cena
-
 },
 #itens que começam na cena
 ]

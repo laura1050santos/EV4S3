@@ -1,14 +1,6 @@
 [gd_scene format=3 uid="uid://bwytanyxh8aqr"]
 
-[ext_resource type="Texture2D" uid="uid://b3o6ljof8o5mq" path="res://assets/cenarios/salaestar.png" id="1_k38jg"]
-[ext_resource type="Script" uid="uid://bhhiskcu1on15" path="res://scripts/ligar_e_desligar.gd" id="2_geb2j"]
-
 [node name="Escuro" type="Node" unique_id=693554654]
 
-[node name="imagem-escuro" type="Sprite2D" parent="." unique_id=1628732244]
-modulate = Color(1, 1, 1, 0.54901963)
-z_index = 1
-position = Vector2(580, 325)
-scale = Vector2(0.62777776, 0.62777776)
-texture = ExtResource("1_k38jg")
-script = ExtResource("2_geb2j")
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2100295126]
+color = Color(0.1905662, 0.1905662, 0.1905662, 1)

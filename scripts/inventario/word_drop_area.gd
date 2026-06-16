@@ -45,41 +45,46 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	data.item= null
 	data.update_ui()
 	
+
 func usar_item(item: itemData, node: Node):
 	if item == null:
 		return
 
 	print("Item clicado com botão direito no cenário: ", item.item_name)
 	
-	# Inverte o estado do item: se estava falso vira verdadeiro, se estava verdadeiro vira falso
+	# Inverte o estado do item
 	item.item_ativo = !item.item_ativo
 	
-	# Atualiza visualmente o nó no cenário com a textura correspondente ao novo estado
+	# Determina quem vai segurar o nó da luz. 
+	# Usar o próprio 'node' da lanterna faz a luz segui-la automaticamente caso ela se mova.
+	var pai_da_luz = node 
+	
 	if item.item_ativo:
 		node.texture = item.ativo_icon
-		print("Item ativado!")
+		
+		if item.item_name == "lanterna":
+			# Passamos o nó real do pai (ou o próprio node) e a posição correta
+			itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
 	else:
 		node.texture = item.icon
 		print("Item desativado!")
 		
+		if item.item_name == "lanterna":
+			# Apaga a luz buscando dentro do pai onde ela foi gerada
+			itemData.desligar_luz(item, pai_da_luz)
+		
 	# Atualiza o estado do item dentro da lista global do Singleton
 	for info in GlobalSingleton.itens_no_mundo:
 		if info.data == item:
-			# Atualiza a referência dos dados globais caso necessário
 			info.data.item_ativo = item.item_ativo
 
 
-
 func _input(event: InputEvent) -> void:
-	# Detecta o clique do BOTÃO DIREITO para usar/ativar o item no cenário
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 		var target = verify()
-		
 		if target != null:
-			# Passa o item e o nó (node) encontrados pela física para a função de uso
 			usar_item(target.item, target.node)
 		
-	# Detecta o DUPLO CLIQUE do botão esquerdo para coletar o item para o inventário
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.double_click and event.pressed:
 		var result = verify()
 		if result == null:
@@ -90,6 +95,10 @@ func _input(event: InputEvent) -> void:
 	
 		for slot in %GridContainer.get_children():
 			if slot.item == null:
+				# CORREÇÃO DE SEGURANÇA: Se pegar a lanterna ligada do chão, limpa a luz antes de deletar o nó
+				if item_pego.item_name == "lanterna":
+					itemData.desligar_luz(item_pego, node_pego)
+					
 				slot.item = item_pego
 				slot.update_ui()
 				GlobalSingleton.remover_item(item_pego)
