@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b502itwqs4700"]
+[gd_scene load_steps=0 format=3 uid="uid://doobegsogvjv1"]
 
 [ext_resource type="Script" uid="uid://ccsodqlbixkb1" path="res://scripts/seta_direita.gd" id="1_3oban"]
 [ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_3oban"]

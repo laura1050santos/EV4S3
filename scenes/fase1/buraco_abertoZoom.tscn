@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://4n7rpaymc5wm"]
+
+[ext_resource type="Texture2D" uid="uid://7gmndetamb5y" path="res://assets/cenarios/buracozoomaberto (1).png" id="1_5rsd2"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="2_84tal"]
+
+[node name="BuracoAberto" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578.5, 334.75)
+scale = Vector2(0.59739584, 0.6060185)
+texture = ExtResource("1_5rsd2")
+
+[node name="Escuro" parent="." instance=ExtResource("2_84tal")]
