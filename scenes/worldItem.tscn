@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+[gd_scene format=3 uid="uid://bm452h5dlcg8j"]
+=======
+[gd_scene load_steps=0 format=3 uid="uid://dqps8w4nbod1w"]
+>>>>>>> e3ff5ab211e7854e3f8d9944b56aabfb15081900
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkfx3"]
+size = Vector2(145.4368, 137.4068)
+
+[node name="Sprite2D" type="Sprite2D" unique_id=772838308]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1503790501]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=486346922]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_qkfx3")

@@ -21,8 +21,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalSingleton="*uid://bvlkdajfddeun"
 Inventario="*uid://nvea80qtj18n"
+GlobalSingleton="*uid://bvlkdajfddeun"
 
 [input]
 
