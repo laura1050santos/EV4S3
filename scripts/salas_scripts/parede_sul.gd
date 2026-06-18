@@ -1,5 +1,5 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
-
+var lanterna_node: Node = null
 func _ready():
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
 	
@@ -21,3 +21,10 @@ func _on_gaveta_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 			meu_sprite.visible = GlobalSingleton.sprite_visivel
 			print("Sprite ativado!")
 			pass
+			
+			
+func _input(event: InputEvent):
+	var lanterna_node = get_node_or_null("lanterna")
+	if lanterna_node:
+		get_node("buraco/colisaoBuraco").disabled = false
+		

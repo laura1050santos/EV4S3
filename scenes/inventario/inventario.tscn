@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://nvea80qtj18n"]
+[gd_scene format=3 uid="uid://nvea80qtj18n"]
 
 [ext_resource type="Script" uid="uid://bk1g0ggvauylc" path="res://scripts/inventario/item_slot.gd" id="2_hswsb"]
 [ext_resource type="Script" uid="uid://bw8sh38ggq7ik" path="res://scripts/inventario/inventory.gd" id="2_t2sse"]

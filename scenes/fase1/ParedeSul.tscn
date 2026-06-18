@@ -46,6 +46,7 @@ destino_cena = "uid://6mwfstbrx3wj"
 [node name="colisaoBuraco" type="CollisionShape2D" parent="buraco" unique_id=138019731]
 position = Vector2(614.5, 283)
 shape = SubResource("RectangleShape2D_nco2w")
+disabled = true
 
 [node name="Gaveta1Aquario" type="Sprite2D" parent="." unique_id=1742275560]
 position = Vector2(576, 326.00003)

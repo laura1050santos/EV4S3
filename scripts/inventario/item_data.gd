@@ -19,7 +19,7 @@ static func ativar_luz(item: itemData, cena: Node, pos: Vector2):
 		
 		# IMPORTANTE: Primeiro adiciona à árvore, depois define a posição global
 		cena.add_child(node)
-		node.global_position = pos
+		node.global_position = Vector2(500,350)
 	else: 
 		itemData.desligar_luz(item, cena)
 		
