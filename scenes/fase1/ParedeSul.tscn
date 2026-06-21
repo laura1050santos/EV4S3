@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cu1drk2c4rf01" path="res://scripts/salas_scripts/zoomBuraco.gd" id="8_cuvsr"]
 [ext_resource type="Texture2D" uid="uid://bf67u7bss8rn8" path="res://assets/cenarios/gavetas/gaveta1_aquario.png" id="9_b4mbd"]
 [ext_resource type="Script" uid="uid://c8vk8nii61b40" path="res://scripts/salas_scripts/objetos/gaveta.gd" id="10_uf1xn"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="11_uf1xn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nco2w"]
 size = Vector2(103, 94)
@@ -62,5 +63,7 @@ script = ExtResource("10_uf1xn")
 [node name="colisaoGaveta" type="CollisionShape2D" parent="gaveta" unique_id=2104811845]
 position = Vector2(49.835327, -3.47406)
 shape = SubResource("RectangleShape2D_htmuf")
+
+[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("11_uf1xn")]
 
 [connection signal="input_event" from="gaveta" to="." method="_on_gaveta_input_event"]

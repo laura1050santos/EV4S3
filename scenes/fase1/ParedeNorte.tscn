@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setas/setaBaixo.tscn" id="5_uinfo"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="6_2l4tn"]
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="6_26mac"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_y3a53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
 size = Vector2(371.2891, 733.0908)
@@ -40,5 +41,7 @@ destino_cena = "uid://dmhce3kfm14ep"
 destino_cena = "uid://dqttd76hew5ag"
 
 [node name="Escuro" parent="." unique_id=1612585862 instance=ExtResource("2_26mac")]
+
+[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_y3a53")]
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
