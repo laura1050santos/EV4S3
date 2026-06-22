@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dla36dayqm5pt"]
+
+[ext_resource type="Texture2D" uid="uid://cp0lqyeo6ei2v" path="res://assets/cartas/carta_relogio.png" id="1_pbgpd"]
+
+[node name="carta_relogio" type="Node" unique_id=636981406]
+
+[node name="carta" type="Sprite2D" parent="." unique_id=1843148744]
+position = Vector2(572, 339.52142)
+rotation = -0.08943273
+scale = Vector2(0.2553935, 0.2553935)
+texture = ExtResource("1_pbgpd")

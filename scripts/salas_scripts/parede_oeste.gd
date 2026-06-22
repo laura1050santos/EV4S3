@@ -1,5 +1,6 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 
+
 func _ready():
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
 
@@ -8,5 +9,3 @@ func _ready():
 		
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-
-	

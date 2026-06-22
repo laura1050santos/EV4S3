@@ -7,6 +7,16 @@
 [ext_resource type="Script" uid="uid://c81pj0ipgvja1" path="res://scripts/digitoBotao.gd" id="4_l3lf0"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="4_p12nd"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="5_61tdm"]
+[ext_resource type="Texture2D" uid="uid://22662h0m8fq2" path="res://assets/cartas/mensagem_alcapao.png" id="8_la3ws"]
+[ext_resource type="Script" uid="uid://ce00dwtgkmavc" path="res://scenes/fase1/viewMensagem.gd" id="9_vl7g8"]
+[ext_resource type="Script" uid="uid://by0kllm5dyvw" path="res://scenes/fase1/viewDifMensagem.gd" id="10_rooau"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57qmd"]
+radius = 58.830048
+height = 175.37756
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4gre"]
+size = Vector2(350.78333, 426.10623)
 
 [node name="CenaChao" type="Node2D" unique_id=64604598]
 script = ExtResource("1_33jt1")
@@ -75,3 +85,29 @@ script = ExtResource("4_l3lf0")
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("4_p12nd")]
 
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("5_61tdm")]
+
+[node name="Mensagem" type="Area2D" parent="." unique_id=1664485397]
+script = ExtResource("9_vl7g8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mensagem" unique_id=872721515]
+position = Vector2(750, 107.00002)
+rotation = -0.79219186
+shape = SubResource("CapsuleShape2D_57qmd")
+
+[node name="Node" type="Node" parent="." unique_id=1301739886]
+
+[node name="mensagem" type="Sprite2D" parent="Node" unique_id=821823027]
+visible = false
+position = Vector2(584.00006, 300.00003)
+rotation = 0.1569194
+scale = Vector2(0.2925, 0.2925)
+texture = ExtResource("8_la3ws")
+
+[node name="Area2D" type="Area2D" parent="Node" unique_id=1843071217]
+script = ExtResource("10_rooau")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D" unique_id=1329452997]
+position = Vector2(584.361, 301.0951)
+rotation = 0.14787108
+shape = SubResource("RectangleShape2D_k4gre")
+debug_color = Color(0.90259814, 0.13965777, 0.67729354, 0.41960785)
