@@ -3,6 +3,7 @@ extends Control
 
 const WORLD_ITEM = preload("res://scenes/inventario/worldItem.tscn")
 func _ready():
+	
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for info in GlobalSingleton.itens_no_mundo:
 		var node = preload("res://scenes/inventario/worldItem.tscn").instantiate()
@@ -67,12 +68,17 @@ func usar_item(item: itemData, node: Node):
 		if item.item_name == "lanterna":
 			# Passamos o nó real do pai (ou o próprio node) e a posição correta
 			itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
+			var root = get_tree().root
+			node.reparent(root)
 	else:
 		node.texture = item.icon
 		
 		if item.item_name == "lanterna":
 			# Apaga a luz buscando dentro do pai onde ela foi gerada
 			itemData.desligar_luz(item, pai_da_luz)
+			
+			
+	
 		
 	# Atualiza o estado do item dentro da lista global do Singleton
 	for info in GlobalSingleton.itens_no_mundo:

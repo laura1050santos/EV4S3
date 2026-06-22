@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dc8wxs18e8dcc"]
+[gd_scene load_steps=14 format=3 uid="uid://dc8wxs18e8dcc"]
 
 [ext_resource type="Script" uid="uid://cb6inmgk45fi2" path="res://scripts/start.gd" id="1_u80x2"]
 [ext_resource type="Texture2D" uid="uid://jn368ptmpdlx" path="res://assets/cenarios/StartFundo.png" id="2_u80x2"]
@@ -107,7 +107,7 @@ expand_icon = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u80x2")
 
-[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("9_v03cv")]
+[node name="BotaoConfig" parent="." instance=ExtResource("9_v03cv")]
 
 [connection signal="pressed" from="background/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="background/continuar" to="." method="_on_continuar_pressed"]
