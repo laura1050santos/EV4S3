@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://6hhkw5105usj" path="res://assets/telaInicial/botao-continuar-lig.png" id="6_67qbj"]
 [ext_resource type="Texture2D" uid="uid://cbtl3ifov5ypf" path="res://assets/telaInicial/botao-creditos-des.png" id="7_ddbr3"]
 [ext_resource type="Texture2D" uid="uid://d0xo3dbbxn7lu" path="res://assets/telaInicial/botao-creditos-lig.png" id="8_ne1qe"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="9_v03cv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0auqf"]
 bg_color = Color(0.15549202, 5.327761e-05, 0.54942274, 1)
@@ -105,6 +106,8 @@ expand_icon = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=414510438]
 sprite_frames = SubResource("SpriteFrames_u80x2")
+
+[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("9_v03cv")]
 
 [connection signal="pressed" from="background/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="background/continuar" to="." method="_on_continuar_pressed"]
