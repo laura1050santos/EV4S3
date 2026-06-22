@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_hwnq5")
-item_name = "lampada"
+item_name = "LampadaNova"
 icon = ExtResource("1_uo6u4")
 inventory_icon = ExtResource("1_uo6u4")
 ativo_icon = ExtResource("1_uo6u4")
