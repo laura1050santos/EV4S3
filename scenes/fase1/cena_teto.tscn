@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bd34wqecebde1" path="res://scripts/salas_scripts/cena_teto.gd" id="1_ccqhm"]
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setas/setaBaixo.tscn" id="2_26nkf"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="4_nsfmt"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="5_26nkf"]
 
 [node name="CenaTeto" type="Node2D" unique_id=313202725]
 script = ExtResource("1_ccqhm")
@@ -16,3 +17,5 @@ texture = ExtResource("1_26nkf")
 [node name="SetaBaixo" parent="." unique_id=24547672 instance=ExtResource("2_26nkf")]
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("4_nsfmt")]
+
+[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("5_26nkf")]

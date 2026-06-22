@@ -1,8 +1,96 @@
 [gd_scene format=3 uid="uid://pv1apy6nn23a"]
 
-[node name="configuracao" type="Node2D" unique_id=1004532544]
+[ext_resource type="Script" uid="uid://bxlqomd7ux2k7" path="res://scripts/configuracao.gd" id="1_m4k1a"]
+[ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="2_n81e7"]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=705398846]
-offset_right = 1150.0
-offset_bottom = 649.0
-color = Color(0.3764706, 1, 1, 1)
+[node name="configuracao" type="Window" unique_id=1565485092]
+oversampling_override = 1.0
+mode = 3
+initial_position = 1
+size = Vector2i(400, 300)
+script = ExtResource("1_m4k1a")
+
+[node name="Panel" type="Panel" parent="." unique_id=1576951739]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Som" type="HSlider" parent="." unique_id=972195014]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 38.0
+offset_right = -92.0
+offset_bottom = -246.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Som" unique_id=393597779]
+layout_mode = 0
+offset_left = 67.0
+offset_top = -24.0
+offset_right = 227.0
+offset_bottom = -1.0
+text = "Som: "
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Som" unique_id=32833104]
+layout_mode = 0
+offset_left = 263.0
+offset_right = 301.0
+offset_bottom = 17.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="Brilho" type="HSlider" parent="." unique_id=104034846]
+offset_left = 65.0
+offset_top = 85.0
+offset_right = 311.0
+offset_bottom = 101.0
+max_value = 4.0
+step = 0.01
+value = 1.0
+
+[node name="Label2" type="Label" parent="Brilho" unique_id=115383398]
+layout_mode = 0
+offset_left = 66.0
+offset_top = -26.0
+offset_right = 226.0
+offset_bottom = -3.0
+text = "Brilho: "
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Brilho" unique_id=1697722015]
+layout_mode = 0
+offset_left = 269.0
+offset_top = -4.0
+offset_right = 296.0
+offset_bottom = 19.0
+text = "1"
+horizontal_alignment = 1
+
+[node name="Sair" type="Button" parent="." unique_id=1979457658]
+offset_left = 116.0
+offset_top = 209.0
+offset_right = 288.0
+offset_bottom = 260.0
+theme_override_fonts/font = ExtResource("2_n81e7")
+text = "Salvar
+e sair"
+
+[node name="Salvar" type="Button" parent="." unique_id=1149597525]
+offset_left = 117.0
+offset_top = 138.0
+offset_right = 289.0
+offset_bottom = 189.0
+theme_override_fonts/font = ExtResource("2_n81e7")
+text = "Salvar
+"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="value_changed" from="Som" to="." method="_on_som_value_changed"]
+[connection signal="value_changed" from="Brilho" to="." method="_on_brilho_value_changed"]
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]

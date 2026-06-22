@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cksbyo67snwfi"]
-
-[ext_resource type="PackedScene" uid="uid://brk21eophri5h" path="res://scenes/setaBaixo.tscn" id="1_dk1x0"]
-
-[node name="Teto" type="Node2D" unique_id=1913810002]
-
-[node name="Setacima" parent="." unique_id=806434433 instance=ExtResource("1_dk1x0")]
-destino_cena = "uid://djryii8ewlak6"

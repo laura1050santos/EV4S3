@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://x00be8xye3xh" path="res://scenes/fase1/verificador_senha.gd" id="3_l3lf0"]
 [ext_resource type="Script" uid="uid://c81pj0ipgvja1" path="res://scripts/digitoBotao.gd" id="4_l3lf0"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="4_p12nd"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="5_61tdm"]
 
 [node name="CenaChao" type="Node2D" unique_id=64604598]
 script = ExtResource("1_33jt1")
@@ -72,3 +73,5 @@ stretch_mode = 5
 script = ExtResource("4_l3lf0")
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("4_p12nd")]
+
+[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("5_61tdm")]
