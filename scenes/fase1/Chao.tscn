@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://csirl8cmaxgie"]
+[gd_scene load_steps=3 format=3 uid="uid://dhmkefaf4ptho"]
 
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="1_0xtrl"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="2_jtyxy"]
 
-[node name="Chao" type="Node2D" unique_id=1198434881]
+[node name="Chao" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1761167946]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="SetaCima" parent="." unique_id=698343437 instance=ExtResource("1_0xtrl")]
+[node name="SetaCima" parent="." instance=ExtResource("1_0xtrl")]
 destino_cena = "uid://djryii8ewlak6"
 
-[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("2_jtyxy")]
+[node name="BotaoConfig" parent="." instance=ExtResource("2_jtyxy")]
