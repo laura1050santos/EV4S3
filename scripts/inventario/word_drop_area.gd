@@ -19,7 +19,7 @@ func _notification(what):
 		mouse_filter = Control.MOUSE_FILTER_STOP
 	# Quando o "Drag" termina, a gente volta a ignorar
 	elif what == NOTIFICATION_DRAG_END:
-		mouse_filter = Control.MOUSE_FILTER_IGNORE
+		mouse_filter = Control.MOUSE_FILTER_PASS
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true
@@ -31,6 +31,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	
 	var node = WORLD_ITEM.instantiate()
 	node.set_meta("item_data", item_para_dropar)
+	node.name = item_para_dropar.item_name
 	if item_para_dropar.item_ativo:
 		node.texture = item_para_dropar.ativo_icon
 	else:
@@ -68,7 +69,6 @@ func usar_item(item: itemData, node: Node):
 			itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
 	else:
 		node.texture = item.icon
-		print("Item desativado!")
 		
 		if item.item_name == "lanterna":
 			# Apaga a luz buscando dentro do pai onde ela foi gerada
@@ -96,8 +96,8 @@ func _input(event: InputEvent) -> void:
 	
 		for slot in %GridContainer.get_children():
 			if slot.item == null:
-				# CORREÇÃO DE SEGURANÇA: Se pegar a lanterna ligada do chão, limpa a luz antes de deletar o nó
 				if item_pego.item_name == "lanterna":
+					item_pego.item_ativo = false
 					itemData.desligar_luz(item_pego, node_pego)
 					
 				slot.item = item_pego

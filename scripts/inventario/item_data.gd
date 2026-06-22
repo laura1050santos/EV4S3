@@ -19,7 +19,7 @@ static func ativar_luz(item: itemData, cena: Node, pos: Vector2):
 		
 		# IMPORTANTE: Primeiro adiciona à árvore, depois define a posição global
 		cena.add_child(node)
-		node.global_position = pos
+		node.global_position = Vector2(500,350)
 	else: 
 		itemData.desligar_luz(item, cena)
 		
@@ -27,3 +27,11 @@ static func desligar_luz(item: itemData, cena: Node):
 	print("Desligando luz...")
 	if cena.has_node("LuzDaLanterna"):
 		cena.get_node("LuzDaLanterna").queue_free()
+		
+		
+func ligar_interruptor():
+	var escuro = preload("res://scenes/escuro.tscn")
+	if GlobalSingleton.lampadaLigada == true:
+		escuro.visible = false
+	else :
+		escuro.visible = false
