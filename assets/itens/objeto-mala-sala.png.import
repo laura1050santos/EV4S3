@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4wof56f5vx32"
-path="res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"
+uid="uid://mjnfhckmhoal"
+path="res://.godot/imported/objeto-mala-sala.png-588e8299bca75d4dfb5b7e154f1d036a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/malagrande.png"
-dest_files=["res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"]
+source_file="res://assets/itens/objeto-mala-sala.png"
+dest_files=["res://.godot/imported/objeto-mala-sala.png-588e8299bca75d4dfb5b7e154f1d036a.ctex"]
 
 [params]
 
