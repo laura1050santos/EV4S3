@@ -4,7 +4,7 @@ func _ready():
 
 	var itens_iniciais=[
 		{ "item": preload("res://recursos/Mala.tres"),
-		"pos":Vector2(750,490),
+		"pos":Vector2(750,590),
 		"cena":nome_desta_cena,
 		},#itens que começam na cena
 	]
