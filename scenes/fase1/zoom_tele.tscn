@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://bt40n0me6w8e5"]
 
+[ext_resource type="Script" uid="uid://cmdvb6puyhbvx" path="res://scripts/salas_scripts/zoom_telePai.gd" id="1_vvp0m"]
 [ext_resource type="Texture2D" uid="uid://bg4fmgvnqceot" path="res://assets/cenarios/cena-telegrafo-inicial.png" id="1_xysmm"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f1w1o"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0qusy"]
 
 [node name="zoomTele" type="Node2D" unique_id=1591257699]
+script = ExtResource("1_vvp0m")
 
 [node name="CenaTelegrafoInicial" type="Sprite2D" parent="." unique_id=1434136291]
-position = Vector2(576, 326.99994)
+position = Vector2(572, 306)
 scale = Vector2(0.5958333, 0.6055556)
 texture = ExtResource("1_xysmm")
 
@@ -15,3 +17,38 @@ texture = ExtResource("1_xysmm")
 destino_cena = "uid://du3u5e5blrq5k"
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_0qusy")]
+
+[node name="traco" type="Button" parent="." unique_id=2097963587]
+offset_left = 624.0
+offset_top = 393.0
+offset_right = 677.0
+offset_bottom = 426.0
+text = "Ponto"
+
+[node name="reset" type="Button" parent="." unique_id=1722959105]
+offset_left = 620.0
+offset_top = 430.0
+offset_right = 771.0
+offset_bottom = 455.0
+text = "Resetar mensagem"
+
+[node name="Label" type="Label" parent="." unique_id=760950537]
+offset_left = 414.0
+offset_top = 468.0
+offset_right = 780.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 24
+text = "sua mensagem irá aparecer aqui"
+horizontal_alignment = 1
+
+[node name="ponto" type="Button" parent="." unique_id=1634992566]
+offset_left = 701.0
+offset_top = 389.0
+offset_right = 752.0
+offset_bottom = 420.0
+theme_override_font_sizes/font_size = 16
+text = "traço"
+
+[connection signal="pressed" from="traco" to="." method="_on_traco_pressed"]
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="ponto" to="." method="_on_ponto_pressed"]
