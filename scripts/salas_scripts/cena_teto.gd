@@ -4,7 +4,7 @@ func _ready():
 
 	var itens_iniciais=[
 {
-"item": preload("res://recursos/LampadaQuebrada.tres"),
+"item": preload("res://recursos/Lampada.tres"), # n sei como deveria ser aqui
 "pos": Vector2(575, 275),
 "cena": nome_desta_cena
 },

@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://b3o6ljof8o5mq" path="res://assets/cenarios/salaestar.png" id="2_a2k3a"]
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="5_ryv08"]
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setas/setaBaixo.tscn" id="6_7a4mq"]
-[ext_resource type="Script" uid="uid://bt3l2r4lm5ee3" path="res://scripts/salas_scripts/zoom_tele.gd" id="7_a2k3a"]
+[ext_resource type="Script" uid="uid://bt3l2r4lm5ee3" path="res://scripts/zoom_tele.gd" id="7_a2k3a"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="8_c7vib"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="9_ck5el"]
-[ext_resource type="Script" uid="uid://b26tofysv2qud" path="res://scenes/fase1/viewCartaRelogio.gd" id="10_x71yn"]
+[ext_resource type="Script" uid="uid://b26tofysv2qud" path="res://scripts/viewCartaRelogio.gd" id="10_x71yn"]
 [ext_resource type="Texture2D" uid="uid://cp0lqyeo6ei2v" path="res://assets/cartas/carta_relogio.png" id="11_x71yn"]
-[ext_resource type="Script" uid="uid://lu8c4l2fgrpq" path="res://scenes/fase1/viewDifCartaRelogio.gd" id="12_k4gre"]
+[ext_resource type="Script" uid="uid://lu8c4l2fgrpq" path="res://scripts/viewDifCartaRelogio.gd" id="12_k4gre"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4mq"]
 size = Vector2(90.5, 48)

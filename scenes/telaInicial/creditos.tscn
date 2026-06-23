@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3iyikvpkk1kp"]
 
-[ext_resource type="Texture2D" uid="uid://co0b014ocn44x" path="res://assets/creditos.png" id="1_l2k5q"]
+[ext_resource type="Texture2D" uid="uid://b33khgny2nea6" path="res://assets/cenarios/creditos.png" id="1_l2k5q"]
 
 [node name="creditos" type="Node2D" unique_id=426105006]
 
