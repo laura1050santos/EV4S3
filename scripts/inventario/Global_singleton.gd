@@ -3,9 +3,16 @@ extends Node
 var itens_no_mundo = []
 var cenas_visitadas =[]
 var historico_cenas: Array[String] = []
-var interruptor_acesso: bool = true
+var item_mao=null
+
+
 var sprite_visivel: bool = true # teste da gaveta do aquario
 # Função para registrar um item novo no mundo
+var holder := Node.new()
+
+func _ready():
+	holder.name = "PersistentItems"
+	get_tree().root.call_deferred("add_child", holder)
 func registrar_item(item_resource, posicao,nome_da_cena):
 	
 	if item_resource:

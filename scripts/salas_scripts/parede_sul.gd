@@ -20,6 +20,7 @@ func _on_gaveta_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 			# 2. Aplica o novo estado visualmente no sprite
 			meu_sprite.visible = GlobalSingleton.sprite_visivel
 			print("Sprite ativado!")
+			pass
 			
 			
 func _input(event: InputEvent):

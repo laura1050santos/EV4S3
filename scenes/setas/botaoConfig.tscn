@@ -3,19 +3,16 @@
 [ext_resource type="Script" uid="uid://bi10rbgbs4o0o" path="res://scripts/setas/botao_config.gd" id="1_17ylc"]
 [ext_resource type="Texture2D" uid="uid://b2alniggt53vn" path="res://assets/telaInicial/botaoconfigr.png" id="1_qqn7o"]
 
-[node name="BotaoConfig" type="Node2D" unique_id=1476302398]
+[node name="BotaoConfig" type="Node2D" unique_id=900679302]
 position = Vector2(210, 47)
 script = ExtResource("1_17ylc")
 
-[node name="Button" type="Button" parent="." unique_id=1157154984]
+[node name="Button" type="Button" parent="." unique_id=1795394889]
 clip_contents = true
-anchors_preset = -1
 offset_left = -120.99999
-offset_top = -65.0
-offset_right = 3727.0
-offset_bottom = 2103.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = -35.0
+offset_right = 3045.6665
+offset_bottom = 1633.0
 scale = Vector2(0.06, 0.06)
 size_flags_horizontal = 0
 size_flags_vertical = 4

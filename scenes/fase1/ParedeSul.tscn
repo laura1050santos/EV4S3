@@ -50,7 +50,6 @@ shape = SubResource("RectangleShape2D_nco2w")
 disabled = true
 
 [node name="Gaveta1Aquario" type="Sprite2D" parent="." unique_id=1742275560]
-visible = false
 position = Vector2(576, 326.00003)
 scale = Vector2(0.5923337, 0.5756894)
 texture = ExtResource("9_b4mbd")

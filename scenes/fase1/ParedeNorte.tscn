@@ -12,9 +12,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
 size = Vector2(371.2891, 733.0908)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3a53"]
-size = Vector2(39, 46)
-
 [node name="Norte" type="Node2D" unique_id=295984050]
 script = ExtResource("1_fqgx5")
 
@@ -47,22 +44,5 @@ destino_cena = "uid://dqttd76hew5ag"
 
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_y3a53")]
 
-[node name="interruptor" type="Sprite2D" parent="." unique_id=634718166]
-
-[node name="Label" type="Label" parent="interruptor" unique_id=1065065699]
-offset_left = 312.0
-offset_top = 349.0
-offset_right = 451.0
-offset_bottom = 372.0
-text = "Interruptor ligado"
-
-[node name="Area_interruptor" type="Area2D" parent="." unique_id=984899568]
-position = Vector2(379, 325)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_interruptor" unique_id=255549787]
-position = Vector2(-10, -6)
-shape = SubResource("RectangleShape2D_y3a53")
-
+[connection signal="child_order_changed" from="." to="." method="_on_child_order_changed"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="input_event" from="Area_interruptor" to="." method="_on_area_interruptor_input_event"]
-[connection signal="input_event" from="Area_interruptor" to="." method="_on_area_2d_input_event"]

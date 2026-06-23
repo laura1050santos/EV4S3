@@ -13,8 +13,6 @@ func _on_close_requested() -> void:
 	get_node(".").queue_free() # Replace with function body.
 
 func _on_som_value_changed(value: float) -> void:
-	var db = linear_to_db(value / 100.0)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),db)
 	$Som/Label2.text = str(value)	# Replace with function body.
 
 func _on_brilho_value_changed(value: float) -> void:

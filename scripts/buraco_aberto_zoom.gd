@@ -5,7 +5,7 @@ func _ready():
 	var itens_iniciais=[
 
 {
-"item": preload("res://recursos/lampadaNova.tres"),
+"item": preload("res://recursos/lampada.tres"),
 "pos": Vector2(570, 380),
 "cena": nome_desta_cena
 },

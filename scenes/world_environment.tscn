@@ -1,8 +1,7 @@
-[gd_scene format=3 uid="uid://dsnbmqrwt6n1d"]
+[gd_scene load_steps=0 format=3 uid="uid://dsnbmqrwt6n1d"]
 
 [sub_resource type="Environment" id="Environment_vghrk"]
 background_mode = 3
-volumetric_fog_enabled = true
 adjustment_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" unique_id=1946684087]

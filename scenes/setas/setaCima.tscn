@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://c86fx5p8gclpc"]
+[gd_scene format=3 uid="uid://c86fx5p8gclpc"]
 
 [ext_resource type="Script" uid="uid://wtwmlkft77li" path="res://scripts/setas/setaCima.gd" id="1_ychhg"]
 [ext_resource type="Texture2D" uid="uid://dwqxkh1m3yt4i" path="res://assets/seta.png.png" id="2_45vxc"]
@@ -7,7 +7,7 @@
 radius = 17.029387
 
 [node name="setaCima" type="Area2D" unique_id=1650788674]
-z_index = 2
+z_index = 4
 position = Vector2(580, 32)
 script = ExtResource("1_ychhg")
 

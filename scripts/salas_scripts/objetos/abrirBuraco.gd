@@ -2,7 +2,6 @@ extends Area2D
 
 signal seta_clicada
 @export_file("*.tscn") var destino_cena:String
-@onready var label:Label = get_node("Label")
 
 func _ready():
 	self.input_event.connect(_inout_event)

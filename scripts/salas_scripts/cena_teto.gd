@@ -13,8 +13,11 @@ func _ready():
 #itens que começam na cena
 ]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-
 	
-	
-
-		
+func _on_area_lampada_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	var lampada = get_node_or_null("LampadaNova")
+	if lampada:
+		lampada.position = Vector2(575,250)
+		print(lampada, "interruptor deve funcionar agr")
+	else:
+		print("lampada não encontrada")#ativar o interruptor
