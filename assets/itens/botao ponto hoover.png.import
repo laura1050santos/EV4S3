@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl0hgq4vgr7v4"
-path="res://.godot/imported/teto-flan.png-b2daa8cd121c247f08b06d46a543d5bf.ctex"
+uid="uid://bkwt08m6gstfn"
+path="res://.godot/imported/botao ponto hoover.png-7ee4f496d786eedd8827c12a4d9fe738.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/teto-flan.png"
-dest_files=["res://.godot/imported/teto-flan.png-b2daa8cd121c247f08b06d46a543d5bf.ctex"]
+source_file="res://assets/itens/botao ponto hoover.png"
+dest_files=["res://.godot/imported/botao ponto hoover.png-7ee4f496d786eedd8827c12a4d9fe738.ctex"]
 
 [params]
 

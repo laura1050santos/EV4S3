@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl0hgq4vgr7v4"
-path="res://.godot/imported/teto-flan.png-b2daa8cd121c247f08b06d46a543d5bf.ctex"
+uid="uid://1mio1inqgpvd"
+path="res://.godot/imported/botao reset pressionado.png-936aa4967040d2c5dbc0337c3f00bb29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/teto-flan.png"
-dest_files=["res://.godot/imported/teto-flan.png-b2daa8cd121c247f08b06d46a543d5bf.ctex"]
+source_file="res://assets/itens/botao reset pressionado.png"
+dest_files=["res://.godot/imported/botao reset pressionado.png-936aa4967040d2c5dbc0337c3f00bb29.ctex"]
 
 [params]
 
