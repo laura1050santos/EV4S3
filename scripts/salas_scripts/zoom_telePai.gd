@@ -6,23 +6,27 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_ponto_pressed() -> void:
 	if label.text == "sua mensagem irá aparecer aqui":
 		label.text = "."
 	else: 
 		label.text = label.text+ "."
+	verificar_mensagem(label)
 
 func _on_traco_pressed() -> void:
 	if label.text == "sua mensagem irá aparecer aqui":
 		label.text = "-"# Replace with function body.
 	else:
 		label.text = label.text+"-"
-
-
+	verificar_mensagem(label)
 func _on_reset_pressed() -> void:
-	label.text == "" # Replace with function body.
+	label.text = "" 
+	verificar_mensagem(label)# Replace with function body.
+	
+func verificar_mensagem(label):
+	var mensagem_correta= "-.-."
+	if label.text == mensagem_correta:
+		label.text ="Mensagem decodificada com sucesso"
+		$traco.queue_free()
+		$reset.queue_free()
+		$ponto.queue_free()
