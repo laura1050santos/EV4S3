@@ -9,7 +9,6 @@ class_name itemData
 
 static func ativar_luz(item: itemData, cena: Node, pos: Vector2):
 	if item.item_ativo == true:
-		# Pega a raiz global do jogo para a luz não morrer na troca de cena
 		var root = cena.get_tree().root
 		
 		# Evita duplicar a luz na raiz
@@ -24,8 +23,7 @@ static func ativar_luz(item: itemData, cena: Node, pos: Vector2):
 		# Adiciona direto na raiz do jogo
 		root.add_child(node)
 		node.global_position = Vector2(500, 350)
-	else: 
-		itemData.desligar_luz(item, cena)
+	
 		
 static func desligar_luz(item: itemData, cena: Node):
 	print("Desligando luz...")

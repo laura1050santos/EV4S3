@@ -87,3 +87,4 @@ position = Vector2(49.835327, -3.47406)
 shape = SubResource("RectangleShape2D_htmuf")
 
 [connection signal="input_event" from="gaveta" to="." method="_on_gaveta_input_event"]
+[connection signal="pressed" from="BotaoConfig" to="." method="_on_botao_config_pressed"]

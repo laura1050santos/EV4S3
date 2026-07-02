@@ -1,6 +1,10 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 var lanterna_node: Node = null
+
 func _ready():
+	var configMenu = get_node("BotaoConfig/configuracao")
+	configMenu.volMax.connect(ativar_enigma_som)
+
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
 	
 	var itens_iniciais=[
@@ -20,11 +24,16 @@ func _on_gaveta_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 			# 2. Aplica o novo estado visualmente no sprite
 			meu_sprite.visible = GlobalSingleton.sprite_visivel
 			print("Sprite ativado!")
-			pass
 			
 			
 func _input(event: InputEvent):
-	var lanterna_node = get_node_or_null("lanterna")
-	if lanterna_node:
+	
+	if get_tree().root.has_node("lanterna"):
 		get_node("buraco/colisaoBuraco").disabled = false
 		
+func ativar_enigma_som():
+	print("volume maximo \nquebrar o aquario")
+
+
+
+# Replace with function body.

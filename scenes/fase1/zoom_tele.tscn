@@ -4,10 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bg4fmgvnqceot" path="res://assets/cenarios/cena-telegrafo-inicial.png" id="1_xysmm"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f1w1o"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0qusy"]
-[ext_resource type="Texture2D" uid="uid://csr76qhcefp0p" path="res://assets/cartas/morse.png" id="3_xwaup"]
-[ext_resource type="Script" uid="uid://cj381ijmtcnub" path="res://scripts/morsePapel.gd" id="4_mvn81"]
-[ext_resource type="Texture2D" uid="uid://cl1w72e785u6g" path="res://assets/cartas/codigo_morse.png" id="7_l7tr6"]
-[ext_resource type="Script" uid="uid://c7abp8a3ygh35" path="res://scripts/DismorsePapel.gd" id="8_det3c"]
+[ext_resource type="Texture2D" uid="uid://d20n8oai8lwpd" path="res://assets/itens/botao traco.png" id="5_l7tr6"]
+[ext_resource type="Texture2D" uid="uid://bod0ysm358fa7" path="res://assets/itens/botao ponto pressionado.png" id="6_det3c"]
+[ext_resource type="Texture2D" uid="uid://d826d5ll452s" path="res://assets/itens/botao traco pressionado.png" id="6_l7tr6"]
+[ext_resource type="Texture2D" uid="uid://5guuejxnq85i" path="res://assets/itens/botao traco hoover.png" id="7_det3c"]
+[ext_resource type="Texture2D" uid="uid://bkwt08m6gstfn" path="res://assets/itens/botao ponto hoover.png" id="7_jkw12"]
+[ext_resource type="Texture2D" uid="uid://cbhkgcnm5iuqe" path="res://assets/itens/botao reset.png" id="8_l2q6r"]
+[ext_resource type="Texture2D" uid="uid://1mio1inqgpvd" path="res://assets/itens/botao reset pressionado.png" id="9_ckquj"]
+[ext_resource type="Texture2D" uid="uid://56lgncvj1nqa" path="res://assets/itens/botao reset hoover.png" id="10_j0w4i"]
+[ext_resource type="Texture2D" uid="uid://b3diwuknh7iva" path="res://assets/itens/botao ponto.png" id="11_ckquj"]
 
 [node name="zoomTele" type="Node2D" unique_id=1591257699]
 script = ExtResource("1_vvp0m")
@@ -17,73 +22,103 @@ position = Vector2(572, 306)
 scale = Vector2(0.5958333, 0.6055556)
 texture = ExtResource("1_xysmm")
 
-[node name="morsepapel" type="Area2D" parent="CenaTelegrafoInicial" unique_id=1858637309]
-script = ExtResource("4_mvn81")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CenaTelegrafoInicial/morsepapel" unique_id=259008207]
-position = Vector2(-412.8672, 206.42201)
-polygon = PackedVector2Array(5.034973, -80.91742, -100.69934, -3.3027344, -100.69934, 110.64221, 379.30072, 107.33948, 231.6084, -80.91742)
-
 [node name="SetaEsquerda" parent="." unique_id=1570841104 instance=ExtResource("2_f1w1o")]
 destino_cena = "uid://du3u5e5blrq5k"
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_0qusy")]
 
-[node name="traco" type="Button" parent="." unique_id=2097963587]
-z_index = 1
-offset_left = 624.0
-offset_top = 393.0
-offset_right = 677.0
-offset_bottom = 426.0
-text = "traco"
-
-[node name="reset" type="Button" parent="." unique_id=1722959105]
-z_index = 1
-offset_left = 620.0
-offset_top = 430.0
-offset_right = 771.0
-offset_bottom = 455.0
-text = "Resetar mensagem"
-
 [node name="Label" type="Label" parent="." unique_id=760950537]
-z_index = 1
-offset_left = 414.0
-offset_top = 468.0
-offset_right = 780.0
-offset_bottom = 512.0
+offset_left = 362.0
+offset_top = 467.0
+offset_right = 728.0
+offset_bottom = 511.0
 theme_override_font_sizes/font_size = 24
 text = "sua mensagem irá aparecer aqui"
 horizontal_alignment = 1
 
 [node name="ponto" type="Button" parent="." unique_id=1634992566]
-z_index = 1
-offset_left = 701.0
-offset_top = 389.0
-offset_right = 752.0
-offset_bottom = 420.0
+offset_left = 709.0
+offset_top = 393.0
+offset_right = 762.0
+offset_bottom = 424.0
 theme_override_font_sizes/font_size = 16
-text = "ponto"
+text = "Ponto"
 
-[node name="papel" type="Sprite2D" parent="." unique_id=1333521693]
-position = Vector2(572, 306)
-scale = Vector2(0.5958333, 0.6055556)
-texture = ExtResource("3_xwaup")
+[node name="TextureButton3" type="TextureButton" parent="ponto" unique_id=938217819]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -18.586
+anchor_top = 12.746
+anchor_right = -18.586
+anchor_bottom = 12.746
+offset_left = 1005.05804
+offset_top = -405.126
+offset_right = 1063.0581
+offset_bottom = -355.12604
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("11_ckquj")
+texture_pressed = ExtResource("6_det3c")
+texture_hover = ExtResource("7_jkw12")
+ignore_texture_size = true
+stretch_mode = 3
 
-[node name="CodigoMorse" type="Sprite2D" parent="." unique_id=840079761]
-visible = false
-z_index = 1
-position = Vector2(557, 300.00003)
-scale = Vector2(0.321436, 0.321436)
-texture = ExtResource("7_l7tr6")
+[node name="reset" type="Button" parent="." unique_id=1513992318]
+offset_left = 622.0
+offset_top = 424.0
+offset_right = 788.0
+offset_bottom = 455.0
+theme_override_font_sizes/font_size = 16
+text = "Reset"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1888913886]
-position = Vector2(557, 300.00003)
-scale = Vector2(0.321436, 0.321436)
-script = ExtResource("8_det3c")
+[node name="TextureButton" type="TextureButton" parent="reset" unique_id=1207479578]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -18.586
+anchor_top = 12.746
+anchor_right = -18.586
+anchor_bottom = 12.746
+offset_left = 3120.6902
+offset_top = -446.126
+offset_right = 3181.2761
+offset_bottom = -383.126
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("8_l2q6r")
+texture_pressed = ExtResource("9_ckquj")
+texture_hover = ExtResource("10_j0w4i")
+ignore_texture_size = true
+stretch_mode = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=682766732]
-polygon = PackedVector2Array(-597.31946, -727.9833, 603.5416, -727.9833, 600.43054, 734.20514, -597.31946, 743.53827)
+[node name="traco" type="Button" parent="." unique_id=1320605433]
+offset_left = 626.0
+offset_top = 392.0
+offset_right = 679.0
+offset_bottom = 423.0
+theme_override_font_sizes/font_size = 16
 
-[connection signal="pressed" from="traco" to="." method="_on_traco_pressed"]
-[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[node name="TextureButton" type="TextureButton" parent="traco" unique_id=2142644728]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -18.586
+anchor_top = 12.746
+anchor_right = -18.586
+anchor_bottom = 12.746
+offset_left = 1006.05804
+offset_top = -403.126
+offset_right = 1064.0581
+offset_bottom = -353.12604
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("5_l7tr6")
+texture_pressed = ExtResource("6_l7tr6")
+texture_hover = ExtResource("7_det3c")
+ignore_texture_size = true
+stretch_mode = 3
+
 [connection signal="pressed" from="ponto" to="." method="_on_ponto_pressed"]
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="traco" to="." method="_on_traco_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dc8wxs18e8dcc"]
+[gd_scene format=3 uid="uid://dc8wxs18e8dcc"]
 
 [ext_resource type="Script" uid="uid://cb6inmgk45fi2" path="res://scripts/start.gd" id="1_u80x2"]
 [ext_resource type="Texture2D" uid="uid://jn368ptmpdlx" path="res://assets/cenarios/StartFundo.png" id="2_u80x2"]
@@ -21,7 +21,7 @@ bg_color = Color(0.44711733, 0.00043016332, 1.3868182, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u80x2"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=522237803]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -36,7 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u80x2")
 
-[node name="background" type="TextureRect" parent="."]
+[node name="background" type="TextureRect" parent="." unique_id=2106304871]
 layout_mode = 0
 offset_left = -23.0
 offset_top = -35.0
@@ -46,7 +46,7 @@ texture = ExtResource("2_u80x2")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="jogar" type="TextureButton" parent="background"]
+[node name="jogar" type="TextureButton" parent="background" unique_id=2031081960]
 layout_mode = 0
 offset_left = 662.0
 offset_top = 156.0
@@ -56,7 +56,7 @@ scale = Vector2(0.33898252, 0.33898252)
 texture_normal = ExtResource("3_p48wj")
 texture_hover = ExtResource("4_v03cv")
 
-[node name="continuar" type="TextureButton" parent="background"]
+[node name="continuar" type="TextureButton" parent="background" unique_id=555593643]
 layout_mode = 0
 offset_left = 595.99994
 offset_top = 212.0
@@ -67,7 +67,7 @@ scale = Vector2(0.33180755, 0.33180755)
 texture_normal = ExtResource("5_4ybn4")
 texture_hover = ExtResource("6_67qbj")
 
-[node name="creditos" type="TextureButton" parent="background"]
+[node name="creditos" type="TextureButton" parent="background" unique_id=1341154000]
 layout_mode = 0
 offset_left = 709.0
 offset_top = 289.0
@@ -78,7 +78,7 @@ scale = Vector2(0.34096316, 0.34096316)
 texture_normal = ExtResource("7_ddbr3")
 texture_hover = ExtResource("8_ne1qe")
 
-[node name="sair" type="Button" parent="background"]
+[node name="sair" type="Button" parent="background" unique_id=1396184799]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 39.0
@@ -88,7 +88,7 @@ theme_override_font_sizes/font_size = 20
 flat = true
 expand_icon = true
 
-[node name="configuracao" type="Button" parent="background"]
+[node name="configuracao" type="Button" parent="background" unique_id=578230245]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.058000002
@@ -104,10 +104,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_tn317")
 flat = true
 expand_icon = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=530809581]
 sprite_frames = SubResource("SpriteFrames_u80x2")
 
-[node name="BotaoConfig" parent="." instance=ExtResource("9_v03cv")]
+[node name="BotaoConfig" parent="." unique_id=1243335896 instance=ExtResource("9_v03cv")]
+layout_mode = 0
 
 [connection signal="pressed" from="background/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="background/continuar" to="." method="_on_continuar_pressed"]

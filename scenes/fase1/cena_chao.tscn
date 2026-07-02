@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bjr5kdtakbu3x" path="res://scripts/salas_scripts/cena_chao.gd" id="1_33jt1"]
 [ext_resource type="Texture2D" uid="uid://c6vqff80jctae" path="res://assets/cenarios/chao.png" id="1_61tdm"]
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="1_ew8tq"]
-[ext_resource type="Script" uid="uid://x00be8xye3xh" path="res://scripts/verificador_senha.gd" id="3_l3lf0"]
+[ext_resource type="Script" uid="uid://x00be8xye3xh" path="res://scenes/fase1/verificador_senha.gd" id="3_l3lf0"]
 [ext_resource type="Script" uid="uid://c81pj0ipgvja1" path="res://scripts/digitoBotao.gd" id="4_l3lf0"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="4_p12nd"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="5_61tdm"]
 [ext_resource type="Texture2D" uid="uid://22662h0m8fq2" path="res://assets/cartas/mensagem_alcapao.png" id="8_la3ws"]
-[ext_resource type="Script" uid="uid://ce00dwtgkmavc" path="res://scripts/viewMensagem.gd" id="9_vl7g8"]
-[ext_resource type="Script" uid="uid://by0kllm5dyvw" path="res://scripts/viewDifMensagem.gd" id="10_rooau"]
+[ext_resource type="Script" uid="uid://ce00dwtgkmavc" path="res://scenes/fase1/viewMensagem.gd" id="9_vl7g8"]
+[ext_resource type="Script" uid="uid://by0kllm5dyvw" path="res://scenes/fase1/viewDifMensagem.gd" id="10_rooau"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57qmd"]
 radius = 58.830048
@@ -90,6 +90,7 @@ script = ExtResource("4_l3lf0")
 script = ExtResource("9_vl7g8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mensagem" unique_id=872721515]
+visible = false
 position = Vector2(750, 107.00002)
 rotation = -0.79219186
 shape = SubResource("CapsuleShape2D_57qmd")
@@ -107,6 +108,7 @@ texture = ExtResource("8_la3ws")
 script = ExtResource("10_rooau")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D" unique_id=1329452997]
+visible = false
 position = Vector2(584.361, 301.0951)
 rotation = 0.14787108
 shape = SubResource("RectangleShape2D_k4gre")

@@ -1,18 +1,15 @@
 [gd_scene format=3 uid="uid://dog5t48p535ke"]
 
-[ext_resource type="Script" uid="uid://bi10rbgbs4o0o" path="res://scripts/setas/botao_config.gd" id="1_17ylc"]
 [ext_resource type="Texture2D" uid="uid://b2alniggt53vn" path="res://assets/telaInicial/botaoconfigr.png" id="1_qqn7o"]
+[ext_resource type="Script" uid="uid://bl6mn3eclcnm6" path="res://scripts/salas_scripts/botao_config.gd" id="2_30aox"]
+[ext_resource type="PackedScene" uid="uid://pv1apy6nn23a" path="res://scenes/telaInicial/configuracao.tscn" id="3_30aox"]
 
-[node name="BotaoConfig" type="Node2D" unique_id=900679302]
-position = Vector2(210, 47)
-script = ExtResource("1_17ylc")
-
-[node name="Button" type="Button" parent="." unique_id=1795394889]
+[node name="BotaoConfig" type="Button" unique_id=2081255353]
 clip_contents = true
-offset_left = -120.99999
-offset_top = -35.0
-offset_right = 3045.6665
-offset_bottom = 1633.0
+offset_left = 15.999996
+offset_top = 15.999999
+offset_right = 3182.6665
+offset_bottom = 1684.0
 scale = Vector2(0.06, 0.06)
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -22,5 +19,9 @@ flat = true
 autowrap_mode = 2
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("2_30aox")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="configuracao" parent="." unique_id=1565485092 instance=ExtResource("3_30aox")]
+visible = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -13,6 +13,7 @@ var holder := Node.new()
 func _ready():
 	holder.name = "PersistentItems"
 	get_tree().root.call_deferred("add_child", holder)
+	
 func registrar_item(item_resource, posicao,nome_da_cena):
 	
 	if item_resource:
