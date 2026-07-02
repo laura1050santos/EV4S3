@@ -1,10 +1,9 @@
-[gd_scene load_steps=0 format=3 uid="uid://6mwfstbrx3wj"]
+[gd_scene format=3 uid="uid://6mwfstbrx3wj"]
 
 [ext_resource type="Texture2D" uid="uid://bxkykb2n3jiut" path="res://assets/cenarios/buracozoomfechado.png" id="1_rrvqn"]
 [ext_resource type="Script" uid="uid://rpjqy53irs0w" path="res://scripts/salas_scripts/objetos/abrirBuraco.gd" id="2_ckdjj"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_tt6ou"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="4_uftcy"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrvqn"]
 size = Vector2(553, 454.5)

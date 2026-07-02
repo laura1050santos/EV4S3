@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://dcjm6p1qyhtmg"]
 
-[ext_resource type="Texture2D" uid="uid://dll2lscg8fwu4" path="res://assets/cenarios/teto.png" id="1_26nkf"]
 [ext_resource type="Script" uid="uid://bd34wqecebde1" path="res://scripts/salas_scripts/cena_teto.gd" id="1_ccqhm"]
+[ext_resource type="Texture2D" uid="uid://de6alu31vklch" path="res://assets/cenarios/teto-sem-protetor-sem-lampada.png" id="2_3ag6q"]
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setas/setaBaixo.tscn" id="2_26nkf"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="4_nsfmt"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="5_26nkf"]
-[ext_resource type="Texture2D" uid="uid://nkq3n3dhepv4" path="res://assets/itens/teto-lampada-quebrada.png" id="6_3ag6q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_421oe"]
 radius = 48.09366
@@ -16,7 +15,7 @@ script = ExtResource("1_ccqhm")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1815035248]
 position = Vector2(575, 324)
 scale = Vector2(0.60277784, 0.60277784)
-texture = ExtResource("1_26nkf")
+texture = ExtResource("2_3ag6q")
 
 [node name="SetaBaixo" parent="." unique_id=24547672 instance=ExtResource("2_26nkf")]
 
@@ -24,15 +23,11 @@ texture = ExtResource("1_26nkf")
 
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("5_26nkf")]
 
-[node name="SuporteLampada" type="Sprite2D" parent="." unique_id=623330331]
-position = Vector2(576, 373)
-texture = ExtResource("6_3ag6q")
+[node name="AreaLampada" type="Area2D" parent="." unique_id=1508346842]
+position = Vector2(581, 249)
 
-[node name="AreaLampada" type="Area2D" parent="SuporteLampada" unique_id=1508346842]
-position = Vector2(5, -124)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SuporteLampada/AreaLampada" unique_id=47445340]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLampada" unique_id=47445340]
 position = Vector2(-6, 7)
 shape = SubResource("CircleShape2D_421oe")
 
-[connection signal="input_event" from="SuporteLampada/AreaLampada" to="." method="_on_area_lampada_input_event"]
+[connection signal="input_event" from="AreaLampada" to="." method="_on_area_lampada_input_event"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ctfwmsaos8s6v"]
+[gd_scene format=3 uid="uid://dhmkefaf4ptho"]
 
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="1_0xtrl"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="2_jtyxy"]
