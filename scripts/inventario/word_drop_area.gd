@@ -61,21 +61,24 @@ func usar_item(item: itemData, node: Node):
 	# Determina quem vai segurar o nó da luz. 
 	# Usar o próprio 'node' da lanterna faz a luz segui-la automaticamente caso ela se mova.
 	var pai_da_luz = node 
+	
+	if item.item_ativo:
+		node.texture = item.ativo_icon
 		
 		if item.item_name == "lanterna":
 			node.position = Vector2(750,582)
 			for i in GlobalSingleton.itens_no_mundo:
 				if i["data"].item_name == "lanterna":
-					i["pos"]= Vector2(750,582)
+					GlobalSingleton.remover_item(i["data"])
 			itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
-			var root = get_tree().root
+			var root= get_tree().root
+			#excluir a instancia da lanterna da cena onde estava e no GlobalSingleton
+			
 			node.reparent(root)
+			node.z_index = 1
 	else:
-		node.texture = item.icon
-		
-		if item.item_name == "lanterna":
-			# Apaga a luz buscando dentro do pai onde ela foi gerada
-			itemData.desligar_luz(item, pai_da_luz)
+		node.texture = item.icon	
+		itemData.desligar_luz(item, pai_da_luz)
 			
 			
 	
