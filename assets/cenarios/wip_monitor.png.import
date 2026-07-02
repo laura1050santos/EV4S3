@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4wof56f5vx32"
-path="res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"
+uid="uid://cbrwqe21ctarf"
+path="res://.godot/imported/wip_monitor.png-c6fb4a6276f4e9f3ceb9e8595ead3748.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/malagrande.png"
-dest_files=["res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"]
+source_file="res://assets/cenarios/wip_monitor.png"
+dest_files=["res://.godot/imported/wip_monitor.png-c6fb4a6276f4e9f3ceb9e8595ead3748.ctex"]
 
 [params]
 
