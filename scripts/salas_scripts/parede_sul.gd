@@ -28,8 +28,7 @@ func _on_gaveta_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 			
 func _input(event: InputEvent):
 	
-	var lanterna_node = get_node_or_null("lanterna")
-	if lanterna_node:
+	if get_tree().root.has_node("lanterna"):
 		get_node("buraco/colisaoBuraco").disabled = false
 		
 func ativar_enigma_som():
