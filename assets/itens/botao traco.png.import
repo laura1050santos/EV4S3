@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4wof56f5vx32"
-path="res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"
+uid="uid://d20n8oai8lwpd"
+path="res://.godot/imported/botao traco.png-9bdb8a28deaf32fab00682683fc560e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/malagrande.png"
-dest_files=["res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"]
+source_file="res://assets/itens/botao traco.png"
+dest_files=["res://.godot/imported/botao traco.png-9bdb8a28deaf32fab00682683fc560e3.ctex"]
 
 [params]
 

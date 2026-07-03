@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4wof56f5vx32"
-path="res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"
+uid="uid://bkwt08m6gstfn"
+path="res://.godot/imported/botao ponto hoover.png-7ee4f496d786eedd8827c12a4d9fe738.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/malagrande.png"
-dest_files=["res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"]
+source_file="res://assets/itens/botao ponto hoover.png"
+dest_files=["res://.godot/imported/botao ponto hoover.png-7ee4f496d786eedd8827c12a4d9fe738.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4wof56f5vx32"
-path="res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"
+uid="uid://c7snx01yst71v"
+path="res://.godot/imported/luzLampada.png-9a33443f15c91be2123f87f85a8c3654.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/malagrande.png"
-dest_files=["res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"]
+source_file="res://assets/itens/luzLampada.png"
+dest_files=["res://.godot/imported/luzLampada.png-9a33443f15c91be2123f87f85a8c3654.ctex"]
 
 [params]
 

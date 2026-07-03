@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4wof56f5vx32"
-path="res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"
+uid="uid://bod0ysm358fa7"
+path="res://.godot/imported/botao ponto pressionado.png-d5a0b30d9bd68fb8d99618c5e3899a7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/malagrande.png"
-dest_files=["res://.godot/imported/malagrande.png-b6c0a89dce25298c97cb231cebc19d4e.ctex"]
+source_file="res://assets/itens/botao ponto pressionado.png"
+dest_files=["res://.godot/imported/botao ponto pressionado.png-d5a0b30d9bd68fb8d99618c5e3899a7c.ctex"]
 
 [params]
 
