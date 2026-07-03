@@ -70,9 +70,24 @@ func usar_item(item: itemData, node: Node):
 			node.reparent(root)
 			node.z_index = 1
 	else:
-		node.texture = item.icon	
-		itemData.desligar_luz(item, pai_da_luz)
 
+		node.texture = item.icon
+		itemData.desligar_luz(item, pai_da_luz)
+		#var raiz = get_tree().root
+		#var lanterna:Node = raiz.get_node("lanterna")
+		#if lanterna:	
+					#var no = raiz.get_child(4)
+					#print(no)
+					#if no:
+						#print(no)
+						#raiz.remove_child(lanterna)
+						#no.add_child(lanterna)
+						#lanterna.z_index = 1
+						#
+						#print("Pai atual:", lanterna.get_parent())
+						#print("Nó encontrado:", no)
+						#GlobalSingleton.registrar_item("res://recursos/lanterna.tres",Vector2(750,590),no.name )
+					#
 	for info in GlobalSingleton.itens_no_mundo:
 		if info.data == item:
 			info.data.item_ativo = item.item_ativo
