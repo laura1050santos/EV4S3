@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://pv1apy6nn23a"]
 
 [ext_resource type="Script" uid="uid://bxlqomd7ux2k7" path="res://scripts/configuracao.gd" id="1_m4k1a"]
+[ext_resource type="Script" uid="uid://bsobhj4loyhwf" path="res://scripts/salas_scripts/ConfigSom.gd" id="2_esjly"]
 [ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="2_n81e7"]
 
 [node name="configuracao" type="Window" unique_id=1565485092]
@@ -18,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Som" type="HSlider" parent="." unique_id=972195014]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,6 +29,7 @@ offset_right = -92.0
 offset_bottom = -246.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_esjly")
 
 [node name="Label" type="Label" parent="Som" unique_id=393597779]
 layout_mode = 0

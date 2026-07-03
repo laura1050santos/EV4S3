@@ -44,5 +44,4 @@ destino_cena = "uid://dqttd76hew5ag"
 
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_y3a53")]
 
-[connection signal="child_order_changed" from="." to="." method="_on_child_order_changed"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

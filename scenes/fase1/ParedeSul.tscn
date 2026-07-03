@@ -67,3 +67,4 @@ shape = SubResource("RectangleShape2D_htmuf")
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("11_uf1xn")]
 
 [connection signal="input_event" from="gaveta" to="." method="_on_gaveta_input_event"]
+[connection signal="pressed" from="BotaoConfig" to="." method="_on_botao_config_pressed"]
