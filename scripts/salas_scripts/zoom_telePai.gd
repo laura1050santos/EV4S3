@@ -15,10 +15,11 @@ func _on_ponto_pressed() -> void:
 
 func _on_traco_pressed() -> void:
 	if label.text == "sua mensagem irá aparecer aqui":
-		label.text = "-"# Replace with function body.
-	else:
-		label.text = label.text+"-"
+		label.text = "-"
+	else: 
+		label.text = label.text+ "-"
 	verificar_mensagem(label)
+	
 func _on_reset_pressed() -> void:
 	label.text = "" 
 	verificar_mensagem(label)# Replace with function body.
