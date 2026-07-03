@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://bwytanyxh8aqr"]
 
+[ext_resource type="Texture2D" uid="uid://c7snx01yst71v" path="res://assets/itens/luzLampada.png" id="1_k38jg"]
+
 [node name="Escuro" type="Node" unique_id=693554654]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2100295126]
-color = Color(0.1905662, 0.1905662, 0.1905662, 1)
+color = Color(0.19793716, 0.19793725, 0.19793722, 1)
+
+[node name="LuzLampada" type="PointLight2D" parent="." unique_id=994862163]
+unique_name_in_owner = true
+position = Vector2(577, 335)
+scale = Vector2(0.6, 0.6037037)
+enabled = false
+energy = 0.7
+texture = ExtResource("1_k38jg")
