@@ -74,6 +74,7 @@ func usar_item(item: itemData, node: Node):
 			var root= get_tree().root
 			#excluir a instancia da lanterna da cena onde estava e no GlobalSingleton
 			
+			node.name="lanterna"
 			node.reparent(root)
 			node.z_index = 1
 	else:
