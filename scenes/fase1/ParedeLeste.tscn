@@ -8,11 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setas/setaBaixo.tscn" id="6_k8ayk"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="7_7nwwv"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_cvcdw"]
-[ext_resource type="Script" uid="uid://cl0wugnw5ytnd" path="res://scripts/salas_scripts/zoom_monitor.gd" id="9_ola1g"]
-[ext_resource type="Script" uid="uid://daps7kw4e3x3b" path="res://scripts/zoom_gabinete.gd" id="10_axhcu"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(147, 145.75)
 
 [node name="leste" type="Node2D" unique_id=1514872956]
 script = ExtResource("1_2litd")
@@ -37,20 +32,3 @@ destino_cena = "uid://dmhce3kfm14ep"
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("7_7nwwv")]
 
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_cvcdw")]
-
-[node name="monitor" type="Area2D" parent="." unique_id=1272225384]
-script = ExtResource("9_ola1g")
-destino_cena = "uid://df65my51libwx"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="monitor" unique_id=1786980585]
-position = Vector2(477.5, 348.875)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="gabinete" type="Area2D" parent="." unique_id=838082541]
-script = ExtResource("10_axhcu")
-destino_cena = "uid://b6ql1rcpbxw6m"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="gabinete" unique_id=1285347960]
-position = Vector2(-5.340271, -8.100052)
-scale = Vector2(1.0175782, 1.0175781)
-polygon = PackedVector2Array(326, 284, 377, 285, 385, 288, 387, 409, 372, 420, 372, 378, 362, 338, 344, 320, 323, 318)
