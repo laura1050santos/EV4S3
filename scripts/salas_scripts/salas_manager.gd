@@ -42,7 +42,7 @@ func ativar_item_ao_resconstruir(item,node):
 
 # Qualquer um pode chamar essa função para dropar/criar um item nesta sala
 func adicionar_item_na_sala(recurso, posicao):
+	
 	GlobalSingleton.registrar_item(recurso, posicao, self.name)
 	# 2. Instancia fisicamente na tela
 	spawnar_itens(recurso, posicao)
-	

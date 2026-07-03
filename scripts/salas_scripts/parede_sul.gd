@@ -1,5 +1,6 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 var lanterna_node: Node = null
+var node = preload("res://scenes/inventario/worldItem.tscn")
 
 func _ready():
 	var configMenu = get_node("BotaoConfig/configuracao")
@@ -32,13 +33,31 @@ func _input(event: InputEvent):
 		
 func ativar_enigma_som():
 	print("volume maximo \nquebrar o aquario")
-	if not has_node("processador"):
-		var processador = Node2D.new()
-		processador.name = "processador"
-		processador.position= Vector2(670,375)
+	var existe = false
+
+	for info in GlobalSingleton.itens_no_mundo:
+		if info["data"].item_name == "LampadaQuebrada":
+			existe = true
+			break
+	if not has_node("processador") or !existe:
+		var item = Node2D.new()
+		item.name = "processador"
+		item.position = Vector2(670,375)
+
 		var sprite = Sprite2D.new()
-		sprite.texture = preload("res://assets/itens/teto-lampada-quebrada.png")
-		processador.add_child(sprite)
-		add_child(processador)
-	GlobalSingleton.registrar_item(preload("res://recursos/LampadaQuebrada.tres"),Vector2(670,375),self.name)
+		var texture = load("res://assets/itens/teto-lampada-quebrada.png")
+		sprite.texture = texture
+		item.add_child(sprite)
+
+		var area = Area2D.new()
+		item.add_child(area)
+
+		var collision = CollisionShape2D.new()
+		var shape = RectangleShape2D.new()
+		shape.size = texture.get_size()
+		collision.shape = shape
+		area.add_child(collision)
+		add_child(item)
+		
+		GlobalSingleton.registrar_item(preload("res://recursos/LampadaQuebrada.tres"),Vector2(670,375),self.name)
 # Replace with function body.
