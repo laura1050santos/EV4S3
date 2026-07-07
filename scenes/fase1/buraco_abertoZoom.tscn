@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="2_84tal"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_jowjx"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2tlq"]
+size = Vector2(118, 173)
+
 [node name="BuracoAberto" type="Node2D" unique_id=26432974]
 script = ExtResource("1_x2tlq")
 
@@ -17,3 +20,11 @@ texture = ExtResource("1_5rsd2")
 
 [node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_jowjx")]
 destino_cena = "uid://6mwfstbrx3wj"
+
+[node name="AreaInterruptor" type="Area2D" parent="." unique_id=973211792]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInterruptor" unique_id=1576235593]
+position = Vector2(622, 276.5)
+shape = SubResource("RectangleShape2D_x2tlq")
+
+[connection signal="input_event" from="AreaInterruptor" to="." method="_on_area_2d_input_event"]

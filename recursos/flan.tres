@@ -1,13 +1,12 @@
 [gd_resource type="Resource" script_class="itemData" format=3 uid="uid://n00yrn8447pg"]
 
-[ext_resource type="Texture2D" path="res://assets/itens/teto-flan.png" id="1_7ql7m"]
+[ext_resource type="Texture2D" uid="uid://bl0hgq4vgr7v4" path="res://assets/itens/teto-flan.png" id="1_7ql7m"]
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_e0blk"]
-[ext_resource type="Texture2D" uid="uid://nkq3n3dhepv4" path="res://assets/itens/teto-lampada-quebrada.png" id="2_mgg54"]
 
 [resource]
 script = ExtResource("1_e0blk")
 item_name = "flan"
 icon = ExtResource("1_7ql7m")
 inventory_icon = ExtResource("1_7ql7m")
-ativo_icon = ExtResource("2_mgg54")
+ativo_icon = ExtResource("1_7ql7m")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

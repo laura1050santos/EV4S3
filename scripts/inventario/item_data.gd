@@ -22,7 +22,7 @@ static func ativar_luz(item: itemData, cena: Node, pos: Vector2):
 		
 		# Adiciona direto na raiz do jogo
 		root.add_child(node)
-		node.global_position = Vector2(500, 350)
+		node.global_position = Vector2(650, 325)
 	
 		
 static func desligar_luz(item: itemData, cena: Node):

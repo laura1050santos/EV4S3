@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_pdaop")
-item_name = "Mala"
+item_name = "mala"
 icon = ExtResource("1_ub7uk")
 inventory_icon = ExtResource("1_3ptfa")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

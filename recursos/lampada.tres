@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_hwnq5"]
 [ext_resource type="Texture2D" uid="uid://od5gh6mt04mt" path="res://assets/itens/lampada.png" id="1_uo6u4"]
+[ext_resource type="Texture2D" uid="uid://4t23tkbsg2xo" path="res://assets/itens/lampadaGigante.png" id="2_tf5kp"]
 
 [resource]
 script = ExtResource("1_hwnq5")
-item_name = "LampadaNova"
+item_name = "lampadaNova"
 icon = ExtResource("1_uo6u4")
-inventory_icon = ExtResource("1_uo6u4")
+inventory_icon = ExtResource("2_tf5kp")
 ativo_icon = ExtResource("1_uo6u4")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

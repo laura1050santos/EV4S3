@@ -4,7 +4,7 @@ var itens_no_mundo = []
 var cenas_visitadas =[]
 var historico_cenas: Array[String] = []
 var item_mao=null
-
+var enigma_luz_resolvido= false
 
 var sprite_visivel: bool = true # teste da gaveta do aquario
 # Função para registrar um item novo no mundo
