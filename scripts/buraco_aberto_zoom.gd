@@ -18,10 +18,17 @@ func interruptor_ativar():
 	var LuzLampada = load("res://scenes/escuro.tscn").instantiate()
 	print(LuzLampada.get_parent())
 	var root = get_tree().root
-	root.add_child(LuzLampada)
-	LuzLampada= LuzLampada.get_child(1)
-	LuzLampada.enabled= true
-	print(LuzLampada.get_parent())
+	if root.get_node_or_null("Escuro/LuzLampada"):
+		var luzNoRoot = root.get_node_or_null("Escuro/LuzLampada")
+		if luzNoRoot.enabled == true:
+			luzNoRoot.enabled =false
+		else:
+			luzNoRoot.enabled = true
+	else:
+		root.add_child(LuzLampada)
+		LuzLampada= LuzLampada.get_child(1)
+		LuzLampada.enabled= true
+		print(LuzLampada.get_parent())
 	
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
