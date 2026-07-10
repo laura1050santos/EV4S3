@@ -13,19 +13,34 @@ func _ready():
 	
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
+	gaveta1_sprite.visible = GlobalSingleton.gaveta_1
+	gaveta2_sprite.visible = GlobalSingleton.gaveta_2
 	
-@onready var meu_sprite = $Gaveta1Aquario
+	
+@onready var gaveta1_sprite = $Gaveta1Aquario
+@onready var gaveta2_sprite = $gaveta2
+@onready var gaveta3_sprite = $gaveta_3
+
 func _on_gaveta_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	# Verifica se o evento foi um clique do botão esquerdo do mouse
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		# Verifica se o botão foi pressionado (e não solto)
-		if event.pressed:
-			GlobalSingleton.sprite_visivel = not GlobalSingleton.sprite_visivel
-			
-			# 2. Aplica o novo estado visualmente no sprite
-			meu_sprite.visible = GlobalSingleton.sprite_visivel
-			print("Sprite ativado!")
-			
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		GlobalSingleton.gaveta_1 = !GlobalSingleton.gaveta_1
+		gaveta1_sprite.visible = GlobalSingleton.gaveta_1
+		print("Ativado 1")
+
+
+func _on_gaveta2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		GlobalSingleton.gaveta_2 = !GlobalSingleton.gaveta_2
+		gaveta2_sprite.visible = GlobalSingleton.gaveta_2
+		print("Ativado 2")
+	pass
+		
+func _on_gaveta_3_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		GlobalSingleton.gaveta_3 = !GlobalSingleton.gaveta_3
+		gaveta3_sprite.visible = GlobalSingleton.gaveta_3
+		print("Ativado 3")
+	pass # Replace with function body.
 			
 func _input(event: InputEvent):
 	if get_tree().root.has_node("lanterna"):
@@ -61,3 +76,6 @@ func ativar_enigma_som():
 		
 		GlobalSingleton.registrar_item(preload("res://recursos/LampadaQuebrada.tres"),Vector2(670,375),self.name)
 # Replace with function body.
+
+
+ # Replace with function body.

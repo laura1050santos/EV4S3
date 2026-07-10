@@ -1,29 +1,37 @@
-[gd_scene format=3 uid="uid://6mwfstbrx3wj"]
+[gd_scene load_steps=7 format=3 uid="uid://6mwfstbrx3wj"]
 
 [ext_resource type="Texture2D" uid="uid://bxkykb2n3jiut" path="res://assets/cenarios/buracozoomfechado.png" id="1_rrvqn"]
 [ext_resource type="Script" uid="uid://rpjqy53irs0w" path="res://scripts/salas_scripts/objetos/abrirBuraco.gd" id="2_ckdjj"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_tt6ou"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="4_uftcy"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="5_yhfr0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrvqn"]
 size = Vector2(553, 454.5)
 
-[node name="zoomBuraco" type="Node2D" unique_id=1866256705]
+[node name="zoomBuraco" type="Node2D"]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=827339385]
+[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_ckdjj")
 destino_cena = "uid://4n7rpaymc5wm"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1974755394]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(569, 279.75)
 shape = SubResource("RectangleShape2D_rrvqn")
 
-[node name="Escuro" parent="." unique_id=1752163145 instance=ExtResource("3_tt6ou")]
+[node name="Escuro" parent="." instance=ExtResource("3_tt6ou")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=616055602]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(573.75, 325)
 scale = Vector2(0.6002604, 0.59814805)
 texture = ExtResource("1_rrvqn")
 
-[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("4_uftcy")]
+[node name="SetaEsquerda" parent="." instance=ExtResource("4_uftcy")]
+position = Vector2(214, 137)
 destino_cena = "uid://cxhjpnc7drrok"
+
+[node name="BotaoConfig" parent="SetaEsquerda" instance=ExtResource("5_yhfr0")]
+offset_left = -127.999985
+offset_top = -131.99998
+offset_right = 3038.6665
+offset_bottom = 1536.0

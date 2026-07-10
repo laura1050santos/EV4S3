@@ -1,29 +1,37 @@
-[gd_scene format=3 uid="uid://4n7rpaymc5wm"]
+[gd_scene load_steps=7 format=3 uid="uid://4n7rpaymc5wm"]
 
 [ext_resource type="Texture2D" uid="uid://7gmndetamb5y" path="res://assets/cenarios/buracozoomaberto (1).png" id="1_5rsd2"]
 [ext_resource type="Script" uid="uid://bi17tcnnbi1sb" path="res://scripts/buraco_aberto_zoom.gd" id="1_x2tlq"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="2_84tal"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_jowjx"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="5_2npeh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2tlq"]
 size = Vector2(118, 173)
 
-[node name="BuracoAberto" type="Node2D" unique_id=26432974]
+[node name="BuracoAberto" type="Node2D"]
 script = ExtResource("1_x2tlq")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=675023441]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(578.5, 334.75)
 scale = Vector2(0.59739584, 0.6060185)
 texture = ExtResource("1_5rsd2")
 
-[node name="Escuro" parent="." unique_id=953145076 instance=ExtResource("2_84tal")]
+[node name="Escuro" parent="." instance=ExtResource("2_84tal")]
 
-[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_jowjx")]
+[node name="SetaEsquerda" parent="." instance=ExtResource("3_jowjx")]
+position = Vector2(217, 183)
 destino_cena = "uid://6mwfstbrx3wj"
 
-[node name="AreaInterruptor" type="Area2D" parent="." unique_id=973211792]
+[node name="BotaoConfig" parent="SetaEsquerda" instance=ExtResource("5_2npeh")]
+offset_left = -142.0
+offset_top = -163.0
+offset_right = 3024.6665
+offset_bottom = 1505.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInterruptor" unique_id=1576235593]
+[node name="AreaInterruptor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInterruptor"]
 position = Vector2(622, 276.5)
 shape = SubResource("RectangleShape2D_x2tlq")
 

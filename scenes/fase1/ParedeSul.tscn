@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxhjpnc7drrok"]
+[gd_scene load_steps=19 format=3 uid="uid://cxhjpnc7drrok"]
 
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="1_1234l"]
 [ext_resource type="Script" uid="uid://cv6fthwtudkv8" path="res://scripts/salas_scripts/parede_sul.gd" id="1_ls4hi"]
@@ -12,16 +12,36 @@
 [ext_resource type="Script" uid="uid://c8vk8nii61b40" path="res://scripts/salas_scripts/objetos/gaveta.gd" id="10_uf1xn"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="11_uf1xn"]
 [ext_resource type="Texture2D" uid="uid://b4ay7iu76t0ls" path="res://assets/cenarios/gavetas/gaveta2_aquario.png" id="12_htmuf"]
-[ext_resource type="Script" uid="uid://blpensyvagw0d" path="res://scripts/salas_scripts/objetos/gaveta2.gd" id="13_nfbrq"]
+[ext_resource type="Texture2D" uid="uid://dyk1hlvw8bxjg" path="res://assets/cenarios/gavetas/gaveta3_aquario.png" id="13_nfbrq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nco2w"]
 size = Vector2(103, 94)
+
+[sub_resource type="GDScript" id="GDScript_htmuf"]
+script/source = "extends Area2D
+@onready var gaveta_1 = $\"../Gaveta1Aquario\"
+@onready var gaveta_2 = $\"../gaveta2\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	gaveta_1.visible = GlobalSingleton.gaveta_1
+	gaveta_2.visible = GlobalSingleton.gaveta_2
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfbrq"]
 size = Vector2(247.2313, 67.20386)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htmuf"]
 size = Vector2(231.2237, 72.95597)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isxgw"]
+size = Vector2(265.41275, 65.55234)
 
 [node name="Sul" type="Node2D"]
 script = ExtResource("1_ls4hi")
@@ -55,6 +75,7 @@ shape = SubResource("RectangleShape2D_nco2w")
 disabled = true
 
 [node name="Gaveta1Aquario" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(576, 326.00003)
 scale = Vector2(0.5923337, 0.5756894)
 texture = ExtResource("9_b4mbd")
@@ -62,17 +83,17 @@ texture = ExtResource("9_b4mbd")
 [node name="BotaoConfig" parent="." instance=ExtResource("11_uf1xn")]
 
 [node name="gaveta2" type="Sprite2D" parent="."]
-position = Vector2(580.4004, 319.96875)
-scale = Vector2(0.58916616, 0.6445023)
+position = Vector2(589.00006, 325)
+scale = Vector2(0.55677074, 0.60092586)
 texture = ExtResource("12_htmuf")
 
 [node name="GAVETA" type="Area2D" parent="."]
 position = Vector2(297, 723.00006)
 scale = Vector2(0.6027018, 0.6761575)
-script = ExtResource("13_nfbrq")
+script = SubResource("GDScript_htmuf")
 
 [node name="COLISAO" type="CollisionShape2D" parent="GAVETA"]
-position = Vector2(723.4091, -338.6786)
+position = Vector2(721.74994, -346.0733)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_nfbrq")
 
@@ -86,7 +107,24 @@ script = ExtResource("10_uf1xn")
 position = Vector2(49.835327, -3.47406)
 shape = SubResource("RectangleShape2D_htmuf")
 
-[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("11_uf1xn")]
+[node name="BotaoConfig2" parent="." instance=ExtResource("11_uf1xn")]
 
-[connection signal="input_event" from="gaveta" to="." method="_on_gaveta_input_event"]
+[node name="gaveta_3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(584, 346)
+scale = Vector2(0.5740886, 0.536726)
+texture = ExtResource("13_nfbrq")
+
+[node name="gaveta3" type="Area2D" parent="."]
+position = Vector2(584, 346)
+scale = Vector2(0.5740885, 0.53672594)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gaveta3"]
+position = Vector2(260.96112, 362.2113)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_isxgw")
+
 [connection signal="pressed" from="BotaoConfig" to="." method="_on_botao_config_pressed"]
+[connection signal="input_event" from="GAVETA" to="." method="_on_gaveta2_input_event"]
+[connection signal="input_event" from="gaveta" to="." method="_on_gaveta_input_event"]
+[connection signal="input_event" from="gaveta3" to="." method="_on_gaveta_3_input_event"]
