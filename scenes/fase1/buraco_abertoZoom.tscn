@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://4n7rpaymc5wm"]
+[gd_scene format=3 uid="uid://4n7rpaymc5wm"]
 
 [ext_resource type="Texture2D" uid="uid://7gmndetamb5y" path="res://assets/cenarios/buracozoomaberto (1).png" id="1_5rsd2"]
 [ext_resource type="Script" uid="uid://bi17tcnnbi1sb" path="res://scripts/buraco_aberto_zoom.gd" id="1_x2tlq"]
@@ -9,29 +9,29 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2tlq"]
 size = Vector2(118, 173)
 
-[node name="BuracoAberto" type="Node2D"]
+[node name="BuracoAberto" type="Node2D" unique_id=492878253]
 script = ExtResource("1_x2tlq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142052247]
 position = Vector2(578.5, 334.75)
 scale = Vector2(0.59739584, 0.6060185)
 texture = ExtResource("1_5rsd2")
 
-[node name="Escuro" parent="." instance=ExtResource("2_84tal")]
+[node name="Escuro" parent="." unique_id=1886569735 instance=ExtResource("2_84tal")]
 
-[node name="SetaEsquerda" parent="." instance=ExtResource("3_jowjx")]
+[node name="SetaEsquerda" parent="." unique_id=616059842 instance=ExtResource("3_jowjx")]
 position = Vector2(217, 183)
 destino_cena = "uid://6mwfstbrx3wj"
 
-[node name="BotaoConfig" parent="SetaEsquerda" instance=ExtResource("5_2npeh")]
+[node name="BotaoConfig" parent="SetaEsquerda" unique_id=1223313343 instance=ExtResource("5_2npeh")]
 offset_left = -142.0
 offset_top = -163.0
 offset_right = 3024.6665
 offset_bottom = 1505.0
 
-[node name="AreaInterruptor" type="Area2D" parent="."]
+[node name="AreaInterruptor" type="Area2D" parent="." unique_id=483048136]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInterruptor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInterruptor" unique_id=966212768]
 position = Vector2(622, 276.5)
 shape = SubResource("RectangleShape2D_x2tlq")
 

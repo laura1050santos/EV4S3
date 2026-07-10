@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byu7rd62h4g1o"
-
-path="res://.godot/imported/gpu.png-6eef9b8118e06224419ff8620ee0c840.ctex"
+uid="uid://dll0h6y7g3nft"
+path="res://.godot/imported/lampadatetoacesa.png-f2c823b97f89716ebede9f97bb897a4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/gpu.png"
-dest_files=["res://.godot/imported/gpu.png-6eef9b8118e06224419ff8620ee0c840.ctex"]
+source_file="res://assets/itens/lampadatetoacesa.png"
+dest_files=["res://.godot/imported/lampadatetoacesa.png-f2c823b97f89716ebede9f97bb897a4f.ctex"]
 
 [params]
 

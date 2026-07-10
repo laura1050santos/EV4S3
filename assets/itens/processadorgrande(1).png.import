@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byu7rd62h4g1o"
-
-path="res://.godot/imported/gpu.png-6eef9b8118e06224419ff8620ee0c840.ctex"
+uid="uid://bjo3liu84m8b4"
+path="res://.godot/imported/processadorgrande(1).png-4329131676aa1cee56311ab2bb2d8dc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/gpu.png"
-dest_files=["res://.godot/imported/gpu.png-6eef9b8118e06224419ff8620ee0c840.ctex"]
+source_file="res://assets/itens/processadorgrande(1).png"
+dest_files=["res://.godot/imported/processadorgrande(1).png-4329131676aa1cee56311ab2bb2d8dc9.ctex"]
 
 [params]
 

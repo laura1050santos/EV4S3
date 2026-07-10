@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byu7rd62h4g1o"
-
-path="res://.godot/imported/gpu.png-6eef9b8118e06224419ff8620ee0c840.ctex"
+uid="uid://bfueq4xvdod74"
+path="res://.godot/imported/lixeiraperto.png-2fef15ebd92b8f8af2055989bb214992.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/gpu.png"
-dest_files=["res://.godot/imported/gpu.png-6eef9b8118e06224419ff8620ee0c840.ctex"]
+source_file="res://assets/cenarios/lixeiraperto.png"
+dest_files=["res://.godot/imported/lixeiraperto.png-2fef15ebd92b8f8af2055989bb214992.ctex"]
 
 [params]
 
