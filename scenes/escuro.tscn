@@ -5,6 +5,7 @@
 [node name="Escuro" type="Node" unique_id=693554654]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2100295126]
+visible = false
 color = Color(0.19793716, 0.19793725, 0.19793722, 1)
 
 [node name="LuzLampada" type="PointLight2D" parent="." unique_id=994862163]

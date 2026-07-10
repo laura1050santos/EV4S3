@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cxhjpnc7drrok"]
+[gd_scene format=3 uid="uid://cxhjpnc7drrok"]
 
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="1_1234l"]
 [ext_resource type="Script" uid="uid://cv6fthwtudkv8" path="res://scripts/salas_scripts/parede_sul.gd" id="1_ls4hi"]
@@ -47,93 +47,96 @@ size = Vector2(265.41275, 65.55234)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8iw3"]
 size = Vector2(250.5, 116)
 
-[node name="Sul" type="Node2D"]
+[node name="Sul" type="Node2D" unique_id=1731487183]
 script = ExtResource("1_ls4hi")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2129781235]
 position = Vector2(575.50006, 323.00003)
 scale = Vector2(0.60052085, 0.6018519)
 texture = ExtResource("2_3wuve")
 
-[node name="SetaDireita" parent="." instance=ExtResource("1_1234l")]
+[node name="SetaDireita" parent="." unique_id=1141201900 instance=ExtResource("1_1234l")]
+visible = false
 destino_cena = "uid://du3u5e5blrq5k"
 
-[node name="SetaEsquerda" parent="." instance=ExtResource("2_02bjx")]
+[node name="SetaEsquerda" parent="." unique_id=1482010499 instance=ExtResource("2_02bjx")]
+visible = false
 destino_cena = "uid://dqttd76hew5ag"
 
-[node name="setaCima" parent="." instance=ExtResource("5_vfh6l")]
+[node name="setaCima" parent="." unique_id=1767603792 instance=ExtResource("5_vfh6l")]
+visible = false
 destino_cena = "uid://dcjm6p1qyhtmg"
 
-[node name="SetaBaixo" parent="." instance=ExtResource("6_o2bnt")]
+[node name="SetaBaixo" parent="." unique_id=1206601111 instance=ExtResource("6_o2bnt")]
+visible = false
 destino_cena = "uid://dmhce3kfm14ep"
 
-[node name="Escuro" parent="." instance=ExtResource("7_o2bnt")]
+[node name="Escuro" parent="." unique_id=1675831160 instance=ExtResource("7_o2bnt")]
 
-[node name="buraco" type="Area2D" parent="."]
+[node name="buraco" type="Area2D" parent="." unique_id=886878941]
 script = ExtResource("8_cuvsr")
 destino_cena = "uid://6mwfstbrx3wj"
 
-[node name="colisaoBuraco" type="CollisionShape2D" parent="buraco"]
+[node name="colisaoBuraco" type="CollisionShape2D" parent="buraco" unique_id=1790577640]
 position = Vector2(614.5, 283)
 shape = SubResource("RectangleShape2D_nco2w")
 disabled = true
 
-[node name="Gaveta1Aquario" type="Sprite2D" parent="."]
+[node name="Gaveta1Aquario" type="Sprite2D" parent="." unique_id=2015950540]
 visible = false
 position = Vector2(576, 326.00003)
 scale = Vector2(0.5923337, 0.5756894)
 texture = ExtResource("9_b4mbd")
 
-[node name="BotaoConfig" parent="." instance=ExtResource("11_uf1xn")]
+[node name="BotaoConfig" parent="." unique_id=413660545 instance=ExtResource("11_uf1xn")]
 
-[node name="gaveta2" type="Sprite2D" parent="."]
+[node name="gaveta2" type="Sprite2D" parent="." unique_id=1462864133]
 position = Vector2(589.00006, 325)
 scale = Vector2(0.55677074, 0.60092586)
 texture = ExtResource("12_htmuf")
 
-[node name="GAVETA" type="Area2D" parent="."]
+[node name="GAVETA" type="Area2D" parent="." unique_id=732679714]
 position = Vector2(297, 723.00006)
 scale = Vector2(0.6027018, 0.6761575)
 script = SubResource("GDScript_htmuf")
 
-[node name="COLISAO" type="CollisionShape2D" parent="GAVETA"]
+[node name="COLISAO" type="CollisionShape2D" parent="GAVETA" unique_id=490141309]
 position = Vector2(721.74994, -346.0733)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_nfbrq")
 
-[node name="gaveta" type="Area2D" parent="."]
+[node name="gaveta" type="Area2D" parent="." unique_id=877787836]
 position = Vector2(702, 429)
 scale = Vector2(0.5923337, 0.5756894)
 collision_layer = 5
 script = ExtResource("10_uf1xn")
 
-[node name="colisaoGaveta" type="CollisionShape2D" parent="gaveta"]
+[node name="colisaoGaveta" type="CollisionShape2D" parent="gaveta" unique_id=1938143914]
 position = Vector2(49.835327, -3.47406)
 shape = SubResource("RectangleShape2D_htmuf")
 
-[node name="BotaoConfig2" parent="." instance=ExtResource("11_uf1xn")]
-
-[node name="gaveta_3" type="Sprite2D" parent="."]
+[node name="gaveta_3" type="Sprite2D" parent="." unique_id=724452809]
 visible = false
 position = Vector2(584, 346)
 scale = Vector2(0.5740886, 0.536726)
 texture = ExtResource("13_nfbrq")
 
-[node name="gaveta3" type="Area2D" parent="."]
+[node name="gaveta3" type="Area2D" parent="." unique_id=525597513]
 position = Vector2(584, 346)
 scale = Vector2(0.5740885, 0.53672594)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gaveta3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gaveta3" unique_id=270150947]
 position = Vector2(260.96112, 362.2113)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_isxgw")
 
-[node name="lixeira" type="Sprite2D" parent="."]
+[node name="lixeira" type="Sprite2D" parent="." unique_id=351100154]
 
-[node name="Area2D" type="Area2D" parent="lixeira"]
+[node name="Area2D" type="Area2D" parent="lixeira" unique_id=270165435]
 script = ExtResource("14_isxgw")
+destino_cena = "uid://djp3ua570moo4"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lixeira/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lixeira/Area2D" unique_id=239772711]
 position = Vector2(447.75, 459)
 shape = SubResource("RectangleShape2D_m8iw3")
 

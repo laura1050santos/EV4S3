@@ -1,42 +1,99 @@
-[gd_scene load_steps=7 format=3 uid="uid://djp3ua570moo4"]
+[gd_scene format=3 uid="uid://djp3ua570moo4"]
 
 [ext_resource type="Texture2D" uid="uid://boephgblmcbri" path="res://assets/itens/lixeiraperto.png" id="1_68gv6"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f6m85"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="3_u3ttn"]
 [ext_resource type="Texture2D" uid="uid://cewmc5jdegb7p" path="res://assets/itens/lixeirapertoaberta.png" id="4_f6m85"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="5_u3ttn"]
+[ext_resource type="Script" uid="uid://x00be8xye3xh" path="res://scripts/verificador_senha.gd" id="6_ppgjm"]
+[ext_resource type="Script" uid="uid://c81pj0ipgvja1" path="res://scripts/digitoBotao.gd" id="7_q2nbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bx6j"]
 size = Vector2(434.5, 219)
 
-[node name="Zoom Lixeira" type="Node2D"]
+[node name="Zoom Lixeira" type="Node2D" unique_id=2018230983]
 
-[node name="back" type="Sprite2D" parent="."]
+[node name="back" type="Sprite2D" parent="." unique_id=983804472]
 position = Vector2(575.5, 326.5)
 scale = Vector2(0.59739584, 0.6064815)
 texture = ExtResource("1_68gv6")
 
-[node name="SetaEsquerda" parent="." instance=ExtResource("2_f6m85")]
+[node name="SetaEsquerda" parent="." unique_id=1512138693 instance=ExtResource("2_f6m85")]
 position = Vector2(215, 142)
 destino_cena = "uid://cxhjpnc7drrok"
 
-[node name="BotaoConfig" parent="." instance=ExtResource("3_u3ttn")]
+[node name="lixeiraAberta" type="Sprite2D" parent="." unique_id=435469066]
+visible = false
+position = Vector2(575.5, 326.5)
+scale = Vector2(0.59739584, 0.6064815)
+texture = ExtResource("4_f6m85")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2005439593]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=66957323]
+position = Vector2(575.75, 344.5)
+shape = SubResource("RectangleShape2D_8bx6j")
+
+[node name="Escuro" parent="." unique_id=1322762046 instance=ExtResource("5_u3ttn")]
+
+[node name="BotaoConfig" parent="." unique_id=126855068 instance=ExtResource("3_u3ttn")]
 offset_left = 65.0
 offset_top = 12.999999
 offset_right = 3231.6665
 offset_bottom = 1681.0
 
-[node name="lixeiraAberta" type="Sprite2D" parent="."]
-position = Vector2(575.5, 326.5)
-scale = Vector2(0.59739584, 0.6064815)
-texture = ExtResource("4_f6m85")
+[node name="PainelSenha" type="Control" parent="." unique_id=22358648]
+modulate = Color(2.208641, 0.00014732288, 1.5211378, 1)
+self_modulate = Color(9.313816, 5.0880766, 7.62352, 1)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 530.0
+offset_top = 362.0
+offset_right = 763.6198
+offset_bottom = 413.03662
+rotation = -0.00867847
+script = ExtResource("6_ppgjm")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Digito1" type="TextureButton" parent="PainelSenha" unique_id=1960231969]
+layout_mode = 0
+offset_left = 23.042528
+offset_top = -4.8002205
+offset_right = 53.545547
+offset_bottom = 31.914074
+scale = Vector2(1.2780716, 1.2780716)
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_q2nbw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(575.75, 344.5)
-shape = SubResource("RectangleShape2D_8bx6j")
+[node name="Digito2" type="TextureButton" parent="PainelSenha" unique_id=1327070528]
+layout_mode = 0
+offset_left = 76.3833
+offset_top = -4.279497
+offset_right = 109.8689
+offset_bottom = 35.720505
+scale = Vector2(1.3390834, 1.3390834)
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_q2nbw")
 
-[node name="Escuro" parent="." instance=ExtResource("5_u3ttn")]
+[node name="Digito3" type="TextureButton" parent="PainelSenha" unique_id=1332181175]
+layout_mode = 0
+offset_left = 125.43868
+offset_top = -3.8542593
+offset_right = 155.91974
+offset_bottom = 36.14574
+scale = Vector2(1.3886526, 1.3886526)
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_q2nbw")
 
-[connection signal="input_event" from="Area2D" to="SetaEsquerda" method="_on_Lixeira_input_event"]
+[node name="Digito4" type="TextureButton" parent="PainelSenha" unique_id=273300306]
+layout_mode = 0
+offset_left = 187.55371
+offset_top = -5.420273
+offset_right = 219.38739
+offset_bottom = 34.579727
+scale = Vector2(1.3586309, 1.3586309)
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_q2nbw")

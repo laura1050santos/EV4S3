@@ -4,8 +4,6 @@ extends Control
 @onready var digit_buttons: Array[TextureButton] = [$Digito1, $Digito2, $Digito3, $Digito4]
 
 @onready var door = $Door
-@onready var fechado: Sprite2D = $".."
-@onready var aberto: Texture2D = preload("res://assets/cenarios/chao_aberto.png")
 
 func _ready() -> void:
 	print("iterando", digit_buttons.size())
@@ -25,8 +23,6 @@ func _check_password() -> void:
 		open_door()
 
 func open_door() -> void:
+	$"../lixeiraAberta".visible=true
 	print("Senha correta! Abrindo...")
-	fechado.texture = aberto
-	visible = false
-	#aberto.visible = true
-	#door.visible = false
+	$".".visible = false

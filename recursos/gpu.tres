@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="itemData" load_steps=3 format=3 uid="uid://c6c57q61ecqqe"]
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://c6c57q61ecqqe"]
 
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_012jw"]
 [ext_resource type="Texture2D" uid="uid://byu7rd62h4g1o" path="res://assets/itens/gpu.png" id="1_ds78f"]

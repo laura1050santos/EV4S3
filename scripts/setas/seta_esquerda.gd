@@ -18,11 +18,3 @@ func trocar():
 		print("erro ao carregar cena",erro)
 	else:
 		print("Erro")
-
-@onready var meu_sprite = $"../lixeiraAberta"
-func _on_Lixeira_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		GlobalSingleton.lixeiraAberta = !GlobalSingleton.lixeiraAberta
-		meu_sprite.visible = GlobalSingleton.lixeiraAberta
-		print("Ativado 3")
-	pass 
