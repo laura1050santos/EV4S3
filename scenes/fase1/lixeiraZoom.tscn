@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://djp3ua570moo4"]
+
+[ext_resource type="Texture2D" uid="uid://boephgblmcbri" path="res://assets/itens/lixeiraperto.png" id="1_68gv6"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f6m85"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="3_u3ttn"]
+[ext_resource type="Texture2D" uid="uid://cewmc5jdegb7p" path="res://assets/itens/lixeirapertoaberta.png" id="4_f6m85"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="5_u3ttn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bx6j"]
+size = Vector2(434.5, 219)
+
+[node name="Zoom Lixeira" type="Node2D"]
+
+[node name="back" type="Sprite2D" parent="."]
+position = Vector2(575.5, 326.5)
+scale = Vector2(0.59739584, 0.6064815)
+texture = ExtResource("1_68gv6")
+
+[node name="SetaEsquerda" parent="." instance=ExtResource("2_f6m85")]
+position = Vector2(215, 142)
+destino_cena = "uid://cxhjpnc7drrok"
+
+[node name="BotaoConfig" parent="." instance=ExtResource("3_u3ttn")]
+offset_left = 65.0
+offset_top = 12.999999
+offset_right = 3231.6665
+offset_bottom = 1681.0
+
+[node name="lixeiraAberta" type="Sprite2D" parent="."]
+position = Vector2(575.5, 326.5)
+scale = Vector2(0.59739584, 0.6064815)
+texture = ExtResource("4_f6m85")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(575.75, 344.5)
+shape = SubResource("RectangleShape2D_8bx6j")
+
+[node name="Escuro" parent="." instance=ExtResource("5_u3ttn")]
+
+[connection signal="input_event" from="Area2D" to="SetaEsquerda" method="_on_Lixeira_input_event"]

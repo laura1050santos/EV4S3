@@ -9,7 +9,7 @@ var enigma_luz_resolvido= false
 var gaveta_1 = false # teste da gaveta do aquario
 var gaveta_2 = false
 var gaveta_3 = false
-
+var lixeiraAberta = false
 # Função para registrar um item novo no mundo
 var holder := Node.new()
 

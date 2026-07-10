@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://dmhce3kfm14ep"]
+[gd_scene load_steps=13 format=3 uid="uid://dmhce3kfm14ep"]
 
 [ext_resource type="Script" uid="uid://bjr5kdtakbu3x" path="res://scripts/salas_scripts/cena_chao.gd" id="1_33jt1"]
 [ext_resource type="Texture2D" uid="uid://c6vqff80jctae" path="res://assets/cenarios/chao.png" id="1_61tdm"]
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="1_ew8tq"]
-[ext_resource type="Script" uid="uid://x00be8xye3xh" path="res://scenes/fase1/verificador_senha.gd" id="3_l3lf0"]
+[ext_resource type="Script" uid="uid://x00be8xye3xh" path="res://scripts/verificador_senha.gd" id="3_l3lf0"]
 [ext_resource type="Script" uid="uid://c81pj0ipgvja1" path="res://scripts/digitoBotao.gd" id="4_l3lf0"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="4_p12nd"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="5_61tdm"]
 [ext_resource type="Texture2D" uid="uid://22662h0m8fq2" path="res://assets/cartas/mensagem_alcapao.png" id="8_la3ws"]
-[ext_resource type="Script" uid="uid://ce00dwtgkmavc" path="res://scenes/fase1/viewMensagem.gd" id="9_vl7g8"]
-[ext_resource type="Script" uid="uid://by0kllm5dyvw" path="res://scenes/fase1/viewDifMensagem.gd" id="10_rooau"]
+[ext_resource type="Script" uid="uid://ce00dwtgkmavc" path="res://scripts/viewMensagem.gd" id="9_vl7g8"]
+[ext_resource type="Script" uid="uid://by0kllm5dyvw" path="res://scripts/viewDifMensagem.gd" id="10_rooau"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57qmd"]
 radius = 58.830048
@@ -18,17 +18,17 @@ height = 175.37756
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4gre"]
 size = Vector2(350.78333, 426.10623)
 
-[node name="CenaChao" type="Node2D" unique_id=64604598]
+[node name="CenaChao" type="Node2D"]
 script = ExtResource("1_33jt1")
 
-[node name="setaCima" parent="." unique_id=106619735 instance=ExtResource("1_ew8tq")]
+[node name="setaCima" parent="." instance=ExtResource("1_ew8tq")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1703706985]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(580.00006, 326.00003)
 scale = Vector2(0.6074074, 0.6074074)
 texture = ExtResource("1_61tdm")
 
-[node name="PainelSenha" type="Control" parent="Sprite2D" unique_id=242366481]
+[node name="PainelSenha" type="Control" parent="Sprite2D"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 44.45117
@@ -38,7 +38,7 @@ offset_bottom = 202.5
 rotation = -0.00867847
 script = ExtResource("3_l3lf0")
 
-[node name="Digito1" type="TextureButton" parent="Sprite2D/PainelSenha" unique_id=1343093530]
+[node name="Digito1" type="TextureButton" parent="Sprite2D/PainelSenha"]
 layout_mode = 0
 offset_left = 9.877677
 offset_top = 0.085724354
@@ -49,7 +49,7 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_l3lf0")
 
-[node name="Digito2" type="TextureButton" parent="Sprite2D/PainelSenha" unique_id=2030758276]
+[node name="Digito2" type="TextureButton" parent="Sprite2D/PainelSenha"]
 layout_mode = 0
 offset_left = 87.28139
 offset_top = -2.5353193
@@ -60,7 +60,7 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_l3lf0")
 
-[node name="Digito3" type="TextureButton" parent="Sprite2D/PainelSenha" unique_id=1932684875]
+[node name="Digito3" type="TextureButton" parent="Sprite2D/PainelSenha"]
 layout_mode = 0
 offset_left = 167.96336
 offset_top = -3.4815087
@@ -71,7 +71,7 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_l3lf0")
 
-[node name="Digito4" type="TextureButton" parent="Sprite2D/PainelSenha" unique_id=1440993265]
+[node name="Digito4" type="TextureButton" parent="Sprite2D/PainelSenha"]
 layout_mode = 0
 offset_left = 240.39966
 offset_top = -2.852857
@@ -82,32 +82,32 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_l3lf0")
 
-[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("4_p12nd")]
+[node name="Escuro" parent="." instance=ExtResource("4_p12nd")]
 
-[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("5_61tdm")]
+[node name="BotaoConfig" parent="." instance=ExtResource("5_61tdm")]
 
-[node name="Mensagem" type="Area2D" parent="." unique_id=1664485397]
+[node name="Mensagem" type="Area2D" parent="."]
 script = ExtResource("9_vl7g8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mensagem" unique_id=872721515]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mensagem"]
 visible = false
 position = Vector2(750, 107.00002)
 rotation = -0.79219186
 shape = SubResource("CapsuleShape2D_57qmd")
 
-[node name="Node" type="Node" parent="." unique_id=1301739886]
+[node name="Node" type="Node" parent="."]
 
-[node name="mensagem" type="Sprite2D" parent="Node" unique_id=821823027]
+[node name="mensagem" type="Sprite2D" parent="Node"]
 visible = false
 position = Vector2(584.00006, 300.00003)
 rotation = 0.1569194
 scale = Vector2(0.2925, 0.2925)
 texture = ExtResource("8_la3ws")
 
-[node name="Area2D" type="Area2D" parent="Node" unique_id=1843071217]
+[node name="Area2D" type="Area2D" parent="Node"]
 script = ExtResource("10_rooau")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D" unique_id=1329452997]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D"]
 visible = false
 position = Vector2(584.361, 301.0951)
 rotation = 0.14787108
