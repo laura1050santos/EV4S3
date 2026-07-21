@@ -21,7 +21,7 @@ texture = ExtResource("1_5rsd2")
 
 [node name="SetaEsquerda" parent="." unique_id=616059842 instance=ExtResource("3_jowjx")]
 position = Vector2(217, 183)
-destino_cena = "uid://6mwfstbrx3wj"
+destino_cena = "uid://cxhjpnc7drrok"
 
 [node name="BotaoConfig" parent="SetaEsquerda" unique_id=1223313343 instance=ExtResource("5_2npeh")]
 offset_left = -142.0

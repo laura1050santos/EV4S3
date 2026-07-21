@@ -9,14 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="7_o2bnt"]
 [ext_resource type="Script" uid="uid://cu1drk2c4rf01" path="res://scripts/salas_scripts/zoomBuraco.gd" id="8_cuvsr"]
 [ext_resource type="Texture2D" uid="uid://bf67u7bss8rn8" path="res://assets/cenarios/gavetas/gaveta1_aquario.png" id="9_b4mbd"]
+[ext_resource type="Texture2D" uid="uid://cdmtvkopmbmcx" path="res://assets/cenarios/BuracoZommAberto2.png" id="9_m8iw3"]
 [ext_resource type="Script" uid="uid://c8vk8nii61b40" path="res://scripts/salas_scripts/objetos/gaveta.gd" id="10_uf1xn"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="11_uf1xn"]
 [ext_resource type="Texture2D" uid="uid://b4ay7iu76t0ls" path="res://assets/cenarios/gavetas/gaveta2_aquario.png" id="12_htmuf"]
 [ext_resource type="Texture2D" uid="uid://dyk1hlvw8bxjg" path="res://assets/cenarios/gavetas/gaveta3_aquario.png" id="13_nfbrq"]
 [ext_resource type="Script" uid="uid://bj13gcn4b2xmb" path="res://scenes/fase1/lixeiraZoom.gd" id="14_isxgw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nco2w"]
-size = Vector2(103, 94)
 
 [sub_resource type="GDScript" id="GDScript_htmuf"]
 script/source = "extends Area2D
@@ -47,6 +45,9 @@ size = Vector2(265.41275, 65.55234)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8iw3"]
 size = Vector2(250.5, 116)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nco2w"]
+size = Vector2(103, 94)
+
 [node name="Sul" type="Node2D" unique_id=1731487183]
 script = ExtResource("1_ls4hi")
 
@@ -56,11 +57,9 @@ scale = Vector2(0.60052085, 0.6018519)
 texture = ExtResource("2_3wuve")
 
 [node name="SetaDireita" parent="." unique_id=1141201900 instance=ExtResource("1_1234l")]
-visible = false
 destino_cena = "uid://du3u5e5blrq5k"
 
 [node name="SetaEsquerda" parent="." unique_id=1482010499 instance=ExtResource("2_02bjx")]
-visible = false
 destino_cena = "uid://dqttd76hew5ag"
 
 [node name="setaCima" parent="." unique_id=1767603792 instance=ExtResource("5_vfh6l")]
@@ -72,15 +71,6 @@ visible = false
 destino_cena = "uid://dmhce3kfm14ep"
 
 [node name="Escuro" parent="." unique_id=1675831160 instance=ExtResource("7_o2bnt")]
-
-[node name="buraco" type="Area2D" parent="." unique_id=886878941]
-script = ExtResource("8_cuvsr")
-destino_cena = "uid://6mwfstbrx3wj"
-
-[node name="colisaoBuraco" type="CollisionShape2D" parent="buraco" unique_id=1790577640]
-position = Vector2(614.5, 283)
-shape = SubResource("RectangleShape2D_nco2w")
-disabled = true
 
 [node name="Gaveta1Aquario" type="Sprite2D" parent="." unique_id=2015950540]
 visible = false
@@ -139,6 +129,21 @@ destino_cena = "uid://djp3ua570moo4"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lixeira/Area2D" unique_id=239772711]
 position = Vector2(447.75, 459)
 shape = SubResource("RectangleShape2D_m8iw3")
+
+[node name="buraco" type="Area2D" parent="." unique_id=886878941]
+script = ExtResource("8_cuvsr")
+destino_cena = "uid://4n7rpaymc5wm"
+
+[node name="colisaoBuraco" type="CollisionShape2D" parent="buraco" unique_id=1790577640]
+position = Vector2(614.5, 283)
+shape = SubResource("RectangleShape2D_nco2w")
+disabled = true
+
+[node name="BuracoZommAberto2" type="Sprite2D" parent="." unique_id=315709090]
+unique_name_in_owner = true
+position = Vector2(612, 288)
+scale = Vector2(0.118055575, 0.13098595)
+texture = ExtResource("9_m8iw3")
 
 [connection signal="pressed" from="BotaoConfig" to="." method="_on_botao_config_pressed"]
 [connection signal="input_event" from="GAVETA" to="." method="_on_gaveta2_input_event"]
