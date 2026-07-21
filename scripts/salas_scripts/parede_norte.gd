@@ -21,7 +21,6 @@ func _ready():
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event:
 		for info in GlobalSingleton.itens_no_mundo:
-			var nome_item = (info.get("data").item_name)
 			var recurso = load(info.get("data"))
 			var nome_item = recurso.item_name
 
