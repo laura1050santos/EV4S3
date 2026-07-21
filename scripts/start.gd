@@ -19,4 +19,5 @@ func _on_configuracao_pressed():
 
 
 func _on_continuar_pressed() -> void:
+	SaveManager.carregar()
 	pass # Replace with function body.

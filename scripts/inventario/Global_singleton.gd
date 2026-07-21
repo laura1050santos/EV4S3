@@ -1,5 +1,6 @@
 extends Node
 
+var ultima_cena = ""
 var itens_no_mundo = []
 var cenas_visitadas =[]
 var historico_cenas: Array[String] = []
@@ -22,11 +23,13 @@ func registrar_item(item_resource, posicao,nome_da_cena):
 	if item_resource:
 		var novo_item = {
 			"data": item_resource,
+			"data": item_resource.resource_path,
 			"pos": posicao,
 			"cena": nome_da_cena,
 			 # Guardamos em qual cena ele deve existir
 		}
 		itens_no_mundo.append(novo_item)
+		print(GlobalSingleton.itens_no_mundo)
 		
 func cena_ja_foi_registrada(nome_da_cena) -> bool:
 	# se a cena já foi carregada com os itens na posição inicia:
@@ -39,11 +42,16 @@ func registrar_cena_visitada(nome_da_cena):
 		
 #Função para remover quando for coletado
 func remover_item(item_data):
+	var caminho_item = item_data.resource_path
+	
 	for i in range(itens_no_mundo.size()):
 		if itens_no_mundo[i].data == item_data:
 			print(itens_no_mundo[i].data,item_data )
+		if itens_no_mundo[i].data == caminho_item:
+			print(itens_no_mundo[i].data, caminho_item)
 			itens_no_mundo.remove_at(i)
 			print(itens_no_mundo,item_data)
+			print(itens_no_mundo)
 			break
 			
 func registrar_transicao(adress_cena: String):
