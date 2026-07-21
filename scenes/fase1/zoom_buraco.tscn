@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6mwfstbrx3wj"]
+[gd_scene format=3 uid="uid://6mwfstbrx3wj"]
 
 [ext_resource type="Texture2D" uid="uid://bxkykb2n3jiut" path="res://assets/cenarios/buracozoomfechado.png" id="1_rrvqn"]
 [ext_resource type="Script" uid="uid://rpjqy53irs0w" path="res://scripts/salas_scripts/objetos/abrirBuraco.gd" id="2_ckdjj"]
@@ -9,28 +9,28 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrvqn"]
 size = Vector2(553, 454.5)
 
-[node name="zoomBuraco" type="Node2D"]
+[node name="zoomBuraco" type="Node2D" unique_id=1092653615]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1803424669]
 script = ExtResource("2_ckdjj")
 destino_cena = "uid://4n7rpaymc5wm"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1310600012]
 position = Vector2(569, 279.75)
 shape = SubResource("RectangleShape2D_rrvqn")
 
-[node name="Escuro" parent="." instance=ExtResource("3_tt6ou")]
+[node name="Escuro" parent="." unique_id=1622023453 instance=ExtResource("3_tt6ou")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2095848140]
 position = Vector2(573.75, 325)
 scale = Vector2(0.6002604, 0.59814805)
 texture = ExtResource("1_rrvqn")
 
-[node name="SetaEsquerda" parent="." instance=ExtResource("4_uftcy")]
+[node name="SetaEsquerda" parent="." unique_id=1108164942 instance=ExtResource("4_uftcy")]
 position = Vector2(214, 137)
 destino_cena = "uid://cxhjpnc7drrok"
 
-[node name="BotaoConfig" parent="SetaEsquerda" instance=ExtResource("5_yhfr0")]
+[node name="BotaoConfig" parent="SetaEsquerda" unique_id=1055388252 instance=ExtResource("5_yhfr0")]
 offset_left = -127.999985
 offset_top = -131.99998
 offset_right = 3038.6665

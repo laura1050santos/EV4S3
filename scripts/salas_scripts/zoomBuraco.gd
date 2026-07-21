@@ -8,6 +8,8 @@ func _ready():
 	self.input_event.connect(_inout_event)
 func _inout_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		%BuracoZommAberto2.visible = true
+		%BuracoZommAberto2.z_index = 1
 		trocar()
 func trocar():
 	if destino_cena==null or destino_cena=="":
