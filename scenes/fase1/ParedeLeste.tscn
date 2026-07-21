@@ -24,9 +24,11 @@ destino_cena = "uid://cxhjpnc7drrok"
 destino_cena = "uid://djryii8ewlak6"
 
 [node name="setaCima" parent="." unique_id=1498824335 instance=ExtResource("5_xd0od")]
+visible = false
 destino_cena = "uid://dcjm6p1qyhtmg"
 
 [node name="SetaBaixo" parent="." unique_id=1229194195 instance=ExtResource("6_k8ayk")]
+visible = false
 destino_cena = "uid://dmhce3kfm14ep"
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("7_7nwwv")]

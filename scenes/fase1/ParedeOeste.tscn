@@ -9,9 +9,9 @@
 [ext_resource type="Script" uid="uid://bt3l2r4lm5ee3" path="res://scripts/zoom_tele.gd" id="7_a2k3a"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="8_c7vib"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="9_ck5el"]
-[ext_resource type="Script" uid="uid://b26tofysv2qud" path="res://scenes/fase1/viewCartaRelogio.gd" id="10_x71yn"]
+[ext_resource type="Script" uid="uid://b26tofysv2qud" path="res://scripts/viewCartaRelogio.gd" id="10_x71yn"]
 [ext_resource type="Texture2D" uid="uid://cp0lqyeo6ei2v" path="res://assets/cartas/carta_relogio.png" id="11_x71yn"]
-[ext_resource type="Script" uid="uid://lu8c4l2fgrpq" path="res://scenes/fase1/viewDifCartaRelogio.gd" id="12_k4gre"]
+[ext_resource type="Script" uid="uid://lu8c4l2fgrpq" path="res://scripts/viewDifCartaRelogio.gd" id="12_k4gre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4mq"]
 size = Vector2(90.5, 48)
@@ -39,9 +39,11 @@ position = Vector2(611.75, 456)
 shape = SubResource("RectangleShape2D_7a4mq")
 
 [node name="SetaBaixo" parent="." unique_id=789411554 instance=ExtResource("6_7a4mq")]
+visible = false
 destino_cena = "uid://dmhce3kfm14ep"
 
 [node name="setaCima" parent="." unique_id=2008441482 instance=ExtResource("5_ryv08")]
+visible = false
 destino_cena = "uid://dcjm6p1qyhtmg"
 
 [node name="SetaEsquerda" parent="." unique_id=627325203 instance=ExtResource("2_02577")]

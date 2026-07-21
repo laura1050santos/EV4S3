@@ -141,6 +141,7 @@ disabled = true
 
 [node name="BuracoZommAberto2" type="Sprite2D" parent="." unique_id=315709090]
 unique_name_in_owner = true
+visible = false
 position = Vector2(612, 288)
 scale = Vector2(0.118055575, 0.13098595)
 texture = ExtResource("9_m8iw3")

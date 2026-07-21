@@ -6,7 +6,6 @@ class_name itemData
 @export var ativo_icon: Texture2D
 @export var item_ativo: bool
 
-
 static func ativar_luz(item: itemData, cena: Node, pos: Vector2):
 	if item.item_ativo == true:
 		var root = cena.get_tree().root
