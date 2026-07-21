@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setaCima.tscn" id="5_xd0od"]
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setaBaixo.tscn" id="6_k8ayk"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="7_7nwwv"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_cvcdw"]
+[ext_resource type="Script" uid="uid://ckml0tt65svo3" path="res://scripts/salas_scripts/zoom_computador.gd" id="9_ola1g"]
+>>>>>>> Stashed changes
 
 [node name="leste" type="Node2D" unique_id=1514872956]
 script = ExtResource("1_2litd")
@@ -29,3 +34,15 @@ destino_cena = "uid://dcjm6p1qyhtmg"
 destino_cena = "uid://dmhce3kfm14ep"
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("7_7nwwv")]
+<<<<<<< Updated upstream
+=======
+
+[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_cvcdw")]
+
+[node name="computador" type="Area2D" parent="." unique_id=1973632617]
+script = ExtResource("9_ola1g")
+destino_cena = "uid://xniwyp7xb6eg"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="computador" unique_id=1077300239]
+polygon = PackedVector2Array(404, 278, 404, 379, 449, 378, 463, 402, 442, 401, 438, 409, 410, 409, 402, 417, 402, 424, 554, 423, 554, 417, 546, 411, 513, 410, 507, 400, 487, 403, 504, 379, 551, 379, 551, 278)
+>>>>>>> Stashed changes

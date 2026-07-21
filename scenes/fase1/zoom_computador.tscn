@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://xniwyp7xb6eg"]
+
+[ext_resource type="Texture2D" uid="uid://dkav75n7cohwg" path="res://assets/cenarios/camada_computador_ligado.png" id="1_1irro"]
+[ext_resource type="Texture2D" uid="uid://62pw7npo3tu7" path="res://assets/cenarios/computador_desligado.png" id="1_erne8"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_0tm21"]
+[ext_resource type="Texture2D" uid="uid://dhxdl6pxrdv8m" path="res://assets/telas_pc/tela_inicial.png" id="2_5pd7j"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0tm21"]
+
+[node name="ComputadorCena" type="Node2D" unique_id=248191768]
+
+[node name="Computador" type="Sprite2D" parent="." unique_id=1171068181]
+position = Vector2(575.5, 324)
+scale = Vector2(0.602, 0.602)
+texture = ExtResource("1_1irro")
+
+[node name="pc_AreaDeTrabalho" type="Sprite2D" parent="Computador" unique_id=2103907628]
+z_index = 1
+texture = ExtResource("2_5pd7j")
+
+[node name="tela_desligada" type="Sprite2D" parent="Computador" unique_id=843532017]
+texture = ExtResource("1_erne8")
+
+[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("2_0tm21")]
+destino_cena = "uid://dqttd76hew5ag"
+
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_0tm21")]
