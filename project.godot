@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 Inventario="*res://scenes/inventario/inventario.tscn"
 GlobalSingleton="*res://scripts/inventario/Global_singleton.gd"
 GlobalWorldEnvironment="*res://scenes/world_environment.tscn"
+SaveManager="*res://scripts/saveManager.gd"
 
 [display]
 

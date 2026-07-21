@@ -3,6 +3,7 @@ var lanterna_node: Node = null
 var node = preload("res://scenes/inventario/worldItem.tscn")
 
 func _ready():
+	GlobalSingleton.ultima_cena = get_tree().current_scene.scene_file_path
 	var configMenu = get_node("BotaoConfig/configuracao")
 	configMenu.volMax.connect(ativar_enigma_som)
 

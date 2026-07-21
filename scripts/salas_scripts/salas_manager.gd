@@ -19,19 +19,23 @@ func iniciar_itens_cena(nome_desta_cena, itens_inciais):
 	#GlobalSingleton.registrar_transicao(scene_file_path) travou de rodar com esse erro:
 	# Invalid call. Nonexistent function 'registrar_transicao' in base 'Node (Global_singleton.gd)'. 
 
-func spawnar_itens(recurso, posicao):
+func spawnar_itens(caminho_recurso, posicao):
+
+	var recurso = load(caminho_recurso)
+
 	var node = preload("res://scenes/inventario/worldItem.tscn").instantiate()
+
 	node.set_meta("item_data", recurso)
-	
+
 	if recurso.item_ativo:
 		node.texture = recurso.ativo_icon
 	else:
-		node.texture = recurso.icon 
-	
+		node.texture = recurso.icon
+
 	add_child(node)
 	node.global_position = posicao
-	ativar_item_ao_resconstruir(recurso,node)
 
+	ativar_item_ao_resconstruir(recurso,node)
 	
 func ativar_item_ao_resconstruir(item,node):
 	match item.item_name:

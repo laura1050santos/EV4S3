@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://djryii8ewlak6"]
+[gd_scene load_steps=10 format=3 uid="uid://djryii8ewlak6"]
 
 [ext_resource type="Script" uid="uid://cxrm6pnl5iapo" path="res://scripts/salas_scripts/parede_norte.gd" id="1_fqgx5"]
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="1_x2vm1"]
@@ -12,36 +12,36 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
 size = Vector2(371.2891, 733.0908)
 
-[node name="Norte" type="Node2D" unique_id=295984050]
+[node name="Norte" type="Node2D"]
 script = ExtResource("1_fqgx5")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=295326469]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(576, 334.00003)
 scale = Vector2(0.5979167, 0.6111111)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1326507331]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 63.818237)
 shape = SubResource("RectangleShape2D_fqgx5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=139906075]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 325.45648)
 scale = Vector2(0.6035101, 0.60100657)
 texture = ExtResource("2_lnbbm")
 
-[node name="SetaEsquerda" parent="." unique_id=1488709997 instance=ExtResource("6_2l4tn")]
+[node name="SetaEsquerda" parent="." instance=ExtResource("6_2l4tn")]
 destino_cena = "uid://du3u5e5blrq5k"
 
-[node name="setaCima" parent="." unique_id=110505315 instance=ExtResource("6_26mac")]
+[node name="setaCima" parent="." instance=ExtResource("6_26mac")]
 destino_cena = "uid://dcjm6p1qyhtmg"
 
-[node name="SetaBaixo" parent="." unique_id=1763738384 instance=ExtResource("5_uinfo")]
+[node name="SetaBaixo" parent="." instance=ExtResource("5_uinfo")]
 destino_cena = "uid://dmhce3kfm14ep"
 
-[node name="SetaDireita" parent="." unique_id=1539331774 instance=ExtResource("1_x2vm1")]
+[node name="SetaDireita" parent="." instance=ExtResource("1_x2vm1")]
 destino_cena = "uid://dqttd76hew5ag"
 
-[node name="Escuro" parent="." unique_id=1612585862 instance=ExtResource("2_26mac")]
+[node name="Escuro" parent="." instance=ExtResource("2_26mac")]
 
-[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_y3a53")]
+[node name="BotaoConfig" parent="." instance=ExtResource("8_y3a53")]
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

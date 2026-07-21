@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://du3u5e5blrq5k"]
+[gd_scene load_steps=16 format=3 uid="uid://du3u5e5blrq5k"]
 
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="1_gm2vv"]
 [ext_resource type="Script" uid="uid://4h5mibudxj5i" path="res://scripts/salas_scripts/parede_oeste.gd" id="1_r4qe8"]
@@ -9,9 +9,9 @@
 [ext_resource type="Script" uid="uid://bt3l2r4lm5ee3" path="res://scripts/zoom_tele.gd" id="7_a2k3a"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="8_c7vib"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="9_ck5el"]
-[ext_resource type="Script" uid="uid://b26tofysv2qud" path="res://scenes/fase1/viewCartaRelogio.gd" id="10_x71yn"]
+[ext_resource type="Script" uid="uid://b26tofysv2qud" path="res://scripts/viewCartaRelogio.gd" id="10_x71yn"]
 [ext_resource type="Texture2D" uid="uid://cp0lqyeo6ei2v" path="res://assets/cartas/carta_relogio.png" id="11_x71yn"]
-[ext_resource type="Script" uid="uid://lu8c4l2fgrpq" path="res://scenes/fase1/viewDifCartaRelogio.gd" id="12_k4gre"]
+[ext_resource type="Script" uid="uid://lu8c4l2fgrpq" path="res://scripts/viewDifCartaRelogio.gd" id="12_k4gre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4mq"]
 size = Vector2(90.5, 48)
@@ -22,60 +22,60 @@ size = Vector2(72.17839, 49.18225)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(34.234364, 21.428217)
 
-[node name="Oeste" type="Node2D" unique_id=1991184608]
+[node name="Oeste" type="Node2D"]
 script = ExtResource("1_r4qe8")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=348728898]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576.0161, 325.12503)
 scale = Vector2(0.60102487, 0.6016204)
 texture = ExtResource("2_a2k3a")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2021680412]
+[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("7_a2k3a")
 destino_cena = "uid://bt40n0me6w8e5"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1441696459]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(611.75, 456)
 shape = SubResource("RectangleShape2D_7a4mq")
 
-[node name="SetaBaixo" parent="." unique_id=789411554 instance=ExtResource("6_7a4mq")]
+[node name="SetaBaixo" parent="." instance=ExtResource("6_7a4mq")]
 destino_cena = "uid://dmhce3kfm14ep"
 
-[node name="setaCima" parent="." unique_id=2008441482 instance=ExtResource("5_ryv08")]
+[node name="setaCima" parent="." instance=ExtResource("5_ryv08")]
 destino_cena = "uid://dcjm6p1qyhtmg"
 
-[node name="SetaEsquerda" parent="." unique_id=627325203 instance=ExtResource("2_02577")]
+[node name="SetaEsquerda" parent="." instance=ExtResource("2_02577")]
 destino_cena = "uid://cxhjpnc7drrok"
 
-[node name="SetaDireita" parent="." unique_id=1058934518 instance=ExtResource("1_gm2vv")]
+[node name="SetaDireita" parent="." instance=ExtResource("1_gm2vv")]
 destino_cena = "uid://djryii8ewlak6"
 
-[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("8_c7vib")]
+[node name="Escuro" parent="." instance=ExtResource("8_c7vib")]
 
-[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("9_ck5el")]
+[node name="BotaoConfig" parent="." instance=ExtResource("9_ck5el")]
 
-[node name="Carta" type="Area2D" parent="." unique_id=1990951888]
+[node name="Carta" type="Area2D" parent="."]
 script = ExtResource("10_x71yn")
 
-[node name="CollisionShape2d2" type="CollisionShape2D" parent="Carta" unique_id=165143711]
+[node name="CollisionShape2d2" type="CollisionShape2D" parent="Carta"]
 position = Vector2(739, 458.00003)
 rotation = -0.19249408
 scale = Vector2(1.2408752, 1.1820033)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Node" type="Node" parent="." unique_id=1704967578]
+[node name="Node" type="Node" parent="."]
 
-[node name="carta_relogio2" type="Sprite2D" parent="Node" unique_id=168693858]
+[node name="carta_relogio2" type="Sprite2D" parent="Node"]
 visible = false
 position = Vector2(572, 339.52142)
 rotation = -0.08943273
 scale = Vector2(0.2553935, 0.2553935)
 texture = ExtResource("11_x71yn")
 
-[node name="Area2D" type="Area2D" parent="Node" unique_id=1633289000]
+[node name="Area2D" type="Area2D" parent="Node"]
 script = ExtResource("12_k4gre")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D" unique_id=865280199]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D"]
 position = Vector2(572.74854, 339.18814)
 rotation = -0.09379309
 scale = Vector2(14.224794, 14.224794)
