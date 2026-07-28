@@ -16,17 +16,14 @@ func _ready():
 	gaveta1_sprite.visible = GlobalSingleton.gaveta_1
 	gaveta2_sprite.visible = GlobalSingleton.gaveta_2
 	
-	
 @onready var gaveta1_sprite = $Gaveta1Aquario
 @onready var gaveta2_sprite = $gaveta2
 @onready var gaveta3_sprite = $gaveta_3
-
 func _on_gaveta_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		GlobalSingleton.gaveta_1 = !GlobalSingleton.gaveta_1
 		gaveta1_sprite.visible = GlobalSingleton.gaveta_1
 		print("Ativado 1")
-
 
 func _on_gaveta2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -44,12 +41,13 @@ func _on_gaveta_3_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 			
 func _input(event: InputEvent):
 	if get_tree().root.has_node("lanterna"):
+		$Sprite2D.texture = preload( "res://assets/cenarios/salaaquarioseta.png")
 		get_node("buraco/colisaoBuraco").disabled = false
+		
 		
 func ativar_enigma_som():
 	print("volume maximo \nquebrar o aquario")
 	var existe = false
-
 	for info in GlobalSingleton.itens_no_mundo:
 		if info["data"].item_name == "LampadaQuebrada":
 			existe = true
@@ -75,7 +73,3 @@ func ativar_enigma_som():
 		add_child(item)
 		
 		GlobalSingleton.registrar_item(preload("res://recursos/LampadaQuebrada.tres"),Vector2(670,375),self.name)
-# Replace with function body.
-
-
- # Replace with function body.

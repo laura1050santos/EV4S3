@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="7_o2bnt"]
 [ext_resource type="Script" uid="uid://cu1drk2c4rf01" path="res://scripts/salas_scripts/zoomBuraco.gd" id="8_cuvsr"]
 [ext_resource type="Texture2D" uid="uid://bf67u7bss8rn8" path="res://assets/cenarios/gavetas/gaveta1_aquario.png" id="9_b4mbd"]
-[ext_resource type="Texture2D" uid="uid://cdmtvkopmbmcx" path="res://assets/cenarios/BuracoZommAberto2.png" id="9_m8iw3"]
 [ext_resource type="Script" uid="uid://c8vk8nii61b40" path="res://scripts/salas_scripts/objetos/gaveta.gd" id="10_uf1xn"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="11_uf1xn"]
 [ext_resource type="Texture2D" uid="uid://b4ay7iu76t0ls" path="res://assets/cenarios/gavetas/gaveta2_aquario.png" id="12_htmuf"]
@@ -50,11 +49,6 @@ size = Vector2(103, 94)
 
 [node name="Sul" type="Node2D" unique_id=1731487183]
 script = ExtResource("1_ls4hi")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2129781235]
-position = Vector2(575.50006, 323.00003)
-scale = Vector2(0.60052085, 0.6018519)
-texture = ExtResource("2_3wuve")
 
 [node name="SetaDireita" parent="." unique_id=1141201900 instance=ExtResource("1_1234l")]
 destino_cena = "uid://du3u5e5blrq5k"
@@ -139,11 +133,10 @@ position = Vector2(614.5, 283)
 shape = SubResource("RectangleShape2D_nco2w")
 disabled = true
 
-[node name="BuracoZommAberto2" type="Sprite2D" parent="." unique_id=315709090]
-unique_name_in_owner = true
-position = Vector2(612, 288)
-scale = Vector2(0.118055575, 0.13098595)
-texture = ExtResource("9_m8iw3")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2129781235]
+position = Vector2(575.50006, 323.00003)
+scale = Vector2(0.60052085, 0.6018519)
+texture = ExtResource("2_3wuve")
 
 [connection signal="pressed" from="BotaoConfig" to="." method="_on_botao_config_pressed"]
 [connection signal="input_event" from="GAVETA" to="." method="_on_gaveta2_input_event"]
