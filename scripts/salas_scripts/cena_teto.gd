@@ -31,6 +31,8 @@ func arrumar_posicao(lst):
 			sl.position =  Vector2(575, 273)
 			if a == "flan" and has_node("lampadaNova"):
 				var flan = get_node("flan")
+				var lampada = get_node("lampadaNova")
+				lampada.texture = preload("res://assets/itens/lampadatetoacesa.png")
 				flan.z_index= 1
 	
 func lampada_arrumada():
