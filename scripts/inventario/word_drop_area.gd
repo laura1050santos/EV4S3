@@ -99,7 +99,7 @@ func _input(event: InputEvent) -> void:
 		if target != null:
 			usar_item(target.item, target.node)
 		
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.double_click and event.pressed:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var result = verify()
 		if result == null:
 			return
