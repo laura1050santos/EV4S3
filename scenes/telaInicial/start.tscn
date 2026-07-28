@@ -109,6 +109,10 @@ sprite_frames = SubResource("SpriteFrames_u80x2")
 
 [node name="BotaoConfig" parent="." unique_id=1243335896 instance=ExtResource("9_v03cv")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 3166.6665
+offset_bottom = 1668.0
 
 [connection signal="pressed" from="background/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="background/continuar" to="." method="_on_continuar_pressed"]
