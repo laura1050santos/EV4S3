@@ -10,6 +10,7 @@ var gaveta_1 = false # teste da gaveta do aquario
 var gaveta_2 = false
 var gaveta_3 = false
 var lixeiraAberta = false
+var volume = 0
 # Função para registrar um item novo no mundo
 var holder := Node.new()
 

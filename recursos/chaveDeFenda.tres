@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://0qank6056dkw"]
+
+[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_t4jw1"]
+[ext_resource type="Texture2D" uid="uid://cdljscjrdlfco" path="res://assets/itens/chavedefendagrande.png" id="1_upefg"]
+
+[resource]
+script = ExtResource("1_t4jw1")
+item_name = "chave de fenda"
+icon = ExtResource("1_upefg")
+inventory_icon = ExtResource("1_upefg")
+ativo_icon = ExtResource("1_upefg")
+metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

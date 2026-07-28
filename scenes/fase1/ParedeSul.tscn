@@ -72,8 +72,6 @@ position = Vector2(576, 326.00003)
 scale = Vector2(0.5923337, 0.5756894)
 texture = ExtResource("9_b4mbd")
 
-[node name="BotaoConfig" parent="." unique_id=413660545 instance=ExtResource("11_uf1xn")]
-
 [node name="gaveta2" type="Sprite2D" parent="." unique_id=1462864133]
 position = Vector2(589.00006, 325)
 scale = Vector2(0.55677074, 0.60092586)
@@ -138,7 +136,9 @@ position = Vector2(575.50006, 323.00003)
 scale = Vector2(0.60052085, 0.6018519)
 texture = ExtResource("2_3wuve")
 
-[connection signal="pressed" from="BotaoConfig" to="." method="_on_botao_config_pressed"]
+[node name="BotaoConfig" parent="." unique_id=413660545 instance=ExtResource("11_uf1xn")]
+
 [connection signal="input_event" from="GAVETA" to="." method="_on_gaveta2_input_event"]
 [connection signal="input_event" from="gaveta" to="." method="_on_gaveta_input_event"]
 [connection signal="input_event" from="gaveta3" to="." method="_on_gaveta_3_input_event"]
+[connection signal="pressed" from="BotaoConfig" to="." method="_on_botao_config_pressed"]

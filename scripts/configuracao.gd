@@ -3,6 +3,8 @@ signal volMax
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void: 
+	%Som.value = GlobalSingleton.volume
+	
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,6 +17,7 @@ func _on_close_requested() -> void:
 		  # Replace with function body.
 
 func _on_som_value_changed(value: float) -> void:
+	GlobalSingleton.volume = value
 	$Som/Label2.text = str(value)
 	if value == 100.0:
 		print("volume mais alto atingido")

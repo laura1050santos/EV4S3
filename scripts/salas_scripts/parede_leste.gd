@@ -9,6 +9,11 @@ func _ready():
 		"pos": Vector2(500, 550),
 		"cena": nome_desta_cena
 		},
+		{
+		"item": preload("res://recursos/chaveDeFenda.tres"),
+		"pos": Vector2(770, 470),
+		"cena": nome_desta_cena
+		},
 #itens que começam na cena
 ]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)

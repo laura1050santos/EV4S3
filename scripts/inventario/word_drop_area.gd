@@ -55,38 +55,26 @@ func usar_item(item: itemData, node: Node):
 	item.item_ativo = !item.item_ativo
 	
 	var pai_da_luz = node 
-	
+	var lst = ["lanterna","chave de fenda"]
 	if item.item_ativo:
 		node.texture = item.ativo_icon
-		if item.item_name == "lanterna":
-			node.position = Vector2(750,590)
-			for i in GlobalSingleton.itens_no_mundo:
-				if i["data"].item_name == "lanterna":
-					GlobalSingleton.remover_item(i["data"])
-			itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
-			var root= get_tree().root
-			#excluir a instancia da lanterna da cena onde estava e no GlobalSingleton
-			node.name="lanterna"
-			node.reparent(root)
-			node.z_index = 1
+		for j in lst:
+			if item.item_name == j:
+				node.position = Vector2(750,590)
+				for i in GlobalSingleton.itens_no_mundo:
+					if i["data"].item_name == j :
+						GlobalSingleton.remover_item(i["data"])
+						node.name=j
+				itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
+				var root= get_tree().root
+				
+				node.reparent(root)
+				node.z_index = 1
 	else:
 
 		node.texture = item.icon
 		itemData.desligar_luz(item, pai_da_luz)
-		#var raiz = get_tree().root
-		#var lanterna:Node = raiz.get_node("lanterna")
-		#if lanterna:	
-					#var no = raiz.get_child(4)
-					#print(no)
-					#if no:
-						#print(no)
-						#raiz.remove_child(lanterna)
-						#no.add_child(lanterna)
-						#lanterna.z_index = 1
-						#
-						#print("Pai atual:", lanterna.get_parent())
-						#print("Nó encontrado:", no)
-						#GlobalSingleton.registrar_item("res://recursos/lanterna.tres",Vector2(750,590),no.name )
+	
 					#
 	for info in GlobalSingleton.itens_no_mundo:
 		if info.data == item:

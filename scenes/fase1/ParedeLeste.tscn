@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cjcf27vpnn2nw" path="res://scenes/setas/setaBaixo.tscn" id="6_k8ayk"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="7_7nwwv"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_cvcdw"]
+[ext_resource type="Texture2D" uid="uid://bmys2qttnwdyi" path="res://assets/cenarios/lixoPC.png" id="9_ola1g"]
 
 [node name="leste" type="Node2D" unique_id=1514872956]
 script = ExtResource("1_2litd")
@@ -32,3 +33,8 @@ destino_cena = "uid://dmhce3kfm14ep"
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("7_7nwwv")]
 
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_cvcdw")]
+
+[node name="LixoPc" type="Sprite2D" parent="." unique_id=744294945]
+position = Vector2(774.99994, 530.49994)
+scale = Vector2(0.67857176, 0.6850002)
+texture = ExtResource("9_ola1g")
