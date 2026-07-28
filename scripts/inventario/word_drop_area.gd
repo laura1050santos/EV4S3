@@ -1,5 +1,5 @@
 extends Control
-signal ativar_setas
+
 const WORLD_ITEM = preload("res://scenes/inventario/worldItem.tscn")
 func _ready():
 	
@@ -12,6 +12,7 @@ func _ready():
 
 		add_child(node)
 		node.global_position = info.pos
+
 func _notification(what):
 	# Quando um "Drag" começa no jogo, a gente ativa a área de drop
 	if what == NOTIFICATION_DRAG_BEGIN:
@@ -19,6 +20,7 @@ func _notification(what):
 	# Quando o "Drag" termina, a gente volta a ignorar
 	elif what == NOTIFICATION_DRAG_END:
 		mouse_filter = Control.MOUSE_FILTER_PASS
+
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true
 
@@ -62,8 +64,6 @@ func usar_item(item: itemData, node: Node):
 				if i["data"].item_name == "lanterna":
 					GlobalSingleton.remover_item(i["data"])
 			itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
-			ativar_setas.emit(true)
-
 			var root= get_tree().root
 			#excluir a instancia da lanterna da cena onde estava e no GlobalSingleton
 			node.name="lanterna"
