@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cmdvb6puyhbvx" path="res://scripts/salas_scripts/zoom_telePai.gd" id="1_vvp0m"]
 [ext_resource type="Texture2D" uid="uid://bg4fmgvnqceot" path="res://assets/cenarios/cena-telegrafo-inicial.png" id="1_xysmm"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f1w1o"]
+[ext_resource type="Script" uid="uid://2kq6ft3clmjt" path="res://scenes/fase1/view_Morse.gd" id="2_f4ryu"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0qusy"]
 [ext_resource type="Texture2D" uid="uid://d20n8oai8lwpd" path="res://assets/itens/botao traco.png" id="5_l7tr6"]
 [ext_resource type="Texture2D" uid="uid://bod0ysm358fa7" path="res://assets/itens/botao ponto pressionado.png" id="6_det3c"]
@@ -13,9 +14,24 @@
 [ext_resource type="Texture2D" uid="uid://1mio1inqgpvd" path="res://assets/itens/botao reset pressionado.png" id="9_ckquj"]
 [ext_resource type="Texture2D" uid="uid://56lgncvj1nqa" path="res://assets/itens/botao reset hoover.png" id="10_j0w4i"]
 [ext_resource type="Texture2D" uid="uid://b3diwuknh7iva" path="res://assets/itens/botao ponto.png" id="11_ckquj"]
+[ext_resource type="Texture2D" uid="uid://csr76qhcefp0p" path="res://assets/cartas/morse.png" id="14_757wu"]
+[ext_resource type="Script" uid="uid://c7abp8a3ygh35" path="res://scripts/DismorsePapel.gd" id="15_f4ryu"]
+[ext_resource type="Texture2D" uid="uid://cl1w72e785u6g" path="res://assets/cartas/codigo_morse.png" id="16_ukuqq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_757wu"]
+size = Vector2(1192.0795, 1449.505)
 
 [node name="zoomTele" type="Node2D" unique_id=1591257699]
 script = ExtResource("1_vvp0m")
+
+[node name="MorseAberto_area2d" type="Area2D" parent="." unique_id=1789903924]
+position = Vector2(419, 273)
+scale = Vector2(0.2525, 0.25249997)
+script = ExtResource("2_f4ryu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MorseAberto_area2d" unique_id=1832824042]
+position = Vector2(1.9799805, 7.9207764)
+shape = SubResource("RectangleShape2D_757wu")
 
 [node name="CenaTelegrafoInicial" type="Sprite2D" parent="." unique_id=1434136291]
 position = Vector2(572, 306)
@@ -118,6 +134,25 @@ texture_pressed = ExtResource("6_l7tr6")
 texture_hover = ExtResource("7_det3c")
 ignore_texture_size = true
 stretch_mode = 3
+
+[node name="Morse_area2d" type="Area2D" parent="." unique_id=1432517006]
+position = Vector2(552, 284)
+scale = Vector2(0.56, 0.56)
+script = ExtResource("15_f4ryu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Morse_area2d" unique_id=1010996973]
+polygon = PackedVector2Array(-407.14288, 124.99997, -180.35718, 124.99997, -33.92859, 310.71426, -507.14288, 312.49997, -507.14288, 198.21426)
+
+[node name="Morse" type="Sprite2D" parent="." unique_id=115577968]
+position = Vector2(552, 284)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("14_757wu")
+
+[node name="CodigoMorse" type="Sprite2D" parent="." unique_id=647591413]
+visible = false
+position = Vector2(419, 273)
+scale = Vector2(0.2525, 0.25249997)
+texture = ExtResource("16_ukuqq")
 
 [connection signal="pressed" from="ponto" to="." method="_on_ponto_pressed"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
