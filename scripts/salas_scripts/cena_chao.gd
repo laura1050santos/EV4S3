@@ -4,17 +4,8 @@ func _ready():
 
 	var itens_iniciais=[
 		
-{
-"item": preload("res://recursos/gpu.tres"),
-"pos": Vector2(542, 362),
-"cena": nome_desta_cena
-},
 
-
-{
-"item": preload("res://recursos/processador.tres"),
-"pos": Vector2(570, 380),
-"cena": nome_desta_cena
-},
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
+	#get_node("processador").visible =false
+	#get_node("gpu").visible =false
