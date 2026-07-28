@@ -23,6 +23,6 @@ func _check_password() -> void:
 		open_door()
 
 func open_door() -> void:
-	$"../lixeiraAberta".visible=true
 	print("Senha correta! Abrindo...")
-	$".".visible = false
+	$"..".visible = false
+	$"../../ChaoAberto"	.visible = true
