@@ -20,6 +20,7 @@ func _ready():
 @onready var gaveta1_sprite = $Gaveta1Aquario
 @onready var gaveta2_sprite = $gaveta2
 @onready var gaveta3_sprite = $gaveta_3
+
 func _on_gaveta_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		GlobalSingleton.gaveta_1 = !GlobalSingleton.gaveta_1
@@ -48,6 +49,8 @@ func _input(event: InputEvent):
 		
 func ativar_enigma_som():
 	print("volume maximo \nquebrar o aquario")
+	$SomVidroQuebrando.play()
 	
-
+	
+	
 	

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://ce00dwtgkmavc" path="res://scripts/viewMensagem.gd" id="9_vl7g8"]
 [ext_resource type="Script" uid="uid://by0kllm5dyvw" path="res://scripts/viewDifMensagem.gd" id="10_rooau"]
 [ext_resource type="Texture2D" uid="uid://8685b7dtcohx" path="res://assets/cenarios/chao_aberto.png" id="11_03j3h"]
+[ext_resource type="Script" uid="uid://dayjqdcveajg0" path="res://scripts/chao_aberto.gd" id="12_umd3r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57qmd"]
 radius = 58.830048
@@ -120,3 +121,4 @@ visible = false
 position = Vector2(578.99994, 327.5)
 scale = Vector2(0.6041666, 0.59722227)
 texture = ExtResource("11_03j3h")
+script = ExtResource("12_umd3r")

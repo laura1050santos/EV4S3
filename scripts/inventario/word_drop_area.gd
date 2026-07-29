@@ -65,7 +65,8 @@ func usar_item(item: itemData, node: Node):
 					if i["data"].item_name == j :
 						GlobalSingleton.remover_item(i["data"])
 						node.name=j
-				itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
+					if j == "lanterna":
+						itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
 				var root= get_tree().root
 				
 				node.reparent(root)
