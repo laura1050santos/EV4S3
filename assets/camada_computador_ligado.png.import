@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkav75n7cohwg"
-path="res://.godot/imported/camada_computador_ligado.png-dd8df501f4b63fa753ab9467ab2f24b9.ctex"
+path="res://.godot/imported/camada_computador_ligado.png-564b9c5c9c78538e0d97b6c29fc321f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenarios/camada_computador_ligado.png"
-dest_files=["res://.godot/imported/camada_computador_ligado.png-dd8df501f4b63fa753ab9467ab2f24b9.ctex"]
+source_file="res://assets/camada_computador_ligado.png"
+dest_files=["res://.godot/imported/camada_computador_ligado.png-564b9c5c9c78538e0d97b6c29fc321f2.ctex"]
 
 [params]
 
