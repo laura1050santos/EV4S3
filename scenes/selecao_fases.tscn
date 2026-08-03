@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dfp06xrw618th"]
+
+[ext_resource type="Script" uid="uid://dsumdbt8qqcbc" path="res://scripts/selecao_fases.gd" id="1_722qd"]
+
+[node name="SelecaoFases" type="Control" unique_id=1822430563]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_722qd")
+
+[node name="Fase1Botao" type="Button" parent="." unique_id=492688043]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 56.0
+offset_right = 623.4839
+offset_bottom = 151.0
+text = "fase 1"
+
+[node name="Fase2Botao" type="Button" parent="." unique_id=1760343905]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 172.0
+offset_right = 623.4839
+offset_bottom = 267.0
+text = "fase 2"
+
+[node name="Fase3Botao" type="Button" parent="." unique_id=400243502]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 296.0
+offset_right = 623.4839
+offset_bottom = 391.0
+text = "fase 3"
+
+[node name="Fase4Botao" type="Button" parent="." unique_id=1864798616]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 422.0
+offset_right = 623.4839
+offset_bottom = 517.0
+text = "fase 4"
+
+[connection signal="pressed" from="Fase1Botao" to="." method="_on_fase_1_botao_pressed"]

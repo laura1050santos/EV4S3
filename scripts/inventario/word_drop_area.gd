@@ -62,8 +62,9 @@ func usar_item(item: itemData, node: Node):
 			if item.item_name == j:
 				node.position = Vector2(750,590)
 				for i in GlobalSingleton.itens_no_mundo:
-					if i["data"].item_name == j :
-						GlobalSingleton.remover_item(i["data"])
+					if i["data"] == item.resource_path:
+						var recurso = load(i["data"])
+						GlobalSingleton.remover_item(recurso)
 						node.name=j
 					if j == "lanterna":
 						itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
@@ -78,8 +79,9 @@ func usar_item(item: itemData, node: Node):
 	
 					#
 	for info in GlobalSingleton.itens_no_mundo:
-		if info.data == item:
-			info.data.item_ativo = item.item_ativo
+		if info["data"] == item.resource_path:
+			var recurso = load(info["data"])
+			recurso.item_ativo = item.item_ativo
 
 
 func _input(event: InputEvent) -> void:

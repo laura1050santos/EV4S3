@@ -1,7 +1,6 @@
 extends Node2D
 # salas_manager.gd
 
-	
 func iniciar_itens_cena(nome_desta_cena, itens_inciais):
 	if not GlobalSingleton.cena_ja_foi_registrada(nome_desta_cena):
 		for info in itens_inciais:
@@ -15,7 +14,7 @@ func iniciar_itens_cena(nome_desta_cena, itens_inciais):
 			spawnar_itens(info.data, info.pos)
 			
 	GlobalSingleton.registrar_transicao(scene_file_path)
-	
+	GlobalSingleton.registrar_cena_atual(scene_file_path)
 	#GlobalSingleton.registrar_transicao(scene_file_path) travou de rodar com esse erro:
 	# Invalid call. Nonexistent function 'registrar_transicao' in base 'Node (Global_singleton.gd)'. 
 

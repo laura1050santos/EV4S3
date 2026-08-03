@@ -2,7 +2,6 @@ extends Node
 
 const CAMINHO_SAVE = "user://save.json"
 
-
 func salvar():
 
 	var dados = {
@@ -16,7 +15,12 @@ func salvar():
 		"gaveta_2": GlobalSingleton.gaveta_2,
 		"gaveta_3": GlobalSingleton.gaveta_3,
 
-		"lixeiraAberta": GlobalSingleton.lixeiraAberta
+		"lixeiraAberta": GlobalSingleton.lixeiraAberta,
+		
+		# === FASES ===
+		"fase_liberada": GlobalSingleton.fase_liberada,
+		"fases_concluidas": GlobalSingleton.fases_concluidas,
+		"ultima_cena_por_fase": GlobalSingleton.ultima_cena_por_fase,
 	}
 
 
@@ -51,7 +55,21 @@ func carregar():
 
 	GlobalSingleton.lixeiraAberta = dados["lixeiraAberta"]
 
+	# === FASES ===
+	GlobalSingleton.fase_liberada = dados.get("fase_liberada", 1)
+	GlobalSingleton.fases_concluidas = dados.get("fases_concluidas", [false, false, false, false])
 
+	var bruto_cenas = dados.get("ultima_cena_por_fase", {})
+	var normalizado = {
+		1: "res://scenes/fase1/ParedeNorte.tscn",
+		2: "",
+		3: "",
+		4: ""
+	}
+	for chave in bruto_cenas:
+		normalizado[int(chave)] = bruto_cenas[chave]
+	GlobalSingleton.ultima_cena_por_fase = normalizado
+	# ============
 	print("Save carregado!")
 
 	get_tree().change_scene_to_file(GlobalSingleton.ultima_cena)

@@ -15,6 +15,19 @@ var volume = 0
 # Função para registrar um item novo no mundo
 var holder := Node.new()
 
+
+# ==== SELEÇÃO DE FASE ====
+var fase_liberada: int = 1
+var fases_concluidas: Array = [false, false, false, false]
+
+var ultima_cena_por_fase: Dictionary = {
+	1: "res://scenes/fase1/ParedeNorte.tscn",
+	2: "",
+	3: "",
+	4: ""
+}
+# ==================
+
 func _ready():
 	holder.name = "PersistentItems"
 	get_tree().root.call_deferred("add_child", holder)
@@ -61,3 +74,25 @@ func obter_cena_anterior() -> String:
 		return ""
 
 	return historico_cenas[historico_cenas.size() - 2]
+	
+# ======= FUNÇÕES DO SISTEMA DE FASES =====
+
+func extrair_numero_fase(caminho: String) -> int:
+	var regex = RegEx.new()
+	regex.compile("fase(\\d+)")
+	var resultado = regex.search(caminho)
+	if resultado:
+		return int(resultado.get_string(1))
+	return 0
+
+func registrar_cena_atual(caminho: String):
+	ultima_cena = caminho
+	var numero_fase = extrair_numero_fase(caminho)
+	if numero_fase > 0:
+		ultima_cena_por_fase[numero_fase] = caminho
+
+func concluir_fase(indice_fase: int):
+	fases_concluidas[indice_fase - 1] = true
+	if indice_fase == fase_liberada and fase_liberada < 4:
+		fase_liberada += 1
+	SaveManager.salvar()
