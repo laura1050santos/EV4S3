@@ -1,10 +1,14 @@
 [gd_resource type="Resource" script_class="itemData" format=3 uid="uid://djgv0q2uku1kw"]
 
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_34axf"]
-[ext_resource type="Texture2D" uid="uid://dvpo8cu6pi0xk" path="res://assets/itens/processadorgrande.png" id="1_rf1yv"]
+[ext_resource type="Texture2D" uid="uid://ddukut26lq1pu" path="res://assets/itens/processadorpequenissimo.png" id="1_dbx7d"]
+[ext_resource type="Texture2D" uid="uid://2ipitb1pfmgq" path="res://assets/itens/processadorpequeno.png" id="2_juoh4"]
+[ext_resource type="Texture2D" uid="uid://bjo3liu84m8b4" path="res://assets/itens/processadorgrande(1).png" id="3_ynaoc"]
 
 [resource]
 script = ExtResource("1_34axf")
-icon = ExtResource("1_rf1yv")
-inventory_icon = ExtResource("1_rf1yv")
+item_name = "processador"
+icon = ExtResource("2_juoh4")
+inventory_icon = ExtResource("3_ynaoc")
+ativo_icon = ExtResource("1_dbx7d")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

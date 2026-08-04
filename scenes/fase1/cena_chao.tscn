@@ -117,7 +117,6 @@ shape = SubResource("RectangleShape2D_k4gre")
 debug_color = Color(0.90259814, 0.13965777, 0.67729354, 0.41960785)
 
 [node name="ChaoAberto" type="Sprite2D" parent="." unique_id=1676373847]
-visible = false
 position = Vector2(578.99994, 327.5)
 scale = Vector2(0.6041666, 0.59722227)
 texture = ExtResource("11_03j3h")

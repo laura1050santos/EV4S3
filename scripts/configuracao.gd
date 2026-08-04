@@ -30,9 +30,7 @@ func _on_brilho_value_changed(value: float) -> void:
 
 
 func _on_sair_pressed() -> void:
-	#var lanterna = get_tree().current_scene.get_node_or_null("lanterna")
-	#if lanterna:
-		#lanterna.queue_free()
+	
 	var root = self.get_tree().root
 	if root.has_node("LuzDaLanterna"):
 		lanternaRes.item_ativo = false
