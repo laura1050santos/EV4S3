@@ -26,4 +26,4 @@ func open_door() -> void:
 	print("Senha correta! Abrindo...")
 	$"..".visible = false
 	$"../../ChaoAberto"	.visible = true
-	$placa/Area2D/CollisionShape2D.set_deferred("disabled", false)
+	$"../../placa/Area2D/CollisionShape2D".set_deferred("disabled", false)
