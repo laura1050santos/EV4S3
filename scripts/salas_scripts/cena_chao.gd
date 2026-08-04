@@ -10,4 +10,4 @@ func _ready():
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
 	get_node("Sprite2D").z_index=1
-	$placa.visible = false
+	$placa/Area2D/CollisionShape2D.set_deferred("disabled", true)
