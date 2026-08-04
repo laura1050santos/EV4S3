@@ -6,7 +6,7 @@ func _ready() -> void:
 	
 func _on_jogar_pressed():
 	#canvas.show()
-	get_tree().change_scene_to_file("res://scenes/selecao_fases.tscn")
+	get_tree().change_scene_to_file("res://scenes/telaInicial/selecao_fases.tscn")
 
 func _on_sair_pressed():
 	get_tree().quit()

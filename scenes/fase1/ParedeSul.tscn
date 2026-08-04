@@ -120,19 +120,22 @@ scale = Vector2(0.60052085, 0.6018519)
 texture = ExtResource("2_3wuve")
 
 [node name="Gaveta1Aquario" type="Sprite2D" parent="." unique_id=2015950540]
-position = Vector2(576, 326.00003)
-scale = Vector2(0.5923337, 0.5756894)
+z_index = 3
+position = Vector2(571.00006, 324)
+scale = Vector2(0.62216634, 0.60468376)
 texture = ExtResource("9_b4mbd")
 
-[node name="gaveta_3" type="Sprite2D" parent="." unique_id=724452809]
-position = Vector2(584, 346)
-scale = Vector2(0.5740886, 0.536726)
-texture = ExtResource("13_nfbrq")
-
 [node name="gaveta2" type="Sprite2D" parent="." unique_id=1462864133]
-position = Vector2(589.00006, 325)
-scale = Vector2(0.55677074, 0.60092586)
+z_index = 2
+position = Vector2(571, 309.00003)
+scale = Vector2(0.62306404, 0.67247665)
 texture = ExtResource("12_htmuf")
+
+[node name="gaveta_3" type="Sprite2D" parent="." unique_id=724452809]
+z_index = 1
+position = Vector2(570, 330.00003)
+scale = Vector2(0.6271698, 0.5863526)
+texture = ExtResource("13_nfbrq")
 
 [node name="SomVidroQuebrando" type="AudioStreamPlayer2D" parent="." unique_id=1509413935]
 stream = ExtResource("15_m8iw3")
