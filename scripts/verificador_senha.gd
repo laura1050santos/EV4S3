@@ -26,3 +26,4 @@ func open_door() -> void:
 	print("Senha correta! Abrindo...")
 	$"..".visible = false
 	$"../../ChaoAberto"	.visible = true
+	$"../../placa".visible = true

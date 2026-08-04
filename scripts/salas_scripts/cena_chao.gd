@@ -10,6 +10,4 @@ func _ready():
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
 	get_node("Sprite2D").z_index=1
-	get_node("placa/Area2D").disabled = false
-	#get_node("processador").visible =false
-	#get_node("gpu").visible =false
+	$placa.visible = false
