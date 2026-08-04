@@ -10,6 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_cvcdw"]
 [ext_resource type="Texture2D" uid="uid://bmys2qttnwdyi" path="res://assets/cenarios/lixoPC.png" id="9_ola1g"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j0j"]
+size = Vector2(77, 159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkbay"]
+size = Vector2(181, 150)
+
 [node name="leste" type="Node2D" unique_id=1514872956]
 script = ExtResource("1_2litd")
 
@@ -38,3 +44,20 @@ destino_cena = "uid://dmhce3kfm14ep"
 position = Vector2(774.99994, 530.49994)
 scale = Vector2(0.67857176, 0.6850002)
 texture = ExtResource("9_ola1g")
+
+[node name="Pc" type="Node" parent="." unique_id=1017511998]
+
+[node name="Pc" type="Area2D" parent="Pc" unique_id=575865142]
+
+[node name="pcCollision" type="CollisionShape2D" parent="Pc/Pc" unique_id=2030729429]
+position = Vector2(355.5, 346)
+shape = SubResource("RectangleShape2D_x2j0j")
+
+[node name="Monitor" type="Area2D" parent="Pc" unique_id=1568180021]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pc/Monitor" unique_id=465960706]
+position = Vector2(491.5, 346)
+shape = SubResource("RectangleShape2D_bkbay")
+
+[connection signal="input_event" from="Pc/Pc" to="." method="_on_pc_input_event"]
+[connection signal="input_event" from="Pc/Monitor" to="." method="_on_monitor_input_event"]

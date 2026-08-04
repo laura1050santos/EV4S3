@@ -23,3 +23,11 @@ func _ready():
 	
 
 		
+
+
+func _on_pc_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn") # Replace with function body.
+
+
+func _on_monitor_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn") # Replace with function body.

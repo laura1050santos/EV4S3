@@ -25,7 +25,7 @@ func spawnar_itens(caminho_recurso, posicao):
 	var node = preload("res://scenes/inventario/worldItem.tscn").instantiate()
 	
 	node.set_meta("item_data", recurso)
-	
+	node.name = recurso.item_name
 	if recurso.item_ativo:
 		node.texture = recurso.ativo_icon
 	else:

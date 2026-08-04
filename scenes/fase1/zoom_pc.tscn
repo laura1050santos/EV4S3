@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bfrogw3qesn5y"]
+
+[node name="ZoomPc" type="Node2D" unique_id=441881010]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=61469310]

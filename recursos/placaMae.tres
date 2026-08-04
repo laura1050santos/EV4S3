@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_qtasf")
-item_name = "placa mãe"
+item_name = "placa"
 icon = ExtResource("2_pwx0f")
 inventory_icon = ExtResource("2_pwx0f")
 ativo_icon = ExtResource("1_bytji")
