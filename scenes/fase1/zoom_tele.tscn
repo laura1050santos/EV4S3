@@ -5,15 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f1w1o"]
 [ext_resource type="Script" uid="uid://2kq6ft3clmjt" path="res://scenes/fase1/view_Morse.gd" id="2_f4ryu"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0qusy"]
-[ext_resource type="Texture2D" uid="uid://d20n8oai8lwpd" path="res://assets/itens/botao traco.png" id="5_l7tr6"]
-[ext_resource type="Texture2D" uid="uid://bod0ysm358fa7" path="res://assets/itens/botao ponto pressionado.png" id="6_det3c"]
-[ext_resource type="Texture2D" uid="uid://d826d5ll452s" path="res://assets/itens/botao traco pressionado.png" id="6_l7tr6"]
-[ext_resource type="Texture2D" uid="uid://5guuejxnq85i" path="res://assets/itens/botao traco hoover.png" id="7_det3c"]
-[ext_resource type="Texture2D" uid="uid://bkwt08m6gstfn" path="res://assets/itens/botao ponto hoover.png" id="7_jkw12"]
-[ext_resource type="Texture2D" uid="uid://cbhkgcnm5iuqe" path="res://assets/itens/botao reset.png" id="8_l2q6r"]
-[ext_resource type="Texture2D" uid="uid://1mio1inqgpvd" path="res://assets/itens/botao reset pressionado.png" id="9_ckquj"]
-[ext_resource type="Texture2D" uid="uid://56lgncvj1nqa" path="res://assets/itens/botao reset hoover.png" id="10_j0w4i"]
-[ext_resource type="Texture2D" uid="uid://b3diwuknh7iva" path="res://assets/itens/botao ponto.png" id="11_ckquj"]
 [ext_resource type="Texture2D" uid="uid://csr76qhcefp0p" path="res://assets/cartas/morse.png" id="14_757wu"]
 [ext_resource type="Script" uid="uid://c7abp8a3ygh35" path="res://scripts/DismorsePapel.gd" id="15_f4ryu"]
 [ext_resource type="Texture2D" uid="uid://cl1w72e785u6g" path="res://assets/cartas/codigo_morse.png" id="16_ukuqq"]
@@ -74,9 +65,6 @@ offset_bottom = -355.12604
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-texture_normal = ExtResource("11_ckquj")
-texture_pressed = ExtResource("6_det3c")
-texture_hover = ExtResource("7_jkw12")
 ignore_texture_size = true
 stretch_mode = 3
 
@@ -102,9 +90,6 @@ offset_bottom = -383.126
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-texture_normal = ExtResource("8_l2q6r")
-texture_pressed = ExtResource("9_ckquj")
-texture_hover = ExtResource("10_j0w4i")
 ignore_texture_size = true
 stretch_mode = 3
 
@@ -129,9 +114,6 @@ offset_bottom = -353.12604
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-texture_normal = ExtResource("5_l7tr6")
-texture_pressed = ExtResource("6_l7tr6")
-texture_hover = ExtResource("7_det3c")
 ignore_texture_size = true
 stretch_mode = 3
 

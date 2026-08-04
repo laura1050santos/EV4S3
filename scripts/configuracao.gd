@@ -1,6 +1,6 @@
 extends Window
 signal volMax
-
+var lanternaRes = preload("res://recursos/lanterna.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void: 
 	%Som.value = GlobalSingleton.volume
@@ -30,6 +30,14 @@ func _on_brilho_value_changed(value: float) -> void:
 
 
 func _on_sair_pressed() -> void:
-	
+	#var lanterna = get_tree().current_scene.get_node_or_null("lanterna")
+	#if lanterna:
+		#lanterna.queue_free()
+	var root = self.get_tree().root
+	if root.has_node("LuzDaLanterna"):
+		lanternaRes.item_ativo = false
+		GlobalSingleton.registrar_item(lanternaRes,Vector2(750,590),"leste")
+		root.get_node("LuzDaLanterna").queue_free()
+		root.get_node("lanterna").queue_free()
+		
 	get_tree().change_scene_to_file("res://scenes/telaInicial/start.tscn")
- # Replace with function body.

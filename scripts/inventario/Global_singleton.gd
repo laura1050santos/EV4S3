@@ -14,7 +14,7 @@ var lixeiraAberta = false
 var volume = 0
 # Função para registrar um item novo no mundo
 var holder := Node.new()
-
+var cont = 0
 
 # ==== SELEÇÃO DE FASE ====
 var fase_liberada: int = 1

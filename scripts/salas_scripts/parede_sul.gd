@@ -43,14 +43,17 @@ func _on_gaveta_3_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 			
 func _input(event: InputEvent):
 	if get_tree().root.has_node("lanterna"):
-		$Sprite2D.texture = preload( "res://assets/cenarios/salaaquarioseta.png")
+		$aquarioInteiro.texture = preload("res://assets/cenarios/salaaquarioseta.png")
 		get_node("buraco/colisaoBuraco").disabled = false
 		
 		
 func ativar_enigma_som():
-	print("volume maximo \nquebrar o aquario")
-	$SomVidroQuebrando.play()
-	
+	if GlobalSingleton.cont == 0 :
+		GlobalSingleton.cont = 1
+		print("volume maximo \nquebrar o aquario")
+		$SomVidroQuebrando.play()
+		$aquarioQuebrado.visible = true
+		$aquarioInteiro.visible = false
 	
 	
 	
