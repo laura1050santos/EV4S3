@@ -9,12 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="7_7nwwv"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_cvcdw"]
 [ext_resource type="Texture2D" uid="uid://bmys2qttnwdyi" path="res://assets/cenarios/lixoPC.png" id="9_ola1g"]
+[ext_resource type="Texture2D" uid="uid://kjdlt65x5xf1" path="res://assets/cenarios/gavetas/gaveta1_pc.png" id="10_etvgb"]
+[ext_resource type="Texture2D" uid="uid://ckfeuq1cxw0t1" path="res://assets/cenarios/gavetas/gaveta2_pc.png" id="11_pvpgn"]
+[ext_resource type="Texture2D" uid="uid://dsinh6ohcco58" path="res://assets/cenarios/gavetas/gaveta3_pc_vazia.png" id="12_35a4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j0j"]
 size = Vector2(77, 159)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkbay"]
-size = Vector2(181, 150)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etvgb"]
+size = Vector2(93, 57)
 
 [node name="leste" type="Node2D" unique_id=1514872956]
 script = ExtResource("1_2litd")
@@ -55,9 +58,55 @@ shape = SubResource("RectangleShape2D_x2j0j")
 
 [node name="Monitor" type="Area2D" parent="Pc" unique_id=1568180021]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pc/Monitor" unique_id=465960706]
-position = Vector2(491.5, 346)
-shape = SubResource("RectangleShape2D_bkbay")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pc/Monitor" unique_id=357571712]
+polygon = PackedVector2Array(405, 278, 550, 279, 551, 379, 502, 379, 487, 403, 505, 403, 511, 410, 545, 412, 553, 419, 551, 423, 404, 423, 402, 417, 413, 410, 437, 410, 443, 402, 463, 402, 447, 379, 403, 380)
+
+[node name="Gaveta1Pc" type="Sprite2D" parent="." unique_id=1163807521]
+visible = false
+z_index = 3
+position = Vector2(576.00006, 324.00003)
+scale = Vector2(0.6, 0.6000001)
+texture = ExtResource("10_etvgb")
+
+[node name="Gaveta2Pc" type="Sprite2D" parent="." unique_id=1222406275]
+visible = false
+z_index = 2
+position = Vector2(576.00006, 324)
+scale = Vector2(0.6, 0.6000001)
+texture = ExtResource("11_pvpgn")
+
+[node name="Gaveta3Pc" type="Sprite2D" parent="." unique_id=1825570844]
+visible = false
+z_index = 1
+position = Vector2(576, 323.99997)
+scale = Vector2(0.6000001, 0.59999996)
+texture = ExtResource("12_35a4w")
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=992332998]
+z_index = 2
+position = Vector2(1, 112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=2075437785]
+position = Vector2(586.5, 466.5)
+shape = SubResource("RectangleShape2D_etvgb")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1807966045]
+z_index = 2
+position = Vector2(1, 56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=58998946]
+position = Vector2(586.5, 466.5)
+shape = SubResource("RectangleShape2D_etvgb")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1104379121]
+z_index = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=741556780]
+position = Vector2(586.5, 466.5)
+shape = SubResource("RectangleShape2D_etvgb")
 
 [connection signal="input_event" from="Pc/Pc" to="." method="_on_pc_input_event"]
 [connection signal="input_event" from="Pc/Monitor" to="." method="_on_monitor_input_event"]
+[connection signal="input_event" from="Area2D3" to="." method="_on_gaveta_3_input_event"]
+[connection signal="input_event" from="Area2D2" to="." method="_on_gaveta_2_input_event"]
+[connection signal="input_event" from="Area2D" to="." method="_on_gaveta_1_input_event"]
