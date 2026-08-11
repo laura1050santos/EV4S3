@@ -1,4 +1,8 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
+@onready var gaveta1_sprite = $Gaveta1Pc
+@onready var gaveta2_sprite = $Gaveta2Pc
+@onready var gaveta3_sprite = $Gaveta3Pc
+
 func _ready():
 	GlobalSingleton.ultima_cena =  get_tree().current_scene.scene_file_path
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
@@ -12,16 +16,15 @@ func _ready():
 		},
 		{
 		"item": preload("res://recursos/chaveDeFenda.tres"),
-		"pos": Vector2(770, 470),
+		"pos": Vector2(770, 550),
 		"cena": nome_desta_cena
 		},
 #itens que começam na cena
 ]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-
-@onready var gaveta1_sprite = $Gaveta1Pc
-@onready var gaveta2_sprite = $Gaveta2Pc
-@onready var gaveta3_sprite = $Gaveta3Pc
+	var lanterna = get_node_or_null("lanterna")
+	if lanterna :
+		lanterna.z_index=1
 
 func _on_gaveta_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

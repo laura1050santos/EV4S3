@@ -1,4 +1,5 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
+
 func _ready():
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
 
@@ -9,6 +10,10 @@ func _ready():
 		},#itens que começam na cena
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-	get_node("Sprite2D").z_index=1
-	if $ChaoAberto.visible == false:
-		$placa/Area2D/CollisionShape2D.set_deferred("disabled", true)
+	$Sprite2D.z_index=1
+	var placa = get_tree().root.get_node("CenaChao/placa")
+	if placa :
+		print("placa mae na cena")
+		var area = placa.get_node("Area2D/CollisionShape2D")
+		area.disabled= true
+	#precisa arrumar a Placa Mãe

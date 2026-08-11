@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://djp3ua570moo4"]
 
+[ext_resource type="Script" uid="uid://bnnb0mc7405mm" path="res://scripts/lixeira_zoom.gd" id="1_8bx6j"]
 [ext_resource type="Texture2D" uid="uid://boephgblmcbri" path="res://assets/itens/lixeiraperto.png" id="1_68gv6"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f6m85"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="3_u3ttn"]
@@ -10,6 +11,7 @@
 size = Vector2(434.5, 219)
 
 [node name="Zoom Lixeira" type="Node2D" unique_id=2018230983]
+script = ExtResource("1_8bx6j")
 
 [node name="back" type="Sprite2D" parent="." unique_id=983804472]
 position = Vector2(575.5, 326.5)
@@ -39,3 +41,5 @@ offset_left = 65.0
 offset_top = 12.999999
 offset_right = 3231.6665
 offset_bottom = 1681.0
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
