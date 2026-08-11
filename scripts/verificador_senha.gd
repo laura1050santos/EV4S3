@@ -32,3 +32,4 @@ func open_door() -> void:
 		print("placa mae na cena")
 		var area = placa.get_node("Area2D/CollisionShape2D")
 		area.disabled= false
+		placa.visible = true

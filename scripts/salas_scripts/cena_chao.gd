@@ -10,10 +10,12 @@ func _ready():
 		},#itens que começam na cena
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-	$Sprite2D.z_index=1
+	
+		
 	var placa = get_tree().root.get_node("CenaChao/placa")
 	if placa :
 		print("placa mae na cena")
+		placa.visible = false
 		var area = placa.get_node("Area2D/CollisionShape2D")
 		area.disabled= true
 	#precisa arrumar a Placa Mãe
