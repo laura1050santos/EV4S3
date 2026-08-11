@@ -18,6 +18,6 @@ func _ready() -> void:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if InputEventMouseButton and event.is_pressed():
-		
-		var chave = get_node("chave")
-		 # Replace with function body.
+		var chave = get_node("Sprite2D")
+		if chave :
+			$back.z_index = 10
