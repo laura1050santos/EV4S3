@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_012jw")
+item_name = "gpu"
 icon = ExtResource("1_ds78f")
 inventory_icon = ExtResource("1_ds78f")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

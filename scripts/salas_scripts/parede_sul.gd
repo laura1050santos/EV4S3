@@ -10,10 +10,23 @@ func _ready():
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
 	
 	var itens_iniciais=[
-		#itens que começam na cena
-	
+
+		{ "item": preload("res://recursos/processador.tres"),
+		"pos":Vector2(600,550),
+		"cena":nome_desta_cena,
+		},#itens que começam na cena
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
+	
+		
+	var processador = get_tree().root.get_node("Sul/processador")
+	if processador :
+		print("placa mae na cena")
+		processador.visible = false
+		var area = processador.get_node("Area2D/CollisionShape2D")
+		area.disabled = false
+
+	
 	gaveta1_sprite.visible = GlobalSingleton.gaveta_1
 	gaveta2_sprite.visible = GlobalSingleton.gaveta_2
 	
@@ -54,6 +67,9 @@ func ativar_enigma_som():
 		$SomVidroQuebrando.play()
 		$aquarioQuebrado.visible = true
 		$aquarioInteiro.visible = false
-	
-	
-	
+		var processador = get_tree().root.get_node("Sul/processador")
+		if processador :
+			processador.visible = true
+			var area = processador.get_node("Area2D/CollisionShape2D")
+			area.disabled = true
+		

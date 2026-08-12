@@ -26,6 +26,7 @@ func open_door() -> void:
 	print("Senha correta! Abrindo...")
 	$"..".visible = false
 	$"../../ChaoAberto".visible = true
+	
 	var root = get_tree().root
 	var placa = root.get_node("CenaChao/placa")
 	if placa :
