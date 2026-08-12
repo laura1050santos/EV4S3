@@ -76,7 +76,6 @@ scale = Vector2(0.6, 0.6000001)
 texture = ExtResource("11_pvpgn")
 
 [node name="Gaveta3Pc" type="Sprite2D" parent="." unique_id=1825570844]
-visible = false
 z_index = 1
 position = Vector2(576, 323.99997)
 scale = Vector2(0.6000001, 0.59999996)

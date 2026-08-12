@@ -25,6 +25,44 @@ script = ExtResource("1_33jt1")
 
 [node name="setaCima" parent="." unique_id=1417665041 instance=ExtResource("1_ew8tq")]
 
+[node name="Escuro" parent="." unique_id=436822312 instance=ExtResource("4_p12nd")]
+
+[node name="BotaoConfig" parent="." unique_id=550755177 instance=ExtResource("5_61tdm")]
+
+[node name="Mensagem" type="Area2D" parent="." unique_id=1131996901]
+script = ExtResource("9_vl7g8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mensagem" unique_id=1799612580]
+visible = false
+position = Vector2(750, 107.00002)
+rotation = -0.79219186
+shape = SubResource("CapsuleShape2D_57qmd")
+
+[node name="Node" type="Node" parent="." unique_id=624238607]
+
+[node name="mensagem" type="Sprite2D" parent="Node" unique_id=1133344333]
+visible = false
+position = Vector2(584.00006, 300.00003)
+rotation = 0.1569194
+scale = Vector2(0.2925, 0.2925)
+texture = ExtResource("8_la3ws")
+
+[node name="Area2D" type="Area2D" parent="Node" unique_id=54303880]
+script = ExtResource("10_rooau")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D" unique_id=1697195367]
+visible = false
+position = Vector2(584.361, 301.0951)
+rotation = 0.14787108
+shape = SubResource("RectangleShape2D_k4gre")
+debug_color = Color(0.90259814, 0.13965777, 0.67729354, 0.41960785)
+
+[node name="ChaoAberto" type="Sprite2D" parent="." unique_id=1676373847]
+position = Vector2(578.99994, 327.5)
+scale = Vector2(0.6041666, 0.59722227)
+texture = ExtResource("11_03j3h")
+script = ExtResource("12_umd3r")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=331265735]
 position = Vector2(580.00006, 326.00003)
 scale = Vector2(0.6074074, 0.6074074)
@@ -83,41 +121,3 @@ scale = Vector2(1.3586309, 1.3586309)
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_l3lf0")
-
-[node name="Escuro" parent="." unique_id=436822312 instance=ExtResource("4_p12nd")]
-
-[node name="BotaoConfig" parent="." unique_id=550755177 instance=ExtResource("5_61tdm")]
-
-[node name="Mensagem" type="Area2D" parent="." unique_id=1131996901]
-script = ExtResource("9_vl7g8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mensagem" unique_id=1799612580]
-visible = false
-position = Vector2(750, 107.00002)
-rotation = -0.79219186
-shape = SubResource("CapsuleShape2D_57qmd")
-
-[node name="Node" type="Node" parent="." unique_id=624238607]
-
-[node name="mensagem" type="Sprite2D" parent="Node" unique_id=1133344333]
-visible = false
-position = Vector2(584.00006, 300.00003)
-rotation = 0.1569194
-scale = Vector2(0.2925, 0.2925)
-texture = ExtResource("8_la3ws")
-
-[node name="Area2D" type="Area2D" parent="Node" unique_id=54303880]
-script = ExtResource("10_rooau")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D" unique_id=1697195367]
-visible = false
-position = Vector2(584.361, 301.0951)
-rotation = 0.14787108
-shape = SubResource("RectangleShape2D_k4gre")
-debug_color = Color(0.90259814, 0.13965777, 0.67729354, 0.41960785)
-
-[node name="ChaoAberto" type="Sprite2D" parent="." unique_id=1676373847]
-position = Vector2(578.99994, 327.5)
-scale = Vector2(0.6041666, 0.59722227)
-texture = ExtResource("11_03j3h")
-script = ExtResource("12_umd3r")

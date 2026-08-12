@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://bfrogw3qesn5y"]
 
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_pxn6f"]
+
 [node name="ZoomPc" type="Node2D" unique_id=441881010]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=61469310]
+
+[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("1_pxn6f")]
+destino_cena = "uid://dqttd76hew5ag"

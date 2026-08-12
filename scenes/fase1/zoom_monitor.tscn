@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://du3a1evg3elat"]
 
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_b03y6"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_p43dj"]
 
 [node name="ZoomMonitor" type="Node2D" unique_id=1296814580]
 
@@ -10,3 +11,6 @@
 position = Vector2(589.75, 323)
 scale = Vector2(3.816406, 1)
 texture = ExtResource("1_b03y6")
+
+[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("2_p43dj")]
+destino_cena = "uid://dqttd76hew5ag"

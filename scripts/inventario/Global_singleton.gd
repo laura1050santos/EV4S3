@@ -6,7 +6,7 @@ var cenas_visitadas =[]
 var historico_cenas: Array[String] = []
 var item_mao=null
 var enigma_luz_resolvido= false
-
+var enigma_chao_resolvido = false
 var gaveta_1 = false # teste da gaveta do aquario
 var gaveta_2 = false
 var gaveta_3 = false

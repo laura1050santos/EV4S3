@@ -1,13 +1,18 @@
 [gd_resource type="Resource" script_class="itemData" format=3 uid="uid://0qank6056dkw"]
 
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_t4jw1"]
-[ext_resource type="Texture2D" uid="uid://cdljscjrdlfco" path="res://assets/itens/chavedefendagrande.png" id="1_upefg"]
-[ext_resource type="Texture2D" uid="uid://b28qy8o783m4v" path="res://assets/itens/chavedefenda.png" id="2_3bgg5"]
+[ext_resource type="Texture2D" uid="uid://d3ogar4sht343" path="res://assets/itens/chavedefendaPE.png" id="1_upefg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_upefg"]
+load_path = "res://.godot/imported/chavedefenda.png-186ce715786df7393190bd82a94494be.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3bgg5"]
+load_path = "res://.godot/imported/chavedefendagrande.png-b0ff19912e3b9d50483ec62bf41f7b3d.ctex"
 
 [resource]
 script = ExtResource("1_t4jw1")
-item_name = "chave de fenda"
-icon = ExtResource("2_3bgg5")
-inventory_icon = ExtResource("1_upefg")
+item_name = "chave"
+icon = SubResource("CompressedTexture2D_upefg")
+inventory_icon = SubResource("CompressedTexture2D_3bgg5")
 ativo_icon = ExtResource("1_upefg")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

@@ -4,7 +4,7 @@ extends Control
 @onready var digit_buttons: Array[TextureButton] = [$Digito1, $Digito2, $Digito3, $Digito4]
 
 @onready var door = $Door
-
+signal  enigma_chao_resolvido
 func _ready() -> void:
 	print("iterando", digit_buttons.size())
 	for btn in digit_buttons:
@@ -25,5 +25,11 @@ func _check_password() -> void:
 func open_door() -> void:
 	print("Senha correta! Abrindo...")
 	$"..".visible = false
-	$"../../ChaoAberto"	.visible = true
-	$"../../placa/Area2D/CollisionShape2D".set_deferred("disabled", false)
+	$"../../ChaoAberto".visible = true
+	var root = get_tree().root
+	var placa = root.get_node("CenaChao/placa")
+	if placa :
+		print("placa mae na cena")
+		var area = placa.get_node("Area2D/CollisionShape2D")
+		area.disabled= false
+		placa.visible = true

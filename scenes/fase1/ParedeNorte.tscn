@@ -12,6 +12,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
 size = Vector2(371.2891, 733.0908)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3a53"]
+size = Vector2(59.651093, 84.857635)
+
 [node name="Norte" type="Node2D" unique_id=295984050]
 script = ExtResource("1_fqgx5")
 
@@ -44,4 +47,14 @@ destino_cena = "uid://dqttd76hew5ag"
 
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_y3a53")]
 
+[node name="AreaInterruptor" type="Area2D" parent="." unique_id=1206122188]
+position = Vector2(576, 325.45648)
+scale = Vector2(0.6035101, 0.60100657)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInterruptor" unique_id=1098445173]
+position = Vector2(-341.33643, -8.246948)
+scale = Vector2(1, 1.0000001)
+shape = SubResource("RectangleShape2D_y3a53")
+
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="AreaInterruptor" to="." method="_on_area_interruptor_input_event"]

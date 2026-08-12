@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="11_uf1xn"]
 [ext_resource type="Texture2D" uid="uid://b4ay7iu76t0ls" path="res://assets/cenarios/gavetas/gaveta2_aquario.png" id="12_htmuf"]
 [ext_resource type="Texture2D" uid="uid://dyk1hlvw8bxjg" path="res://assets/cenarios/gavetas/gaveta3_aquario.png" id="13_nfbrq"]
-[ext_resource type="Script" uid="uid://bj13gcn4b2xmb" path="res://scenes/fase1/lixeiraZoom.gd" id="14_isxgw"]
+[ext_resource type="Script" uid="uid://bj13gcn4b2xmb" path="res://scripts/lixeiraZoom.gd" id="14_isxgw"]
 [ext_resource type="AudioStream" uid="uid://cfcc6i5pfgs65" path="res://assets/Sons/freesound_community-glass-break-001-103000.mp3" id="15_m8iw3"]
 [ext_resource type="Texture2D" uid="uid://dynqrojgwh5wf" path="res://assets/cenarios/aquarioquebrado(1).png" id="15_tu704"]
 
@@ -132,6 +132,7 @@ scale = Vector2(0.62306404, 0.67247665)
 texture = ExtResource("12_htmuf")
 
 [node name="gaveta_3" type="Sprite2D" parent="." unique_id=724452809]
+visible = false
 z_index = 1
 position = Vector2(570, 330.00003)
 scale = Vector2(0.6271698, 0.5863526)
