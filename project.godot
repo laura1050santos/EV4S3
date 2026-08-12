@@ -15,7 +15,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="evase"
+<<<<<<< Updated upstream
 run/main_scene="uid://bhdp01nmfx5bk"
+=======
+run/main_scene="uid://djryii8ewlak6"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
