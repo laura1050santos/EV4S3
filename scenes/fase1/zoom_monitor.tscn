@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://du3a1evg3elat"]
 
-[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_b03y6"]
+[ext_resource type="Texture2D" uid="uid://46winhk8p8iw" path="res://assets/cenarios/computador_desligado.png" id="1_p43dj"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_p43dj"]
 
 [node name="ZoomMonitor" type="Node2D" unique_id=1296814580]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1049587466]
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=595713161]
-position = Vector2(589.75, 323)
-scale = Vector2(3.816406, 1)
-texture = ExtResource("1_b03y6")
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.59999996)
+texture = ExtResource("1_p43dj")
 
 [node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("2_p43dj")]
 destino_cena = "uid://dqttd76hew5ag"
