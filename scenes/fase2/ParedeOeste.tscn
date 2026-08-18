@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bolqqf3cxta2h"]
+
+[ext_resource type="Texture2D" uid="uid://d0k2npawdhxuw" path="res://assets/oeste_cena.png" id="1_l7aw2"]
+
+[node name="Oeste" type="Node2D" unique_id=1806890671]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=981584893]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_l7aw2")

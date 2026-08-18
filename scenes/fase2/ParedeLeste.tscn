@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ppal8h18egfx"]
+
+[ext_resource type="Texture2D" uid="uid://dit3q4nvgfvu" path="res://assets/leste_cena.png" id="1_gtfh5"]
+
+[node name="Leste" type="Node2D" unique_id=1720139885]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1950233016]
+position = Vector2(576.00006, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_gtfh5")

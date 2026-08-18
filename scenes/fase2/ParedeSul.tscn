@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://p3pae5nx2pr0"]
+
+[ext_resource type="Texture2D" uid="uid://c84nafoh5npqu" path="res://assets/sul_cena.png" id="1_luvwy"]
+
+[node name="Sul" type="Node2D" unique_id=1920197835]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1144675528]
+position = Vector2(576, 323.99997)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_luvwy")

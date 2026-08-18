@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://vbee67t43cq0"]
+
+[ext_resource type="Texture2D" uid="uid://c58pxujh5lnj" path="res://assets/norte_cena.png" id="1_kna8t"]
+
+[node name="Norte" type="Node2D" unique_id=2084371957]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1544319898]
+position = Vector2(576.00006, 324.00003)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_kna8t")
