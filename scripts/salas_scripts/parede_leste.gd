@@ -53,3 +53,8 @@ func _on_pc_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> vo
 func _on_monitor_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn") # Replace with function body.
+
+# ==== TESTE DE TRANSIÇÃO =====
+func _input(event):
+	if event.is_action_pressed("ui_accept"):  # tecla Enter/Espaço por padrão
+		TransicaoFase.show_phase_complete("res://scenes/telaInicial/selecao_fases.tscn")

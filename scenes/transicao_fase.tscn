@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cfhj6kkcbausb"]
+
+[ext_resource type="Script" uid="uid://dpk51yoeeirbr" path="res://scripts/transicao_fase.gd" id="1_luos3"]
+[ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="2_twx6u"]
+
+[node name="Transicao_Fase" type="CanvasLayer" unique_id=362737838]
+layer = 120
+script = ExtResource("1_luos3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1586740848]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1563211094]
+visible = false
+offset_top = 215.0
+offset_right = 1152.0
+offset_bottom = 395.0
+theme_override_fonts/font = ExtResource("2_twx6u")
+theme_override_font_sizes/font_size = 30
+text = "Objetivo concluído."
+horizontal_alignment = 1
+vertical_alignment = 1

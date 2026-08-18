@@ -25,6 +25,7 @@ Inventario="*res://scenes/inventario/inventario.tscn"
 GlobalSingleton="*res://scripts/inventario/Global_singleton.gd"
 GlobalWorldEnvironment="*res://scenes/world_environment.tscn"
 SaveManager="*uid://dxwg3eomhfngo"
+TransicaoFase="*uid://cfhj6kkcbausb"
 
 [display]
 
