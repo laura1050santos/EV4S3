@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://vbee67t43cq0"]
 
 [ext_resource type="Texture2D" uid="uid://c58pxujh5lnj" path="res://assets/norte_cena.png" id="1_kna8t"]
+[ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="2_bs0us"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_vlli6"]
+[ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="4_inovt"]
 
 [node name="Norte" type="Node2D" unique_id=2084371957]
 
@@ -8,3 +11,11 @@
 position = Vector2(576.00006, 324.00003)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_kna8t")
+
+[node name="setaCima" parent="." unique_id=1650788674 instance=ExtResource("2_bs0us")]
+
+[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_vlli6")]
+destino_cena = "uid://bolqqf3cxta2h"
+
+[node name="SetaDireita" parent="." unique_id=1806574924 instance=ExtResource("4_inovt")]
+destino_cena = "uid://ppal8h18egfx"
