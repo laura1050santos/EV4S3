@@ -31,6 +31,8 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	
 	var node = WORLD_ITEM.instantiate()
 	node.set_meta("item_data", item_para_dropar)
+	node.name = item_para_dropar.item_name
+
 	if item_para_dropar.item_ativo:
 		node.texture = item_para_dropar.ativo_icon
 	else:

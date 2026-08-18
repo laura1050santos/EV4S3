@@ -1,10 +1,53 @@
 [gd_scene format=3 uid="uid://bfrogw3qesn5y"]
 
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_pxn6f"]
+[ext_resource type="Script" uid="uid://cqdfu8ejxfdl4" path="res://scripts/salas_scripts/zoom_pc.gd" id="1_ya232"]
+[ext_resource type="Texture2D" uid="uid://b8j6cw7dj820f" path="res://assets/cenarios/gabinetePC.png" id="1_ynyrg"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_78eci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ij56"]
+size = Vector2(347.1494, 70.096985)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa1l7"]
+size = Vector2(114.75, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gd0nk"]
+size = Vector2(199.13603, 132.90308)
 
 [node name="ZoomPc" type="Node2D" unique_id=441881010]
+script = ExtResource("1_ya232")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=61469310]
+[node name="GabinetePc" type="Sprite2D" parent="." unique_id=1589472735]
+position = Vector2(575.5, 323)
+scale = Vector2(0.6005208, 0.59999996)
+texture = ExtResource("1_ynyrg")
 
 [node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("1_pxn6f")]
 destino_cena = "uid://dqttd76hew5ag"
+
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_78eci")]
+
+[node name="AreaGPU" type="Area2D" parent="." unique_id=665740407]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaGPU" unique_id=1539477303]
+position = Vector2(654.51764, 279.78427)
+rotation = -0.08925961
+shape = SubResource("RectangleShape2D_2ij56")
+
+[node name="AreaProcessador" type="Area2D" parent="." unique_id=550181436]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaProcessador" unique_id=1327470896]
+position = Vector2(525.375, 391)
+shape = SubResource("RectangleShape2D_xa1l7")
+
+[node name="AreaPlacaMae" type="Area2D" parent="." unique_id=1088790700]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPlacaMae" unique_id=1595137567]
+position = Vector2(629.0765, 164.31688)
+rotation = -0.117691785
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_gd0nk")
+
+[connection signal="input_event" from="AreaGPU" to="." method="_on_area_gpu_input_event"]
+[connection signal="input_event" from="AreaProcessador" to="." method="_on_area_processador_input_event"]
+[connection signal="input_event" from="AreaPlacaMae" to="." method="_on_area_placa_mae_input_event"]

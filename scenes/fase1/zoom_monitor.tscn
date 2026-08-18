@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://46winhk8p8iw" path="res://assets/cenarios/computador_desligado.png" id="1_p43dj"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_p43dj"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0ucrh"]
 
 [node name="ZoomMonitor" type="Node2D" unique_id=1296814580]
 
@@ -12,3 +13,5 @@ texture = ExtResource("1_p43dj")
 
 [node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("2_p43dj")]
 destino_cena = "uid://dqttd76hew5ag"
+
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_0ucrh")]

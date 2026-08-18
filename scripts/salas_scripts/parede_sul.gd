@@ -24,7 +24,7 @@ func _ready():
 		print("placa mae na cena")
 		processador.visible = false
 		var area = processador.get_node("Area2D/CollisionShape2D")
-		area.disabled = false
+		area.disabled = true
 
 	
 	gaveta1_sprite.visible = GlobalSingleton.gaveta_1
@@ -67,9 +67,13 @@ func ativar_enigma_som():
 		$SomVidroQuebrando.play()
 		$aquarioQuebrado.visible = true
 		$aquarioInteiro.visible = false
+		
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if InputEventMouseButton and event.is_pressed():
 		var processador = get_tree().root.get_node("Sul/processador")
 		if processador :
 			processador.visible = true
 			var area = processador.get_node("Area2D/CollisionShape2D")
-			area.disabled = true
-		
+			area.disabled = false

@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dsinh6ohcco58" path="res://assets/cenarios/gavetas/gaveta3_pc_vazia.png" id="12_35a4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j0j"]
-size = Vector2(77, 159)
+size = Vector2(62, 138.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etvgb"]
 size = Vector2(93, 57)
@@ -53,13 +53,13 @@ texture = ExtResource("9_ola1g")
 [node name="Pc" type="Area2D" parent="Pc" unique_id=575865142]
 
 [node name="pcCollision" type="CollisionShape2D" parent="Pc/Pc" unique_id=2030729429]
-position = Vector2(355.5, 346)
+position = Vector2(356, 352.75)
 shape = SubResource("RectangleShape2D_x2j0j")
 
 [node name="Monitor" type="Area2D" parent="Pc" unique_id=1568180021]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pc/Monitor" unique_id=357571712]
-polygon = PackedVector2Array(405, 278, 550, 279, 551, 379, 502, 379, 487, 403, 505, 403, 511, 410, 545, 412, 553, 419, 551, 423, 404, 423, 402, 417, 413, 410, 437, 410, 443, 402, 463, 402, 447, 379, 403, 380)
+polygon = PackedVector2Array(13.4599, -2.5000916, 12.55304, -3.585266, 11.572449, 7.370941, -183.60452, -44.232788)
 
 [node name="Gaveta1Pc" type="Sprite2D" parent="." unique_id=1163807521]
 visible = false

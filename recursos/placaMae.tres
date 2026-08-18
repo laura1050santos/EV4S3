@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="itemData" format=3 uid="uid://df30wishxki7q"]
 
-[ext_resource type="Texture2D" uid="uid://dyh38oyfptu4u" path="res://assets/itens/placamaeperspectiva.png" id="1_bytji"]
+[ext_resource type="Texture2D" uid="uid://1mayir26v0b5" path="res://assets/itens/placamaeperspectiva.png" id="1_bytji"]
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_qtasf"]
 [ext_resource type="Texture2D" uid="uid://8f8l1hur621y" path="res://assets/itens/placamae.png" id="2_pwx0f"]
 
