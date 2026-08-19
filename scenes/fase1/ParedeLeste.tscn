@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dqttd76hew5ag"]
+[gd_scene load_steps=15 format=3 uid="uid://dqttd76hew5ag"]
 
 [ext_resource type="Script" uid="uid://cyusdajpoxlmc" path="res://scripts/salas_scripts/parede_leste.gd" id="1_2litd"]
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="1_nd5rm"]
@@ -19,88 +19,89 @@ size = Vector2(62, 138.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etvgb"]
 size = Vector2(93, 57)
 
-[node name="leste" type="Node2D" unique_id=1514872956]
+[node name="leste" type="Node2D"]
 script = ExtResource("1_2litd")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=122520221]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(575.5, 324)
 scale = Vector2(0.60156244, 0.6009259)
 texture = ExtResource("2_k8ayk")
 
-[node name="SetaDireita" parent="." unique_id=1578184254 instance=ExtResource("1_nd5rm")]
+[node name="SetaDireita" parent="." instance=ExtResource("1_nd5rm")]
 destino_cena = "uid://cxhjpnc7drrok"
 
-[node name="SetaEsquerda" parent="." unique_id=1283995243 instance=ExtResource("2_vkmgy")]
+[node name="SetaEsquerda" parent="." instance=ExtResource("2_vkmgy")]
 destino_cena = "uid://djryii8ewlak6"
 
-[node name="setaCima" parent="." unique_id=1498824335 instance=ExtResource("5_xd0od")]
+[node name="setaCima" parent="." instance=ExtResource("5_xd0od")]
 destino_cena = "uid://dcjm6p1qyhtmg"
 
-[node name="SetaBaixo" parent="." unique_id=1229194195 instance=ExtResource("6_k8ayk")]
+[node name="SetaBaixo" parent="." instance=ExtResource("6_k8ayk")]
 destino_cena = "uid://dmhce3kfm14ep"
 
-[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("7_7nwwv")]
+[node name="Escuro" parent="." instance=ExtResource("7_7nwwv")]
 
-[node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_cvcdw")]
+[node name="BotaoConfig" parent="." instance=ExtResource("8_cvcdw")]
 
-[node name="LixoPc" type="Sprite2D" parent="." unique_id=744294945]
+[node name="LixoPc" type="Sprite2D" parent="."]
 position = Vector2(774.99994, 530.49994)
 scale = Vector2(0.67857176, 0.6850002)
 texture = ExtResource("9_ola1g")
 
-[node name="Pc" type="Node" parent="." unique_id=1017511998]
+[node name="Pc" type="Node" parent="."]
 
-[node name="Pc" type="Area2D" parent="Pc" unique_id=575865142]
+[node name="Pc" type="Area2D" parent="Pc"]
 
-[node name="pcCollision" type="CollisionShape2D" parent="Pc/Pc" unique_id=2030729429]
+[node name="pcCollision" type="CollisionShape2D" parent="Pc/Pc"]
 position = Vector2(356, 352.75)
 shape = SubResource("RectangleShape2D_x2j0j")
 
-[node name="Monitor" type="Area2D" parent="Pc" unique_id=1568180021]
+[node name="Monitor" type="Area2D" parent="Pc"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pc/Monitor" unique_id=357571712]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pc/Monitor"]
 polygon = PackedVector2Array(13.4599, -2.5000916, 12.55304, -3.585266, 11.572449, 7.370941, -183.60452, -44.232788)
 
-[node name="Gaveta1Pc" type="Sprite2D" parent="." unique_id=1163807521]
+[node name="Gaveta1Pc" type="Sprite2D" parent="."]
 visible = false
 z_index = 3
 position = Vector2(576.00006, 324.00003)
 scale = Vector2(0.6, 0.6000001)
 texture = ExtResource("10_etvgb")
 
-[node name="Gaveta2Pc" type="Sprite2D" parent="." unique_id=1222406275]
+[node name="Gaveta2Pc" type="Sprite2D" parent="."]
 visible = false
 z_index = 2
 position = Vector2(576.00006, 324)
 scale = Vector2(0.6, 0.6000001)
 texture = ExtResource("11_pvpgn")
 
-[node name="Gaveta3Pc" type="Sprite2D" parent="." unique_id=1825570844]
+[node name="Gaveta3Pc" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 position = Vector2(576, 323.99997)
 scale = Vector2(0.6000001, 0.59999996)
 texture = ExtResource("12_35a4w")
 
-[node name="Area2D3" type="Area2D" parent="." unique_id=992332998]
+[node name="Area2D3" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(1, 112)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=2075437785]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2(586.5, 466.5)
 shape = SubResource("RectangleShape2D_etvgb")
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=1807966045]
+[node name="Area2D2" type="Area2D" parent="."]
 z_index = 2
 position = Vector2(1, 56)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=58998946]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(586.5, 466.5)
 shape = SubResource("RectangleShape2D_etvgb")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1104379121]
+[node name="Area2D" type="Area2D" parent="."]
 z_index = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=741556780]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(586.5, 466.5)
 shape = SubResource("RectangleShape2D_etvgb")
 

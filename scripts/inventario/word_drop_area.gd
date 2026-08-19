@@ -56,8 +56,15 @@ func usar_item(item: itemData, node: Node):
 	item.item_ativo = !item.item_ativo
 	
 	var pai_da_luz = node 
+	
+	
 	var lst = ["lanterna","chave de fenda"]
 	if item.item_ativo:
+		GlobalSingleton.item_mao = item
+	
+		print("ITEM EQUIPADO: ", item.item_name)
+		print("ATIVO: ", item.item_ativo)
+	
 		node.texture = item.ativo_icon
 		for j in lst:
 			if item.item_name == j:
@@ -74,7 +81,7 @@ func usar_item(item: itemData, node: Node):
 				node.reparent(root)
 				node.z_index = 1
 	else:
-
+		GlobalSingleton.item_mao = null
 		node.texture = item.icon
 		itemData.desligar_luz(item, pai_da_luz)
 	

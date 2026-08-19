@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctcxfyudlfy8a"]
+
+[ext_resource type="Texture2D" uid="uid://10ks54qoe15d" path="res://assets/cenarios/pcfechado.png" id="1_kdbaf"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_lw6fh"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_lvly6"]
+
+[sub_resource type="GDScript" id="GDScript_lw6fh"]
+script/source = "extends Node2D
+
+
+func _on_tampa_gabinete_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	print(\"ITEM NA MÃO: \", GlobalSingleton.item_mao)
+
+	if GlobalSingleton.item_mao != null:
+		print(\"NOME: \", GlobalSingleton.item_mao.item_name)
+		print(\"ATIVO: \", GlobalSingleton.item_mao.item_ativo)
+
+		if GlobalSingleton.item_mao.item_name == \"chave\" and GlobalSingleton.item_mao.item_ativo:
+			get_tree().change_scene_to_file(\"res://scenes/fase1/zoom_pc.tscn\")
+			return
+
+	print(\"Você deve encontrar a ferramenta necessária para abrir o gabinete.\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lw6fh"]
+size = Vector2(383.8714, 418.0493)
+
+[node name="pcFechado" type="Node2D"]
+script = SubResource("GDScript_lw6fh")
+
+[node name="SetaEsquerda" parent="." instance=ExtResource("1_lw6fh")]
+destino_cena = "uid://dqttd76hew5ag"
+
+[node name="gabinete pc" type="Sprite2D" parent="."]
+position = Vector2(574, 327.5)
+scale = Vector2(0.59791666, 0.6027778)
+texture = ExtResource("1_kdbaf")
+
+[node name="Escuro" parent="." instance=ExtResource("3_lvly6")]
+
+[node name="Tampa Gabinete" type="Area2D" parent="."]
+position = Vector2(32, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tampa Gabinete"]
+position = Vector2(608.27026, -14.57309)
+rotation = -0.052951742
+shape = SubResource("RectangleShape2D_lw6fh")
+
+[connection signal="input_event" from="Tampa Gabinete" to="." method="_on_tampa_gabinete_input_event"]

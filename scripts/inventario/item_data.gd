@@ -30,3 +30,4 @@ static func desligar_luz(item: itemData, cena: Node):
 	var root = cena.get_tree().root
 	if root.has_node("LuzDaLanterna"):
 		root.get_node("LuzDaLanterna").queue_free()
+		
