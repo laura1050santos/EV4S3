@@ -51,9 +51,4 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	data.icon.show()
 	update_ui()
 	data.update_ui()
-
-func _notification(what):
-	#'avisa' se o item foi solto e mostra ele.É ativado no final da ação
-	if what == NOTIFICATION_DRAG_END:
-		if item:
-			icon.show()
+	
