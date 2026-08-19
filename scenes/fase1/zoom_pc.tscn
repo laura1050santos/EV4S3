@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfrogw3qesn5y"]
+[gd_scene format=3 uid="uid://bfrogw3qesn5y"]
 
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_pxn6f"]
 [ext_resource type="Script" uid="uid://cqdfu8ejxfdl4" path="res://scripts/salas_scripts/zoom_pc.gd" id="1_ya232"]
@@ -14,35 +14,35 @@ size = Vector2(114.75, 94)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gd0nk"]
 size = Vector2(193.04404, 128.17139)
 
-[node name="ZoomPc" type="Node2D" groups=["gabinete"]]
+[node name="ZoomPc" type="Node2D" unique_id=121454200 groups=["gabinete"]]
 script = ExtResource("1_ya232")
 
-[node name="GabinetePc" type="Sprite2D" parent="."]
+[node name="GabinetePc" type="Sprite2D" parent="." unique_id=1410218213]
 position = Vector2(575.5, 323)
 scale = Vector2(0.6005208, 0.59999996)
 texture = ExtResource("1_ynyrg")
 
-[node name="SetaEsquerda" parent="." instance=ExtResource("1_pxn6f")]
+[node name="SetaEsquerda" parent="." unique_id=135503277 instance=ExtResource("1_pxn6f")]
 destino_cena = "uid://dqttd76hew5ag"
 
-[node name="Escuro" parent="." instance=ExtResource("3_78eci")]
+[node name="Escuro" parent="." unique_id=643556558 instance=ExtResource("3_78eci")]
 
-[node name="slotGPU" type="Area2D" parent="." groups=["slots_componentes"]]
+[node name="slotGPU" type="Area2D" parent="." unique_id=2108897049 groups=["slots_componentes"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slotGPU"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slotGPU" unique_id=2113479162]
 position = Vector2(656.13855, 272.20132)
 rotation = -0.08925961
 shape = SubResource("RectangleShape2D_2ij56")
 
-[node name="slotProcessador" type="Area2D" parent="." groups=["slots_componentes"]]
+[node name="slotProcessador" type="Area2D" parent="." unique_id=164846825 groups=["slots_componentes"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slotProcessador"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slotProcessador" unique_id=1893565587]
 position = Vector2(525.375, 391)
 shape = SubResource("RectangleShape2D_xa1l7")
 
-[node name="slotPlacaMae" type="Area2D" parent="." groups=["slots_componentes"]]
+[node name="slotPlacaMae" type="Area2D" parent="." unique_id=636820922 groups=["slots_componentes"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slotPlacaMae"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slotPlacaMae" unique_id=1946240508]
 position = Vector2(632.3792, 166.3087)
 rotation = -0.117691785
 scale = Vector2(0.9999997, 0.9999997)

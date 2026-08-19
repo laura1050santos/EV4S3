@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctcxfyudlfy8a"]
+[gd_scene format=3 uid="uid://ctcxfyudlfy8a"]
 
 [ext_resource type="Texture2D" uid="uid://10ks54qoe15d" path="res://assets/cenarios/pcfechado.png" id="1_kdbaf"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_lw6fh"]

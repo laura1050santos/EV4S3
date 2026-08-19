@@ -1,6 +1,12 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
-var lanterna_node: Node = null
+
+@onready var lanterna: Node = get_tree().root.get_node_or_null("lanterna")
 var node = preload("res://scenes/inventario/worldItem.tscn")
+
+@onready var processador 
+@onready var gaveta1_sprite = $Gaveta1Aquario
+@onready var gaveta2_sprite = $gaveta2
+@onready var gaveta3_sprite = $gaveta_3
 
 func _ready():
 	GlobalSingleton.ultima_cena =  get_tree().current_scene.scene_file_path
@@ -17,22 +23,13 @@ func _ready():
 		},#itens que começam na cena
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-	
-		
-	var processador = get_tree().root.get_node("Sul/processador")
-	if processador :
-		print("placa mae na cena")
+	processador = get_tree().root.get_node_or_null("Sul/processador")
+	if GlobalSingleton.cont ==0:
 		processador.visible = false
 		var area = processador.get_node("Area2D/CollisionShape2D")
 		area.disabled = true
-
-	
 	gaveta1_sprite.visible = GlobalSingleton.gaveta_1
 	gaveta2_sprite.visible = GlobalSingleton.gaveta_2
-	
-@onready var gaveta1_sprite = $Gaveta1Aquario
-@onready var gaveta2_sprite = $gaveta2
-@onready var gaveta3_sprite = $gaveta_3
 
 func _on_gaveta_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -54,26 +51,27 @@ func _on_gaveta_3_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 		print("Ativado 3")
 	pass # Replace with function body.
 			
-func _input(event: InputEvent):
-	if get_tree().root.has_node("lanterna"):
-		$aquarioInteiro.texture = preload("res://assets/cenarios/salaaquarioseta.png")
-		get_node("buraco/colisaoBuraco").disabled = false
-		
-		
 func ativar_enigma_som():
 	if GlobalSingleton.cont == 0 :
 		GlobalSingleton.cont = 1
 		print("volume maximo \nquebrar o aquario")
 		$SomVidroQuebrando.play()
-		$aquarioQuebrado.visible = true
-		$aquarioInteiro.visible = false
+		
+
+		$aquarioInteiro.texture  = preload("res://assets/cenarios/aquarioquebrado(1).png")	
+
+func _input(event: InputEvent):
+	if lanterna:
+		$aquarioInteiro.texture = preload("res://assets/cenarios/salaaquarioseta.png")
+		$buraco/colisaoBuraco.disabled = false
+	if GlobalSingleton.cont==1:
+		$aquarioInteiro.texture = preload("res://assets/cenarios/aquarioquebrado(1).png")
 		
 
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_cabeca_quebrada_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if InputEventMouseButton and event.is_pressed():
-		var processador = get_tree().root.get_node("Sul/processador")
-		if processador :
-			processador.visible = true
-			var area = processador.get_node("Area2D/CollisionShape2D")
-			area.disabled = false
+		processador.visible = true
+		
+		var area = processador.get_node("Area2D/CollisionShape2D")
+		area.disabled = false # Replace with function body.

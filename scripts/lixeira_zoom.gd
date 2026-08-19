@@ -15,10 +15,11 @@ func _ready() -> void:
 #itens que começam na cena
 ]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-	var gpu = get_node("gpu")
-	gpu.visible = false
-	var collision = gpu.get_node("Area2D/CollisionShape2D")
-	collision.disabled = true
+	var gpu = get_node_or_null("gpu")
+	if gpu:
+		gpu.visible = false
+		var collision = gpu.get_node("Area2D/CollisionShape2D")
+		collision.disabled = true
  # Replace with function body.
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
