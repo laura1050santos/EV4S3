@@ -3,24 +3,23 @@
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_pxn6f"]
 [ext_resource type="Script" uid="uid://cqdfu8ejxfdl4" path="res://scripts/salas_scripts/zoom_pc.gd" id="1_ya232"]
 [ext_resource type="Texture2D" uid="uid://b8j6cw7dj820f" path="res://assets/cenarios/gabinetePC.png" id="1_ynyrg"]
+[ext_resource type="Texture2D" uid="uid://10ks54qoe15d" path="res://assets/cenarios/pcfechado.png" id="2_ya232"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_78eci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ij56"]
-size = Vector2(342.56857, 55.280426)
+size = Vector2(350.97073, 72.14209)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa1l7"]
-size = Vector2(114.75, 94)
+size = Vector2(117.75, 99)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gd0nk"]
 size = Vector2(193.04404, 128.17139)
 
-[node name="ZoomPc" type="Node2D" unique_id=121454200 groups=["gabinete"]]
-script = ExtResource("1_ya232")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt5hf"]
+size = Vector2(965.4165, 826.6668)
 
-[node name="GabinetePc" type="Sprite2D" parent="." unique_id=1410218213]
-position = Vector2(575.5, 323)
-scale = Vector2(0.6005208, 0.59999996)
-texture = ExtResource("1_ynyrg")
+[node name="ZoomPc" type="Node2D" unique_id=121454200]
+script = ExtResource("1_ya232")
 
 [node name="SetaEsquerda" parent="." unique_id=135503277 instance=ExtResource("1_pxn6f")]
 destino_cena = "uid://dqttd76hew5ag"
@@ -30,14 +29,14 @@ destino_cena = "uid://dqttd76hew5ag"
 [node name="slotGPU" type="Area2D" parent="." unique_id=2108897049 groups=["slots_componentes"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slotGPU" unique_id=2113479162]
-position = Vector2(656.13855, 272.20132)
+position = Vector2(655.96576, 276.35736)
 rotation = -0.08925961
 shape = SubResource("RectangleShape2D_2ij56")
 
 [node name="slotProcessador" type="Area2D" parent="." unique_id=164846825 groups=["slots_componentes"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slotProcessador" unique_id=1893565587]
-position = Vector2(525.375, 391)
+position = Vector2(523.875, 393.5)
 shape = SubResource("RectangleShape2D_xa1l7")
 
 [node name="slotPlacaMae" type="Area2D" parent="." unique_id=636820922 groups=["slots_componentes"]]
@@ -48,6 +47,24 @@ rotation = -0.117691785
 scale = Vector2(0.9999997, 0.9999997)
 shape = SubResource("RectangleShape2D_gd0nk")
 
-[connection signal="input_event" from="slotGPU" to="." method="_on_slot_gpu_input_event"]
-[connection signal="input_event" from="slotProcessador" to="." method="_on_slot_processador_input_event"]
-[connection signal="input_event" from="slotPlacaMae" to="." method="_on_slot_placa_mae_input_event"]
+[node name="GabineteAberto" type="Sprite2D" parent="." unique_id=2031913857]
+position = Vector2(579.5, 323.5)
+scale = Vector2(0.60052085, 0.5935185)
+texture = ExtResource("1_ynyrg")
+
+[node name="GabinetePc" type="Sprite2D" parent="." unique_id=1410218213]
+position = Vector2(581.00006, 327)
+scale = Vector2(0.6005208, 0.59999996)
+texture = ExtResource("2_ya232")
+
+[node name="Area2D" type="Area2D" parent="GabinetePc" unique_id=2043775888]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GabinetePc/Area2D" unique_id=605391720]
+position = Vector2(-16.025635, -26.666626)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_nt5hf")
+
+[connection signal="area_entered" from="slotGPU" to="." method="_on_slot_gpu_area_entered"]
+[connection signal="area_entered" from="slotProcessador" to="." method="_on_slot_processador_area_entered"]
+[connection signal="area_entered" from="slotPlacaMae" to="." method="_on_slot_placa_mae_area_entered"]
+[connection signal="input_event" from="GabinetePc/Area2D" to="." method="_on_area_2d_input_event"]

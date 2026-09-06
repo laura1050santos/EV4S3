@@ -153,6 +153,7 @@ volume_db = -4.815
 position = Vector2(600, 548)
 rotation = -1.5265174
 shape = SubResource("CapsuleShape2D_eq0go")
+disabled = true
 
 [connection signal="input_event" from="GAVETA" to="." method="_on_gaveta2_input_event"]
 [connection signal="input_event" from="gaveta" to="." method="_on_gaveta_input_event"]

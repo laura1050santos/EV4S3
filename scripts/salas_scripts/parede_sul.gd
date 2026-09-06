@@ -56,8 +56,6 @@ func ativar_enigma_som():
 		GlobalSingleton.cont = 1
 		print("volume maximo \nquebrar o aquario")
 		$SomVidroQuebrando.play()
-		
-
 		$aquarioInteiro.texture  = preload("res://assets/cenarios/aquarioquebrado(1).png")	
 
 func _input(event: InputEvent):
@@ -66,12 +64,11 @@ func _input(event: InputEvent):
 		$buraco/colisaoBuraco.disabled = false
 	if GlobalSingleton.cont==1:
 		$aquarioInteiro.texture = preload("res://assets/cenarios/aquarioquebrado(1).png")
-		
-
-
+	
 func _on_area_cabeca_quebrada_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if InputEventMouseButton and event.is_pressed():
-		processador.visible = true
-		
-		var area = processador.get_node("Area2D/CollisionShape2D")
-		area.disabled = false # Replace with function body.
+		if processador:
+			if processador.visible ==false:
+				processador.visible = true
+				var area = processador.get_node("Area2D/CollisionShape2D")
+				area.disabled = false # Replace with function body.
