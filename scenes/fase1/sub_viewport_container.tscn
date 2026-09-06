@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://br7k0n78k5ayn"]
+
+[ext_resource type="Script" uid="uid://dhd26671kyo85" path="res://scripts/telaComp/TelaDoComputador.gd" id="1_f0u6h"]
+[ext_resource type="Script" uid="uid://bgnlvsvgp2la1" path="res://scripts/telaComp/sub_viewport_container.gd" id="1_mn5u1"]
+[ext_resource type="Texture2D" uid="uid://bya08stkc7h5h" path="res://assets/cursor_normal.png" id="2_f0u6h"]
+[ext_resource type="Script" uid="uid://cl2x7yyhtkguu" path="res://scripts/telaComp/barra_senha.gd" id="4_y5tpp"]
+
+[node name="SubViewportContainerPC" type="SubViewportContainer" unique_id=1791322923]
+offset_left = 285.0
+offset_top = 87.0
+offset_right = 2100.0
+offset_bottom = 1019.0
+scale = Vector2(0.31999716, 0.39999837)
+stretch = true
+script = ExtResource("1_mn5u1")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1296937187]
+handle_input_locally = false
+size = Vector2i(1815, 932)
+render_target_update_mode = 4
+script = ExtResource("1_f0u6h")
+
+[node name="pcControl" type="Control" parent="SubViewport" unique_id=103237254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tela" type="ColorRect" parent="SubViewport/pcControl" unique_id=307978765]
+layout_mode = 0
+offset_right = 1815.0
+offset_bottom = 932.0
+color = Color(0.6028433, 0.6028428, 0.60284305, 1)
+
+[node name="CursorPc" type="Sprite2D" parent="SubViewport/pcControl" unique_id=1620216982]
+z_index = 5
+position = Vector2(-153, -153)
+scale = Vector2(0.235, 0.235)
+texture = ExtResource("2_f0u6h")
+
+[node name="Button" type="Button" parent="SubViewport/pcControl" unique_id=1341174103 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 1455.1342
+offset_top = 659.99615
+offset_right = 1611.3854
+offset_bottom = 764.9966
+theme_override_font_sizes/font_size = 25
+text = "Entrar
+"
+
+[node name="Window" type="Window" parent="SubViewport/pcControl" unique_id=561100560]
+oversampling_override = 1.0
+position = Vector2i(500, 268)
+visible = false
+
+[node name="BarraSenha" type="LineEdit" parent="SubViewport/pcControl" unique_id=1629270854]
+layout_mode = 0
+offset_left = 189.49785
+offset_top = 657.49615
+offset_right = 1436.3839
+offset_bottom = 762.4966
+theme_override_font_sizes/font_size = 40
+placeholder_text = "********"
+script = ExtResource("4_y5tpp")
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/pcControl" unique_id=1811098296]
+layout_mode = 0
+offset_left = 743.7566
+offset_top = 212.50087
+offset_right = 1033.2328
+offset_bottom = 432.50183
+color = Color(0.28485027, 0.28485027, 0.28485027, 1)
+
+[node name="TextEdit" type="TextEdit" parent="SubViewport/pcControl" unique_id=1842920138]
+layout_mode = 0
+offset_left = 793.7571
+offset_top = 452.50183
+offset_right = 996.884
+offset_bottom = 515.0021
+theme_override_font_sizes/font_size = 35
+text = "User_0xdj2"

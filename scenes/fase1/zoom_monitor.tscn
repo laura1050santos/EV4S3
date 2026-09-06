@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://du3a1evg3elat"]
 
+[ext_resource type="Script" uid="uid://ibclc43h6dh1" path="res://scenes/fase1/zoom_monitor.gd" id="1_lsmqo"]
 [ext_resource type="Texture2D" uid="uid://46winhk8p8iw" path="res://assets/cenarios/computador_desligado.png" id="1_p43dj"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_p43dj"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0ucrh"]
+[ext_resource type="PackedScene" uid="uid://br7k0n78k5ayn" path="res://scenes/fase1/sub_viewport_container.tscn" id="5_lsmqo"]
 
 [node name="ZoomMonitor" type="Node2D" unique_id=1296814580]
+script = ExtResource("1_lsmqo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1049587466]
 position = Vector2(576, 324)
@@ -15,3 +18,5 @@ texture = ExtResource("1_p43dj")
 destino_cena = "uid://dqttd76hew5ag"
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_0ucrh")]
+
+[node name="SubViewportContainer" parent="." unique_id=1791322923 instance=ExtResource("5_lsmqo")]

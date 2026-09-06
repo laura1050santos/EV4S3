@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cgsi8unu7f4cu"]
+
+[ext_resource type="Texture2D" uid="uid://bya08stkc7h5h" path="res://assets/cursor_normal.png" id="1_nrq1k"]
+
+[node name="pcControl" type="Control" unique_id=103237254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tela" type="ColorRect" parent="." unique_id=307978765]
+layout_mode = 0
+offset_right = 1815.0
+offset_bottom = 932.0
+color = Color(0.6028433, 0.6028428, 0.60284305, 1)
+
+[node name="CursorPc" type="Sprite2D" parent="." unique_id=1620216982]
+z_index = 5
+position = Vector2(-153, -153)
+scale = Vector2(0.235, 0.235)
+texture = ExtResource("1_nrq1k")
+
+[node name="Button" type="Button" parent="." unique_id=1341174103 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 223.0
+offset_right = 745.0
+offset_bottom = 325.0
+text = "teste
+"
+
+[node name="Window" type="Window" parent="." unique_id=561100560]
+oversampling_override = 1.0
+position = Vector2i(500, 403)
