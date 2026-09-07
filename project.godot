@@ -26,6 +26,7 @@ GlobalSingleton="*res://scripts/inventario/Global_singleton.gd"
 GlobalWorldEnvironment="*res://scenes/world_environment.tscn"
 SaveManager="*uid://dxwg3eomhfngo"
 TransicaoFase="*uid://cfhj6kkcbausb"
+Database="*uid://ca46e7o1v7sf8"
 
 [display]
 

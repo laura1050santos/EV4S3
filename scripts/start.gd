@@ -1,7 +1,9 @@
 extends Control
-# No script da sua CENA (ex: Level1.gd)
+
 @onready var canvas = Inventario.get_node("canvasLayer")
+
 func _ready() -> void:
+
 	canvas.hide()
 	
 func _on_jogar_pressed():
