@@ -9,4 +9,5 @@ script = ExtResource("1_pdaop")
 item_name = "mala"
 icon = ExtResource("1_ub7uk")
 inventory_icon = ExtResource("1_3ptfa")
+ativo_icon = ExtResource("1_ub7uk")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

@@ -55,43 +55,36 @@ func usar_item(item: itemData, node: Node):
 	print("Item clicado com botão direito no cenário: ", item.item_name)
 	item.item_ativo = !item.item_ativo
 	
-	var pai_da_luz = node 
+	var lst = ["lanterna", "chave de fenda"]
 	
-	
-	var lst = ["lanterna","chave de fenda"]
 	if item.item_ativo:
 		GlobalSingleton.item_mao = item
-	
 		print("ITEM EQUIPADO: ", item.item_name)
-		print("ATIVO: ", item.item_ativo)
-	
 		node.texture = item.ativo_icon
-		for j in lst:
-			if item.item_name == j:
-				node.position = Vector2(750,590)
-				for i in GlobalSingleton.itens_no_mundo:
-					if i["data"] == item.resource_path:
-						var recurso = load(i["data"])
-						GlobalSingleton.remover_item(recurso)
-						node.name=j
-					if j == "lanterna":
-						itemData.ativar_luz(item, pai_da_luz, node.get_global_position())
-				var root= get_tree().root
-				
-				node.reparent(root)
-				node.z_index = 1
+		
+		if item.item_name in lst:
+			# 1. Troca o nó pai para a raiz PRIMEIRO
+			var root = get_tree().root
+			node.reparent(root)
+			node.z_index = 1
+			node.name = item.item_name
+			
+			# 2. Ajusta a posição DEPOIS de ter mudado de pai
+			node.global_position = Vector2(750, 590)
+			
+			if item.item_name == "lanterna":
+				itemData.ativar_luz(item, node, node.global_position)
 	else:
 		GlobalSingleton.item_mao = null
 		node.texture = item.icon
-		itemData.desligar_luz(item, pai_da_luz)
-	
-					#
+		if item.item_name == "lanterna":
+			itemData.desligar_luz(item, node)
+
+	# Atualiza o estado do recurso no Singleton SEM remover ele da lista antes da hora
 	for info in GlobalSingleton.itens_no_mundo:
 		if info["data"] == item.resource_path:
-			var recurso = load(info["data"])
-			recurso.item_ativo = item.item_ativo
-
-
+			item.item_ativo = item.item_ativo
+			
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 		var target = verify()
