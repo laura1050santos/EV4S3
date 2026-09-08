@@ -19,6 +19,8 @@ func _on_close_requested() -> void:
 func _on_som_value_changed(value: float) -> void:
 	GlobalSingleton.volume = value
 	$Som/Label2.text = str(value)
+	Database.salvar_config("som", str(value))
+
 	if value == 100.0:
 		print("volume mais alto atingido")
 		volMax.emit()
@@ -27,7 +29,7 @@ func _on_som_value_changed(value: float) -> void:
 func _on_brilho_value_changed(value: float) -> void:
 	GlobalWorldEnvironment.environment.adjustment_brightness = value
 	$Brilho/Label.text = str(value)	# Replace with function body.
-
+	Database.salvar_config("brilho", str(value))
 
 func _on_sair_pressed() -> void:
 	

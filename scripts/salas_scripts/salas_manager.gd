@@ -10,27 +10,20 @@ func iniciar_itens_cena(nome_desta_cena, itens_inciais):
 			
 	for info in GlobalSingleton.itens_no_mundo:
 		if info.cena == nome_desta_cena:
-			#precisa saber se o item estava ativo
 			spawnar_itens(info.data, info.pos)
-			
+	Database.salvar_arrays("itens_no_mundo",JSON.stringify( GlobalSingleton.itens_no_mundo ))
+	Database.salvar_arrays("cenas_visitadas",JSON.stringify( GlobalSingleton.cenas_visitadas ))	
 	GlobalSingleton.registrar_transicao(scene_file_path)
-	GlobalSingleton.registrar_cena_atual(scene_file_path)
-	#GlobalSingleton.registrar_transicao(scene_file_path) travou de rodar com esse erro:
-	# Invalid call. Nonexistent function 'registrar_transicao' in base 'Node (Global_singleton.gd)'. 
-
+	
 func spawnar_itens(caminho_recurso, posicao):
-	
 	var recurso = load(caminho_recurso)
-	
 	var node = preload("res://scenes/inventario/worldItem.tscn").instantiate()
-	
 	node.set_meta("item_data", recurso)
 	node.name = recurso.item_name
 	if recurso.item_ativo:
 		node.texture = recurso.ativo_icon
 	else:
 		node.texture = recurso.icon 
-	
 	add_child(node)
 	node.global_position = posicao
 	
@@ -44,9 +37,7 @@ func ativar_item_ao_resconstruir(item,node):
 				item, node,node.global_position
 			)
 
-# Qualquer um pode chamar essa função para dropar/criar um item nesta sala
 func adicionar_item_na_sala(recurso, posicao):
-	
 	GlobalSingleton.registrar_item(recurso, posicao, self.name)
 	# 2. Instancia fisicamente na tela
 	spawnar_itens(recurso, posicao)

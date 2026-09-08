@@ -24,7 +24,7 @@ func _ready():
 	]
 	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
 	processador = get_tree().root.get_node_or_null("Sul/processador")
-	if GlobalSingleton.cont ==0:
+	if GlobalSingleton.cont_enigma_som ==0:
 		processador.visible = false
 		var area = processador.get_node("Area2D/CollisionShape2D")
 		area.disabled = true
@@ -52,8 +52,8 @@ func _on_gaveta_3_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 	pass # Replace with function body.
 			
 func ativar_enigma_som():
-	if GlobalSingleton.cont == 0 :
-		GlobalSingleton.cont = 1
+	if GlobalSingleton.cont_enigma_som == 0 :
+		GlobalSingleton.cont_enigma_som = 1
 		print("volume maximo \nquebrar o aquario")
 		$SomVidroQuebrando.play()
 		$aquarioInteiro.texture  = preload("res://assets/cenarios/aquarioquebrado(1).png")	
@@ -62,7 +62,7 @@ func _input(event: InputEvent):
 	if lanterna:
 		$aquarioInteiro.texture = preload("res://assets/cenarios/salaaquarioseta.png")
 		$buraco/colisaoBuraco.disabled = false
-	if GlobalSingleton.cont==1:
+	if GlobalSingleton.cont_enigma_som==1:
 		$aquarioInteiro.texture = preload("res://assets/cenarios/aquarioquebrado(1).png")
 	
 func _on_area_cabeca_quebrada_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
