@@ -1,70 +1,22 @@
 [gd_scene format=3 uid="uid://bfrogw3qesn5y"]
 
+[ext_resource type="Script" uid="uid://ibclc43h6dh1" path="res://scenes/fase1/zoom_monitor.gd" id="1_h7lp8"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_pxn6f"]
-[ext_resource type="Script" uid="uid://cqdfu8ejxfdl4" path="res://scripts/salas_scripts/zoom_pc.gd" id="1_ya232"]
-[ext_resource type="Texture2D" uid="uid://b8j6cw7dj820f" path="res://assets/cenarios/gabinetePC.png" id="1_ynyrg"]
-[ext_resource type="Texture2D" uid="uid://10ks54qoe15d" path="res://assets/cenarios/pcfechado.png" id="2_ya232"]
+[ext_resource type="Texture2D" uid="uid://46winhk8p8iw" path="res://assets/cenarios/computador_desligado.png" id="2_1pyfn"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_78eci"]
+[ext_resource type="PackedScene" uid="uid://br7k0n78k5ayn" path="res://scenes/fase1/sub_viewport_container.tscn" id="5_er0p3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ij56"]
-size = Vector2(350.97073, 72.14209)
+[node name="ZoomMonitor" type="Node2D" unique_id=1296814580]
+script = ExtResource("1_h7lp8")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa1l7"]
-size = Vector2(117.75, 99)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1049587466]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.59999996)
+texture = ExtResource("2_1pyfn")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gd0nk"]
-size = Vector2(193.04404, 128.17139)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt5hf"]
-size = Vector2(965.4165, 826.6668)
-
-[node name="ZoomPc" type="Node2D" unique_id=121454200]
-script = ExtResource("1_ya232")
-
-[node name="SetaEsquerda" parent="." unique_id=135503277 instance=ExtResource("1_pxn6f")]
+[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("1_pxn6f")]
 destino_cena = "uid://dqttd76hew5ag"
 
-[node name="Escuro" parent="." unique_id=643556558 instance=ExtResource("3_78eci")]
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_78eci")]
 
-[node name="slotGPU" type="Area2D" parent="." unique_id=2108897049 groups=["slots_componentes"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slotGPU" unique_id=2113479162]
-position = Vector2(655.96576, 276.35736)
-rotation = -0.08925961
-shape = SubResource("RectangleShape2D_2ij56")
-
-[node name="slotProcessador" type="Area2D" parent="." unique_id=164846825 groups=["slots_componentes"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slotProcessador" unique_id=1893565587]
-position = Vector2(523.875, 393.5)
-shape = SubResource("RectangleShape2D_xa1l7")
-
-[node name="slotPlacaMae" type="Area2D" parent="." unique_id=636820922 groups=["slots_componentes"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slotPlacaMae" unique_id=1946240508]
-position = Vector2(632.3792, 166.3087)
-rotation = -0.117691785
-scale = Vector2(0.9999997, 0.9999997)
-shape = SubResource("RectangleShape2D_gd0nk")
-
-[node name="GabineteAberto" type="Sprite2D" parent="." unique_id=2031913857]
-position = Vector2(579.5, 323.5)
-scale = Vector2(0.60052085, 0.5935185)
-texture = ExtResource("1_ynyrg")
-
-[node name="GabinetePc" type="Sprite2D" parent="." unique_id=1410218213]
-position = Vector2(581.00006, 327)
-scale = Vector2(0.6005208, 0.59999996)
-texture = ExtResource("2_ya232")
-
-[node name="Area2D" type="Area2D" parent="GabinetePc" unique_id=2043775888]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GabinetePc/Area2D" unique_id=605391720]
-position = Vector2(-16.025635, -26.666626)
-scale = Vector2(0.9999999, 1)
-shape = SubResource("RectangleShape2D_nt5hf")
-
-[connection signal="area_entered" from="slotGPU" to="." method="_on_slot_gpu_area_entered"]
-[connection signal="area_entered" from="slotProcessador" to="." method="_on_slot_processador_area_entered"]
-[connection signal="area_entered" from="slotPlacaMae" to="." method="_on_slot_placa_mae_area_entered"]
-[connection signal="input_event" from="GabinetePc/Area2D" to="." method="_on_area_2d_input_event"]
+[node name="SubViewportContainer" parent="." unique_id=1791322923 instance=ExtResource("5_er0p3")]

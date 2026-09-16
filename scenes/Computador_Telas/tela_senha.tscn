@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dflvdlgem7pct"]
+
+[ext_resource type="Script" uid="uid://cl2x7yyhtkguu" path="res://scripts/telaComp/barra_senha.gd" id="2_l0ixp"]
+
+[node name="Tela_Senha" type="Control" unique_id=851971395]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tela" type="ColorRect" parent="." unique_id=523744494]
+layout_mode = 0
+offset_right = 1815.0
+offset_bottom = 932.0
+color = Color(0.6028433, 0.6028428, 0.60284305, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1103022180 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 1455.1342
+offset_top = 659.99615
+offset_right = 1611.3854
+offset_bottom = 764.9966
+theme_override_font_sizes/font_size = 25
+text = "Entrar
+"
+
+[node name="BarraSenha" type="LineEdit" parent="." unique_id=1040433813]
+layout_mode = 0
+offset_left = 189.49785
+offset_top = 657.49615
+offset_right = 1436.3839
+offset_bottom = 762.4966
+theme_override_font_sizes/font_size = 40
+placeholder_text = "********"
+script = ExtResource("2_l0ixp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1954814129]
+layout_mode = 0
+offset_left = 743.7566
+offset_top = 212.50087
+offset_right = 1033.2328
+offset_bottom = 432.50183
+color = Color(0.28485027, 0.28485027, 0.28485027, 1)
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=331889958]
+layout_mode = 0
+offset_left = 793.7571
+offset_top = 452.50183
+offset_right = 996.884
+offset_bottom = 515.0021
+theme_override_font_sizes/font_size = 35
+text = "User_0xdj2"

@@ -9,5 +9,6 @@ func _ready() -> void:
 func _on_entrar(texto: String):
 	if texto == "Catarina":
 		print("Senha correta: ", texto)
+		get_parent().get_parent().get_node("Tela_Senha").hide()
 	else:
 		print("INCORRETO")

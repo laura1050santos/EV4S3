@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dudsayc35f54n"]
+
+[node name="Tela_Navegador" type="Control" unique_id=1346634533]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tela" type="ColorRect" parent="." unique_id=1158333231]
+layout_mode = 0
+offset_right = 1815.0
+offset_bottom = 932.0
+color = Color(0.69467324, 0.6946736, 0.69467336, 1)
+
+[node name="BarraPesquisa" type="LineEdit" parent="." unique_id=612635931]
+layout_mode = 0
+offset_left = 287.5026
+offset_top = 447.50186
+offset_right = 1534.3885
+offset_bottom = 552.5023
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Pesquisar..."
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=760177088]
+layout_mode = 0
+offset_left = 659.3809
+offset_top = 305.00125
+offset_right = 859.38086
+offset_bottom = 355.00125
+scale = Vector2(2.3750045, 2.3750045)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "NAVEGADOR"
+
+[node name="Button" type="Button" parent="." unique_id=434278563 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 825.0073
+offset_top = 582.5024
+offset_right = 981.25854
+offset_bottom = 687.5028
+theme_override_font_sizes/font_size = 25
+text = "Lupa"

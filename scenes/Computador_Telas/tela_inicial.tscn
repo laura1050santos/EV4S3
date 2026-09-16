@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cbl683ktnebq1"]
+
+[ext_resource type="Script" uid="uid://clruqe430n1a6" path="res://scenes/Computador_Telas/tela_inicial.gd" id="1_hcb5x"]
+
+[node name="Tela_Inicial" type="Control" unique_id=3652729]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hcb5x")
+
+[node name="Tela" type="ColorRect" parent="." unique_id=1320379024]
+layout_mode = 0
+offset_right = 1815.0
+offset_bottom = 932.0
+color = Color(0.31474152, 0.49246484, 0.47980273, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Tela" unique_id=1470874875]
+layout_mode = 0
+offset_left = -26.999998
+offset_top = 751.0
+offset_right = 262.4762
+offset_bottom = 971.001
+scale = Vector2(6.447468, 0.8168873)
+color = Color(0.23072472, 0.29728663, 0.337483, 1)
+
+[node name="Navegador" type="Button" parent="." unique_id=1386740228 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 68.75061
+offset_top = 790.0032
+offset_right = 110.75061
+offset_bottom = 821.0032
+scale = Vector2(4.7901287, 3.6956282)
+action_mode = 0
+text = "NAV"
+
+[node name="Pasta" type="Button" parent="." unique_id=406090245 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 68.75061
+offset_top = 47.500244
+offset_right = 125.75061
+offset_bottom = 78.500244
+scale = Vector2(3.554537, 3.554537)
+text = "PASTA 1"
+
+[node name="Pasta2" type="Button" parent="." unique_id=835146384 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 71.87561
+offset_top = 217.50089
+offset_right = 128.87561
+offset_bottom = 248.50089
+scale = Vector2(3.554537, 3.554537)
+text = "PASTA 2"
+
+[node name="Email" type="Button" parent="." unique_id=444680029 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 303.1277
+offset_top = 792.50323
+offset_right = 359.1277
+offset_bottom = 823.50323
+scale = Vector2(3.6198378, 3.6198378)
+text = "EMAIL"

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dc1a4giqskyf3"]
+
+[node name="Tela_Email" type="Control" unique_id=1090878199]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tela" type="ColorRect" parent="." unique_id=1804008241]
+layout_mode = 0
+offset_right = 1815.0
+offset_bottom = 932.0
+color = Color(0.66198117, 0.5831723, 0.57731605, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Tela" unique_id=1085900547]
+layout_mode = 0
+offset_left = 59.375427
+offset_top = 67.50028
+offset_right = 406.25366
+offset_bottom = 865.0035
+color = Color(0.7784455, 0.7784456, 0.77844536, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Tela" unique_id=1287206393]
+layout_mode = 0
+offset_left = 456.25403
+offset_top = 70.00029
+offset_right = 1734.3905
+offset_bottom = 867.5035
+color = Color(0.7784455, 0.7784456, 0.77844536, 1)
+
+[node name="PanelContainer" type="VBoxContainer" parent="." unique_id=905329447]
+layout_mode = 0
+offset_left = 543.7549
+offset_top = 105.00043
+offset_right = 1675.0149
+offset_bottom = 585.00244
+
+[node name="Button" type="Button" parent="PanelContainer" unique_id=1614871054]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "email 1"
+
+[node name="Button2" type="Button" parent="PanelContainer" unique_id=1026063232]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "email 2"
+
+[node name="Button3" type="Button" parent="PanelContainer" unique_id=1508583386]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "email 3"
