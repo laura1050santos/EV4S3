@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bhmdlul66bnvd"]
+
+[ext_resource type="Texture2D" uid="uid://ch2gdq30p1jay" path="res://assets/cenarios/fase-2-norte-limitado.png" id="1_k6m0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(134, 189)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 59.99997
+height = 196.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(81, 113)
+
+[node name="ParedeNorteLimitado" type="Node2D" unique_id=407256603]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1330308702]
+position = Vector2(575, 323)
+scale = Vector2(0.59907407, 0.59907407)
+texture = ExtResource("1_k6m0f")
+
+[node name="painel" type="Area2D" parent="." unique_id=1561059754]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="painel" unique_id=146132154]
+position = Vector2(377, 300)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="mala" type="Area2D" parent="." unique_id=519362064]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mala" unique_id=428020254]
+position = Vector2(509, 558)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="roteador" type="Area2D" parent="." unique_id=1395317268]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roteador" unique_id=272611987]
+position = Vector2(552.5, 272)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="porta-seguranca" type="Area2D" parent="." unique_id=1891439019]
+position = Vector2(221, 123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porta-seguranca" unique_id=965261154]
+position = Vector2(552.5, 282.5)
+shape = SubResource("RectangleShape2D_yf5fn")
