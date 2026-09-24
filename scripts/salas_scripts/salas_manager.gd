@@ -1,5 +1,4 @@
 extends Node2D
-# salas_manager.gd
 
 func iniciar_itens_cena(nome_desta_cena, itens_inciais):
 	if not GlobalSingleton.cena_ja_foi_registrada(nome_desta_cena):
@@ -11,8 +10,6 @@ func iniciar_itens_cena(nome_desta_cena, itens_inciais):
 	for info in GlobalSingleton.itens_no_mundo:
 		if info.cena == nome_desta_cena:
 			spawnar_itens(info.data, info.pos)
-	Database.salvar_arrays("itens_no_mundo",JSON.stringify( GlobalSingleton.itens_no_mundo ))
-	Database.salvar_arrays("cenas_visitadas",JSON.stringify( GlobalSingleton.cenas_visitadas ))	
 	GlobalSingleton.registrar_transicao(scene_file_path)
 	
 func spawnar_itens(caminho_recurso, posicao):

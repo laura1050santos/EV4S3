@@ -1,7 +1,13 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 
+
 func _ready():
 	GlobalSingleton.ultima_cena =  get_tree().current_scene.scene_file_path
+	var imgGabinete = Cenarios.get_cena("GabineteAberto")
+	if imgGabinete:
+		$GabinetePc.texture = load("res://assets/cenarios/pcvazio.png")
+
+		
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
 
 	var itens_iniciais=[
@@ -13,7 +19,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if InputEventMouseButton and event.is_pressed():		
 		var chave =  get_node_or_null("chave")
 		if chave:
-			$GabinetePc.queue_free()
+			$GabinetePc.texture = load("res://assets/cenarios/pcvazio.png")
+			Cenarios.salvar_cenarios("GabineteAberto","res://assets/cenarios/pcvazio.png" )
 		
 		
 

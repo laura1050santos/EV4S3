@@ -24,9 +24,8 @@ func _check_password() -> void:
 
 func open_door() -> void:
 	print("Senha correta! Abrindo...")
-	$"..".visible = false
-	$"../../ChaoAberto".visible = true
-	
+	$"..".texture = preload("res://assets/cenarios/chao_aberto.png")
+	Database.salvar_cenarios("chaoAberto", "res://assets/cenarios/chao_aberto.png")
 	var root = get_tree().root
 	var placa = root.get_node("CenaChao/placa")
 	if placa :

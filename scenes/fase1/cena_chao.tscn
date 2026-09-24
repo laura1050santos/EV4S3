@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://22662h0m8fq2" path="res://assets/cartas/mensagem_alcapao.png" id="8_la3ws"]
 [ext_resource type="Script" uid="uid://ce00dwtgkmavc" path="res://scripts/viewMensagem.gd" id="9_vl7g8"]
 [ext_resource type="Script" uid="uid://by0kllm5dyvw" path="res://scripts/viewDifMensagem.gd" id="10_rooau"]
-[ext_resource type="Texture2D" uid="uid://8685b7dtcohx" path="res://assets/cenarios/chao_aberto.png" id="11_03j3h"]
-[ext_resource type="Script" uid="uid://dayjqdcveajg0" path="res://scripts/chao_aberto.gd" id="12_umd3r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57qmd"]
 radius = 58.830048
@@ -56,12 +54,6 @@ position = Vector2(584.361, 301.0951)
 rotation = 0.14787108
 shape = SubResource("RectangleShape2D_k4gre")
 debug_color = Color(0.90259814, 0.13965777, 0.67729354, 0.41960785)
-
-[node name="ChaoAberto" type="Sprite2D" parent="." unique_id=1676373847]
-position = Vector2(578.99994, 327.5)
-scale = Vector2(0.6041666, 0.59722227)
-texture = ExtResource("11_03j3h")
-script = ExtResource("12_umd3r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=331265735]
 position = Vector2(580.00006, 326.00003)

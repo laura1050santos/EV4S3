@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_pxn6f"]
 [ext_resource type="Script" uid="uid://cqdfu8ejxfdl4" path="res://scripts/salas_scripts/zoom_pc.gd" id="1_ya232"]
-[ext_resource type="Texture2D" uid="uid://b8j6cw7dj820f" path="res://assets/cenarios/gabinetePC.png" id="1_ynyrg"]
 [ext_resource type="Texture2D" uid="uid://10ks54qoe15d" path="res://assets/cenarios/pcfechado.png" id="2_ya232"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_78eci"]
 
@@ -50,7 +49,6 @@ shape = SubResource("RectangleShape2D_gd0nk")
 [node name="GabineteAberto" type="Sprite2D" parent="." unique_id=2031913857]
 position = Vector2(579.5, 323.5)
 scale = Vector2(0.60052085, 0.5935185)
-texture = ExtResource("1_ynyrg")
 
 [node name="GabinetePc" type="Sprite2D" parent="." unique_id=1410218213]
 position = Vector2(581.00006, 327)
