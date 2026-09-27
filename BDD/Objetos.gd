@@ -1,27 +1,36 @@
 class_name Objetos
 
+
 static func criar_tabela():
 	var sql_objetos = """
 	CREATE TABLE IF NOT EXISTS Objetos (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		nome TEXT NOT NULL UNIQUE,
-		recurso TEXT NOT NULL UNIQUE, 
-		pos TEXT, 
+		recurso TEXT NOT NULL UNIQUE,
+		pos TEXT,
 		cena TEXT
-		
 	);
 	"""
+
 	Database.db.query(sql_objetos)
-	
-static func salvar_objetos( nome, recurso, pos, cena):
+
+
+static func salvar_objetos(nome, recurso, pos, cena):
 	var sql = """
-	INSERT INTO Objetos (nome, recurso, pos , cena )
-	VALUES (?, ?)
+	INSERT INTO Objetos (nome, recurso, pos, cena)
+	VALUES (?, ?, ?, ?);
 	"""
+
 	Database.db.query_with_bindings(sql, [
-		nome, recurso, pos , cena ])
+		nome,
+		recurso,
+		pos,
+		cena
+	])
+
 	print("Objeto salvo: ", nome)
-	
+
+
 static func atualizar_objeto(nome, recurso, pos, cena):
 	var sql = """
 	UPDATE Objetos
@@ -30,28 +39,43 @@ static func atualizar_objeto(nome, recurso, pos, cena):
 		cena = ?
 	WHERE nome = ?;
 	"""
+
 	Database.db.query_with_bindings(sql, [
-		recurso, pos,cena,nome
+		recurso,
+		pos,
+		cena,
+		nome
 	])
+
 	print("Objeto atualizado: ", nome)
+
 
 static func get_objetos():
 	var sql = """
-	SELECT id, objeto, 
+	SELECT id, nome, recurso, pos, cena
 	FROM Objetos;
 	"""
+
 	Database.db.query(sql)
+
 	return Database.db.get_query_result()
+
 
 static func get_nome(nome):
 	var sql = """
-	SELECT id, objeto, ,pos
+	SELECT id, nome, recurso, pos, cena
 	FROM Objetos
-	WHERE objeto = ?;
+	WHERE nome = ?;
 	"""
-	
+
 	Database.db.query_with_bindings(sql, [nome])
-	return Database.db.get_query_result()
+
+	var resultado = Database.db.get_query_result()
+
+	if resultado.size() > 0:
+		return resultado[0]
+
+	return null
 
 
 static func delete_objeto(nome):
@@ -59,9 +83,11 @@ static func delete_objeto(nome):
 	DELETE FROM Objetos
 	WHERE nome = ?;
 	"""
+
 	Database.db.query_with_bindings(sql, [nome])
+
 	print("Objeto deletado: ", nome)
-	
+
 static func iniciar_objetos():
 	salvar_objetos("mala", "res://recursos/Mala.tres",pos_para_json(750,590),"norte")
 	salvar_objetos("chave", "res://recursos/chaveDeFenda.tres",pos_para_json(770,590),"leste")

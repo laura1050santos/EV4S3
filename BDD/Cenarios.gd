@@ -11,18 +11,20 @@ static func criar_tabela():
 
 	Database.db.query(sql_cenarios)
 	
-static func salvar_cenarios( cena, sprite):
+static func salvar_cenarios(cena, sprite):
 	var sql = """
 	INSERT INTO Cenarios (cena, sprite)
-	VALUES (?, ?)
+	VALUES (?, ?);
 	"""
-	
+
 	Database.db.query_with_bindings(sql, [
 		cena,
 		sprite
 	])
-	
-	print("Cena salva: ", cena)
+
+	print("Cenário criado: ", cena)
+
+
 static func atualizar_cenario(cena, sprite):
 	var sql = """
 	UPDATE Cenarios
@@ -56,11 +58,11 @@ static func delete_cena(cena):
 	DELETE FROM Cenarios
 	WHERE cena = ?;
 	"""
-	
+
 	Database.db.query_with_bindings(sql, [cena])
-	
-	print("Cena deletada: ", cena)
-	
+
+	print("Cenário deletado: ", cena)
+
 	
 static func iniciar_cenarios():
 	salvar_cenarios("norte","res://assets/cenarios/tela porta.png")
