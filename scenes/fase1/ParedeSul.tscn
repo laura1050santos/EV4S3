@@ -117,7 +117,7 @@ position = Vector2(614.5, 283)
 shape = SubResource("RectangleShape2D_nco2w")
 disabled = true
 
-[node name="aquarioInteiro" type="Sprite2D" parent="." unique_id=2129781235]
+[node name="cena" type="Sprite2D" parent="." unique_id=2129781235]
 position = Vector2(575.50006, 323.00003)
 scale = Vector2(0.60052085, 0.6018519)
 texture = ExtResource("2_3wuve")

@@ -6,10 +6,19 @@ func _ready() -> void:
 	db = SQLite.new()
 	db.path = "res://data.db"
 	if not db.open_db():
-		print("Erro ao abrir banco de dados!")
-		return
+		pass
+	print("banco criado")
 	criar_tabelas()
-
+	novo_jogo()
+	return
+	
+func novo_jogo():
+	Objetos.iniciar_objetos()
+	Arrays.iniciar_array()
+	Enigmas.iniciar_enigmas()
+	Cenarios.iniciar_cenarios()	
+	Config.iniciar_config()
+	
 func criar_tabelas():
 	Cenarios.criar_tabela()
 	Objetos.criar_tabela()

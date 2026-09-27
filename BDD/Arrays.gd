@@ -35,6 +35,7 @@ static func get_array(nome):
 	WHERE nome = ?;
 	"""
 	Database.db.query_with_bindings(sql, [nome])
+	
 	var resultado = Database.db.get_query_result()
 	
 	if resultado.is_empty():
@@ -50,7 +51,12 @@ static func delete_array(nome):
 	DELETE FROM Arrays
 	WHERE nome = ?;
 	"""
-	
 	Database.db.query_with_bindings(sql, [nome])
 	
 	print("Array deletado: ", nome)
+	
+static func iniciar_array():
+	Objetos.get_objetos()
+	salvar_arrays("itens_no_mundo","") 
+	salvar_arrays("cenasVisitadas","")
+	salvar_arrays("historico_cenas","")

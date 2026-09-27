@@ -1,9 +1,7 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 
 func _ready():
-	var a = Database.get_info("Cenarios", "chaoAberto")
-	if a:
-		$Sprite2D.texture = a
+
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
 
 	var itens_iniciais=[

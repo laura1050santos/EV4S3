@@ -54,3 +54,7 @@ static func delete_config( config):
 	Database.db.query_with_bindings(sql, [config])
 	
 	print("Cena deletada: ", config)
+
+static func iniciar_config():
+	salvar_configuracao("volume", 40)
+	salvar_configuracao("brilho", 1)

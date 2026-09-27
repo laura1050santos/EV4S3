@@ -53,3 +53,8 @@ static func delete_enigma(nome):
 	Database.db.query_with_bindings(sql, [nome])
 	
 	print("Enigma deletada: ", nome)
+	
+static func iniciar_enigmas():
+	salvar_enigmas("aquario", false)
+	salvar_enigmas("lampada", false)
+	salvar_enigmas("alcapao", false)
