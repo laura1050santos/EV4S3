@@ -15,10 +15,7 @@ static func salvar_enigmas( nome, resolvido):
 	var sql = """
 	INSERT INTO Enigmas (nome, resolvido)
 	VALUES (?, ?)
-	ON CONFLICT(nome)
-	DO UPDATE SET resolvido = excluded.resolvido;
 	"""
-	
 	Database.db.query_with_bindings(sql, [
 		nome,
 		resolvido
@@ -26,6 +23,19 @@ static func salvar_enigmas( nome, resolvido):
 	
 	print("Enigma salva: ", nome)
 
+static func atualizar_enigma(nome, resolvido):
+	var sql = """
+	UPDATE Enigmas
+	SET resolvido = ?
+	WHERE nome = ?;
+	"""
+
+	Database.db.query_with_bindings(sql, [
+		resolvido,
+		nome
+	])
+
+	print("Enigma atualizado: ", nome)
 
 static func get_nome(nome):
 	var sql = """
@@ -49,7 +59,6 @@ static func delete_enigma(nome):
 	DELETE FROM Enigmas
 	WHERE nome = ?;
 	"""
-	
 	Database.db.query_with_bindings(sql, [nome])
 	
 	print("Enigma deletada: ", nome)

@@ -6,10 +6,7 @@ func _ready() -> void:
 	db = SQLite.new()
 	db.path = "res://data.db"
 	if not db.open_db():
-		pass
-	print("banco criado")
-	criar_tabelas()
-	novo_jogo()
+		criar_tabelas()
 	return
 	
 func novo_jogo():

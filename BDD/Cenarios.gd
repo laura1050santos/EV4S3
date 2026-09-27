@@ -15,8 +15,6 @@ static func salvar_cenarios( cena, sprite):
 	var sql = """
 	INSERT INTO Cenarios (cena, sprite)
 	VALUES (?, ?)
-	ON CONFLICT(cena)
-	DO UPDATE SET sprite = excluded.sprite;
 	"""
 	
 	Database.db.query_with_bindings(sql, [
@@ -25,6 +23,19 @@ static func salvar_cenarios( cena, sprite):
 	])
 	
 	print("Cena salva: ", cena)
+static func atualizar_cenario(cena, sprite):
+	var sql = """
+	UPDATE Cenarios
+	SET sprite = ?
+	WHERE cena = ?;
+	"""
+
+	Database.db.query_with_bindings(sql, [
+		sprite,
+		cena
+	])
+
+	print("Cenário atualizado: ", cena)
 
 
 static func get_cena(cena):
@@ -33,14 +44,10 @@ static func get_cena(cena):
 	FROM Cenarios
 	WHERE cena = ?;
 	"""
-	
 	Database.db.query_with_bindings(sql, [cena])
-	
 	var resultado = Database.db.get_query_result()
-	
 	if resultado.size() > 0:
-		return resultado
-	
+		return resultado[0]
 	return null
 
 
@@ -53,6 +60,8 @@ static func delete_cena(cena):
 	Database.db.query_with_bindings(sql, [cena])
 	
 	print("Cena deletada: ", cena)
+	
+	
 static func iniciar_cenarios():
 	salvar_cenarios("norte","res://assets/cenarios/tela porta.png")
 	salvar_cenarios("sul","res://assets/cenarios/salaaquario.png")

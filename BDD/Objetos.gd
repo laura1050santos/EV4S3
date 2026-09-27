@@ -17,25 +17,31 @@ static func salvar_objetos( nome, recurso, pos, cena):
 	var sql = """
 	INSERT INTO Objetos (nome, recurso, pos , cena )
 	VALUES (?, ?)
-	ON CONFLICT(nome,recurso)
-	DO UPDATE SET  = excluded.pos;
 	"""
-	
 	Database.db.query_with_bindings(sql, [
 		nome, recurso, pos , cena ])
-	
 	print("Objeto salvo: ", nome)
+	
+static func atualizar_objeto(nome, recurso, pos, cena):
+	var sql = """
+	UPDATE Objetos
+	SET recurso = ?,
+		pos = ?,
+		cena = ?
+	WHERE nome = ?;
+	"""
+	Database.db.query_with_bindings(sql, [
+		recurso, pos,cena,nome
+	])
+	print("Objeto atualizado: ", nome)
 
 static func get_objetos():
 	var sql = """
 	SELECT id, objeto, 
 	FROM Objetos;
 	"""
-	
 	Database.db.query(sql)
 	return Database.db.get_query_result()
-
-
 
 static func get_nome(nome):
 	var sql = """

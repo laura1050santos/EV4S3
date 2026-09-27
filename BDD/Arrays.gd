@@ -19,15 +19,27 @@ static func salvar_arrays (nome, dados):
 	var sql = """
 	INSERT INTO Arrays (nome, dados)
 	VALUES (?, ?)
-	ON CONFLICT(nome)
-	DO UPDATE SET dados = excluded.dados;
 	"""
 	Database.db.query_with_bindings(sql, [
 		nome,
 		dados_json
 	])
 	print("Array salvo:", nome)
-	
+
+static func atualizar_array(nome, dados):
+	var dados_json = JSON.stringify(dados)
+	var sql = """
+	UPDATE Arrays
+	SET dados = ?
+	WHERE nome = ?;
+	"""
+	Database.db.query_with_bindings(sql, [
+		dados_json,
+		nome
+	])
+
+	print("Array atualizado: ", nome)
+
 static func get_array(nome):
 	var sql = """
 	SELECT id, nome, dados
