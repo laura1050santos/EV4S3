@@ -68,7 +68,7 @@ static func delete_array(nome):
 	print("Array deletado: ", nome)
 	
 static func iniciar_array():
-	Objetos.get_objetos()
+	
 	salvar_arrays("itens_no_mundo","") 
 	salvar_arrays("cenasVisitadas","")
 	salvar_arrays("historico_cenas","")

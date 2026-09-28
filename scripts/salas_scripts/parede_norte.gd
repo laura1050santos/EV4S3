@@ -4,18 +4,10 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 func _ready():
 	GlobalSingleton.ultima_cena =  get_tree().current_scene.scene_file_path
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
-	var objetos = Objetos.get_nome("mala")
-	print(objetos)
-	var A=[
-		{ "item": preload("res://recursos/Mala.tres"),
-		"pos":Vector2(750,590),
-		"cena":nome_desta_cena,
-		},#itens que começam na cena
-	]
-	iniciar_itens_cena(nome_desta_cena, A)
- 	
-
-
+	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
+	iniciar_itens_cena(nome_desta_cena, objetos)
+	 
+	
 func interruptor_ativar():
 	var LuzLampada = load("res://scenes/escuro.tscn").instantiate()
 	print(LuzLampada.get_parent())
@@ -46,5 +38,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 func _on_area_interruptor_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		if GlobalSingleton.enigma_luz_resolvido == true:
+		var lampada = Enigmas.get_nome("lampada")
+		if lampada["resolvido"] == 1 :
 			interruptor_ativar()

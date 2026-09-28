@@ -12,7 +12,7 @@ func _ready() -> void:
 	if not sucesso:
 		print("Erro ao abrir o banco de dados.")
 		return
-
+	novo_jogo()
 
 func criar_tabelas():
 	Cenarios.criar_tabela()

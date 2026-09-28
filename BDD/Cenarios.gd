@@ -37,7 +37,7 @@ static func atualizar_cenario(cena, sprite):
 		cena
 	])
 
-	print("Cenário atualizado: ", cena)
+	print("Cenário atualizado: ", cena,sprite)
 
 
 static func get_cena(cena):
