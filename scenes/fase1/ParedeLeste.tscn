@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://kjdlt65x5xf1" path="res://assets/cenarios/gavetas/gaveta1_pc.png" id="10_etvgb"]
 [ext_resource type="Texture2D" uid="uid://ckfeuq1cxw0t1" path="res://assets/cenarios/gavetas/gaveta2_pc.png" id="11_pvpgn"]
 [ext_resource type="Texture2D" uid="uid://dsinh6ohcco58" path="res://assets/cenarios/gavetas/gaveta3_pc_vazia.png" id="12_35a4w"]
+[ext_resource type="Texture2D" uid="uid://c82jhhq02daer" path="res://assets/itens/monitorLigadoSemConexao.png" id="13_pvpgn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j0j"]
 size = Vector2(62, 138.5)
@@ -106,6 +107,11 @@ z_index = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1782050822]
 position = Vector2(586.5, 466.5)
 shape = SubResource("RectangleShape2D_etvgb")
+
+[node name="monitorLigado" type="Sprite2D" parent="." unique_id=1031921177]
+position = Vector2(478.71936, 346.0139)
+scale = Vector2(0.3206337, 0.2885615)
+texture = ExtResource("13_pvpgn")
 
 [connection signal="input_event" from="Pc/Pc" to="." method="_on_pc_input_event"]
 [connection signal="input_event" from="Pc/Monitor" to="." method="_on_monitor_input_event"]

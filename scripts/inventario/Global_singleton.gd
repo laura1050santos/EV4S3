@@ -16,13 +16,16 @@ var volume = 0
 # Função para registrar um item novo no mundo
 var holder := Node.new()
 var cont_enigma_som = 0
+var roteador_coletado = false
+var roteador_instalado: bool = false
 
 # ==== SELEÇÃO DE FASE ====
 var fase_liberada: int = 1
 var fases_concluidas: Array = [false, false, false, false]
+var pc_conectado: bool = false
 
 var ultima_cena_por_fase: Dictionary = {
-	1: "res://scenes/fase1/ParedeNorte.tscn",
+	1: "res://scenes/fase1/zoom_pc.tscn",
 	2: "",
 	3: "",
 	4: ""
@@ -60,9 +63,14 @@ func registrar_cena_visitada(nome_da_cena):
 func remover_item(item_data):
 	var caminho_item = item_data.resource_path
 	
+	# Verifica se o item que está sendo coletado é o Roteador
+	if item_data.item_name == "roteador" or "roteador" in caminho_item.to_lower():
+		roteador_coletado = true
+		print("Roteador coletado com sucesso! Variavel global atualizada.")
+	
 	for i in range(itens_no_mundo.size()):
 		if itens_no_mundo[i].data == caminho_item:
-			print(itens_no_mundo[i].data,caminho_item )
+			print(itens_no_mundo[i].data, caminho_item)
 			itens_no_mundo.remove_at(i)
 			print(itens_no_mundo)
 			break

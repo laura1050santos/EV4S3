@@ -21,10 +21,10 @@ func _notification(what):
 	elif what == NOTIFICATION_DRAG_END:
 		mouse_filter = Control.MOUSE_FILTER_PASS
 
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return true
 
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	#essa função Nativa do Control é ativada ao soltar um item 
 	var item_para_dropar = data.item
 	print("Item dropado")
