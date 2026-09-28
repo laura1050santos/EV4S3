@@ -33,12 +33,12 @@ func ir_para_fase(numero_fase: int):
 		return
 	var caminho = GlobalSingleton.ultima_cena_por_fase[numero_fase]
 	get_tree().change_scene_to_file(caminho)
+	canvas.show()
 	# Não precisa chamar SaveManager.salvar() aqui: o registro da cena
 	# acontece sozinho no _ready() do salas_manager.gd assim que a cena carregar.
 
 func _on_fase_1_botao_pressed():
 	ir_para_fase(1)
-	canvas.show()
 
 func _on_fase_2_botao_pressed():
 	ir_para_fase(2)

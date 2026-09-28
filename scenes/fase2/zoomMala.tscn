@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dtybkfs4i3ifc"]
+
+[ext_resource type="Script" uid="uid://b3vsr72swlocd" path="res://scenes/fase2/zoom_mala.gd" id="1_kjaa4"]
+[ext_resource type="Texture2D" uid="uid://c4wof56f5vx32" path="res://assets/itens/malagrande.png" id="2_b6euy"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_nmnx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ak76"]
+size = Vector2(296.34433, 171.305)
+
+[node name="zoom mala" type="Node2D" unique_id=1923973982]
+script = ExtResource("1_kjaa4")
+
+[node name="pontoroteador" type="Marker2D" parent="." unique_id=129519319]
+position = Vector2(693, 471)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1217307611]
+position = Vector2(758.00006, 436)
+scale = Vector2(1.2822917, 1.2842592)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1424485446]
+position = Vector2(-45.23163, 6.2292786)
+shape = SubResource("RectangleShape2D_3ak76")
+
+[node name="Malagrande" type="Sprite2D" parent="." unique_id=2110221623]
+position = Vector2(758.00006, 436)
+scale = Vector2(1.2822917, 1.2842592)
+texture = ExtResource("2_b6euy")
+
+[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_nmnx3")]
+destino_cena = "uid://djryii8ewlak6"
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://ddbcf7i3msare"]
+
+[ext_resource type="Texture2D" uid="uid://rbsyhrtqva43" path="res://assets/itens/roteadorFeio.webp" id="1_11sw5"]
+[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_o1gs7"]
+[ext_resource type="Texture2D" uid="uid://db0bt3c3aekr2" path="res://assets/itens/roteadorParede.png" id="1_rnke8"]
+
+[resource]
+resource_name = "roteador"
+script = ExtResource("1_o1gs7")
+item_name = "roteador"
+icon = ExtResource("1_11sw5")
+inventory_icon = ExtResource("1_11sw5")
+ativo_icon = ExtResource("1_rnke8")
