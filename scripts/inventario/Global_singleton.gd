@@ -22,6 +22,7 @@ var roteador_instalado: bool = false
 # ==== SELEÇÃO DE FASE ====
 var fase_liberada: int = 1
 var fases_concluidas: Array = [false, false, false, false]
+var pc_conectado: bool = false
 
 var ultima_cena_por_fase: Dictionary = {
 	1: "res://scenes/fase1/zoom_pc.tscn",

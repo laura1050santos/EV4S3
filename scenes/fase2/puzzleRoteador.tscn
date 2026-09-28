@@ -1,3 +1,119 @@
 [gd_scene format=3 uid="uid://gesit7wnl14t"]
 
-[node name="Node2D" type="Node2D" unique_id=814926556]
+[ext_resource type="Script" uid="uid://xtu7nn6q5b5v" path="res://scripts/puzzle_roteador.gd" id="1_vnrup"]
+[ext_resource type="Texture2D" uid="uid://cdupn8a02d676" path="res://assets/itens/caixafios.png" id="2_0dkf4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_is5g8"]
+radius = 12.477173
+height = 67.90231
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ak76"]
+radius = 12.379852
+height = 77.83099
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3fj2y"]
+height = 74.45996
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7s212"]
+radius = 10.86116
+height = 67.308716
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_keh4x"]
+height = 64.089966
+
+[node name="fios" type="Node2D" unique_id=814926556]
+script = ExtResource("1_vnrup")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=409879107]
+position = Vector2(534, 320)
+scale = Vector2(1.9509997, 1.6539998)
+texture = ExtResource("2_0dkf4")
+
+[node name="fioVerde" type="Line2D" parent="." unique_id=446559013]
+points = PackedVector2Array(257, 333, 812, 440)
+default_color = Color(0, 0.5549464, 0.30304995, 1)
+
+[node name="fioVerde_Esquerda" type="Area2D" parent="." unique_id=369562949]
+position = Vector2(154.94766, 500.95438)
+rotation = 2.6512334
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fioVerde_Esquerda" unique_id=1356973261]
+position = Vector2(-170.8881, 99.16052)
+rotation = 2.0407236
+shape = SubResource("CapsuleShape2D_is5g8")
+debug_color = Color(3.6338718e-06, 0.64689106, 0.23348927, 0.41960785)
+
+[node name="fioVermelho" type="Line2D" parent="." unique_id=2062796465]
+points = PackedVector2Array(267, 220, 803, 327)
+default_color = Color(0.71868926, 0.14169246, 0.0022533855, 1)
+
+[node name="fioVermelho_Esquerda" type="Area2D" parent="." unique_id=223345394]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fioVermelho_Esquerda" unique_id=1415737355]
+position = Vector2(265, 219.99998)
+rotation = 1.5766739
+shape = SubResource("CapsuleShape2D_is5g8")
+debug_color = Color(0.98039216, 0, 0, 0.41960785)
+
+[node name="fioAmarelo" type="Line2D" parent="." unique_id=536987601]
+points = PackedVector2Array(278, 442, 803, 507)
+default_color = Color(1, 1, 0.101960786, 1)
+
+[node name="fioAmarelo_Esquerda" type="Area2D" parent="." unique_id=1180344848]
+position = Vector2(540, 316)
+scale = Vector2(1.9509997, 1.6539998)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fioAmarelo_Esquerda" unique_id=209348851]
+position = Vector2(-138.90315, 76.78356)
+rotation = 1.5964592
+scale = Vector2(0.5125606, 0.60459256)
+skew = 0.001778841
+shape = SubResource("CapsuleShape2D_is5g8")
+debug_color = Color(0.57830065, 0.55174625, 0.10022422, 0.41960785)
+
+[node name="fioAzul" type="Line2D" parent="." unique_id=662193974]
+points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(0, 0.10980392, 1, 1)
+
+[node name="fioAzul_ESquerda" type="Area2D" parent="." unique_id=1425666393]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fioAzul_ESquerda" unique_id=748123426]
+position = Vector2(271.63116, 513.82654)
+rotation = 1.5569209
+shape = SubResource("CapsuleShape2D_is5g8")
+debug_color = Color(0, 0.53438336, 0.9791085, 0.41960785)
+
+[node name="FioAzul_Direita" type="Area2D" parent="." unique_id=1660595966]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FioAzul_Direita" unique_id=2099912198]
+position = Vector2(810, 217.99991)
+rotation = -1.6366173
+shape = SubResource("CapsuleShape2D_3ak76")
+
+[node name="FioAmarelo_direita" type="Area2D" parent="." unique_id=160695615]
+position = Vector2(-141, 351)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FioAmarelo_direita" unique_id=497625419]
+position = Vector2(959.99994, 157)
+rotation = 1.6152166
+shape = SubResource("CapsuleShape2D_3fj2y")
+debug_color = Color(0.60376686, 0.54224706, 0, 0.41960785)
+
+[node name="FioVerde_Direita" type="Area2D" parent="." unique_id=1901360315]
+position = Vector2(-124, 230)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FioVerde_Direita" unique_id=435953125]
+position = Vector2(947, 206)
+rotation = 1.5035493
+shape = SubResource("CapsuleShape2D_7s212")
+debug_color = Color(0, 0.6, 0.11764706, 0.41960785)
+
+[node name="Area2D4fioVermelho_Direita" type="Area2D" parent="." unique_id=555104022]
+position = Vector2(823, 310)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4fioVermelho_Direita" unique_id=1729174090]
+position = Vector2(-6, 14)
+rotation = 1.5872487
+shape = SubResource("CapsuleShape2D_keh4x")
+debug_color = Color(0.9967428, 0, 0.18973592, 0.41960785)
