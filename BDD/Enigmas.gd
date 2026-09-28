@@ -5,23 +5,26 @@ static func criar_tabela():
 	CREATE TABLE IF NOT EXISTS Enigmas (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		nome TEXT NOT NULL UNIQUE,
-		resolvido INTERGER
+		resolvido INTEGER
 	);
 	"""
 
 	Database.db.query(sql_enigmas)
 	
-static func salvar_enigmas( nome, resolvido):
+static func salvar_enigmas(nome, resolvido):
+	if get_nome(nome) != null:
+		return
+
 	var sql = """
 	INSERT INTO Enigmas (nome, resolvido)
-	VALUES (?, ?)
+	VALUES (?, ?);
 	"""
+
 	Database.db.query_with_bindings(sql, [
 		nome,
 		resolvido
 	])
-	
-	print("Enigma salva: ", nome)
+	print("Enigma salvo: ", nome)
 
 static func atualizar_enigma(nome, resolvido):
 	var sql = """
@@ -34,23 +37,22 @@ static func atualizar_enigma(nome, resolvido):
 		resolvido,
 		nome
 	])
-
 	print("Enigma atualizado: ", nome)
 
 static func get_nome(nome):
 	var sql = """
-	SELECT id, enigma, resolvido
+	SELECT id, nome, resolvido
 	FROM Enigmas
-	WHERE enigma = ?;
+	WHERE nome = ?;
 	"""
-	
+
 	Database.db.query_with_bindings(sql, [nome])
-	
+
 	var resultado = Database.db.get_query_result()
-	
+
 	if resultado.size() > 0:
-		return resultado
-	
+		return resultado[0]
+
 	return null
 
 

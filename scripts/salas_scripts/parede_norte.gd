@@ -5,25 +5,21 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 @onready var roteador_parede_sprite: Sprite2D = $roteadorParede
 
 func _ready():
-	GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)
-	var nome_desta_cena = self.name
+GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)
+GlobalSingleton.ultima_cena = get_tree().current_scene.scene_file_path
+var nome_desta_cena = self.name # O nome do nó raiz desta cena
+var objetos = Objetos.get_objetos_cena(nome_desta_cena)
+if objetos.is_empty():
+    objetos = []
+iniciar_itens_cena(nome_desta_cena, objetos)
 
-	var itens_iniciais = []
-	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-	
-	_configurar_interacao_mala()
-	
-	# Garante a visibilidade correta dependendo do estado salvo no GlobalSingleton
-	if GlobalSingleton.roteador_instalado:
-		roteador_parede_sprite.visible = true
-	else:
-		roteador_parede_sprite.visible = false
+_configurar_interacao_mala()
 
-func _configurar_interacao_mala() -> void:
-	if mala_area:
-		var interativa = GlobalSingleton.fase_liberada >= 2
-		mala_area.input_pickable = interativa
-
+# Garante a visibilidade correta dependendo do estado salvo no GlobalSingleton
+if GlobalSingleton.roteador_instalado:
+    roteador_parede_sprite.visible = true
+else:
+    roteador_parede_sprite.visible = false
 func interruptor_ativar():
 	var LuzLampada = load("res://scenes/escuro.tscn").instantiate()
 	var root = get_tree().root
@@ -69,7 +65,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 func _on_area_interruptor_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		if GlobalSingleton.enigma_luz_resolvido == true:
+		var lampada = Enigmas.get_nome("lampada")
+		if lampada["resolvido"] == 1 :
 			interruptor_ativar()
 			
 func instalar_roteador():

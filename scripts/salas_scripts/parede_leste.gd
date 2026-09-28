@@ -16,21 +16,21 @@ func _ready():
 	gaveta3_sprite.visible = GlobalSingleton.gaveta_3
 
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
-
-	var itens_iniciais = [
-		{
-			"item": preload("res://recursos/lanterna.tres"),
-			"pos": Vector2(500, 550),
-			"cena": nome_desta_cena
-		},
-		{
-			"item": preload("res://recursos/chaveDeFenda.tres"),
-			"pos": Vector2(770, 590),
-			"cena": nome_desta_cena
-		},
-	]
-	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-	
+var objetos = Objetos.get_objetos_cena(nome_desta_cena)
+if objetos.is_empty():
+    objetos = [
+        {
+            "item": preload("res://recursos/lanterna.tres"),
+            "pos": Vector2(500, 550),
+            "cena": nome_desta_cena
+        },
+        {
+            "item": preload("res://recursos/chaveDeFenda.tres"),
+            "pos": Vector2(770, 590),
+            "cena": nome_desta_cena
+        },
+    ]
+iniciar_itens_cena(nome_desta_cena, objetos)
 	var lanterna = get_node_or_null("lanterna")
 	if lanterna:
 		lanterna.z_index = 1

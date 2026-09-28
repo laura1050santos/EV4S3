@@ -1,17 +1,17 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 
 func _ready():
-
+	var chao = Cenarios.get_cena("chao")
+	if chao:
+		var sprite = load(chao["sprite"])
+		print(chao,' ',sprite)
+		$Sprite2D.texture= sprite
+		
+	GlobalSingleton.ultima_cena =  get_tree().current_scene.scene_file_path
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
-
-	var itens_iniciais=[
-		{ "item": preload("res://recursos/placaMae.tres"),
-		"pos":Vector2(600,400),
-		"cena":nome_desta_cena,
-		},#itens que começam na cena
-	]
-	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
-	
+	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
+	iniciar_itens_cena(nome_desta_cena, objetos)
+	 
 		
 	var placa = get_tree().root.get_node("CenaChao/placa")
 	if placa :
