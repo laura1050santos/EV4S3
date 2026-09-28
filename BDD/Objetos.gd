@@ -84,12 +84,9 @@ static func get_nome(nome):
 	"""
 
 	Database.db.query_with_bindings(sql, [nome])
-
 	var resultado = Database.db.get_query_result()
-
 	if resultado.size() > 0:
 		return resultado[0]
-
 	return null
 
 
@@ -98,9 +95,7 @@ static func delete_objeto(nome):
 	DELETE FROM Objetos
 	WHERE nome = ?;
 	"""
-
 	Database.db.query_with_bindings(sql, [nome])
-
 	print("Objeto deletado: ", nome)
 
 static func iniciar_objetos():
