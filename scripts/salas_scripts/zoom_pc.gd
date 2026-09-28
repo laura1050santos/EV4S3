@@ -5,7 +5,8 @@ var gpu_instalada: bool = false
 var processador_instalado: bool = false
 var placa_mae_instalada: bool = false
 
-@onready var tela_ligada: Sprite2D = $monitorLigado
+# Usamos get_node_or_null para evitar travamentos caso o nó $monitorLigado não exista na cena do gabinete
+@onready var tela_ligada: Sprite2D = $monitorLigado if has_node("monitorLigado") else null
 
 func _ready():
 	#GlobalSingleton.fase_liberada = 2 Teste do funcionamento do gatilho fase 2
@@ -63,11 +64,13 @@ func _verificar_conclusao_gabinete() -> void:
 		GlobalSingleton.concluir_fase(1)
 		
 func atualizar_estado_da_tela():
-	# Se já concluiu a Fase 1 e está na Fase 2 (ou superior), acende a tela
-	if GlobalSingleton.fase_liberada >= 2:
-		tela_ligada.visible = true
-		print("Fase 2+: Computador ligado (Sem Conexão).")
+	# Só altera a visibilidade se o nó realmente existir na cena
+	if tela_ligada != null:
+		if GlobalSingleton.fase_liberada >= 2:
+			tela_ligada.visible = true
+			print("Fase 2+: Computador ligado (Sem Conexão).")
+		else:
+			tela_ligada.visible = false
+			print("Fase 1: Computador desligado.")
 	else:
-		# Na Fase 1, a tela permanece apagada
-		tela_ligada.visible = false
-		print("Fase 1: Computador desligado.")
+		print("Nota: O nó 'monitorLigado' não existe na cena zoom_pc.tscn. Ignorando atualização de sprite.")
