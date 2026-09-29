@@ -12,8 +12,18 @@ func _ready():
 	Objetos.garantir_padrao(nome_desta_cena)
 	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
 	iniciar_itens_cena(nome_desta_cena, objetos)
-
-	# Garante a visibilidade correta dependendo do estado salvo no GlobalSingleton
+	
+	for o in objetos:
+		print (o)
+		if o["nome"] == "mala":
+			print(o)
+			var root = get_tree().root
+			if root.get_node_or_null("Norte/Mala/Area2D"):
+					var colisionMala = root.get_node_or_null("Norte/Mala/Area2D/CollisionShape2D")
+					if GlobalSingleton.fase_liberada == 2:
+						print("colisao da mala ativada")
+						colisionMala.disabled = false
+				# Garante a visibilidade correta dependendo do estado salvo no GlobalSingleton
 	if GlobalSingleton.roteador_instalado:
 		roteador_parede_sprite.visible = true
 	else:
