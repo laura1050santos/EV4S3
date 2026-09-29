@@ -13,8 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ckfeuq1cxw0t1" path="res://assets/cenarios/gavetas/gaveta2_pc.png" id="11_pvpgn"]
 [ext_resource type="Texture2D" uid="uid://dsinh6ohcco58" path="res://assets/cenarios/gavetas/gaveta3_pc_vazia.png" id="12_35a4w"]
 [ext_resource type="Texture2D" uid="uid://c82jhhq02daer" path="res://assets/itens/monitorLigadoSemConexao.png" id="13_pvpgn"]
-[ext_resource type="Texture2D" uid="uid://bw2qqoffrystj" path="res://assets/itens/postit.jpg" id="14_35a4w"]
-[ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="15_4jgc5"]
+[ext_resource type="Texture2D" uid="uid://c70o4sfo2kx3s" path="res://assets/itens/postit.png" id="14_4jgc5"]
 [ext_resource type="Script" uid="uid://d3j2t58cko362" path="res://scenes/fase1/postit.gd" id="15_566lb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j0j"]
@@ -24,7 +23,7 @@ size = Vector2(62, 138.5)
 size = Vector2(93, 57)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eq0go"]
-size = Vector2(631.6875, 731.4772)
+size = Vector2(108.70543, 108.72484)
 
 [node name="leste" type="Node2D" unique_id=1464192632]
 script = ExtResource("1_2litd")
@@ -120,31 +119,16 @@ scale = Vector2(0.3206337, 0.2885615)
 texture = ExtResource("13_pvpgn")
 
 [node name="postit" type="Sprite2D" parent="." unique_id=1548971824]
-position = Vector2(596, 303)
-scale = Vector2(0.060156327, 0.05741809)
-texture = ExtResource("14_35a4w")
+position = Vector2(619, 323.00003)
+scale = Vector2(0.43236074, 0.4138889)
+texture = ExtResource("14_4jgc5")
 script = ExtResource("15_566lb")
-
-[node name="Label" type="Label" parent="postit" unique_id=1312403425]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -552.7263
-offset_top = -441.07568
-offset_right = -66.72632
-offset_bottom = -274.07568
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.4007645, 0.07205356, 0.10492919, 1)
-theme_override_fonts/font = ExtResource("15_4jgc5")
-theme_override_font_sizes/font_size = 114
-text = "LBD-???"
 
 [node name="Area2D" type="Area2D" parent="postit" unique_id=961268535]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="postit/Area2D" unique_id=689736382]
+position = Vector2(-47.414063, -27.78534)
+scale = Vector2(1.0000002, 1)
 shape = SubResource("RectangleShape2D_eq0go")
 
 [connection signal="input_event" from="Pc/Pc" to="." method="_on_pc_input_event"]
