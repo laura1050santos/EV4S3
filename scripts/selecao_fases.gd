@@ -53,6 +53,7 @@ func ir_para_fase(numero_fase: int):
 			caminho = CENAS_INICIAIS.get(numero_fase, "res://scenes/fase1/parede_norte.tscn")
 
 	get_tree().change_scene_to_file(caminho)
+	SaveManager.apagar_save()
 	canvas.show()
 
 func _on_fase_1_botao_pressed():

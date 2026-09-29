@@ -2,6 +2,7 @@ extends Control
 
 @onready var canvas = Inventario.get_node("canvasLayer")
 @onready var label = get_node("Label")
+const CAMINHO_SAVE = "user://save.json"
 
 func _ready() -> void:
 	canvas.hide()
@@ -20,9 +21,11 @@ func _on_configuracao_pressed():
 
 
 func _on_continuar_pressed() -> void:
-	if SaveManager.carregar():
+	if not FileAccess.file_exists(CAMINHO_SAVE):
 		label.text = "Nenhum save encontrado"
 		label.show()
 		await get_tree().create_timer(1.0).timeout
-
 		label.hide()
+		return
+	else:
+		SaveManager.carregar()

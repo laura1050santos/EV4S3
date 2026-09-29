@@ -31,6 +31,12 @@ func salvar():
 
 	print("Jogo salvo!")
 	
+func apagar_save():
+	if FileAccess.file_exists(CAMINHO_SAVE):
+		DirAccess.remove_absolute(CAMINHO_SAVE)
+		print("Save apagado!")
+	else:
+		print("Nenhum save para apagar.")
 	
 func carregar():
 
