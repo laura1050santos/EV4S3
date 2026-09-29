@@ -40,14 +40,9 @@ func _on_brilho_value_changed(value: float) -> void:
 
 
 func _on_sair_pressed() -> void:
-	var root = get_tree().root
-	if root.has_node("LuzDaLanterna"):
-		lanternaRes.item_ativo = false
-		GlobalSingleton.registrar_item(
-			lanternaRes,
-			Vector2(750, 590),"leste")
-		root.get_node("LuzDaLanterna").queue_free()
-		root.get_node("lanterna").queue_free()
+	SaveManager.salvar()
+	get_tree().change_scene_to_file("res://scenes/telaInicial/start.tscn")
 
-	get_tree().change_scene_to_file(
-		"res://scenes/telaInicial/start.tscn")
+
+func _on_salvar_pressed() -> void:
+	SaveManager.salvar()

@@ -9,7 +9,6 @@ oversampling_override = 1.0
 mode = 3
 initial_position = 1
 size = Vector2i(400, 300)
-visible = false
 script = ExtResource("1_m4k1a")
 
 [node name="Panel" type="Panel" parent="." unique_id=1576951739]
@@ -98,3 +97,4 @@ text = "Salvar
 [connection signal="value_changed" from="Som" to="." method="_on_som_value_changed"]
 [connection signal="value_changed" from="Brilho" to="." method="_on_brilho_value_changed"]
 [connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Salvar" to="." method="_on_salvar_pressed"]

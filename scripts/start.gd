@@ -20,12 +20,9 @@ func _on_configuracao_pressed():
 
 
 func _on_continuar_pressed() -> void:
-	SaveManager.carregar()
-	label.text = "Nenhum save encontrado"
-	label.show()
-	await get_tree().create_timer(1.0).timeout
+	if SaveManager.carregar():
+		label.text = "Nenhum save encontrado"
+		label.show()
+		await get_tree().create_timer(1.0).timeout
 
-	label.hide()
-	
-	pass # Replace with function body.
-	
+		label.hide()
