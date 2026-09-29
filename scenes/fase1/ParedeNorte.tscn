@@ -51,7 +51,6 @@ destino_cena = "uid://dqttd76hew5ag"
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("8_y3a53")]
 
 [node name="AreaInterruptor" type="Area2D" parent="." unique_id=1206122188]
-visible = false
 position = Vector2(575, 325)
 scale = Vector2(0.6035101, 0.60100657)
 
@@ -61,7 +60,6 @@ scale = Vector2(1, 1.0000001)
 shape = SubResource("RectangleShape2D_y3a53")
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=1544547508]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=525579883]
 shape = SubResource("RectangleShape2D_3ak76")

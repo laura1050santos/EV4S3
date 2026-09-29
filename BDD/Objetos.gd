@@ -106,7 +106,6 @@ static func iniciar_objetos():
 	salvar_objetos("flan", "res://recursos/flan.tres",pos_para_json(750,550),"CenaTeto")
 	salvar_objetos("placa mae", "res://recursos/placaMae.tres",pos_para_json(600,400),"CenaChao")
 	salvar_objetos("lanterna", "res://recursos/lanterna.tres" ,pos_para_json(500,550),"leste")
-
 	
 static func pos_para_json(x:int,y:int):
 	var pos = JSON.stringify(
