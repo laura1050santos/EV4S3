@@ -7,7 +7,7 @@ func _ready() -> void:
 	$"../Button".pressed.connect(func(): _on_entrar(barra_senha.text))
 
 func _on_entrar(texto: String):
-	if texto == "Catarina":
+	if texto == "LBD-3451":
 		print("Senha correta: ", texto)
 		get_parent().get_parent().get_node("Tela_Senha").hide()
 	else:
