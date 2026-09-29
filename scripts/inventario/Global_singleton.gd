@@ -62,17 +62,17 @@ func registrar_cena_visitada(nome_da_cena):
 #Função para remover quando for coletado
 func remover_item(item_data):
 	var caminho_item = item_data.resource_path
-	
-	# Verifica se o item que está sendo coletado é o Roteador
+
 	if item_data.item_name == "roteador" or "roteador" in caminho_item.to_lower():
 		roteador_coletado = true
 		print("Roteador coletado com sucesso! Variavel global atualizada.")
-	
+
+	# Atualiza o banco: este item não está mais no mundo
+	Objetos.marcar_coletado_por_recurso(caminho_item)
+
 	for i in range(itens_no_mundo.size()):
 		if itens_no_mundo[i].data == caminho_item:
-			print(itens_no_mundo[i].data, caminho_item)
 			itens_no_mundo.remove_at(i)
-			print(itens_no_mundo)
 			break
 			
 func registrar_transicao(adress_cena: String):

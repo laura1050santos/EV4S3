@@ -21,8 +21,8 @@ func criar_tabelas():
 	Arrays.criar_tabela()
 	Config.criar_tabelas()
 
-
 func novo_jogo():
+	Objetos.resetar()
 	Objetos.iniciar_objetos()
 	Arrays.iniciar_array()
 	Enigmas.iniciar_enigmas()

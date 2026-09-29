@@ -2,16 +2,7 @@ extends Control
 
 const WORLD_ITEM = preload("res://scenes/inventario/worldItem.tscn")
 func _ready():
-	
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	for info in GlobalSingleton.itens_no_mundo:
-		var node = preload("res://scenes/inventario/worldItem.tscn").instantiate()
-		node.set_meta("item_data", info.data)
-		# Se o seu worldItem for um Sprite2D:
-		node.texture = info.data.icon 
-
-		add_child(node)
-		node.global_position = info.pos
 
 func _notification(what):
 	# Quando um "Drag" começa no jogo, a gente ativa a área de drop
@@ -44,10 +35,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var nome_cena_atual = get_tree().current_scene.name
 	
 	# PASSANDO O NOME PARA O SINGLETON
-	GlobalSingleton.registrar_item(item_para_dropar, node.global_position, nome_cena_atual)
+	Objetos.soltar_por_recurso(item_para_dropar.resource_path, node.global_position, nome_cena_atual)
 	data.item= null
 	data.update_ui()
-	
 
 func usar_item(item: itemData, node: Node):
 	if item == null:
