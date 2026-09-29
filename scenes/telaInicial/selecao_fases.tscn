@@ -43,4 +43,13 @@ offset_right = 623.4839
 offset_bottom = 517.0
 text = "fase 4"
 
+[node name="sair" type="Button" parent="." unique_id=1883915870]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 66.0
+offset_bottom = 41.0
+text = "Voltar"
+
 [connection signal="pressed" from="Fase1Botao" to="." method="_on_fase_1_botao_pressed"]
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]

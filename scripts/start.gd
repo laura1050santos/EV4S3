@@ -1,12 +1,12 @@
 extends Control
 
 @onready var canvas = Inventario.get_node("canvasLayer")
+@onready var label = get_node("Label")
 
 func _ready() -> void:
 	canvas.hide()
 	
 func _on_jogar_pressed():
-	#canvas.show()
 	get_tree().change_scene_to_file("res://scenes/telaInicial/selecao_fases.tscn")
 
 func _on_sair_pressed():
@@ -20,8 +20,12 @@ func _on_configuracao_pressed():
 
 
 func _on_continuar_pressed() -> void:
-	canvas.show()
 	SaveManager.carregar()
+	label.text = "Nenhum save encontrado"
+	label.show()
+	await get_tree().create_timer(1.0).timeout
+
+	label.hide()
 	
 	pass # Replace with function body.
 	

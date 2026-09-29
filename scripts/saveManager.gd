@@ -1,6 +1,7 @@
 extends Node
 
 const CAMINHO_SAVE = "user://save.json"
+@onready var canvas = Inventario.get_node("canvasLayer")
 
 func salvar():
 
@@ -71,5 +72,6 @@ func carregar():
 	GlobalSingleton.ultima_cena_por_fase = normalizado
 	# ============
 	print("Save carregado!")
-
+	
 	get_tree().change_scene_to_file(GlobalSingleton.ultima_cena)
+	canvas.show()

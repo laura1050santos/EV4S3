@@ -66,3 +66,6 @@ func _on_fase_3_botao_pressed():
 
 func _on_fase_4_botao_pressed():
 	ir_para_fase(4)
+	
+func _on_sair_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/telaInicial/start.tscn")
