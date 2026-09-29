@@ -1,10 +1,21 @@
 [gd_scene format=3 uid="uid://c3iyikvpkk1kp"]
 
 [ext_resource type="Texture2D" uid="uid://co0b014ocn44x" path="res://assets/creditos.png" id="1_l2k5q"]
+[ext_resource type="Script" uid="uid://ct3wi8cuenwds" path="res://scripts/creditos.gd" id="1_ycnrf"]
 
 [node name="creditos" type="Node2D" unique_id=426105006]
+script = ExtResource("1_ycnrf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2103436176]
 position = Vector2(576, 324.50006)
 scale = Vector2(0.6020833, 0.60277784)
 texture = ExtResource("1_l2k5q")
+
+[node name="sair" type="Button" parent="." unique_id=697058886]
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 66.0
+offset_bottom = 41.0
+text = "Voltar"
+
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]

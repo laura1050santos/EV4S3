@@ -3,7 +3,6 @@ extends Control
 @onready var canvas = Inventario.get_node("canvasLayer")
 
 func _ready() -> void:
-
 	canvas.hide()
 	
 func _on_jogar_pressed():
@@ -25,3 +24,4 @@ func _on_continuar_pressed() -> void:
 	SaveManager.carregar()
 	
 	pass # Replace with function body.
+	
