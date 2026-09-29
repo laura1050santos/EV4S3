@@ -84,3 +84,9 @@ func _on_monitor_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		TransicaoFase.show_phase_complete("res://scenes/telaInicial/selecao_fases.tscn")
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if GlobalSingleton.fase_liberada == 1:
+			get_tree().change_scene_to_file("res://scenes/fase2/zoom_postIt.tscn")

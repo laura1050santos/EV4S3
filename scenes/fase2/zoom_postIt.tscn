@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bsle4unofk862"]
+
+[ext_resource type="Texture2D" uid="uid://bw2qqoffrystj" path="res://assets/itens/postit.jpg" id="1_g56lm"]
+[ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="2_6e8ii"]
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_6e8ii"]
+
+[node name="ZoomPostIt" type="Node2D" unique_id=1972248754]
+
+[node name="postit" type="Sprite2D" parent="." unique_id=1061828539]
+position = Vector2(487.00003, 324)
+scale = Vector2(0.5566406, 0.53130305)
+texture = ExtResource("1_g56lm")
+
+[node name="Label" type="Label" parent="postit" unique_id=949137968]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -552.7263
+offset_top = -441.07568
+offset_right = -66.72632
+offset_bottom = -274.07568
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4007645, 0.07205356, 0.10492919, 1)
+theme_override_fonts/font = ExtResource("2_6e8ii")
+theme_override_font_sizes/font_size = 114
+text = "LBD- ???"
+
+[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_6e8ii")]
+destino_cena = "uid://dqttd76hew5ag"

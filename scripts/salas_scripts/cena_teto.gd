@@ -29,8 +29,8 @@ func lampada_arrumada():
 	var flan = get_node_or_null("flan")
 	if lamp and flan:
 		if lamp.position == Vector2(575, 273) and flan.position == Vector2(575, 273):
-			#if not has_node("lampadaQuebrada"):
-					var lampada = Enigmas.get_nome("lampada")
-					if lampada["resolvido"] == 0 :
-						Enigmas.atualizar_enigma("lampada", 1)
-								
+				var lampada = Enigmas.get_nome("lampada")
+				if lampada["resolvido"] == 0 :
+					Enigmas.atualizar_enigma("lampada", 1)
+					Objetos.atualizar_objeto("lampada", "res://recursos/lampada.tres",Objetos.pos_para_json(575, 273),"CenaTeto")
+					Objetos.atualizar_objeto("flan", "res://recursos/flan.tres",Objetos.pos_para_json(575, 273),"CenaTeto")

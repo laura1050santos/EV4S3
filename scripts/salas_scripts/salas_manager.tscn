@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://cj4411w1wmovl"]
+=======
+[gd_scene format=3 uid="uid://sjgp0ruhloqj"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://xw031d6ckt14" path="res://scripts/salas_scripts/salas_manager.gd" id="1_cjeqq"]
 
