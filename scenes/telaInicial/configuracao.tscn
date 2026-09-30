@@ -9,6 +9,7 @@ oversampling_override = 1.0
 mode = 3
 initial_position = 1
 size = Vector2i(400, 300)
+visible = false
 script = ExtResource("1_m4k1a")
 
 [node name="Panel" type="Panel" parent="." unique_id=1576951739]
