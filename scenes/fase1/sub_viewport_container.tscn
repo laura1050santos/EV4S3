@@ -37,9 +37,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Tela_Inicial" parent="SubViewport/pcControl/Telas" unique_id=3652729 instance=ExtResource("3_utot3")]
+visible = false
 layout_mode = 0
 
 [node name="Tela_Senha" parent="SubViewport/pcControl/Telas" unique_id=419790478 instance=ExtResource("3_mn5u1")]
+visible = false
 layout_mode = 0
 
 [node name="Tela_Navegador" parent="SubViewport/pcControl/Telas" unique_id=1346634533 instance=ExtResource("5_of56o")]
@@ -47,11 +49,20 @@ visible = false
 layout_mode = 0
 
 [node name="Tela_Email" parent="SubViewport/pcControl/Telas" unique_id=1090878199 instance=ExtResource("6_2mry1")]
-visible = false
 layout_mode = 0
+
+[node name="Button" parent="SubViewport/pcControl/Telas/Tela_Email/PanelContainer" parent_id_path=PackedInt32Array(1090878199, 905329447) index="0" unique_id=1614871054 groups=["botoes_computador"]]
+
+[node name="Button2" parent="SubViewport/pcControl/Telas/Tela_Email/PanelContainer" parent_id_path=PackedInt32Array(1090878199, 905329447) index="1" unique_id=1026063232 groups=["botoes_computador"]]
+
+[node name="Button3" parent="SubViewport/pcControl/Telas/Tela_Email/PanelContainer" parent_id_path=PackedInt32Array(1090878199, 905329447) index="2" unique_id=1508583386 groups=["botoes_computador"]]
+
+[node name="Button" parent="SubViewport/pcControl/Telas/Tela_Email" index="4" unique_id=1592369486 groups=["botoes_computador"]]
 
 [node name="CursorPc" type="Sprite2D" parent="SubViewport/pcControl" unique_id=1620216982]
 z_index = 5
 position = Vector2(-153, -153)
 scale = Vector2(0.235, 0.235)
 texture = ExtResource("2_f0u6h")
+
+[editable path="SubViewport/pcControl/Telas/Tela_Email"]
