@@ -20,10 +20,6 @@ func _ready():
 	Objetos.garantir_padrao(nome_desta_cena)
 	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
 	iniciar_itens_cena(nome_desta_cena, objetos)
-	
-	var lanterna = get_node_or_null("lanterna")
-	if lanterna:
-		lanterna.z_index = 1
 
 	# Atualiza o visual da sala de acordo com a fase atual
 	_atualizar_estado_fase()

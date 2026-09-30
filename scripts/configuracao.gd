@@ -42,7 +42,7 @@ func _on_brilho_value_changed(value: float) -> void:
 func _on_sair_pressed() -> void:
 	SaveManager.salvar()
 	get_tree().change_scene_to_file("res://scenes/telaInicial/start.tscn")
-
+	
 
 func _on_salvar_pressed() -> void:
 	SaveManager.salvar()
