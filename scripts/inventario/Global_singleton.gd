@@ -48,7 +48,6 @@ func registrar_item(item_resource, posicao,nome_da_cena):
 		itens_no_mundo.append(novo_item)
 		print(GlobalSingleton.itens_no_mundo)
 		
-		
 func cena_ja_foi_registrada(nome_da_cena) -> bool:
 	return nome_da_cena in cenas_visitadas
 	

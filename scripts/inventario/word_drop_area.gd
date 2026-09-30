@@ -52,18 +52,21 @@ func usar_item(item: itemData, node: Node):
 		print("ITEM EQUIPADO: ", item.item_name)
 		node.texture = item.ativo_icon
 		
-		if item.item_name in lst:
-			# 1. Troca o nó pai para a raiz PRIMEIRO
-			var root = get_tree().root
-			node.reparent(root)
-			node.z_index = 1
-			node.name = item.item_name
-			
-			# 2. Ajusta a posição DEPOIS de ter mudado de pai
-			node.global_position = Vector2(750, 590)
-			
-			if item.item_name == "lanterna":
-				itemData.ativar_luz(item, node, node.global_position)
+		if item.item_ativo:
+			GlobalSingleton.item_mao = item
+			print("ITEM EQUIPADO: ", item.item_name)
+			node.texture = item.ativo_icon
+	
+			if item.item_name in lst:
+				GlobalSingleton.remover_item(item)
+				var root = get_tree().root
+				node.reparent(root)
+				node.z_index = 1
+				node.name = item.item_name
+				node.global_position = Vector2(750, 590)
+				
+				if item.item_name == "lanterna":
+					itemData.ativar_luz(item, node, node.global_position)
 	else:
 		GlobalSingleton.item_mao = null
 		node.texture = item.icon
