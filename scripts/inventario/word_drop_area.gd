@@ -65,6 +65,7 @@ func usar_item(item: itemData, node: Node):
 	if item.item_ativo:
 		node.texture = item.ativo_icon
 		
+<<<<<<< Updated upstream
 		if item.item_name == "lanterna":
 			node.position = Vector2(750,582)
 			for i in GlobalSingleton.itens_no_mundo:
@@ -77,6 +78,23 @@ func usar_item(item: itemData, node: Node):
 			node.name="lanterna"
 			node.reparent(root)
 			node.z_index = 1
+=======
+		if item.item_ativo:
+			GlobalSingleton.item_mao = item
+			print("ITEM EQUIPADO: ", item.item_name)
+			node.texture = item.ativo_icon
+	
+			if item.item_name in lst:
+				GlobalSingleton.remover_item(item)
+				var root = get_tree().root
+				node.reparent(root)
+				node.z_index = 1
+				node.name = item.item_name
+				node.global_position = Vector2(750, 590)
+				
+				if item.item_name == "lanterna":
+					itemData.ativar_luz(item, node, node.global_position)
+>>>>>>> Stashed changes
 	else:
 		node.texture = item.icon	
 		itemData.desligar_luz(item, pai_da_luz)

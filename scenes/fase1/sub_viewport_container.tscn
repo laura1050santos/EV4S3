@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://br7k0n78k5ayn"]
+
+[ext_resource type="Script" uid="uid://dhd26671kyo85" path="res://scripts/telaComp/TelaDoComputador.gd" id="1_f0u6h"]
+[ext_resource type="Script" uid="uid://bgnlvsvgp2la1" path="res://scripts/telaComp/sub_viewport_container.gd" id="1_mn5u1"]
+[ext_resource type="Texture2D" uid="uid://bya08stkc7h5h" path="res://assets/cursor_normal.png" id="2_f0u6h"]
+[ext_resource type="PackedScene" uid="uid://dflvdlgem7pct" path="res://scenes/Computador_Telas/tela_senha.tscn" id="3_mn5u1"]
+[ext_resource type="PackedScene" uid="uid://cbl683ktnebq1" path="res://scenes/Computador_Telas/tela_inicial.tscn" id="3_utot3"]
+[ext_resource type="PackedScene" uid="uid://dudsayc35f54n" path="res://scenes/Computador_Telas/tela_navegador.tscn" id="5_of56o"]
+[ext_resource type="PackedScene" uid="uid://dc1a4giqskyf3" path="res://scenes/Computador_Telas/tela_email.tscn" id="6_2mry1"]
+
+[node name="SubViewportContainerPC" type="SubViewportContainer" unique_id=1791322923]
+offset_left = 285.0
+offset_top = 87.0
+offset_right = 2100.0
+offset_bottom = 1019.0
+scale = Vector2(0.31999716, 0.39999837)
+stretch = true
+script = ExtResource("1_mn5u1")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1296937187]
+handle_input_locally = false
+size = Vector2i(1815, 932)
+render_target_update_mode = 4
+script = ExtResource("1_f0u6h")
+
+[node name="pcControl" type="Control" parent="SubViewport" unique_id=103237254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Telas" type="Control" parent="SubViewport/pcControl" unique_id=1223877024]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tela_Inicial" parent="SubViewport/pcControl/Telas" unique_id=3652729 instance=ExtResource("3_utot3")]
+visible = false
+layout_mode = 0
+
+[node name="Tela_Senha" parent="SubViewport/pcControl/Telas" unique_id=419790478 instance=ExtResource("3_mn5u1")]
+visible = false
+layout_mode = 0
+
+[node name="Tela_Navegador" parent="SubViewport/pcControl/Telas" unique_id=1346634533 instance=ExtResource("5_of56o")]
+visible = false
+layout_mode = 0
+
+[node name="Tela_Email" parent="SubViewport/pcControl/Telas" unique_id=1090878199 instance=ExtResource("6_2mry1")]
+layout_mode = 0
+
+[node name="Button" parent="SubViewport/pcControl/Telas/Tela_Email/PanelContainer" parent_id_path=PackedInt32Array(1090878199, 905329447) index="0" unique_id=1614871054 groups=["botoes_computador"]]
+
+[node name="Button2" parent="SubViewport/pcControl/Telas/Tela_Email/PanelContainer" parent_id_path=PackedInt32Array(1090878199, 905329447) index="1" unique_id=1026063232 groups=["botoes_computador"]]
+
+[node name="Button3" parent="SubViewport/pcControl/Telas/Tela_Email/PanelContainer" parent_id_path=PackedInt32Array(1090878199, 905329447) index="2" unique_id=1508583386 groups=["botoes_computador"]]
+
+[node name="Button" parent="SubViewport/pcControl/Telas/Tela_Email" index="4" unique_id=1592369486 groups=["botoes_computador"]]
+
+[node name="CursorPc" type="Sprite2D" parent="SubViewport/pcControl" unique_id=1620216982]
+z_index = 5
+position = Vector2(-153, -153)
+scale = Vector2(0.235, 0.235)
+texture = ExtResource("2_f0u6h")
+
+[editable path="SubViewport/pcControl/Telas/Tela_Email"]

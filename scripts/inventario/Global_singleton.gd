@@ -24,6 +24,10 @@ func registrar_item(item_resource, posicao,nome_da_cena):
 			 # Guardamos em qual cena ele deve existir
 		}
 		itens_no_mundo.append(novo_item)
+<<<<<<< Updated upstream
+=======
+		print(GlobalSingleton.itens_no_mundo)
+>>>>>>> Stashed changes
 		
 func cena_ja_foi_registrada(nome_da_cena) -> bool:
 	# se a cena já foi carregada com os itens na posição inicia:

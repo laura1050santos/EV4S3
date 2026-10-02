@@ -110,6 +110,15 @@ sprite_frames = SubResource("SpriteFrames_u80x2")
 [node name="BotaoConfig" parent="." unique_id=1243335896 instance=ExtResource("9_v03cv")]
 layout_mode = 0
 
+[node name="Label" type="Label" parent="." unique_id=545740034]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 467.0
+offset_right = 728.0
+offset_bottom = 511.0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
 [connection signal="pressed" from="background/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="background/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="background/creditos" to="." method="_on_creditos_pressed"]

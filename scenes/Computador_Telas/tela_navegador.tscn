@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dudsayc35f54n"]
+
+[ext_resource type="Texture2D" uid="uid://dqirdg0g6cuty" path="res://assets/computador_telas/navegador.png" id="1_dusd7"]
+
+[node name="Tela_Navegador" type="Control" unique_id=1346634533]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=540446062]
+position = Vector2(-892, -235)
+scale = Vector2(1.8749999, 1.6135687)
+texture = ExtResource("1_dusd7")
+centered = false
+
+[node name="Tela" type="ColorRect" parent="." unique_id=1158333231]
+z_index = -1
+layout_mode = 0
+offset_right = 1815.0
+offset_bottom = 932.0
+color = Color(0.69467324, 0.6946736, 0.69467336, 1)
+
+[node name="BarraPesquisa" type="LineEdit" parent="." unique_id=612635931]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 498.0
+offset_right = 1296.0
+offset_bottom = 561.0
+theme_override_colors/font_placeholder_color = Color(0.648407, 0.65114325, 0.92975765, 0.6)
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Pesquisar..."
+flat = true
+
+[node name="Button" type="Button" parent="." unique_id=434278563 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 1298.0
+offset_top = 497.0
+offset_right = 1421.0
+offset_bottom = 560.0004
+theme_override_font_sizes/font_size = 25
+text = "O"
+flat = true

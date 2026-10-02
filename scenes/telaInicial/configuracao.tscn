@@ -97,3 +97,4 @@ text = "Salvar
 [connection signal="value_changed" from="Som" to="." method="_on_som_value_changed"]
 [connection signal="value_changed" from="Brilho" to="." method="_on_brilho_value_changed"]
 [connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Salvar" to="." method="_on_salvar_pressed"]
