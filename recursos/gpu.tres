@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_012jw"]
 [ext_resource type="Texture2D" uid="uid://byu7rd62h4g1o" path="res://assets/itens/gpu.png" id="1_ds78f"]
+[ext_resource type="Texture2D" uid="uid://by4drpqt5im2g" path="res://assets/itens/gpuperspectivamenor.png" id="1_n4suo"]
+[ext_resource type="Texture2D" uid="uid://dfegohlucek4p" path="res://assets/itens/gpuperspectiva.png" id="3_oh1k4"]
 
 [resource]
 script = ExtResource("1_012jw")
 item_name = "gpu"
 icon = ExtResource("1_ds78f")
-inventory_icon = ExtResource("1_ds78f")
+inventory_icon = ExtResource("3_oh1k4")
+ativo_icon = ExtResource("1_n4suo")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

@@ -6,7 +6,6 @@ var db: SQLite
 func _ready() -> void:
 	db = SQLite.new()
 	db.path = "res://data.db"
-
 	var sucesso = db.open_db()
 	criar_tabelas()
 	novo_jogo()

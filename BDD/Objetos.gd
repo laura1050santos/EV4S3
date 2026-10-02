@@ -18,6 +18,11 @@ const PADRAO := {
 	"CenaChao": [
 		{"nome": "placa mae", "recurso": "res://recursos/placaMae.tres", "pos": Vector2(600, 400)},
 	],
+	"Zoom Lixeira":[
+		{"nome": "gpu", "recurso": "res://recursos/gpu.tres", "pos": Vector2(600, 400)},
+	],
+	
+	
 }
 
 
