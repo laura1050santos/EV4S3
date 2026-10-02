@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cmdvb6puyhbvx" path="res://scripts/salas_scripts/zoom_telePai.gd" id="1_vvp0m"]
 [ext_resource type="Texture2D" uid="uid://bg4fmgvnqceot" path="res://assets/cenarios/cena-telegrafo-inicial.png" id="1_xysmm"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f1w1o"]
-[ext_resource type="Script" uid="uid://2kq6ft3clmjt" path="res://scenes/fase1/view_Morse.gd" id="2_f4ryu"]
+[ext_resource type="Script" uid="uid://2kq6ft3clmjt" path="res://scripts/view_Morse.gd" id="2_f4ryu"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0qusy"]
 [ext_resource type="Texture2D" uid="uid://csr76qhcefp0p" path="res://assets/cartas/morse.png" id="14_757wu"]
 [ext_resource type="Script" uid="uid://c7abp8a3ygh35" path="res://scripts/DismorsePapel.gd" id="15_f4ryu"]

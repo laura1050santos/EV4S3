@@ -20,6 +20,7 @@ destino_cena = "uid://dqttd76hew5ag"
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_0ucrh")]
 
 [node name="SubViewportContainer" parent="." unique_id=1791322923 instance=ExtResource("5_lsmqo")]
+visible = false
 offset_left = 287.0
 offset_top = 86.0
 offset_right = 2080.1248

@@ -5,6 +5,9 @@ signal seta_clicada
 
 func _ready():
 	self.input_event.connect(_inout_event)
+	var nome_desta_cena = self.name
+	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
+	
 func _inout_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		trocar()

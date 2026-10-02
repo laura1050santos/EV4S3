@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://dc1a4giqskyf3"]
 
+[ext_resource type="Texture2D" uid="uid://dpsr1og62mtku" path="res://assets/computador_telas/email.png" id="1_fpyyx"]
+
 [node name="Tela_Email" type="Control" unique_id=1090878199]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=294034932]
+position = Vector2(909, 631.49994)
+scale = Vector2(1.88125, 1.6101851)
+texture = ExtResource("1_fpyyx")
+
 [node name="Tela" type="ColorRect" parent="." unique_id=1804008241]
+z_index = -1
 layout_mode = 0
 offset_right = 1815.0
 offset_bottom = 932.0
@@ -30,22 +38,38 @@ color = Color(0.7784455, 0.7784456, 0.77844536, 1)
 
 [node name="PanelContainer" type="VBoxContainer" parent="." unique_id=905329447]
 layout_mode = 0
-offset_left = 543.7549
-offset_top = 105.00043
-offset_right = 1675.0149
-offset_bottom = 585.00244
+offset_left = 428.0
+offset_top = 136.0
+offset_right = 1810.0
+offset_bottom = 918.0
 
 [node name="Button" type="Button" parent="PanelContainer" unique_id=1614871054]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "email 1"
+flat = true
 
 [node name="Button2" type="Button" parent="PanelContainer" unique_id=1026063232]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "email 2"
+flat = true
 
 [node name="Button3" type="Button" parent="PanelContainer" unique_id=1508583386]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "email 3"
+flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=771257231]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="." unique_id=1592369486]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 312.0
+offset_right = 409.0
+offset_bottom = 361.0
+flat = true

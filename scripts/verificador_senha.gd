@@ -4,9 +4,10 @@ extends Control
 @onready var digit_buttons: Array[TextureButton] = [$Digito1, $Digito2, $Digito3, $Digito4]
 
 @onready var door = $Door
-signal  enigma_chao_resolvido
+@onready var fechado: Sprite2D = $".."
+@onready var aberto: Texture2D = preload("res://assets/cenarios/chao_aberto.png")
+
 func _ready() -> void:
-	
 	print("iterando", digit_buttons.size())
 	for btn in digit_buttons:
 		btn.pressed.connect(_check_password)
@@ -25,15 +26,7 @@ func _check_password() -> void:
 
 func open_door() -> void:
 	print("Senha correta! Abrindo...")
-	$"..".texture = preload("res://assets/cenarios/chao_aberto.png")
-	Cenarios.atualizar_cenario("chao", "res://assets/cenarios/chao_aberto.png")
-	var alcapao = Enigmas.get_nome("alcapao")
-	if alcapao["resolvido"] == 0 :
-		Enigmas.atualizar_enigma("alcapao", 1)
-	var root = get_tree().root
-	var placa = root.get_node("CenaChao/placa")
-	if placa :
-		print("placa mae na cena")
-		var area = placa.get_node("Area2D/CollisionShape2D")
-		area.disabled= false
-		placa.visible = true
+	fechado.texture = aberto
+	visible = false
+	#aberto.visible = true
+	#door.visible = false

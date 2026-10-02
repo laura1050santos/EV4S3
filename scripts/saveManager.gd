@@ -1,6 +1,7 @@
 extends Node
 
 const CAMINHO_SAVE = "user://save.json"
+@onready var canvas = Inventario.get_node("canvasLayer")
 
 func salvar():
 
@@ -30,6 +31,12 @@ func salvar():
 
 	print("Jogo salvo!")
 	
+func apagar_save():
+	if FileAccess.file_exists(CAMINHO_SAVE):
+		DirAccess.remove_absolute(CAMINHO_SAVE)
+		print("Save apagado!")
+	else:
+		print("Nenhum save para apagar.")
 	
 func carregar():
 
@@ -71,5 +78,6 @@ func carregar():
 	GlobalSingleton.ultima_cena_por_fase = normalizado
 	# ============
 	print("Save carregado!")
-
+	
 	get_tree().change_scene_to_file(GlobalSingleton.ultima_cena)
+	canvas.show()
