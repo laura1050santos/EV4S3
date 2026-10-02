@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b2yprmoof26x1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8kk8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 6
+border_width_top = 3
+border_width_right = 6
+border_width_bottom = 3
+border_color = Color(1, 0.46922654, 0.5241529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gu1ow"]
+bg_color = Color(1, 0.47058824, 0.5254902, 0.19607843)
+border_width_left = 6
+border_width_top = 3
+border_width_right = 6
+border_width_bottom = 3
+border_color = Color(1, 0.46922654, 0.5241529, 1)
+
+[node name="ItemEmail" type="Button" unique_id=1413474198]
+custom_minimum_size = Vector2(0, 95)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8kk8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gu1ow")
+
+[node name="Label" type="Label" parent="." unique_id=1106423976]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 4.0
+offset_right = 16.0
+offset_bottom = 104.0
+scale = Vector2(1.1942309, 1.1942309)
+theme_override_colors/font_color = Color(1, 0.46922654, 0.5241529, 1)
+theme_override_colors/font_outline_color = Color(0.11322712, 0, 0.012720101, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 38

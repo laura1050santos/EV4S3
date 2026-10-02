@@ -1,52 +1,41 @@
-[gd_scene format=3 uid="uid://dflvdlgem7pct"]
+[gd_scene format=3 uid="uid://528f0ef3pcaw"]
 
-[ext_resource type="Script" uid="uid://cl2x7yyhtkguu" path="res://scripts/telaComp/barra_senha.gd" id="2_l0ixp"]
+[ext_resource type="Texture2D" uid="uid://nraqqpnxtiyr" path="res://assets/computador_telas/senha.png" id="1_qkghh"]
+[ext_resource type="Script" uid="uid://cl2x7yyhtkguu" path="res://scripts/telaComp/barra_senha.gd" id="2_487ly"]
 
-[node name="Tela_Senha" type="Control" unique_id=851971395]
+[node name="Tela_Senha" type="Control" unique_id=760084489]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Tela" type="ColorRect" parent="." unique_id=523744494]
+[node name="Tela" type="ColorRect" parent="." unique_id=511493874]
 layout_mode = 0
 offset_right = 1815.0
 offset_bottom = 932.0
 color = Color(0.6028433, 0.6028428, 0.60284305, 1)
 
-[node name="Button" type="Button" parent="." unique_id=1103022180 groups=["botoes_computador"]]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1212740485]
+position = Vector2(909, 591)
+scale = Vector2(1.8750001, 1.4962964)
+texture = ExtResource("1_qkghh")
+
+[node name="Button" type="Button" parent="." unique_id=86694636 groups=["botoes_computador"]]
 layout_mode = 0
-offset_left = 1455.1342
-offset_top = 659.99615
-offset_right = 1611.3854
-offset_bottom = 764.9966
+offset_left = 834.3824
+offset_top = 602.50244
+offset_right = 990.6336
+offset_bottom = 688.0
 theme_override_font_sizes/font_size = 25
 text = "Entrar
 "
 
-[node name="BarraSenha" type="LineEdit" parent="." unique_id=1040433813]
+[node name="BarraSenha" type="LineEdit" parent="." unique_id=1254352546]
 layout_mode = 0
-offset_left = 189.49785
-offset_top = 657.49615
-offset_right = 1436.3839
-offset_bottom = 762.4966
+offset_left = 550.0
+offset_top = 486.0
+offset_right = 1268.0
+offset_bottom = 556.0
 theme_override_font_sizes/font_size = 40
 placeholder_text = "********"
-script = ExtResource("2_l0ixp")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1954814129]
-layout_mode = 0
-offset_left = 743.7566
-offset_top = 212.50087
-offset_right = 1033.2328
-offset_bottom = 432.50183
-color = Color(0.28485027, 0.28485027, 0.28485027, 1)
-
-[node name="TextEdit" type="TextEdit" parent="." unique_id=331889958]
-layout_mode = 0
-offset_left = 793.7571
-offset_top = 452.50183
-offset_right = 996.884
-offset_bottom = 515.0021
-theme_override_font_sizes/font_size = 35
-text = "User_0xdj2"
+script = ExtResource("2_487ly")
