@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dsinh6ohcco58" path="res://assets/cenarios/gavetas/gaveta3_pc_vazia.png" id="12_35a4w"]
 [ext_resource type="Texture2D" uid="uid://c82jhhq02daer" path="res://assets/itens/monitorLigadoSemConexao.png" id="13_pvpgn"]
 [ext_resource type="Texture2D" uid="uid://c70o4sfo2kx3s" path="res://assets/itens/postit.png" id="14_4jgc5"]
-[ext_resource type="Script" uid="uid://d3j2t58cko362" path="res://scenes/fase1/postit.gd" id="15_566lb"]
+[ext_resource type="Script" uid="uid://d3j2t58cko362" path="res://scripts/telaComp/postit.gd" id="15_566lb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j0j"]
 size = Vector2(62, 138.5)

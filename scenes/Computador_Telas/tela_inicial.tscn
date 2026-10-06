@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbl683ktnebq1"]
 
-[ext_resource type="Script" uid="uid://clruqe430n1a6" path="res://scenes/Computador_Telas/tela_inicial.gd" id="1_hcb5x"]
+[ext_resource type="Script" uid="uid://clruqe430n1a6" path="res://scripts/telaComp/tela_inicial.gd" id="1_hcb5x"]
 [ext_resource type="Texture2D" uid="uid://bm5sp60wusg3k" path="res://assets/computador_telas/tela_inicial.png" id="2_ijvd6"]
 
 [node name="Tela_Inicial" type="Control" unique_id=1581143958]

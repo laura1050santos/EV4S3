@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc1a4giqskyf3"]
 
 [ext_resource type="Texture2D" uid="uid://dpsr1og62mtku" path="res://assets/computador_telas/email.png" id="1_fpyyx"]
-[ext_resource type="Script" uid="uid://cja1nswjxw25v" path="res://scenes/Computador_Telas/tela_email.gd" id="1_lp1dp"]
+[ext_resource type="Script" uid="uid://cja1nswjxw25v" path="res://scripts/telaComp/tela_email.gd" id="1_lp1dp"]
 [ext_resource type="Script" uid="uid://byo5yx7fdb7ms" path="res://scripts/telaComp/email_data.gd" id="2_skfp5"]
 [ext_resource type="Resource" uid="uid://db77mgjf4cegr" path="res://recursos/emails/email_1.tres" id="3_fi8ha"]
 [ext_resource type="Resource" uid="uid://2uu1cgdc2y84" path="res://recursos/emails/email_2.tres" id="4_3s1ob"]
