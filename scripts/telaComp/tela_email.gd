@@ -9,6 +9,7 @@ signal todos_classificados  # quem estiver escutando usa isso pra avançar de fa
 @onready var imagem_email: TextureRect = $VisualizadorEmail/ImagemEmail
 @onready var botao_phishing: Button = $VisualizadorEmail/BotaoPhishing
 @onready var botao_legitimo: Button = $VisualizadorEmail/BotaoLegitimo
+@onready var enviados: Button = $VisualizadorEmail/Enviados
 @onready var label_feedback: Label = $VisualizadorEmail/LabelFeedback
 
 var item_cena = preload("res://scenes/Computador_Telas/item_email.tscn")
@@ -33,6 +34,11 @@ func abrir_email(email: email_data):
 	imagem_email.texture = email.imagem
 	label_feedback.text = ""
 	visualizador.show()
+	lista_inbox.hide()
+	
+func voltar():
+	visualizador.hide()
+	lista_inbox.show()
 
 func responder(marcou_como_phishing: bool):
 	if email_atual == null:

@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b26tofysv2qud" path="res://scripts/viewCartaRelogio.gd" id="10_x71yn"]
 [ext_resource type="Texture2D" uid="uid://cp0lqyeo6ei2v" path="res://assets/cartas/carta_relogio.png" id="11_x71yn"]
 [ext_resource type="Script" uid="uid://lu8c4l2fgrpq" path="res://scripts/viewDifCartaRelogio.gd" id="12_k4gre"]
+[ext_resource type="Script" uid="uid://c3i501botd0q0" path="res://scripts/salas_scripts/zoom_tocafitas.gd" id="13_uxxvl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4mq"]
 size = Vector2(90.5, 48)
@@ -22,6 +23,9 @@ size = Vector2(72.17839, 49.18225)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(34.234364, 21.428217)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j0j"]
+size = Vector2(149.5, 104)
+
 [node name="Oeste" type="Node2D" unique_id=1991184608]
 script = ExtResource("1_r4qe8")
 
@@ -30,11 +34,11 @@ position = Vector2(576.0161, 325.12503)
 scale = Vector2(0.60102487, 0.6016204)
 texture = ExtResource("2_a2k3a")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2021680412]
+[node name="telegrafo" type="Area2D" parent="." unique_id=2021680412]
 script = ExtResource("7_a2k3a")
 destino_cena = "uid://bt40n0me6w8e5"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1441696459]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="telegrafo" unique_id=1441696459]
 position = Vector2(611.75, 456)
 shape = SubResource("RectangleShape2D_7a4mq")
 
@@ -82,3 +86,11 @@ rotation = -0.09379309
 scale = Vector2(14.224794, 14.224794)
 shape = SubResource("RectangleShape2D_yf5fn")
 debug_color = Color(0.9058082, 0.058740504, 0.7258143, 0.41960785)
+
+[node name="toca_fitas" type="Area2D" parent="." unique_id=1539130923]
+script = ExtResource("13_uxxvl")
+destino_cena = "uid://d1mfunmrykn8r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toca_fitas" unique_id=1913434416]
+position = Vector2(373.25, 280)
+shape = SubResource("RectangleShape2D_x2j0j")

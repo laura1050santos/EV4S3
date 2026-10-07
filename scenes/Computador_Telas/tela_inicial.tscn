@@ -2,21 +2,22 @@
 
 [ext_resource type="Script" uid="uid://clruqe430n1a6" path="res://scripts/telaComp/tela_inicial.gd" id="1_hcb5x"]
 [ext_resource type="Texture2D" uid="uid://bm5sp60wusg3k" path="res://assets/computador_telas/tela_inicial.png" id="2_ijvd6"]
+[ext_resource type="Texture2D" uid="uid://cpg5gfblglovk" path="res://assets/computador_telas/menu.png" id="3_5v85p"]
 
-[node name="Tela_Inicial" type="Control" unique_id=1581143958]
+[node name="Tela_Inicial" type="Control" unique_id=1112073215]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_hcb5x")
 
-[node name="Tela" type="ColorRect" parent="." unique_id=139663868]
+[node name="Tela" type="ColorRect" parent="." unique_id=1043897991]
 layout_mode = 0
 offset_right = 1815.0
 offset_bottom = 932.0
 color = Color(0.31474152, 0.49246484, 0.47980273, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Tela" unique_id=941718244]
+[node name="ColorRect" type="ColorRect" parent="Tela" unique_id=170716107]
 layout_mode = 0
 offset_left = -26.999998
 offset_top = 751.0
@@ -25,41 +26,41 @@ offset_bottom = 971.001
 scale = Vector2(6.447468, 0.8168873)
 color = Color(0.23072472, 0.29728663, 0.337483, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458480505]
+[node name="fundo" type="Sprite2D" parent="." unique_id=2049672971]
 position = Vector2(909.383, 592.50244)
 scale = Vector2(1.8750167, 1.5000061)
 texture = ExtResource("2_ijvd6")
 
-[node name="Navegador" type="Button" parent="." unique_id=1133117085 groups=["botoes_computador"]]
+[node name="Navegador" type="Button" parent="." unique_id=995976231 groups=["botoes_computador"]]
 layout_mode = 0
-offset_left = 164.0
-offset_top = 815.0
-offset_right = 206.0
-offset_bottom = 846.0
+offset_left = 121.8761
+offset_top = 852.5035
+offset_right = 144.05733
+offset_bottom = 883.5035
 scale = Vector2(4.7901287, 3.6956282)
 theme_override_font_sizes/font_size = 16
 action_mode = 0
-text = "NAV"
+flat = true
 
-[node name="Pasta" type="Button" parent="." unique_id=1754056549 groups=["botoes_computador"]]
+[node name="Pasta" type="Button" parent="." unique_id=1167020983 groups=["botoes_computador"]]
 layout_mode = 0
-offset_left = 78.905045
+offset_left = 71.8757
 offset_top = 208.75027
-offset_right = 149.90504
+offset_right = 118.4715
 offset_bottom = 239.75027
 scale = Vector2(3.554537, 3.554537)
-text = "PASTA 1"
+text = "P1"
 
-[node name="Pasta2" type="Button" parent="." unique_id=1494673982 groups=["botoes_computador"]]
+[node name="Pasta2" type="Button" parent="." unique_id=1782090801 groups=["botoes_computador"]]
 layout_mode = 0
-offset_left = 82.030045
+offset_left = 71.87562
 offset_top = 378.75092
-offset_right = 153.03004
+offset_right = 119.35056
 offset_bottom = 409.75092
 scale = Vector2(3.554537, 3.554537)
-text = "PASTA 2"
+text = "P2"
 
-[node name="Email" type="Button" parent="." unique_id=2127091711 groups=["botoes_computador"]]
+[node name="Email" type="Button" parent="." unique_id=366109309 groups=["botoes_computador"]]
 layout_mode = 0
 offset_left = 489.00287
 offset_top = 815.0
@@ -67,3 +68,29 @@ offset_right = 545.00287
 offset_bottom = 846.0
 scale = Vector2(3.6198378, 3.6198378)
 text = "EMAIL"
+
+[node name="Menu" type="Button" parent="." unique_id=1183037844 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = -6.2500916
+offset_top = 852.5034
+offset_right = 103.125885
+offset_bottom = 945.0039
+flat = true
+
+[node name="menu" type="Sprite2D" parent="." unique_id=1724776752]
+visible = false
+position = Vector2(815.63226, 557.5022)
+scale = Vector2(1.6961877, 1.6961877)
+texture = ExtResource("3_5v85p")
+
+[node name="Navegador" type="Button" parent="menu" unique_id=572242697 groups=["botoes_computador"]]
+offset_left = -475.33487
+offset_top = -163.6028
+offset_right = -429.9691
+offset_bottom = -122.21484
+scale = Vector2(4.3048444, 1.3176367)
+theme_override_font_sizes/font_size = 16
+action_mode = 0
+text = "
+"
+flat = true

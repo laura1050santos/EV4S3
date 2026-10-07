@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d1mfunmrykn8r"]
+
+[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_s0cdr"]
+[ext_resource type="Texture2D" uid="uid://bqehfxammojss" path="res://assets/cenarios/zoom_tocafitas.png" id="2_r45ts"]
+[ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_r45ts"]
+
+[node name="ZoomTocafitas" type="Node2D" unique_id=872383766]
+
+[node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_r45ts")]
+
+[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("1_s0cdr")]
+destino_cena = "uid://du3u5e5blrq5k"
+
+[node name="ZoomTocafitas" type="Sprite2D" parent="." unique_id=1999192275]
+position = Vector2(575, 324)
+scale = Vector2(1.6052631, 1.6052631)
+texture = ExtResource("2_r45ts")

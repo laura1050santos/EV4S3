@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://byo5yx7fdb7ms" path="res://scripts/telaComp/email_data.gd" id="2_skfp5"]
 [ext_resource type="Resource" uid="uid://db77mgjf4cegr" path="res://recursos/emails/email_1.tres" id="3_fi8ha"]
 [ext_resource type="Resource" uid="uid://2uu1cgdc2y84" path="res://recursos/emails/email_2.tres" id="4_3s1ob"]
+[ext_resource type="Script" uid="uid://tkav200dune0" path="res://scenes/Computador_Telas/enviados.gd" id="6_skfp5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsmqo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -31,11 +32,13 @@ script = ExtResource("1_lp1dp")
 emails = Array[ExtResource("2_skfp5")]([ExtResource("3_fi8ha"), ExtResource("4_3s1ob")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=294034932]
+z_index = -2
 position = Vector2(909, 631.49994)
 scale = Vector2(1.88125, 1.6101851)
 texture = ExtResource("1_fpyyx")
 
 [node name="Tela" type="ColorRect" parent="." unique_id=1804008241]
+visible = false
 z_index = -1
 layout_mode = 0
 offset_right = 1815.0
@@ -58,23 +61,26 @@ offset_right = 1734.3905
 offset_bottom = 867.5035
 color = Color(0.7784455, 0.7784456, 0.77844536, 1)
 
-[node name="Enviados" type="Button" parent="." unique_id=1592369486]
+[node name="VisualizadorEmail" type="Control" parent="." unique_id=1675473737]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Enviados" type="Button" parent="VisualizadorEmail" unique_id=1592369486]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 312.0
 offset_right = 409.0
 offset_bottom = 361.0
 flat = true
-
-[node name="VisualizadorEmail" type="Control" parent="." unique_id=1675473737]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+script = ExtResource("6_skfp5")
 
 [node name="ImagemEmail" type="TextureRect" parent="VisualizadorEmail" unique_id=1477311943]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 450.0
+offset_top = 140.0
+offset_right = 1176.0
+offset_bottom = 574.0
 
 [node name="BotaoPhishing" type="Button" parent="VisualizadorEmail" unique_id=565990618]
 layout_mode = 0
@@ -107,9 +113,12 @@ offset_bottom = 760.0
 theme_override_font_sizes/font_size = 35
 
 [node name="ListaEmails" type="VBoxContainer" parent="." unique_id=905329447]
+z_index = -1
 layout_mode = 0
-offset_left = 447.0
+offset_left = 460.0
 offset_top = 151.0
-offset_right = 1788.0
+offset_right = 1782.0
 offset_bottom = 709.0
 theme_override_constants/separation = 0
+
+[connection signal="pressed" from="VisualizadorEmail/Enviados" to="." method="voltar"]
