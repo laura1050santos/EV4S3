@@ -30,7 +30,7 @@ func _on_mala_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: i
 				_gerar_roteador_no_mundo()
 
 func _gerar_roteador_no_mundo() -> void:
-	var recurso_roteador = preload("res://recursos/Roteador.tres") # Ajusta o teu caminho
+	var recurso_roteador = preload("res://recursos/roteador.tres") # Ajusta o teu caminho
 	
 	# Usa a tua própria função do salas_manager.gd para criar o item na cena
 	adicionar_item_na_sala(recurso_roteador, ponto_roteador.global_position)

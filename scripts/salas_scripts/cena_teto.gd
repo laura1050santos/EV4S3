@@ -25,6 +25,7 @@ func arrumar_posicao(lst):
 				flan.z_index= 1
 	
 func lampada_arrumada():
+	print("ponto")
 	var lamp = get_node_or_null("lampadaNova")
 	var flan = get_node_or_null("flan")
 	if lamp and flan:

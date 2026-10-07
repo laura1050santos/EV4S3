@@ -1,13 +1,12 @@
 extends Node
 
+var lampada_ligada: bool = true
+signal lampada_alterada
 var ultima_cena = ""
 var itens_no_mundo = []
 var cenas_visitadas =[]
 var historico_cenas: Array[String] = []
 var item_mao=null
-var enigma_luz_resolvido= false
-var enigma_chao_resolvido = false
-var enigma_som_resolvido =false
 var gaveta_1 = false # teste da gaveta do aquario
 var gaveta_2 = false
 var gaveta_3 = false
@@ -102,3 +101,7 @@ func concluir_fase(indice_fase: int):
 	if indice_fase == fase_liberada and fase_liberada < 4:
 		fase_liberada += 1
 	SaveManager.salvar()
+	
+func alternar_lampada():
+	lampada_ligada = not lampada_ligada
+	lampada_alterada.emit()

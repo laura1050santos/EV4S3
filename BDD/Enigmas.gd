@@ -5,7 +5,7 @@ static func criar_tabela():
 	CREATE TABLE IF NOT EXISTS Enigmas (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		nome TEXT NOT NULL UNIQUE,
-		resolvido INTEGER
+		resolvido INTEGER NOT NULL DEFAULT 0
 	);
 	"""
 
@@ -34,7 +34,7 @@ static func atualizar_enigma(nome, resolvido):
 	"""
 
 	Database.db.query_with_bindings(sql, [
-		resolvido,
+		int(resolvido),
 		nome
 	])
 	print("Enigma atualizado: ", nome)

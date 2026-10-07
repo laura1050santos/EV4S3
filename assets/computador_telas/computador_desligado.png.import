@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://62pw7npo3tu7"
-path="res://.godot/imported/computador_desligado.png-26405ab09ecaa245914aafaa380e9a36.ctex"
+path="res://.godot/imported/computador_desligado.png-e42fc818676f3605310c8b7c4ca46b57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/fase1/computador_desligado.png"
-dest_files=["res://.godot/imported/computador_desligado.png-26405ab09ecaa245914aafaa380e9a36.ctex"]
+source_file="res://assets/computador_telas/computador_desligado.png"
+dest_files=["res://.godot/imported/computador_desligado.png-e42fc818676f3605310c8b7c4ca46b57.ctex"]
 
 [params]
 

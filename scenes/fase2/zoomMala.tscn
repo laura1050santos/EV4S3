@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtybkfs4i3ifc"]
 
-[ext_resource type="Script" uid="uid://b3vsr72swlocd" path="res://scenes/fase2/zoom_mala.gd" id="1_kjaa4"]
+[ext_resource type="Script" uid="uid://b3vsr72swlocd" path="res://scripts/salas_scripts/zoom_mala.gd" id="1_kjaa4"]
 [ext_resource type="Texture2D" uid="uid://c4wof56f5vx32" path="res://assets/itens/malagrande.png" id="2_b6euy"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_nmnx3"]
 

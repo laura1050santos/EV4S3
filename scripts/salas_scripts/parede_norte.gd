@@ -5,7 +5,6 @@ extends SalasManager
 @onready var roteador_parede_sprite: Sprite2D = $roteadorParede
 
 func _ready():
-
 	GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)
 	GlobalSingleton.ultima_cena = get_tree().current_scene.scene_file_path
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
@@ -30,18 +29,12 @@ func _ready():
 		roteador_parede_sprite.visible = false
 
 func interruptor_ativar():
-	var LuzLampada = load("res://scenes/escuro.tscn").instantiate()
-	var root = get_tree().root
-	if root.get_node_or_null("Escuro/LuzLampada"):
-		var luzNoRoot = root.get_node_or_null("Escuro/LuzLampada")
-		if luzNoRoot.enabled == true:
-			luzNoRoot.enabled = false
-		else:
-			luzNoRoot.enabled = true
-	else:
-		root.add_child(LuzLampada)
-		LuzLampada = LuzLampada.get_child(1)
-		LuzLampada.enabled = true
+	GlobalSingleton.alternar_lampada()
+
+func aplicar_estado_lampada():
+	var luz = $Escuro/LuzLampada
+	luz.visible = GlobalSingleton.lampada_ligada
+
 
 # Evento de clique na Mala no cenário
 func _on_mala_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

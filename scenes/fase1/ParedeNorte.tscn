@@ -54,7 +54,7 @@ destino_cena = "uid://dqttd76hew5ag"
 position = Vector2(575, 325)
 scale = Vector2(0.6035101, 0.60100657)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInterruptor" unique_id=1098445173]
+[node name="interruptor" type="CollisionShape2D" parent="AreaInterruptor" unique_id=1098445173]
 position = Vector2(-341.33643, -8.246948)
 scale = Vector2(1, 1.0000001)
 shape = SubResource("RectangleShape2D_y3a53")
