@@ -10,11 +10,11 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		
 		# Compara o Resource para garantir que não é o mesmo item que foi clicado
 		if info_item.data != meus_dados: 
-			print("Achei os dados de OUTRO item registrado!")
-			print("Nome do Resource do item: ", info_item.data.resource_path.get_file()) 
-			print("Ele está salvo na cena: ", info_item.cena)
-			print("A posição salva dele é: ", info_item.pos)
+			print("World_item -> Achei os dados de OUTRO item registrado!")
+			print("World_item -> Nome do Resource do item: ", info_item.data.resource_path.get_file()) 
+			print("World_item -> Ele está salvo na cena: ", info_item.cena)
+			print("World_item -> A posição salva dele é: ", info_item.pos)
 			
 	#o Codigo detecta interação com o mouse aqui
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("Cliquei em mim mesmo: ", name)
+		print("World_item -> Cliquei em mim mesmo: ", name)

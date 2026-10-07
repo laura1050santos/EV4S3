@@ -11,8 +11,8 @@ const PADRAO := {
 	"Sul": [
 		{"nome": "processador", "recurso": "res://recursos/processador.tres", "pos": Vector2(600, 550)},
 	],
-	"oeste": [
-		{"nome": "fita cassete", "recurso": "res://recursos/FitaCassete.tres", "pos": Vector2(600, 550)},
+	"Oeste": [
+		{"nome": "fita cassete", "recurso": "res://recursos/FitaCassete.tres", "pos": Vector2(500, 550)},
 	],
 	"CenaTeto": [
 		{"nome": "lampada quebrada", "recurso": "res://recursos/LampadaQuebrada.tres", "pos": Vector2(575, 273)},

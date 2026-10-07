@@ -80,6 +80,11 @@ func obter_cena_anterior() -> String:
 
 	return historico_cenas[historico_cenas.size() - 2]
 	
+	
+	
+	
+	
+
 # ======= FUNÇÕES DO SISTEMA DE FASES =====
 
 func extrair_numero_fase(caminho: String) -> int:

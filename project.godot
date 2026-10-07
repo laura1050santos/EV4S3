@@ -32,6 +32,15 @@ Database="*uid://ca46e7o1v7sf8"
 
 window/stretch/mode="canvas_items"
 
+[file_customization]
+
+folder_colors={
+"res://BDD/": "orange",
+"res://recursos/": "purple",
+"res://scenes/": "green",
+"res://scripts/": "red"
+}
+
 [input]
 
 click={

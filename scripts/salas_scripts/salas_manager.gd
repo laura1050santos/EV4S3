@@ -25,7 +25,7 @@ func spawnar_itens(item_ou_caminho, posicao):
 		recurso = load(item_ou_caminho)
 
 	if not recurso:
-		print("ERRO: recurso nulo")
+		print("Salas_Manager -> ERRO: recurso nulo")
 		return null
 
 	# Já existe um item com esse nome nesta cena? Não cria outro.

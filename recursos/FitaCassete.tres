@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://t448chq5te6t"]
+
+[ext_resource type="Texture2D" uid="uid://bugnkiwuv4lel" path="res://assets/itens/fitacassete.jpg" id="1_b2nlu"]
+[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="2_s2q4q"]
+
+[resource]
+script = ExtResource("2_s2q4q")
+item_name = "Fita Cassete"
+icon = ExtResource("1_b2nlu")
+inventory_icon = ExtResource("1_b2nlu")
+ativo_icon = ExtResource("1_b2nlu")
+metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

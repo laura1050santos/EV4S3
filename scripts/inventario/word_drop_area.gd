@@ -18,7 +18,7 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	#essa função Nativa do Control é ativada ao soltar um item 
 	var item_para_dropar = data.item
-	print("Item dropado")
+	print("word_drop -> Item dropado")
 	
 	var node = WORLD_ITEM.instantiate()
 	node.set_meta("item_data", item_para_dropar)
@@ -42,19 +42,19 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 func usar_item(item: itemData, node: Node):
 	if item == null:
 		return
-	print("Item clicado com botão direito no cenário: ", item.item_name)
+	print("word_drop_area -> Item clicado com botão direito no cenário: ", item.item_name)
 	item.item_ativo = !item.item_ativo
 	
 	var lst = ["lanterna", "chave de fenda"]
 	
 	if item.item_ativo:
 		GlobalSingleton.item_mao = item
-		print("ITEM EQUIPADO: ", item.item_name)
+		print("word_drop_area -> ITEM EQUIPADO: ", item.item_name)
 		node.texture = item.ativo_icon
 		
 		if item.item_ativo:
 			GlobalSingleton.item_mao = item
-			print("ITEM EQUIPADO: ", item.item_name)
+			print("word_drop_area -> ITEM EQUIPADO: ", item.item_name)
 			node.texture = item.ativo_icon
 	
 			if item.item_name in lst:
