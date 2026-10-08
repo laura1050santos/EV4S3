@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="1_s0cdr"]
 [ext_resource type="Texture2D" uid="uid://bqehfxammojss" path="res://assets/cenarios/zoom_tocafitas.png" id="2_r45ts"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_r45ts"]
+[ext_resource type="Script" uid="uid://ca8wwitga4rnm" path="res://scripts/salas_scripts/toca_fitas.gd" id="4_f3bcf"]
+[ext_resource type="Resource" uid="uid://t448chq5te6t" path="res://recursos/FitaCassete.tres" id="5_04wbe"]
+[ext_resource type="AudioStream" uid="uid://hcl2ptyd13qe" path="res://assets/Sons/audio_fita_cassete.mp3" id="5_12td3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(279.70496, 199.96725)
 
 [node name="ZoomTocafitas" type="Node2D" unique_id=872383766]
 
@@ -15,3 +21,18 @@ destino_cena = "uid://du3u5e5blrq5k"
 position = Vector2(575, 324)
 scale = Vector2(1.6052631, 1.6052631)
 texture = ExtResource("2_r45ts")
+
+[node name="Estacao" type="Area2D" parent="ZoomTocafitas" unique_id=416391494]
+script = ExtResource("4_f3bcf")
+item_aceito = ExtResource("5_04wbe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoomTocafitas/Estacao" unique_id=1586119932]
+position = Vector2(0.9344177, -10.901642)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ZoomTocafitas/Estacao" unique_id=1429925684]
+stream = ExtResource("5_12td3")
+volume_db = -5.0
+playback_type = 1
+parameters/looping = false

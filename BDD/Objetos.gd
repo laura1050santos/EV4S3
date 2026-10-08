@@ -154,3 +154,23 @@ static func iniciar_objetos():
 static func resetar():
 	Database.db.query("DELETE FROM Objetos;")
 	Database.db.query("DELETE FROM CenasVisitadas;")
+	
+	
+#===================================
+#===================================
+# TOCA-FITAS
+
+static func guardar_em_estacao(recurso: String, estacao_id: String):
+	if not Database.db.query_with_bindings(
+		"UPDATE Objetos SET coletado = 2, cena = ? WHERE recurso = ?;",
+		["estacao:" + estacao_id, recurso]
+	):
+		push_error("Erro ao guardar na estação: " + Database.db.error_message)
+
+static func get_recurso_em_estacao(estacao_id: String) -> String:
+	Database.db.query_with_bindings(
+		"SELECT recurso FROM Objetos WHERE coletado = 2 AND cena = ?;",
+		["estacao:" + estacao_id]
+	)
+	var r = Database.db.get_query_result()
+	return r[0]["recurso"] if r.size() > 0 else ""

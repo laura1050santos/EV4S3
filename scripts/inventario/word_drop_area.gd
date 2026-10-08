@@ -3,6 +3,7 @@ extends Control
 const WORLD_ITEM = preload("res://scenes/inventario/worldItem.tscn")
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_to_group("world_drop_area")
 
 func _notification(what):
 	# Quando um "Drag" começa no jogo, a gente ativa a área de drop
@@ -19,6 +20,13 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	#essa função Nativa do Control é ativada ao soltar um item 
 	var item_para_dropar = data.item
 	print("word_drop -> Item dropado")
+	
+	var estacao = estacao_sob_mouse()
+	if estacao != null:
+		if estacao.colocar_item(item_para_dropar):
+			data.item = null        # some do slot
+			data.update_ui()
+		return                      # ocupada: o item continua no slot, nada é solto
 	
 	var node = WORLD_ITEM.instantiate()
 	node.set_meta("item_data", item_para_dropar)
@@ -121,3 +129,23 @@ func verify() -> Variant:
 		if target.has_meta("item_data"):
 			return {"item": target.get_meta("item_data"), "node": target}
 	return null
+	
+#========================
+#========================
+
+func estacao_sob_mouse() -> Node:
+	var params = PhysicsPointQueryParameters2D.new()
+	params.position = get_global_mouse_position()
+	params.collide_with_areas = true
+	for r in get_world_2d().direct_space_state.intersect_point(params):
+		if r.collider.is_in_group("estacao"):
+			return r.collider
+	return null
+
+func guardar_no_inventario(item: itemData) -> bool:
+	for slot in %GridContainer.get_children():
+		if slot.item == null:
+			slot.item = item
+			slot.update_ui()
+			return true
+	return false
