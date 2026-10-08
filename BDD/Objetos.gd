@@ -2,7 +2,7 @@ class_name Objetos
 
 const PADRAO := {
 	"Norte": [
-		{"nome": "mala", "recurso": "res://recursos/Mala.tres", "pos": Vector2(750, 590)},
+		{"nome": "roteador", "recurso": "res://recursos/roteador.tres", "pos": Vector2(750, 590)},
 	],
 	"leste": [
 		{"nome": "chave", "recurso": "res://recursos/chaveDeFenda.tres", "pos": Vector2(770, 590)},

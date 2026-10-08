@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="6_26mac"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_y3a53"]
 [ext_resource type="Texture2D" uid="uid://db0bt3c3aekr2" path="res://assets/itens/roteadorParede.png" id="9_p2jjl"]
+[ext_resource type="Texture2D" uid="uid://mjnfhckmhoal" path="res://assets/itens/objeto-mala-sala.png" id="10_v0sle"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
 size = Vector2(107.03837, 58.909073)
@@ -68,6 +69,10 @@ shape = SubResource("RectangleShape2D_3ak76")
 position = Vector2(359, 448.99997)
 scale = Vector2(0.2349857, 0.2216174)
 texture = ExtResource("9_p2jjl")
+
+[node name="ObjetoMalaSala" type="Sprite2D" parent="." unique_id=1324784849]
+position = Vector2(777, 575)
+texture = ExtResource("10_v0sle")
 
 [connection signal="input_event" from="ParedeRoteador" to="." method="_on_area_2d_input_event"]
 [connection signal="input_event" from="AreaInterruptor" to="." method="_on_area_interruptor_input_event"]

@@ -12,6 +12,7 @@ func _ready():
 	Objetos.garantir_padrao(nome_desta_cena)
 	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
 	iniciar_itens_cena(nome_desta_cena, objetos)
+	
 
 	var placa = get_tree().root.get_node("CenaChao/placa")
 	if placa :

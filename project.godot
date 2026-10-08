@@ -36,6 +36,7 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://BDD/": "orange",
+"res://assets/": "teal",
 "res://recursos/": "purple",
 "res://scenes/": "green",
 "res://scripts/": "red"
