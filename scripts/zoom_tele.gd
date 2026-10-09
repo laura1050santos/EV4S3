@@ -10,11 +10,11 @@ func _inout_event(viewport, event, shape_idx):
 		trocar()
 func trocar():
 	if destino_cena==null or destino_cena=="":
-		print("Campo vazio no inspetor")
+		print("zoom_tele -> Campo vazio no inspetor")
 		
-	print("Tentando ir para: ", destino_cena)
+	print("zoom_tele -> Tentando ir para: ", destino_cena)
 	var erro = get_tree().call_deferred("change_scene_to_file", destino_cena)
 	if erro==OK:
-		print("erro ao carregar cena",erro)
+		print("zoom_tele -> erro ao carregar cena",erro)
 	else:
-		print("Erro")
+		print("zoom_tele -> Erro")

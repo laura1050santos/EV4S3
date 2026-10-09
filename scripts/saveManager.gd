@@ -10,7 +10,7 @@ func salvar():
 		"itens_no_mundo": GlobalSingleton.itens_no_mundo,
 		"cenas_visitadas": GlobalSingleton.cenas_visitadas,
 
-		"enigma_luz_resolvido": GlobalSingleton.enigma_luz_resolvido,
+		#"enigma_luz_resolvido": GlobalSingleton.enigma_luz_resolvido,
 
 		"gaveta_1": GlobalSingleton.gaveta_1,
 		"gaveta_2": GlobalSingleton.gaveta_2,
@@ -54,7 +54,7 @@ func carregar():
 	GlobalSingleton.itens_no_mundo = dados["itens_no_mundo"]
 	GlobalSingleton.cenas_visitadas = dados["cenas_visitadas"]
 
-	GlobalSingleton.enigma_luz_resolvido = dados["enigma_luz_resolvido"]
+	#GlobalSingleton.enigma_luz_resolvido = dados["enigma_luz_resolvido"]
 
 	GlobalSingleton.gaveta_1 = dados["gaveta_1"]
 	GlobalSingleton.gaveta_2 = dados["gaveta_2"]

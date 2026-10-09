@@ -15,5 +15,5 @@ func trocar():
 	if destino == "":
 		destino = GlobalSingleton.obter_cena_anterior()
 
-	print("Tentando ir para: ", destino)
+	print("seta_baixo -> Tentando ir para: ", destino)
 	get_tree().change_scene_to_file(destino)
