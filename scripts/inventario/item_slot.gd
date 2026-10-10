@@ -1,13 +1,12 @@
 extends Panel
 
 @onready var icon: TextureRect = $icon
-@export var item : itemData:
+@export var item: itemData:
 	set(value):
-		item  = value
-		if is_node_ready and item:
+		item = value
+
+		if is_node_ready():
 			update_ui()
-func _ready():
-	update_ui()
 
 func update_ui():
 	#atualiza a iinterface do slote e do item no mundo

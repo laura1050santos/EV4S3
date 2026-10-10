@@ -7,11 +7,13 @@
 script = ExtResource("1_ycnrf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2103436176]
+z_index = 5
 position = Vector2(576, 324.50006)
 scale = Vector2(0.6020833, 0.60277784)
 texture = ExtResource("1_l2k5q")
 
 [node name="sair" type="Button" parent="." unique_id=697058886]
+z_index = 5
 offset_left = 19.0
 offset_top = 16.0
 offset_right = 66.0

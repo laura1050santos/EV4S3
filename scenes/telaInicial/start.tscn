@@ -22,6 +22,7 @@ bg_color = Color(0.44711733, 0.00043016332, 1.3868182, 1)
 [sub_resource type="SpriteFrames" id="SpriteFrames_u80x2"]
 
 [node name="Control" type="Control" unique_id=522237803]
+z_index = 9
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

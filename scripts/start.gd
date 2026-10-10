@@ -1,31 +1,49 @@
 extends Control
 
+
 @onready var canvas = Inventario.get_node("canvasLayer")
 @onready var label = get_node("Label")
-const CAMINHO_SAVE = "user://save.json"
+
+const CENA_SELECAO_FASES := "res://scenes/telaInicial/selecao_fases.tscn"
 
 func _ready() -> void:
 	canvas.hide()
-	
-func _on_jogar_pressed():
-	get_tree().change_scene_to_file("res://scenes/telaInicial/selecao_fases.tscn")
 
-func _on_sair_pressed():
-	get_tree().quit()
+# =========================================================
+# NOVO JOGO
+# =========================================================
 
-func _on_creditos_pressed():
-	get_tree().change_scene_to_file("res://scenes/telaInicial/creditos.tscn")
-	
-func _on_configuracao_pressed():
-	get_tree().change_scene_to_file("res://scenes/telaInicial/configuracao.tscn")
+func _on_jogar_pressed() -> void:
+	SaveManager.novo_jogo()
+	get_tree().change_scene_to_file(CENA_SELECAO_FASES)
 
+
+# =========================================================
+# CONTINUAR
+# =========================================================
 
 func _on_continuar_pressed() -> void:
-	if not FileAccess.file_exists(CAMINHO_SAVE):
+	if not Progresso.existe_partida():
 		label.text = "Nenhum save encontrado"
 		label.show()
 		await get_tree().create_timer(1.0).timeout
 		label.hide()
 		return
-	else:
-		SaveManager.carregar()
+
+	SaveManager.carregar()
+
+
+# =========================================================
+# MENU
+# =========================================================
+
+func _on_sair_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_creditos_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/telaInicial/creditos.tscn")
+
+
+func _on_configuracao_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/telaInicial/configuracao.tscn")

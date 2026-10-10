@@ -1,5 +1,6 @@
 class_name Objetos
 
+
 const PADRAO := {
 	"Norte": [
 		{"nome": "roteador", "recurso": "res://recursos/roteador.tres", "pos": Vector2(750, 590)},
@@ -21,13 +22,18 @@ const PADRAO := {
 	"CenaChao": [
 		{"nome": "placa mae", "recurso": "res://recursos/placaMae.tres", "pos": Vector2(600, 400)},
 	],
-	"Zoom Lixeira":[
+	"Zoom Lixeira": [
 		{"nome": "gpu", "recurso": "res://recursos/gpu.tres", "pos": Vector2(600, 400)},
 	],
-	
-	
+	"BuracoAberto": [
+		{"nome": "lampada nova", "recurso": "res://recursos/lampada.tres", "pos": Vector2(570, 380)},
+	],
 }
 
+
+# =========================================================
+# BANCO
+# =========================================================
 
 static func criar_tabela():
 	Database.db.query("""
@@ -43,45 +49,79 @@ static func criar_tabela():
 	Database.db.query("""
 	CREATE TABLE IF NOT EXISTS CenasVisitadas (
 		cena TEXT PRIMARY KEY
-	);""")
+	);
+	""")
 
 
-static func cena_ja_visitada(cena) -> bool:
+# =========================================================
+# CENAS VISITADAS
+# =========================================================
+
+static func cena_ja_visitada(cena: String) -> bool:
 	Database.db.query_with_bindings(
 		"SELECT cena FROM CenasVisitadas WHERE cena = ?;", [cena]
 	)
 	return Database.db.get_query_result().size() > 0
 
 
-static func marcar_cena_visitada(cena):
-	Database.db.query_with_bindings(
+static func marcar_cena_visitada(cena: String):
+	if not Database.db.query_with_bindings(
 		"INSERT OR IGNORE INTO CenasVisitadas (cena) VALUES (?);", [cena]
-	)
+	):
+		push_error("Erro ao marcar cena visitada: " + Database.db.error_message)
 
+
+# =========================================================
+# OBJETOS PADRÃO
+# =========================================================
 
 static func garantir_padrao(cena: String):
 	if cena_ja_visitada(cena):
 		return
 	for o in PADRAO.get(cena, []):
 		salvar_objetos(
-			o["nome"],
-			o["recurso"],
+			o["nome"], o["recurso"],
 			pos_para_json(int(o["pos"].x), int(o["pos"].y)),
 			cena
 		)
 	marcar_cena_visitada(cena)
 
 
-static func salvar_objetos(nome, recurso, pos, cena):
+static func iniciar_objetos():
+	for cena in PADRAO.keys():
+		garantir_padrao(cena)
+
+
+# =========================================================
+# SALVAR / ATUALIZAR malditos 
+# =========================================================
+
+static func salvar_objetos(nome: String, recurso: String, pos: String, cena: String):
 	var sql = """
-	INSERT OR IGNORE INTO Objetos (nome, recurso, pos, cena)
-	VALUES (?, ?, ?, ?);
+	INSERT OR IGNORE INTO Objetos (nome, recurso, pos, cena, coletado)
+	VALUES (?, ?, ?, ?, 0);
 	"""
 	if not Database.db.query_with_bindings(sql, [nome, recurso, pos, cena]):
 		push_error("Erro ao salvar objeto: " + Database.db.error_message)
 		return
 	print("Objeto salvo: ", nome)
 
+
+static func atualizar_objeto(nome: String, recurso: String, pos: String, cena: String):
+	var sql = """
+	UPDATE Objetos
+	SET recurso = ?, pos = ?, cena = ?
+	WHERE nome = ?;
+	"""
+	if not Database.db.query_with_bindings(sql, [recurso, pos, cena, nome]):
+		push_error("Erro ao atualizar objeto: " + Database.db.error_message)
+		return
+	print("Objeto atualizado: ", nome)
+
+
+# =========================================================
+# ESTADO DO ITEM
+# =========================================================
 
 static func marcar_coletado_por_recurso(recurso: String):
 	if not Database.db.query_with_bindings(
@@ -90,75 +130,183 @@ static func marcar_coletado_por_recurso(recurso: String):
 		push_error("Erro ao marcar coletado: " + Database.db.error_message)
 
 
-static func atualizar_objeto(nome, recurso, pos, cena):
-	var sql = """
-	UPDATE Objetos
-	SET recurso = ?, pos = ?, cena = ?
-	WHERE nome = ?;
-	"""
-	Database.db.query_with_bindings(sql, [recurso, pos, cena, nome])
-	print("Objeto atualizado: ", nome)
-
 static func soltar_por_recurso(recurso: String, pos: Vector2, cena: String):
-	Database.db.query_with_bindings(
-		"UPDATE Objetos SET coletado = 0, pos = ?, cena = ? WHERE recurso = ?;",
+	if not Database.db.query_with_bindings(
+		"""
+		UPDATE Objetos
+		SET coletado = 0, pos = ?, cena = ?
+		WHERE recurso = ?;
+		""",
 		[pos_para_json(int(pos.x), int(pos.y)), cena, recurso]
-	)
+	):
+		push_error("Erro ao soltar objeto: " + Database.db.error_message)
 
-static func get_objetos_cena(cena):
+
+# =========================================================
+# OBJETOS NO MUNDO
+# =========================================================
+
+static func get_objetos_cena(cena: String) -> Array:
 	var sql = """
-	SELECT id, nome, recurso, pos, cena
+	SELECT id, nome, recurso, pos, cena, coletado
 	FROM Objetos
 	WHERE cena = ? AND coletado = 0;
 	"""
-	Database.db.query_with_bindings(sql, [cena])
+	if not Database.db.query_with_bindings(sql, [cena]):
+		push_error("Erro ao buscar objetos da cena: " + Database.db.error_message)
+		return []
+
 	var resultado = Database.db.get_query_result()
-	var objetos = []
+	var objetos: Array = []
+
 	for info in resultado:
-		var recurso = load(info["recurso"])
-		var posicao = JSON.parse_string(info["pos"])
-		if not (posicao is Dictionary) or recurso == null:
-			push_error("Objeto inválido no banco: " + str(info["nome"]))
+		var caminho_recurso: String = info["recurso"]
+		if not ResourceLoader.exists(caminho_recurso):
+			push_error("Recurso não encontrado: " + caminho_recurso)
 			continue
+
+		var recurso = load(caminho_recurso)
+		var posicao = JSON.parse_string(info["pos"])
+		if not (posicao is Dictionary):
+			push_error("Posição inválida no banco: " + str(info["nome"]))
+			continue
+
 		objetos.append({
+			"id": info["id"],
 			"nome": info["nome"],
 			"item": recurso,
-			"pos": Vector2(posicao["x"], posicao["y"]),
-			"cena": info["cena"]
+			"recurso": caminho_recurso,
+			"pos": Vector2(float(posicao["x"]), float(posicao["y"])),
+			"cena": info["cena"],
+			"coletado": info["coletado"]
 		})
+
 	return objetos
 
 
-static func get_nome(nome):
-	Database.db.query_with_bindings(
-		"SELECT id, nome, recurso, pos, cena FROM Objetos WHERE nome = ?;", [nome]
-	)
+# =========================================================
+# OBJETOS COLETADOS / INVENTÁRIO <---  scanagem comigo
+# =========================================================
+
+static func get_objetos_coletados() -> Array:
+	var sql = """
+	SELECT id, nome, recurso, pos, cena, coletado
+	FROM Objetos
+	WHERE coletado = 1;
+	"""
+	if not Database.db.query(sql):
+		push_error("Erro ao buscar objetos coletados: " + Database.db.error_message)
+		return []
+
+	var resultado = Database.db.get_query_result()
+	var objetos: Array = []
+
+	for info in resultado:
+		var caminho_recurso: String = info["recurso"]
+		if not ResourceLoader.exists(caminho_recurso):
+			push_error("Recurso coletado não encontrado: " + caminho_recurso)
+			continue
+
+		var recurso = load(caminho_recurso)
+		objetos.append({
+			"id": info["id"],
+			"nome": info["nome"],
+			"item": recurso,
+			"recurso": caminho_recurso,
+			"pos": info["pos"],
+			"cena": info["cena"],
+			"coletado": info["coletado"]
+		})
+
+	return objetos
+
+
+static func get_recursos_coletados() -> Array:
+	var objetos = get_objetos_coletados()
+	var recursos: Array = []
+	for objeto in objetos:
+		if objeto.has("item"):
+			recursos.append(objeto["item"])
+	return recursos
+
+
+static func esta_coletado(recurso: String) -> bool:
+	if not Database.db.query_with_bindings(
+		"SELECT id FROM Objetos WHERE recurso = ? AND coletado = 1;", [recurso]
+	):
+		return false
+	return Database.db.get_query_result().size() > 0
+
+
+# =========================================================
+# BUSCA
+# =========================================================
+
+static func get_nome(nome: String):
+	if not Database.db.query_with_bindings(
+		"""
+		SELECT id, nome, recurso, pos, cena, coletado
+		FROM Objetos
+		WHERE nome = ?;
+		""",
+		[nome]
+	):
+		return null
 	var resultado = Database.db.get_query_result()
 	if resultado.size() > 0:
 		return resultado[0]
 	return null
 
 
-static func delete_objeto(nome):
-	Database.db.query_with_bindings("DELETE FROM Objetos WHERE nome = ?;", [nome])
+static func get_por_recurso(recurso: String):
+	if not Database.db.query_with_bindings(
+		"""
+		SELECT id, nome, recurso, pos, cena, coletado
+		FROM Objetos
+		WHERE recurso = ?;
+		""",
+		[recurso]
+	):
+		return null
+	var resultado = Database.db.get_query_result()
+	if resultado.size() > 0:
+		return resultado[0]
+	return null
+
+
+# =========================================================
+# DELETAR
+# =========================================================
+
+static func delete_objeto(nome: String):
+	if not Database.db.query_with_bindings(
+		"DELETE FROM Objetos WHERE nome = ?;", [nome]
+	):
+		push_error("Erro ao deletar objeto: " + Database.db.error_message)
+		return
 	print("Objeto deletado: ", nome)
 
 
-static func pos_para_json(x: int, y: int):
+# =========================================================
+# POSIÇÃO
+# =========================================================
+
+static func pos_para_json(x: int, y: int) -> String:
 	return JSON.stringify({"x": x, "y": y})
-	
-static func iniciar_objetos():
-	for cena in PADRAO.keys():
-		garantir_padrao(cena)
-		
+
+
+# =========================================================
+# RESET
+# =========================================================
+
 static func resetar():
 	Database.db.query("DELETE FROM Objetos;")
 	Database.db.query("DELETE FROM CenasVisitadas;")
-	
-	
-#===================================
-#===================================
-# TOCA-FITAS
+
+
+# =========================================================
+# TOCA-FITAS / ESTAÇÕES
+# =========================================================
 
 static func guardar_em_estacao(recurso: String, estacao_id: String):
 	if not Database.db.query_with_bindings(
@@ -167,10 +315,21 @@ static func guardar_em_estacao(recurso: String, estacao_id: String):
 	):
 		push_error("Erro ao guardar na estação: " + Database.db.error_message)
 
+
+static func retirar_de_estacao(recurso: String):
+	if not Database.db.query_with_bindings(
+		"UPDATE Objetos SET coletado = 1 WHERE recurso = ?;", [recurso]
+	):
+		push_error("Erro ao retirar da estação: " + Database.db.error_message)
+
+
 static func get_recurso_em_estacao(estacao_id: String) -> String:
-	Database.db.query_with_bindings(
+	if not Database.db.query_with_bindings(
 		"SELECT recurso FROM Objetos WHERE coletado = 2 AND cena = ?;",
 		["estacao:" + estacao_id]
-	)
-	var r = Database.db.get_query_result()
-	return r[0]["recurso"] if r.size() > 0 else ""
+	):
+		return ""
+	var resultado = Database.db.get_query_result()
+	if resultado.size() > 0:
+		return resultado[0]["recurso"]
+	return ""
