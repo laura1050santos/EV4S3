@@ -90,30 +90,34 @@ position = Vector2(576, 323.99997)
 scale = Vector2(0.6000001, 0.59999996)
 texture = ExtResource("12_35a4w")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=402879579]
+z_index = 4
+position = Vector2(6.1035156e-05, 3.0517578e-05)
+scale = Vector2(0.99999994, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1782050822]
+position = Vector2(586.5, 466.5)
+shape = SubResource("RectangleShape2D_etvgb")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=279750461]
+z_index = 4
+position = Vector2(1.000061, 56)
+scale = Vector2(0.99999994, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=320231829]
+position = Vector2(586.5, 466.5)
+shape = SubResource("RectangleShape2D_etvgb")
+
 [node name="Area2D3" type="Area2D" parent="." unique_id=687591449]
-z_index = 2
+z_index = 4
 position = Vector2(1, 112)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=806657607]
 position = Vector2(586.5, 466.5)
 shape = SubResource("RectangleShape2D_etvgb")
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=279750461]
-z_index = 2
-position = Vector2(1, 56)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=320231829]
-position = Vector2(586.5, 466.5)
-shape = SubResource("RectangleShape2D_etvgb")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=402879579]
-z_index = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1782050822]
-position = Vector2(586.5, 466.5)
-shape = SubResource("RectangleShape2D_etvgb")
-
 [node name="monitorLigado" type="Sprite2D" parent="." unique_id=1031921177]
+visible = false
 position = Vector2(478.71936, 346.0139)
 scale = Vector2(0.3206337, 0.2885615)
 texture = ExtResource("13_pvpgn")
@@ -133,7 +137,4 @@ shape = SubResource("RectangleShape2D_eq0go")
 
 [connection signal="input_event" from="Pc/Pc" to="." method="_on_pc_input_event"]
 [connection signal="input_event" from="Pc/Monitor" to="." method="_on_monitor_input_event"]
-[connection signal="input_event" from="Area2D3" to="." method="_on_gaveta_3_input_event"]
-[connection signal="input_event" from="Area2D2" to="." method="_on_gaveta_2_input_event"]
-[connection signal="input_event" from="Area2D" to="." method="_on_gaveta_1_input_event"]
 [connection signal="input_event" from="postit/Area2D" to="." method="_on_area_2d_input_event"]

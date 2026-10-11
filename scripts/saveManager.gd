@@ -16,10 +16,8 @@ func salvar() -> void:
 	Progresso.marcar_partida_criada()
 
 	Progresso.salvar("ultima_cena", GlobalSingleton.ultima_cena)
-	Progresso.salvar("gaveta_1", GlobalSingleton.gaveta_1)
-	Progresso.salvar("gaveta_2", GlobalSingleton.gaveta_2)
-	Progresso.salvar("gaveta_3", GlobalSingleton.gaveta_3)
 	Progresso.salvar("lixeiraAberta", GlobalSingleton.lixeiraAberta)
+	Progresso.salvar("gavetas",GlobalSingleton.gavetas)
 	Progresso.salvar("fase_liberada", GlobalSingleton.fase_liberada)
 	Progresso.salvar("fases_concluidas", GlobalSingleton.fases_concluidas)
 	Progresso.salvar("pc_conectado", GlobalSingleton.pc_conectado)
@@ -45,9 +43,25 @@ func carregar() -> void:
 	Inventario.get_node("canvasLayer").show()
 
 	GlobalSingleton.ultima_cena = Progresso.carregar("ultima_cena", "")
-	GlobalSingleton.gaveta_1 = Progresso.carregar("gaveta_1", false)
-	GlobalSingleton.gaveta_2 = Progresso.carregar("gaveta_2", false)
-	GlobalSingleton.gaveta_3 = Progresso.carregar("gaveta_3", false)
+	
+	var gavetas_salvas = Progresso.carregar("gavetas",{})
+	GlobalSingleton.gavetas = {
+	"leste": {"1": false, "2": false, "3": false},
+	"sul":   {"1": false, "2": false, "3": false}
+	}
+
+	if gavetas_salvas is Dictionary:
+		for sala in gavetas_salvas.keys():
+			if not GlobalSingleton.gavetas.has(sala):
+				GlobalSingleton.gavetas[sala] = {}
+
+			var gavetas_da_sala = gavetas_salvas[sala]
+			if not (gavetas_da_sala is Dictionary):
+				continue
+
+			for gaveta_id in gavetas_da_sala.keys():
+				GlobalSingleton.gavetas[sala][str(gaveta_id)] = bool(gavetas_da_sala[gaveta_id])
+	
 	GlobalSingleton.lixeiraAberta = Progresso.carregar("lixeiraAberta", false)
 	GlobalSingleton.fase_liberada = int(Progresso.carregar("fase_liberada", 1))
 
@@ -132,9 +146,10 @@ func resetar_global() -> void:
 
 	GlobalSingleton.item_mao = null
 
-	GlobalSingleton.gaveta_1 = false
-	GlobalSingleton.gaveta_2 = false
-	GlobalSingleton.gaveta_3 = false
+	GlobalSingleton.gavetas = {
+		"leste": {"1": false,"2": false,"3": false},
+		"sul": {"1": false,"2": false,"3": false}
+	}
 
 	GlobalSingleton.lixeiraAberta = false
 	GlobalSingleton.cont_enigma_som = 0

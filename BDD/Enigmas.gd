@@ -66,6 +66,10 @@ static func delete_enigma(nome):
 	print("Enigma deletada: ", nome)
 	
 static func iniciar_enigmas():
-	salvar_enigmas("aquario", false)
-	salvar_enigmas("lampada", false)
-	salvar_enigmas("alcapao", false)
+	salvar_enigmas("aquario", false) # Enigma da audicao
+	salvar_enigmas("lixeira", false) # Lixeira
+	salvar_enigmas("lampada", false) # Opcional: consertar a luz
+	salvar_enigmas("alcapao", false) # Descoberta da senha do codigo morse
+	salvar_enigmas("roteador", false) # Instalação obrigatória
+	salvar_enigmas("senha do pc", false) # Solucionar o toca-fitas
+	salvar_enigmas("phishing", false) # Classificação de e-mails

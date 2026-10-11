@@ -1,78 +1,94 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 
-@onready var gaveta1_sprite = $Gaveta1Pc
-@onready var gaveta2_sprite = $Gaveta2Pc
-@onready var gaveta3_sprite = $Gaveta3Pc
+const ID_SALA := "leste"
 
-# Referência opcional caso você tenha um Sprite2D para a tela acesa no monitor
-# @onready var monitor_sprite = $MonitorSprite
+var gavetas_controller: GavetasController
 
-func _ready():
+@onready var gavetas_sprites := {
+	"1": $Gaveta1Pc,
+	"2": $Gaveta2Pc,
+	"3": $Gaveta3Pc
+}
+
+@onready var gavetas_areas := {
+	"1": $Area2D,
+	"2": $Area2D2,
+	"3": $Area2D3
+}
+
+func _ready() -> void:
 	GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)
-	
-	# Restaura o estado das gavetas ao entrar na sala
-	gaveta1_sprite.visible = GlobalSingleton.gaveta_1
-	gaveta2_sprite.visible = GlobalSingleton.gaveta_2
-	gaveta3_sprite.visible = GlobalSingleton.gaveta_3
 
-	var nome_desta_cena = self.name # O nome do nó raiz desta cena
-	#var objetos = Objetos.get_objetos_cena(nome_desta_cena)
+	var nome_desta_cena = self.name
 	Objetos.garantir_padrao(nome_desta_cena)
 	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
 	iniciar_itens_cena(nome_desta_cena, objetos)
 
-	# Atualiza o visual da sala de acordo com a fase atual
+	gavetas_controller = GavetasController.new()
+	add_child(gavetas_controller)
+	gavetas_controller.configurar(ID_SALA, gavetas_sprites, gavetas_areas)
+	gavetas_controller.gaveta_alterada.connect(_on_gaveta_alterada)
+
+	for id in GlobalSingleton.gavetas[ID_SALA].keys():
+		if GlobalSingleton.gavetas[ID_SALA][id]:
+			_mostrar_itens_gaveta(id)
+
 	_atualizar_estado_fase()
+
+func _on_gaveta_alterada(id: String, aberta: bool) -> void:
+	if aberta:
+		_mostrar_itens_gaveta(id)
+	else:
+		_esconder_itens_gaveta(id)
+
+func _container_id(id: String) -> String:
+	return ID_SALA + "_gvt_" + id
+
+func _mostrar_itens_gaveta(id: String) -> void:
+	var objetos = Objetos.get_objetos_container(self.name, _container_id(id))
+	for info in objetos:
+		spawnar_itens(info["item"], info["pos"])
+
+func _esconder_itens_gaveta(id: String) -> void:
+	var objetos = Objetos.get_objetos_container(self.name, _container_id(id))
+	for info in objetos:
+		var node = get_node_or_null(NodePath(info["item"].item_name))
+		if node != null:
+			node.queue_free()
+
+func _clique_esquerdo(event: InputEvent) -> bool:
+	return (
+		event is InputEventMouseButton
+		and event.button_index == MOUSE_BUTTON_LEFT
+		and event.pressed
+	)
 
 func _atualizar_estado_fase() -> void:
 	if GlobalSingleton.fase_liberada >= 2:
-		# Exemplo: Trocar o sprite do monitor para "Sem Conexão" na Fase 2
-		# monitor_sprite.texture = load("res://assets/cenarios/monitor_sem_conexao.png")
 		print("Sala do PC configurada para a Fase 2")
 
-func _on_gaveta_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		GlobalSingleton.gaveta_1 = !GlobalSingleton.gaveta_1
-		gaveta1_sprite.visible = GlobalSingleton.gaveta_1
-		print("Ativado 1")
+func _on_pc_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if not _clique_esquerdo(event):
+		return
+	if GlobalSingleton.fase_liberada == 1:
+		get_tree().change_scene_to_file("res://scenes/fase1/zoom_pc.tscn")
+	else:
+		print("O gabinete já está montado com todas as peças.")
 
-func _on_gaveta_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		GlobalSingleton.gaveta_2 = !GlobalSingleton.gaveta_2
-		gaveta2_sprite.visible = GlobalSingleton.gaveta_2
-		print("Ativado 2")
+func _on_monitor_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if not _clique_esquerdo(event):
+		return
+	if GlobalSingleton.fase_liberada == 1:
+		get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")
+	elif GlobalSingleton.fase_liberada == 2:
+		get_tree().change_scene_to_file("res://scenes/fase2/zoom_monitor_fase2.tscn")
 
-func _on_gaveta_3_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		GlobalSingleton.gaveta_3 = !GlobalSingleton.gaveta_3
-		gaveta3_sprite.visible = GlobalSingleton.gaveta_3
-		print("Ativado 3")
-
-# Clique no Gabinete
-func _on_pc_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if GlobalSingleton.fase_liberada == 1:
-			# Na Fase 1, abre o zoom do gabinete para montar as peças
-			get_tree().change_scene_to_file("res://scenes/fase1/zoom_pc.tscn")
-		else:
-			# Na Fase 2 em diante, o gabinete já está montado
-			print("O gabinete já está montado com todas as peças.")
-
-# Clique no Monitor
-func _on_monitor_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if GlobalSingleton.fase_liberada == 1:
-			get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")
-		elif GlobalSingleton.fase_liberada == 2:
-			# Na Fase 2, abre o zoom da tela indicando "Sem Conexão / Configuração do Roteador"
-			get_tree().change_scene_to_file("res://scenes/fase2/zoom_monitor_fase2.tscn")
-
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		TransicaoFase.show_phase_complete("res://scenes/telaInicial/selecao_fases.tscn")
 
-
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if GlobalSingleton.fase_liberada == 1:
-			get_tree().change_scene_to_file("res://scenes/fase2/zoom_postIt.tscn")
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if not _clique_esquerdo(event):
+		return
+	if GlobalSingleton.fase_liberada == 1:
+		get_tree().change_scene_to_file("res://scenes/fase2/zoom_postIt.tscn")

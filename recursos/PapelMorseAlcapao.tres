@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://bdh572nefm7gw"]
+
+[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_2i6st"]
+[ext_resource type="Texture2D" uid="uid://c6wuov6nj21cu" path="res://assets/itens/papel_morse_recorte_zoom.png" id="1_uhgg3"]
+[ext_resource type="Texture2D" uid="uid://2o4u2hdsos5d" path="res://assets/itens/papel_morse_recorte.png" id="2_il0mu"]
+
+[resource]
+script = ExtResource("1_2i6st")
+item_name = "????"
+icon = ExtResource("2_il0mu")
+inventory_icon = ExtResource("2_il0mu")
+ativo_icon = ExtResource("1_uhgg3")
+metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

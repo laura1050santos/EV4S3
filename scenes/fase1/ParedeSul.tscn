@@ -9,44 +9,26 @@
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="7_o2bnt"]
 [ext_resource type="Script" uid="uid://cu1drk2c4rf01" path="res://scripts/salas_scripts/zoomBuraco.gd" id="8_cuvsr"]
 [ext_resource type="Texture2D" uid="uid://bf67u7bss8rn8" path="res://assets/cenarios/gavetas/gaveta1_aquario.png" id="9_b4mbd"]
-[ext_resource type="Script" uid="uid://c8vk8nii61b40" path="res://scripts/salas_scripts/objetos/gaveta.gd" id="10_uf1xn"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="11_uf1xn"]
 [ext_resource type="Texture2D" uid="uid://b4ay7iu76t0ls" path="res://assets/cenarios/gavetas/gaveta2_aquario.png" id="12_htmuf"]
 [ext_resource type="Texture2D" uid="uid://dyk1hlvw8bxjg" path="res://assets/cenarios/gavetas/gaveta3_aquario.png" id="13_nfbrq"]
 [ext_resource type="Script" uid="uid://bj13gcn4b2xmb" path="res://scripts/lixeiraZoom.gd" id="14_isxgw"]
 [ext_resource type="AudioStream" uid="uid://cfcc6i5pfgs65" path="res://assets/Sons/freesound_community-glass-break-001-103000.mp3" id="15_m8iw3"]
 
-[sub_resource type="GDScript" id="GDScript_htmuf"]
-script/source = "extends Area2D
-@onready var gaveta_1 = $\"../Gaveta1Aquario\"
-@onready var gaveta_2 = $\"../gaveta2\"
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	gaveta_1.visible = GlobalSingleton.gaveta_1
-	gaveta_2.visible = GlobalSingleton.gaveta_2
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfbrq"]
-size = Vector2(247.2313, 67.20386)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_htmuf"]
-size = Vector2(231.2237, 72.95597)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_isxgw"]
-size = Vector2(265.41275, 65.55234)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8iw3"]
 size = Vector2(250.5, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nco2w"]
 size = Vector2(103, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htmuf"]
+size = Vector2(258.30045, 81.64115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfbrq"]
+size = Vector2(253.03293, 69.51041)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isxgw"]
+size = Vector2(269.9932, 90.25011)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eq0go"]
 radius = 39.0
@@ -68,35 +50,6 @@ destino_cena = "uid://dcjm6p1qyhtmg"
 destino_cena = "uid://dmhce3kfm14ep"
 
 [node name="Escuro" parent="." unique_id=1675831160 instance=ExtResource("7_o2bnt")]
-
-[node name="GAVETA" type="Area2D" parent="." unique_id=732679714]
-position = Vector2(297, 723.00006)
-scale = Vector2(0.6027018, 0.6761575)
-script = SubResource("GDScript_htmuf")
-
-[node name="COLISAO" type="CollisionShape2D" parent="GAVETA" unique_id=490141309]
-position = Vector2(721.74994, -346.0733)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_nfbrq")
-
-[node name="gaveta" type="Area2D" parent="." unique_id=877787836]
-position = Vector2(702, 429)
-scale = Vector2(0.5923337, 0.5756894)
-collision_layer = 5
-script = ExtResource("10_uf1xn")
-
-[node name="colisaoGaveta" type="CollisionShape2D" parent="gaveta" unique_id=1938143914]
-position = Vector2(49.835327, -3.47406)
-shape = SubResource("RectangleShape2D_htmuf")
-
-[node name="gaveta3" type="Area2D" parent="." unique_id=525597513]
-position = Vector2(584, 346)
-scale = Vector2(0.5740885, 0.53672594)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gaveta3" unique_id=270150947]
-position = Vector2(260.96112, 362.2113)
-scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_isxgw")
 
 [node name="lixeira" type="Sprite2D" parent="." unique_id=351100154]
 
@@ -123,23 +76,56 @@ scale = Vector2(0.60052085, 0.6018519)
 texture = ExtResource("2_3wuve")
 
 [node name="Gaveta1Aquario" type="Sprite2D" parent="." unique_id=2015950540]
+visible = false
 z_index = 3
 position = Vector2(571.00006, 324)
 scale = Vector2(0.62216634, 0.60468376)
 texture = ExtResource("9_b4mbd")
 
-[node name="gaveta2" type="Sprite2D" parent="." unique_id=1462864133]
+[node name="Gaveta2Aquario" type="Sprite2D" parent="." unique_id=1462864133]
+visible = false
 z_index = 2
 position = Vector2(571, 309.00003)
 scale = Vector2(0.62306404, 0.67247665)
 texture = ExtResource("12_htmuf")
 
-[node name="gaveta_3" type="Sprite2D" parent="." unique_id=724452809]
+[node name="Gaveta3Aquario" type="Sprite2D" parent="." unique_id=724452809]
 visible = false
 z_index = 1
 position = Vector2(570, 330.00003)
 scale = Vector2(0.6271698, 0.5863526)
 texture = ExtResource("13_nfbrq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=877787836]
+z_index = 4
+position = Vector2(702, 429)
+scale = Vector2(0.5923336, 0.5756894)
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1938143914]
+position = Vector2(48.11487, 0.8685913)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_htmuf")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=732679714]
+z_index = 3
+position = Vector2(297.00003, 723)
+scale = Vector2(0.6027018, 0.6761575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=490141309]
+position = Vector2(718.8492, -348.29163)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_nfbrq")
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=525597513]
+z_index = 3
+position = Vector2(583.2605, 346.74402)
+scale = Vector2(0.5740885, 0.53672594)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=270150947]
+position = Vector2(259.9591, 374.56006)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_isxgw")
 
 [node name="SomVidroQuebrando" type="AudioStreamPlayer2D" parent="." unique_id=1509413935]
 stream = ExtResource("15_m8iw3")
@@ -155,8 +141,5 @@ rotation = -1.5265174
 shape = SubResource("CapsuleShape2D_eq0go")
 disabled = true
 
-[connection signal="input_event" from="GAVETA" to="." method="_on_gaveta2_input_event"]
-[connection signal="input_event" from="gaveta" to="." method="_on_gaveta_input_event"]
-[connection signal="input_event" from="gaveta3" to="." method="_on_gaveta_3_input_event"]
 [connection signal="pressed" from="BotaoConfig" to="." method="_on_botao_config_pressed"]
 [connection signal="input_event" from="areaCabecaQuebrada" to="." method="_on_area_cabeca_quebrada_input_event"]

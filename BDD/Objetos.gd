@@ -3,30 +3,31 @@ class_name Objetos
 
 const PADRAO := {
 	"Norte": [
-		{"nome": "roteador", "recurso": "res://recursos/roteador.tres", "pos": Vector2(750, 590)},
+		{"nome": "roteador", "recurso": "res://recursos/roteador.tres", "pos": Vector2(750, 590), "container_id": ""},
 	],
 	"leste": [
-		{"nome": "chave", "recurso": "res://recursos/chaveDeFenda.tres", "pos": Vector2(770, 590)},
-		{"nome": "lanterna", "recurso": "res://recursos/lanterna.tres", "pos": Vector2(500, 550)},
+		{"nome": "chave", "recurso": "res://recursos/chaveDeFenda.tres", "pos": Vector2(770, 590), "container_id": ""},
+		{"nome": "lanterna", "recurso": "res://recursos/lanterna.tres", "pos": Vector2(500, 550), "container_id": ""},
 	],
 	"Sul": [
-		{"nome": "processador", "recurso": "res://recursos/processador.tres", "pos": Vector2(600, 550)},
+		{"nome": "processador", "recurso": "res://recursos/processador.tres", "pos": Vector2(600, 550), "container_id": ""},
+		{"nome": "papel morse alcapao", "recurso": "res://recursos/PapelMorseAlcapao.tres", "pos": Vector2(727, 387), "container_id": "sul_gvt_2"},
 	],
 	"Oeste": [
-		{"nome": "fita cassete", "recurso": "res://recursos/FitaCassete.tres", "pos": Vector2(500, 550)},
+		{"nome": "fita cassete", "recurso": "res://recursos/FitaCassete.tres", "pos": Vector2(500, 550), "container_id": ""},
 	],
 	"CenaTeto": [
-		{"nome": "lampada quebrada", "recurso": "res://recursos/LampadaQuebrada.tres", "pos": Vector2(575, 273)},
-		{"nome": "flan", "recurso": "res://recursos/flan.tres", "pos": Vector2(750, 550)},
+		{"nome": "lampada quebrada", "recurso": "res://recursos/LampadaQuebrada.tres", "pos": Vector2(575, 273), "container_id": ""},
+		{"nome": "flan", "recurso": "res://recursos/flan.tres", "pos": Vector2(750, 550), "container_id": ""},
 	],
 	"CenaChao": [
-		{"nome": "placa mae", "recurso": "res://recursos/placaMae.tres", "pos": Vector2(600, 400)},
+		{"nome": "placa mae", "recurso": "res://recursos/placaMae.tres", "pos": Vector2(600, 400), "container_id": ""},
 	],
 	"Zoom Lixeira": [
-		{"nome": "gpu", "recurso": "res://recursos/gpu.tres", "pos": Vector2(600, 400)},
+		{"nome": "gpu", "recurso": "res://recursos/gpu.tres", "pos": Vector2(600, 400), "container_id": ""},
 	],
 	"BuracoAberto": [
-		{"nome": "lampada nova", "recurso": "res://recursos/lampada.tres", "pos": Vector2(570, 380)},
+		{"nome": "lampada nova", "recurso": "res://recursos/lampada.tres", "pos": Vector2(570, 380), "container_id": ""},
 	],
 }
 
@@ -43,9 +44,11 @@ static func criar_tabela():
 		recurso TEXT NOT NULL UNIQUE,
 		pos TEXT,
 		cena TEXT,
-		coletado INTEGER NOT NULL DEFAULT 0
+		coletado INTEGER NOT NULL DEFAULT 0,
+		container_id TEXT NOT NULL DEFAULT ''
 	);
 	""")
+
 	Database.db.query("""
 	CREATE TABLE IF NOT EXISTS CenasVisitadas (
 		cena TEXT PRIMARY KEY
@@ -81,8 +84,7 @@ static func garantir_padrao(cena: String):
 	for o in PADRAO.get(cena, []):
 		salvar_objetos(
 			o["nome"], o["recurso"],
-			pos_para_json(int(o["pos"].x), int(o["pos"].y)),
-			cena
+			pos_para_json(int(o["pos"].x), int(o["pos"].y)), cena, o.get("container_id", "")
 		)
 	marcar_cena_visitada(cena)
 
@@ -96,15 +98,15 @@ static func iniciar_objetos():
 # SALVAR / ATUALIZAR malditos 
 # =========================================================
 
-static func salvar_objetos(nome: String, recurso: String, pos: String, cena: String):
+static func salvar_objetos(nome: String, recurso: String, pos: String, cena: String, container_id: String = ""):
 	var sql = """
-	INSERT OR IGNORE INTO Objetos (nome, recurso, pos, cena, coletado)
-	VALUES (?, ?, ?, ?, 0);
+	INSERT OR IGNORE INTO Objetos (nome, recurso, pos, cena, container_id ,coletado)
+	VALUES (?, ?, ?, ?, ?, 0);
 	"""
-	if not Database.db.query_with_bindings(sql, [nome, recurso, pos, cena]):
+	if not Database.db.query_with_bindings(sql, [nome, recurso, pos, cena, container_id]):
 		push_error("Erro ao salvar objeto: " + Database.db.error_message)
 		return
-	print("Objeto salvo: ", nome)
+	print("Objeto salvo: ", nome, " ", container_id)
 
 
 static func atualizar_objeto(nome: String, recurso: String, pos: String, cena: String):
@@ -123,22 +125,29 @@ static func atualizar_objeto(nome: String, recurso: String, pos: String, cena: S
 # ESTADO DO ITEM
 # =========================================================
 
-static func marcar_coletado_por_recurso(recurso: String):
-	if not Database.db.query_with_bindings(
-		"UPDATE Objetos SET coletado = 1 WHERE recurso = ?;", [recurso]
-	):
+static func marcar_coletado_por_recurso(recurso: String) -> void:
+	var sql = """
+	UPDATE Objetos
+	SET coletado = 1, container_id = ''
+	WHERE recurso = ?;
+	"""
+
+	var sucesso = Database.db.query_with_bindings(sql, [recurso])
+
+	if not sucesso:
 		push_error("Erro ao marcar coletado: " + Database.db.error_message)
 
 
-static func soltar_por_recurso(recurso: String, pos: Vector2, cena: String):
-	if not Database.db.query_with_bindings(
-		"""
-		UPDATE Objetos
-		SET coletado = 0, pos = ?, cena = ?
-		WHERE recurso = ?;
-		""",
-		[pos_para_json(int(pos.x), int(pos.y)), cena, recurso]
-	):
+static func soltar_por_recurso(recurso: String, pos: Vector2, cena: String) -> void:
+	var sql = """
+	UPDATE Objetos
+	SET coletado = 0, pos = ?, cena = ?, container_id = ''
+	WHERE recurso = ?;
+	"""
+
+	var sucesso = Database.db.query_with_bindings(sql, [pos_para_json(int(pos.x), int(pos.y)), cena, recurso])
+
+	if not sucesso:
 		push_error("Erro ao soltar objeto: " + Database.db.error_message)
 
 
@@ -146,43 +155,76 @@ static func soltar_por_recurso(recurso: String, pos: Vector2, cena: String):
 # OBJETOS NO MUNDO
 # =========================================================
 
-static func get_objetos_cena(cena: String) -> Array:
+static func get_objetos_cena(cena):
 	var sql = """
-	SELECT id, nome, recurso, pos, cena, coletado
+	SELECT id, nome, recurso, pos, cena, container_id
 	FROM Objetos
-	WHERE cena = ? AND coletado = 0;
+	WHERE cena = ?
+	AND coletado = 0
+	AND (container_id IS NULL OR container_id = '');
 	"""
-	if not Database.db.query_with_bindings(sql, [cena]):
-		push_error("Erro ao buscar objetos da cena: " + Database.db.error_message)
-		return []
 
-	var resultado = Database.db.get_query_result()
-	var objetos: Array = []
+	Database.db.query_with_bindings(sql, [cena])
+
+	var resultado: Array = Database.db.get_query_result()
+	var objetos = []
 
 	for info in resultado:
-		var caminho_recurso: String = info["recurso"]
-		if not ResourceLoader.exists(caminho_recurso):
-			push_error("Recurso não encontrado: " + caminho_recurso)
-			continue
-
-		var recurso = load(caminho_recurso)
+		var recurso = load(info["recurso"])
 		var posicao = JSON.parse_string(info["pos"])
-		if not (posicao is Dictionary):
-			push_error("Posição inválida no banco: " + str(info["nome"]))
+
+		if not (posicao is Dictionary) or recurso == null:
+			push_error("Objeto inválido no banco: " + str(info["nome"]))
 			continue
 
 		objetos.append({
-			"id": info["id"],
 			"nome": info["nome"],
 			"item": recurso,
-			"recurso": caminho_recurso,
-			"pos": Vector2(float(posicao["x"]), float(posicao["y"])),
+			"pos": Vector2(posicao["x"], posicao["y"]),
 			"cena": info["cena"],
-			"coletado": info["coletado"]
+			"container_id": info["container_id"]
 		})
 
 	return objetos
 
+# =========================================================
+# OBJETOS NAS GAVETAS
+# =======================================================
+
+static func get_objetos_container(cena: String, container_id: String) -> Array:
+	var sql = """
+	SELECT id, nome, recurso, pos, cena, container_id
+	FROM Objetos
+	WHERE cena = ?
+	AND container_id = ?
+	AND coletado = 0;
+	"""
+
+	Database.db.query_with_bindings(sql, [cena, container_id])
+
+	var resultado: Array = Database.db.get_query_result()
+	var objetos: Array = []
+
+	for info in resultado:
+		var recurso = load(info["recurso"])
+		if recurso == null:
+			push_error("Recurso inválido na gaveta: " + str(info["nome"]))
+			continue
+
+		var posicao = JSON.parse_string(info["pos"])
+		if not (posicao is Dictionary):
+			push_error("Posição inválida na gaveta: " + str(info["nome"]))
+			continue
+
+		objetos.append({
+			"nome": info["nome"],
+			"item": recurso,
+			"pos": Vector2(posicao["x"], posicao["y"]),
+			"cena": info["cena"],
+			"container_id": info["container_id"]
+		})
+
+	return objetos
 
 # =========================================================
 # OBJETOS COLETADOS / INVENTÁRIO <---  scanagem comigo

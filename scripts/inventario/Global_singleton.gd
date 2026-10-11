@@ -7,9 +7,6 @@ var itens_no_mundo = []
 var cenas_visitadas =[]
 var historico_cenas: Array[String] = []
 var item_mao=null
-var gaveta_1 = false # teste da gaveta do aquario
-var gaveta_2 = false
-var gaveta_3 = false
 var lixeiraAberta = false
 var volume = 0
 # Função para registrar um item novo no mundo
@@ -18,7 +15,13 @@ var cont_enigma_som = 0
 var roteador_coletado = false
 var roteador_instalado: bool = false
 
+var gavetas: Dictionary = {
+	"leste": {"1": false, "2": false, "3": false},
+	"sul": {"1": false, "2": false, "3": false},
+}
+
 # ==== SELEÇÃO DE FASE ====
+
 var fase_liberada: int = 1
 var fases_concluidas: Array = [false, false, false, false]
 var pc_conectado: bool = false
