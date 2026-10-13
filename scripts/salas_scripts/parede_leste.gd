@@ -1,7 +1,7 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 
 const ID_SALA := "leste"
-
+@onready var telaSemConexao := $monitorLigado
 var gavetas_controller: GavetasController
 
 @onready var gavetas_sprites := {
@@ -74,7 +74,7 @@ func _on_pc_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> 
 		get_tree().change_scene_to_file("res://scenes/fase1/zoom_pc.tscn")
 	else:
 		print("O gabinete já está montado com todas as peças.")
-
+		telaSemConexao.visible= true
 func _on_monitor_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if not _clique_esquerdo(event):
 		return

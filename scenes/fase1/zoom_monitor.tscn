@@ -4,21 +4,27 @@
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_p43dj"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0ucrh"]
 [ext_resource type="PackedScene" uid="uid://br7k0n78k5ayn" path="res://scenes/fase1/sub_viewport_container.tscn" id="5_lsmqo"]
+[ext_resource type="Texture2D" uid="uid://dpwrhdwynlybq" path="res://assets/itens/alerta.png" id="5_ud4wo"]
 
 [sub_resource type="GDScript" id="GDScript_ilril"]
 script/source = "extends Node2D
 
 @onready var sub_viewport_container: SubViewportContainer = $SubViewportContainer
-
+@onready var telaSemConexao :=$\"sem conexão\"
 func _ready():
 	if sub_viewport_container:
-		# Liga/desliga a visibilidade da tela do PC de acordo com o estado do puzzle
-		#sub_viewport_container.visible = GlobalSingleton.pc_conectado
+		# Liga/desliga a visibilidade do container
+		sub_viewport_container.visible = GlobalSingleton.pc_conectado
 		
+		# Conecta os sinais do mouse
 		sub_viewport_container.mouse_entered.connect(_on_entrou_na_tela)
 		sub_viewport_container.mouse_exited.connect(_on_saiu_da_tela)
-	pass
-
+		
+		# Exibe a tela sem conexão caso o PC NÃO esteja conectado
+		if not GlobalSingleton.pc_conectado and GlobalSingleton.fase_liberada==2:
+			telaSemConexao.visible = true
+		else:
+			telaSemConexao.visible = false
 func _on_entrou_na_tela():
 	if sub_viewport_container and sub_viewport_container.visible:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -46,3 +52,8 @@ offset_left = 287.0
 offset_top = 86.0
 offset_right = 2080.1248
 offset_bottom = 1008.5038
+
+[node name="sem conexão" type="Sprite2D" parent="." unique_id=21905937]
+position = Vector2(581, 412.59753)
+scale = Vector2(1.1496733, 1.1692637)
+texture = ExtResource("5_ud4wo")
