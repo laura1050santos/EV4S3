@@ -5,7 +5,6 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 # IDENTIFICAÇÃO DA CENA NO BANCO
 # =========================================================
 
-# Para os objetos, esta cena será SEMPRE identificada pelo mesmo nome no SQLite.
 const CENA_ID := "ZoomPc"
 
 # =========================================================

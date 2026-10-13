@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://nraqqpnxtiyr" path="res://assets/computador_telas/senha.png" id="1_qkghh"]
 [ext_resource type="Script" uid="uid://cl2x7yyhtkguu" path="res://scripts/telaComp/barra_senha.gd" id="2_487ly"]
+[ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="3_l0ixp"]
 
 [node name="Tela_Senha" type="Control" unique_id=760084489]
 layout_mode = 3
@@ -23,9 +24,9 @@ texture = ExtResource("1_qkghh")
 [node name="Button" type="Button" parent="." unique_id=86694636 groups=["botoes_computador"]]
 layout_mode = 0
 offset_left = 834.3824
-offset_top = 602.50244
+offset_top = 664.0
 offset_right = 990.6336
-offset_bottom = 688.0
+offset_bottom = 749.49756
 theme_override_font_sizes/font_size = 25
 text = "Entrar
 "
@@ -39,3 +40,14 @@ offset_bottom = 556.0
 theme_override_font_sizes/font_size = 40
 placeholder_text = "********"
 script = ExtResource("2_487ly")
+
+[node name="AvisoSenha" type="Label" parent="." unique_id=195539126]
+layout_mode = 0
+offset_top = 576.0
+offset_right = 1816.0
+offset_bottom = 640.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_l0ixp")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1

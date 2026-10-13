@@ -94,3 +94,13 @@ action_mode = 0
 text = "
 "
 flat = true
+
+[node name="Email" type="Button" parent="menu" unique_id=1001428767 groups=["botoes_computador"]]
+offset_left = -476.14557
+offset_top = -45.691994
+offset_right = -420.1188
+offset_bottom = -14.691994
+scale = Vector2(3.605083, 1.6622539)
+text = "
+"
+flat = true
