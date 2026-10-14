@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dudsayc35f54n" path="res://scenes/Computador_Telas/tela_navegador.tscn" id="5_of56o"]
 [ext_resource type="PackedScene" uid="uid://dc1a4giqskyf3" path="res://scenes/Computador_Telas/tela_email.tscn" id="6_2mry1"]
 [ext_resource type="PackedScene" uid="uid://crv8fgrofvwkj" path="res://scenes/Computador_Telas/tela_boot.tscn" id="8_qrm8x"]
+[ext_resource type="PackedScene" uid="uid://dx4yl4c7rl03g" path="res://scenes/Computador_Telas/tela_pastas.tscn" id="9_0gxb3"]
+[ext_resource type="PackedScene" uid="uid://idq4lk7mir2j" path="res://scenes/Computador_Telas/pasta_pessoal.tscn" id="10_b47ss"]
+[ext_resource type="PackedScene" uid="uid://cgsl4vmsu53kt" path="res://scenes/Computador_Telas/pasta_tecnico.tscn" id="11_f74yq"]
 
 [node name="SubViewportContainerPC" type="SubViewportContainer" unique_id=1791322923]
 offset_left = 285.0
@@ -44,6 +47,7 @@ visible = false
 layout_mode = 0
 
 [node name="Tela_Senha" parent="SubViewport/pcControl/Telas" unique_id=851971395 instance=ExtResource("4_2mry1")]
+visible = false
 layout_mode = 0
 
 [node name="Tela_Navegador" parent="SubViewport/pcControl/Telas" unique_id=1346634533 instance=ExtResource("5_of56o")]
@@ -55,8 +59,32 @@ visible = false
 layout_mode = 0
 
 [node name="Tela_Boot" parent="SubViewport/pcControl/Telas" unique_id=1391405876 instance=ExtResource("8_qrm8x")]
+visible = false
 z_index = -1
 layout_mode = 0
+
+[node name="Tela_Pastas" parent="SubViewport/pcControl/Telas" unique_id=1948911442 instance=ExtResource("9_0gxb3")]
+visible = false
+z_index = 1
+layout_mode = 1
+
+[node name="Pasta_Pessoal" parent="SubViewport/pcControl/Telas" unique_id=844825480 instance=ExtResource("10_b47ss")]
+visible = false
+layout_mode = 0
+
+[node name="Pasta_Tecnico" parent="SubViewport/pcControl/Telas" unique_id=876146448 instance=ExtResource("11_f74yq")]
+layout_mode = 0
+
+[node name="Arquivo_ZIP" type="Control" parent="SubViewport/pcControl/Telas" unique_id=1644035925]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Arquivo_DAT" type="Control" parent="SubViewport/pcControl/Telas" unique_id=1952448933]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="CursorPc" type="Sprite2D" parent="SubViewport/pcControl" unique_id=1620216982]
 z_index = 5

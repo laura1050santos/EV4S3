@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://db77mgjf4cegr" path="res://recursos/emails/email_1.tres" id="3_fi8ha"]
 [ext_resource type="Resource" uid="uid://2uu1cgdc2y84" path="res://recursos/emails/email_2.tres" id="4_3s1ob"]
 [ext_resource type="Script" uid="uid://tkav200dune0" path="res://scenes/Computador_Telas/enviados.gd" id="6_skfp5"]
+[ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="7_fi8ha"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsmqo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -23,7 +24,8 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(4.764944e-06, 0.7998089, 0.18998468, 1)
 
-[node name="Tela_Email" type="Control" unique_id=1090878199]
+[node name="Tela_Email" type="Control" unique_id=1114813363]
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1813.0
@@ -31,13 +33,13 @@ offset_bottom = 934.0
 script = ExtResource("1_lp1dp")
 emails = Array[ExtResource("2_skfp5")]([ExtResource("3_fi8ha"), ExtResource("4_3s1ob")])
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=294034932]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=87687327]
 z_index = -2
 position = Vector2(909, 631.49994)
 scale = Vector2(1.88125, 1.6101851)
 texture = ExtResource("1_fpyyx")
 
-[node name="Tela" type="ColorRect" parent="." unique_id=1804008241]
+[node name="Tela" type="ColorRect" parent="." unique_id=1844366705]
 visible = false
 z_index = -1
 layout_mode = 0
@@ -45,7 +47,7 @@ offset_right = 1815.0
 offset_bottom = 932.0
 color = Color(0.66198117, 0.5831723, 0.57731605, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Tela" unique_id=1085900547]
+[node name="ColorRect2" type="ColorRect" parent="Tela" unique_id=1336121144]
 layout_mode = 0
 offset_left = 59.375427
 offset_top = 67.50028
@@ -53,7 +55,7 @@ offset_right = 406.25366
 offset_bottom = 865.0035
 color = Color(0.7784455, 0.7784456, 0.77844536, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Tela" unique_id=1287206393]
+[node name="ColorRect" type="ColorRect" parent="Tela" unique_id=759133512]
 layout_mode = 0
 offset_left = 456.25403
 offset_top = 70.00029
@@ -61,12 +63,12 @@ offset_right = 1734.3905
 offset_bottom = 867.5035
 color = Color(0.7784455, 0.7784456, 0.77844536, 1)
 
-[node name="VisualizadorEmail" type="Control" parent="." unique_id=1675473737]
+[node name="VisualizadorEmail" type="Control" parent="." unique_id=138942853]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Enviados" type="Button" parent="VisualizadorEmail" unique_id=1592369486]
+[node name="Enviados" type="Button" parent="VisualizadorEmail" unique_id=148499053]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 312.0
@@ -75,14 +77,14 @@ offset_bottom = 361.0
 flat = true
 script = ExtResource("6_skfp5")
 
-[node name="ImagemEmail" type="TextureRect" parent="VisualizadorEmail" unique_id=1477311943]
+[node name="ImagemEmail" type="TextureRect" parent="VisualizadorEmail" unique_id=1961453323]
 layout_mode = 0
 offset_left = 450.0
 offset_top = 140.0
 offset_right = 1176.0
 offset_bottom = 574.0
 
-[node name="BotaoPhishing" type="Button" parent="VisualizadorEmail" unique_id=565990618]
+[node name="BotaoPhishing" type="Button" parent="VisualizadorEmail" unique_id=329080045]
 layout_mode = 0
 offset_left = 621.0
 offset_top = 775.0
@@ -93,7 +95,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_lsmqo")
 text = "Denunciar como phishing"
 
-[node name="BotaoLegitimo" type="Button" parent="VisualizadorEmail" unique_id=1204895773]
+[node name="BotaoLegitimo" type="Button" parent="VisualizadorEmail" unique_id=1511736210]
 layout_mode = 0
 offset_left = 1181.0
 offset_top = 775.0
@@ -104,7 +106,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_ud4wo")
 text = "Não é phishing"
 
-[node name="LabelFeedback" type="Label" parent="VisualizadorEmail" unique_id=246469900]
+[node name="LabelFeedback" type="Label" parent="VisualizadorEmail" unique_id=16364955]
 layout_mode = 0
 offset_left = 943.0
 offset_top = 711.0
@@ -112,7 +114,7 @@ offset_right = 983.0
 offset_bottom = 760.0
 theme_override_font_sizes/font_size = 35
 
-[node name="ListaEmails" type="VBoxContainer" parent="." unique_id=905329447]
+[node name="ListaEmails" type="VBoxContainer" parent="." unique_id=666820884]
 z_index = -1
 layout_mode = 0
 offset_left = 460.0
@@ -120,5 +122,12 @@ offset_top = 151.0
 offset_right = 1782.0
 offset_bottom = 709.0
 theme_override_constants/separation = 0
+
+[node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("7_fi8ha")]
+layout_mode = 0
+offset_left = 1632.0001
+offset_right = 2640.0
+scale = Vector2(0.1498459, 0.12717399)
+flat = true
 
 [connection signal="pressed" from="VisualizadorEmail/Enviados" to="." method="voltar"]

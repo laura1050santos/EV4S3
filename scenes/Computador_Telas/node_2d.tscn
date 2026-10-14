@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cpvqjkku6qldk"]
+
+[ext_resource type="Texture2D" uid="uid://k4cipkhsrbel" path="res://assets/computador_telas/arquivos/aniversarios.png" id="1_6ucci"]
+
+[node name="Node2D" type="Node2D" unique_id=949933252]
+
+[node name="aniverarios" type="Sprite2D" parent="." unique_id=2047292381]
+texture = ExtResource("1_6ucci")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=613689443]

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dx4yl4c7rl03g"]
+
+[ext_resource type="Texture2D" uid="uid://p8076ajx5qi5" path="res://assets/computador_telas/pasta_haha.png" id="1_aambw"]
+[ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="1_phlro"]
+[ext_resource type="Texture2D" uid="uid://def6bnrcq8tq3" path="res://assets/computador_telas/zip_haha.png" id="2_mja4o"]
+
+[node name="Tela_Pastas" type="Control" unique_id=1948911442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tela" type="ColorRect" parent="." unique_id=338225499]
+z_index = -1
+layout_mode = 0
+offset_right = 1815.0
+offset_bottom = 932.0
+color = Color(0.69467324, 0.6946736, 0.69467336, 1)
+
+[node name="Guias" type="ColorRect" parent="Tela" unique_id=2102273233]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 56.0
+offset_right = 344.0
+offset_bottom = 920.0
+color = Color(0.88453144, 0.88453114, 0.88453114, 1)
+
+[node name="P1" type="Button" parent="Tela" unique_id=1663656933]
+layout_mode = 0
+offset_left = 399.99997
+offset_top = 56.000008
+offset_right = 920.0
+offset_bottom = 576.0
+scale = Vector2(0.3868433, 0.3868433)
+icon = ExtResource("1_aambw")
+flat = true
+
+[node name="P2" type="Button" parent="Tela" unique_id=2093935653]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 55.999992
+offset_right = 1184.0
+offset_bottom = 576.0
+scale = Vector2(0.3868433, 0.3868433)
+icon = ExtResource("1_aambw")
+flat = true
+
+[node name="Zip" type="Button" parent="Tela" unique_id=2033235111]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 63.999992
+offset_right = 976.0
+offset_bottom = 136.0
+scale = Vector2(2.4643385, 2.4643385)
+icon = ExtResource("2_mja4o")
+flat = true
+
+[node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("1_phlro")]
+layout_mode = 0
+offset_left = 1632.0001
+offset_right = 2640.0
+scale = Vector2(0.1498459, 0.12717399)
+flat = true

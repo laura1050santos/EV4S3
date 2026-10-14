@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://beg2asfcj1fqs"]
+
+[ext_resource type="Script" uid="uid://dn2eqdvblurf4" path="res://scenes/Computador_Telas/botao_fechar.gd" id="1_0jtfc"]
+[ext_resource type="Texture2D" uid="uid://dshk8xkdf6e7b" path="res://assets/computador_telas/botaoFechar.png" id="1_wryw7"]
+
+[node name="Button" type="Button" unique_id=1701383731]
+offset_right = 1008.0
+offset_bottom = 1008.0
+scale = Vector2(0.12717399, 0.12717399)
+icon = ExtResource("1_wryw7")
+script = ExtResource("1_0jtfc")

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cgsl4vmsu53kt"]
+
+[ext_resource type="Texture2D" uid="uid://bh5qu6w5bea85" path="res://assets/computador_telas/documento.png" id="1_ohppg"]
+[ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="2_3qv3v"]
+
+[node name="Pasta_Tecnico" type="Control" unique_id=876146448]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tela" type="ColorRect" parent="." unique_id=1175068278]
+z_index = -1
+layout_mode = 0
+offset_right = 1815.0
+offset_bottom = 932.0
+color = Color(0.37638173, 0.43683, 0.5514186, 1)
+
+[node name="BackupsLog_txt" type="Button" parent="Tela" unique_id=385912064 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 1009.38403
+offset_top = 62.500244
+offset_right = 1529.384
+offset_bottom = 582.50024
+scale = Vector2(0.33059737, 0.33059737)
+icon = ExtResource("1_ohppg")
+flat = true
+
+[node name="Procedimentos_txt" type="Button" parent="Tela" unique_id=182522556 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 810.8399
+offset_top = 62.500267
+offset_right = 1330.8398
+offset_bottom = 582.50024
+scale = Vector2(0.33059737, 0.33059737)
+icon = ExtResource("1_ohppg")
+flat = true
+
+[node name="Contatos_txt" type="Button" parent="Tela" unique_id=303760573 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 609.3804
+offset_top = 62.500244
+offset_right = 1129.3804
+offset_bottom = 582.50024
+scale = Vector2(0.33059737, 0.33059737)
+icon = ExtResource("1_ohppg")
+flat = true
+
+[node name="RegistroEquip_txt" type="Button" parent="Tela" unique_id=870648915 groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 409.37863
+offset_top = 62.50025
+offset_right = 929.37866
+offset_bottom = 582.50024
+scale = Vector2(0.33059737, 0.33059737)
+icon = ExtResource("1_ohppg")
+flat = true
+
+[node name="Guias" type="ColorRect" parent="Tela" unique_id=328114986]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 56.0
+offset_right = 344.0
+offset_bottom = 920.0
+color = Color(0.88453144, 0.88453114, 0.88453114, 1)
+
+[node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("2_3qv3v")]
+layout_mode = 0
+offset_left = 1632.0001
+offset_right = 2640.0
+scale = Vector2(0.1498459, 0.12717399)
+flat = true

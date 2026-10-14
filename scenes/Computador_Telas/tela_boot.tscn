@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b6lxepph0su1g" path="res://assets/computador_telas/logo-pc.png" id="2_74yne"]
 
 [node name="Tela_Boot" type="Control" unique_id=1391405876]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -17,13 +16,10 @@ offset_right = 1815.0
 offset_bottom = 932.0
 color = Color(0, 0, 0, 1)
 
-[node name="Progresso" type="ProgressBar" parent="." unique_id=1555038694]
-layout_mode = 0
-offset_left = 909.3831
-offset_top = 602.50244
-offset_right = 913.3831
-offset_bottom = 655.50244
-theme_override_font_sizes/font_size = 35
+[node name="Logo" type="Sprite2D" parent="." unique_id=1786821151]
+position = Vector2(909.3831, 662.5028)
+scale = Vector2(1.4566112, 1.4566112)
+texture = ExtResource("2_74yne")
 
 [node name="Status" type="Label" parent="." unique_id=2143167440]
 layout_mode = 0
@@ -43,7 +39,10 @@ offset_bottom = 551.5021
 theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 
-[node name="Logo" type="Sprite2D" parent="." unique_id=1786821151]
-position = Vector2(909.3831, 662.5028)
-scale = Vector2(1.4566112, 1.4566112)
-texture = ExtResource("2_74yne")
+[node name="Progresso" type="ProgressBar" parent="." unique_id=1555038694]
+layout_mode = 0
+offset_left = 909.3831
+offset_top = 602.50244
+offset_right = 913.3831
+offset_bottom = 655.50244
+theme_override_font_sizes/font_size = 35

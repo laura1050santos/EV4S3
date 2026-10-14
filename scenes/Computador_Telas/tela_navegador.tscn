@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dudsayc35f54n"]
 
 [ext_resource type="Texture2D" uid="uid://dqirdg0g6cuty" path="res://assets/computador_telas/navegador.png" id="1_dusd7"]
+[ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="2_13qop"]
 
 [node name="Tela_Navegador" type="Control" unique_id=1346634533]
 layout_mode = 3
@@ -40,4 +41,11 @@ offset_right = 1421.0
 offset_bottom = 560.0004
 theme_override_font_sizes/font_size = 25
 text = "O"
+flat = true
+
+[node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("2_13qop")]
+layout_mode = 0
+offset_left = 1632.0001
+offset_right = 2640.0
+scale = Vector2(0.1498459, 0.12717399)
 flat = true
