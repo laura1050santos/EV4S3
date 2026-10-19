@@ -58,6 +58,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			
 			if nome_item == "roteador":
 				instalar_roteador()
+				
+				Objetos.delete_objeto("roteador")
 			elif nome_item == "RelogioCuco":
 				get_tree().change_scene_to_file("res://scenes/start.tscn")
 				
@@ -67,6 +69,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				print("Abrindo puzzle de fios do roteador...")
 				get_tree().change_scene_to_file("res://scenes/fase2/puzzleRoteador.tscn")
 			else:
+				Objetos.delete_objeto("roteador")
 				print("O roteador já está com os fios conectados!")
 
 func _on_area_interruptor_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

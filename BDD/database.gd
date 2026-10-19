@@ -29,9 +29,5 @@ func novo_jogo():
 	Enigmas.iniciar_enigmas()
 	Cenarios.deletarTabela()
 	Cenarios.iniciar_cenarios()
-	var a = get_tree().root
-	
-	if a:
-		a.queue_free()
-		print(a)
+
 	
