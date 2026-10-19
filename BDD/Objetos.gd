@@ -24,7 +24,9 @@ const PADRAO := {
 	"Zoom Lixeira":[
 		{"nome": "gpu", "recurso": "res://recursos/gpu.tres", "pos": Vector2(600, 400)},
 	],
-	
+	"BuracoAberto":[
+		{"nome": "lampada", "recurso": 	"res://recursos/lampada.tres", "pos": Vector2(600, 400)},
+	]
 	
 }
 
@@ -151,7 +153,7 @@ static func iniciar_objetos():
 	for cena in PADRAO.keys():
 		garantir_padrao(cena)
 		
-static func resetar():
+static func deletarTabela():
 	Database.db.query("DELETE FROM Objetos;")
 	Database.db.query("DELETE FROM CenasVisitadas;")
 	

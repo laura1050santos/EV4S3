@@ -21,9 +21,17 @@ func criar_tabelas():
 	Config.criar_tabelas()
 
 func novo_jogo():
-	Objetos.resetar()
+	Objetos.deletarTabela()
 	Objetos.iniciar_objetos()
+	Arrays.deletarTabela()
 	Arrays.iniciar_array()
+	Enigmas.deletarTabela()
 	Enigmas.iniciar_enigmas()
+	Cenarios.deletarTabela()
 	Cenarios.iniciar_cenarios()
-	Config.iniciar_config()
+	var a = get_tree().root
+	
+	if a:
+		a.queue_free()
+		print(a)
+	

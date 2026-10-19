@@ -4,7 +4,7 @@ const CAMINHO_SAVE = "user://save.json"
 @onready var canvas = Inventario.get_node("canvasLayer")
 
 func salvar():
-
+	
 	var dados = {
 		"ultima_cena": GlobalSingleton.ultima_cena,
 		"itens_no_mundo": GlobalSingleton.itens_no_mundo,

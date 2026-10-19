@@ -66,6 +66,9 @@ static func delete_enigma(nome):
 	print("Enigma deletada: ", nome)
 	
 static func iniciar_enigmas():
-	salvar_enigmas("aquario", false)
-	salvar_enigmas("lampada", false)
-	salvar_enigmas("alcapao", false)
+	salvar_enigmas("aquario", 0)
+	salvar_enigmas("lampada", 0)
+	salvar_enigmas("alcapao", 0)
+	
+static func deletarTabela():
+	Database.db.query("DELETE FROM Enigmas;")

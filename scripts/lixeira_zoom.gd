@@ -5,16 +5,9 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 func _ready() -> void:
 	GlobalSingleton.ultima_cena =  get_tree().current_scene.scene_file_path
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
-
-	var itens_iniciais=[
-		{ "item": preload("res://recursos/gpu.tres"),
-		"pos":Vector2(570,406),
-		"cena":nome_desta_cena,
-		}
-
-#itens que começam na cena
-]
-	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
+	Objetos.garantir_padrao(nome_desta_cena)
+	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
+	iniciar_itens_cena(nome_desta_cena, objetos)
 	var gpu = get_node_or_null("gpu")
 	if gpu:
 		gpu.visible = false
@@ -27,6 +20,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		var chave =  get_node_or_null("chave")
 		if chave:
 			$lixeiraAberta.visible= true
+			Cenarios.atualizar_cenario("zoomLixeira","res://assets/itens/lixeirapertoaberta.png")
 			var gpu = get_node_or_null("gpu")
 			if gpu:
 				gpu.visible = true

@@ -8,6 +8,8 @@ func _ready() -> void:
 	canvas.hide()
 	
 func _on_jogar_pressed():
+	Database.novo_jogo()
+	
 	get_tree().change_scene_to_file("res://scenes/telaInicial/selecao_fases.tscn")
 
 func _on_sair_pressed():

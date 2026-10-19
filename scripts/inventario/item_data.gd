@@ -30,4 +30,19 @@ static func desligar_luz(item: itemData, cena: Node):
 	var root = cena.get_tree().root
 	if root.has_node("LuzDaLanterna"):
 		root.get_node("LuzDaLanterna").queue_free()
-	
+
+static func desativar_item_global(tree: SceneTree):
+	# 1. Garante a remoção da LuzDaLanterna da raiz se ela existir
+	var root = tree.root
+	if root.has_node("LuzDaLanterna"):
+		root.get_node("LuzDaLanterna").queue_free()
+
+	# 2. Se um item ativo tiver sido colocado direto na raiz (como a lanterna no reparent), limpa o nó
+	if GlobalSingleton.item_mao != null:
+		var nome_item = GlobalSingleton.item_mao.item_name
+		if root.has_node(nome_item):
+			root.get_node(nome_item).queue_free()
+		
+		# Desmarca a flag do item e reseta a mão do jogador
+		GlobalSingleton.item_mao.item_ativo = false
+		GlobalSingleton.item_mao = null
