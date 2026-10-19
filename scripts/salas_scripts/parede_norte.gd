@@ -37,18 +37,12 @@ func aplicar_estado_lampada():
 
 
 # Evento de clique na Mala no cenário
-func _on_mala_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if GlobalSingleton.fase_liberada == 1:
-			print("A mala está trancada / não há motivo para mexer nela agora.")
-		elif GlobalSingleton.fase_liberada >= 2:
-			get_tree().change_scene_to_file("res://scenes/fase2/zoom_mala.tscn")
+
 
 # Evento de interação com a área da Parede do Roteador ($ParedeRoteador)
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if not (event is InputEventMouseButton and event.pressed):
 		return
-		
 	# --- INSTALAÇÃO / INTERAÇÃO (Clique Esquerdo) ---
 	if event.button_index == MOUSE_BUTTON_LEFT:
 		# 1. Se o jogador está segurando um item na mão
@@ -146,3 +140,11 @@ func _varrer_e_remover_world_item(no_atual: Node):
 	# Busca recursiva nos nós filhos
 	for filho in no_atual.get_children():
 		_varrer_e_remover_world_item(filho)
+
+
+func _on_ObjetoMala_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if GlobalSingleton.fase_liberada == 1:
+			print("A mala está trancada / não há motivo para mexer nela agora.")
+		elif GlobalSingleton.fase_liberada >= 2:
+			get_tree().change_scene_to_file("res://scenes/fase2/zoomMala.tscn") # Replace with function body.

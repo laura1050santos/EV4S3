@@ -2,7 +2,6 @@ class_name Objetos
 
 const PADRAO := {
 	"Norte": [
-		{"nome": "roteador", "recurso": "res://recursos/roteador.tres", "pos": Vector2(750, 590)},
 	],
 	"leste": [
 		{"nome": "chave", "recurso": "res://recursos/chaveDeFenda.tres", "pos": Vector2(770, 590)},
@@ -26,8 +25,13 @@ const PADRAO := {
 	],
 	"BuracoAberto":[
 		{"nome": "lampada", "recurso": 	"res://recursos/lampada.tres", "pos": Vector2(600, 400)},
-	]
-	
+	],
+	"zoomMala":
+		[
+		{"nome": "roteador", "recurso": "res://recursos/roteador.tres", "pos": Vector2(700, 400)},
+
+	],
+
 }
 
 
