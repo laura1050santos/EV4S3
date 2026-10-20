@@ -2,8 +2,9 @@ class_name Objetos
 
 
 const PADRAO := {
-	"Norte": [
-		{"nome": "roteador", "recurso": "res://recursos/roteador.tres", "pos": Vector2(750, 590), "container_id": ""},
+	"Norte": [],
+	"zoom mala": [
+		{"nome": "roteador", "recurso": "res://recursos/roteador.tres", "pos": Vector2(693, 471), "container_id": "interior_mala"},
 	],
 	"leste": [
 		{"nome": "chave", "recurso": "res://recursos/chaveDeFenda.tres", "pos": Vector2(770, 590), "container_id": ""},
@@ -92,6 +93,18 @@ static func garantir_padrao(cena: String):
 static func iniciar_objetos():
 	for cena in PADRAO.keys():
 		garantir_padrao(cena)
+
+
+static func migrar_roteador_para_mala() -> void:
+	if not Database.db.query_with_bindings(
+		"""
+		UPDATE Objetos
+		SET cena = ?, container_id = ?
+		WHERE recurso = ? AND cena = 'Norte' AND coletado = 0;
+		""",
+		["zoom mala", "interior_mala", "res://recursos/roteador.tres"]
+	):
+		push_error("Erro ao migrar roteador para a mala: " + Database.db.error_message)
 
 
 # =========================================================
@@ -363,6 +376,14 @@ static func retirar_de_estacao(recurso: String):
 		"UPDATE Objetos SET coletado = 1 WHERE recurso = ?;", [recurso]
 	):
 		push_error("Erro ao retirar da estação: " + Database.db.error_message)
+
+
+static func marcar_instalado_por_recurso(recurso: String) -> void:
+	if not Database.db.query_with_bindings(
+		"UPDATE Objetos SET coletado = 3, container_id = '' WHERE recurso = ?;",
+		[recurso]
+	):
+		push_error("Erro ao marcar item instalado: " + Database.db.error_message)
 
 
 static func get_recurso_em_estacao(estacao_id: String) -> String:

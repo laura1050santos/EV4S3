@@ -11,9 +11,14 @@ const CENA_ID := "ZoomPc"
 # POSIÇÕES DAS PEÇAS INSTALADAS
 # =========================================================
 
-const POS_GPU := Vector2(406, 377)
-const POS_PROCESSADOR := Vector2(524, 395)
-const POS_PLACA_MAE := Vector2(362, 366)
+const POS_GPU := Vector2(655.96576, 276.35736)
+const POS_PROCESSADOR := Vector2(530.5, 399.5)
+const POS_PLACA_MAE := Vector2(632.3792, 166.3087)
+const POS_GPU_ANTIGA := Vector2(406, 377)
+const POS_PROCESSADOR_ANTIGA := Vector2(524, 395)
+const POS_PLACA_MAE_ANTIGA := Vector2(362, 366)
+const FASE2_INICIAL := "res://scenes/fase1/ParedeNorte.tscn"
+const SELECAO_FASES := "res://scenes/telaInicial/selecao_fases.tscn"
 
 # =========================================================
 # RECURSOS
@@ -86,16 +91,33 @@ func _restaurar_estado_gabinete(objetos: Array) -> void:
 		var nome := str(info["nome"])
 		var posicao: Vector2 = info["pos"]
 
+		var posicao_correta := Vector2.ZERO
+		var posicao_antiga := Vector2.ZERO
 		match nome:
 			"gpu":
-				if posicao.distance_to(POS_GPU) < 2.0:
-					gpu_instalada = true
+				posicao_correta = POS_GPU
+				posicao_antiga = POS_GPU_ANTIGA
 			"processador":
-				if posicao.distance_to(POS_PROCESSADOR) < 2.0:
-					processador_instalado = true
+				posicao_correta = POS_PROCESSADOR
+				posicao_antiga = POS_PROCESSADOR_ANTIGA
 			"placa mae":
-				if posicao.distance_to(POS_PLACA_MAE) < 2.0:
-					placa_mae_instalada = true
+				posicao_correta = POS_PLACA_MAE
+				posicao_antiga = POS_PLACA_MAE_ANTIGA
+			_:
+				continue
+
+		if posicao.distance_to(posicao_correta) < 2.0:
+			_marcar_componente_instalado(nome)
+		elif posicao.distance_to(posicao_antiga) < 2.0:
+			# Migra peças encaixadas pelo posicionamento da versão anterior.
+			Objetos.atualizar_objeto(
+				nome,
+				info["item"].resource_path,
+				Objetos.pos_para_json(int(posicao_correta.x), int(posicao_correta.y)),
+				CENA_ID
+			)
+			info["pos"] = posicao_correta
+			_marcar_componente_instalado(nome)
 
 	print("Estado restaurado | GPU: ", gpu_instalada,
 		" | Processador: ", processador_instalado,
@@ -119,51 +141,93 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 # =========================================================
 
 func _on_slot_gpu_area_entered(area: Area2D) -> void:
-	var objeto_detectado = area.get_parent()
-	if not objeto_detectado is Sprite2D:
-		return
-	if not _objeto_tem_recurso(objeto_detectado, RECURSO_GPU):
-		return
-
-	objeto_detectado.global_position = POS_GPU
-	Objetos.atualizar_objeto("gpu", RECURSO_GPU,
-		Objetos.pos_para_json(int(POS_GPU.x), int(POS_GPU.y)), CENA_ID)
-
-	gpu_instalada = true
-	print("GPU instalada.")
-	_verificar_conclusao_gabinete()
+	_instalar_componente_no_slot(area.get_parent(), "slotGPU")
 
 
 func _on_slot_processador_area_entered(area: Area2D) -> void:
-	var objeto_detectado = area.get_parent()
-	if not objeto_detectado is Sprite2D:
-		return
-	if not _objeto_tem_recurso(objeto_detectado, RECURSO_PROCESSADOR):
-		return
-
-	objeto_detectado.global_position = POS_PROCESSADOR
-	Objetos.atualizar_objeto("processador", RECURSO_PROCESSADOR,
-		Objetos.pos_para_json(int(POS_PROCESSADOR.x), int(POS_PROCESSADOR.y)), CENA_ID)
-
-	processador_instalado = true
-	print("Processador instalado.")
-	_verificar_conclusao_gabinete()
+	_instalar_componente_no_slot(area.get_parent(), "slotProcessador")
 
 
 func _on_slot_placa_mae_area_entered(area: Area2D) -> void:
-	var objeto_detectado = area.get_parent()
-	if not objeto_detectado is Sprite2D:
+	_instalar_componente_no_slot(area.get_parent(), "slotPlacaMae")
+
+
+func receber_item_drop(item: itemData, slot: Area2D) -> bool:
+	if item == null or not slot.is_in_group("slots_componentes"):
+		return false
+
+	var esperado := ""
+	match slot.name:
+		"slotGPU": esperado = RECURSO_GPU
+		"slotProcessador": esperado = RECURSO_PROCESSADOR
+		"slotPlacaMae": esperado = RECURSO_PLACA_MAE
+		_: return false
+	if item.resource_path != esperado:
+		return false
+	if (
+		(slot.name == "slotGPU" and gpu_instalada)
+		or (slot.name == "slotProcessador" and processador_instalado)
+		or (slot.name == "slotPlacaMae" and placa_mae_instalada)
+	):
+		return false
+
+	var visual = preload("res://scenes/inventario/worldItem.tscn").instantiate()
+	visual.name = item.item_name
+	visual.set_meta("item_data", item)
+	visual.texture = item.icon
+	add_child(visual)
+	_instalar_componente_no_slot(visual, slot.name)
+	return true
+
+
+func _instalar_componente_no_slot(objeto: Node, nome_slot: String) -> void:
+	if not objeto is Sprite2D or not objeto.has_meta("item_data"):
 		return
-	if not _objeto_tem_recurso(objeto_detectado, RECURSO_PLACA_MAE):
+	var item: itemData = objeto.get_meta("item_data")
+	if item == null:
 		return
 
-	objeto_detectado.global_position = POS_PLACA_MAE
-	Objetos.atualizar_objeto("placa mae", RECURSO_PLACA_MAE,
-		Objetos.pos_para_json(int(POS_PLACA_MAE.x), int(POS_PLACA_MAE.y)), CENA_ID)
+	var nome_objeto := ""
+	var recurso_esperado := ""
+	var posicao := Vector2.ZERO
+	match nome_slot:
+		"slotGPU":
+			nome_objeto = "gpu"
+			recurso_esperado = RECURSO_GPU
+			posicao = POS_GPU
+			if gpu_instalada: return
+		"slotProcessador":
+			nome_objeto = "processador"
+			recurso_esperado = RECURSO_PROCESSADOR
+			posicao = POS_PROCESSADOR
+			if processador_instalado: return
+		"slotPlacaMae":
+			nome_objeto = "placa mae"
+			recurso_esperado = RECURSO_PLACA_MAE
+			posicao = POS_PLACA_MAE
+			if placa_mae_instalada: return
+		_:
+			return
+	if item.resource_path != recurso_esperado:
+		return
 
-	placa_mae_instalada = true
-	print("Placa mãe instalada.")
+	objeto.global_position = posicao
+	Objetos.atualizar_objeto(
+		nome_objeto,
+		recurso_esperado,
+		Objetos.pos_para_json(int(posicao.x), int(posicao.y)),
+		CENA_ID
+	)
+	_marcar_componente_instalado(nome_objeto)
+	print(item.item_name, " instalado.")
 	_verificar_conclusao_gabinete()
+
+
+func _marcar_componente_instalado(nome_objeto: String) -> void:
+	match nome_objeto:
+		"gpu": gpu_instalada = true
+		"processador": processador_instalado = true
+		"placa mae": placa_mae_instalada = true
 
 
 # =========================================================
@@ -186,10 +250,13 @@ func _objeto_tem_recurso(objeto: Node, caminho_recurso: String) -> bool:
 func _verificar_conclusao_gabinete() -> void:
 	if not gpu_instalada or not processador_instalado or not placa_mae_instalada:
 		return
+	if GlobalSingleton.fases_concluidas.size() > 0 and GlobalSingleton.fases_concluidas[0]:
+		return
 
 	print("Gabinete completo! Concluindo Fase 1 e liberando Fase 2...")
-	GlobalSingleton.ultima_cena_por_fase[2] = "res://scenes/quarto/sala_computador.tscn"
+	GlobalSingleton.ultima_cena_por_fase[2] = FASE2_INICIAL
 	GlobalSingleton.concluir_fase(1)
+	TransicaoFase.show_phase_complete(SELECAO_FASES)
 
 
 # =========================================================

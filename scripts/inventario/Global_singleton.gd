@@ -25,10 +25,11 @@ var gavetas: Dictionary = {
 var fase_liberada: int = 1
 var fases_concluidas: Array = [false, false, false, false]
 var pc_conectado: bool = false
+var dica_inicio_fase1_exibida: bool = false
 
 var ultima_cena_por_fase: Dictionary = {
 	1: "res://scenes/fase1/zoom_pc.tscn",
-	2: "",
+	2: "res://scenes/fase1/ParedeNorte.tscn",
 	3: "",
 	4: ""
 }

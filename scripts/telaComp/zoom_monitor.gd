@@ -2,14 +2,12 @@ extends Node2D
 
 @onready var sub_viewport_container: SubViewportContainer = $SubViewportContainer
 @onready var telaSemConexao = $"sem conexão"
-@export var forcar_ligado_debug := true # ligar true para ver a animação de boot
-
 func _ready():
 	if sub_viewport_container:
-		# Liga/desliga a visibilidade do container
-		sub_viewport_container.visible = GlobalSingleton.pc_conectado or forcar_ligado_debug
-		
-		
+		sub_viewport_container.visible = GlobalSingleton.pc_conectado
+		# Mantém o aviso no zoom sempre que o computador ainda está desconectado.
+		telaSemConexao.visible = not GlobalSingleton.pc_conectado
+
 		# Conecta os sinais do mouse
 		sub_viewport_container.mouse_entered.connect(_on_entrou_na_tela)
 		sub_viewport_container.mouse_exited.connect(_on_saiu_da_tela)

@@ -90,14 +90,18 @@ func carregar() -> void:
 	var salvo_por_fase = Progresso.carregar("ultima_cena_por_fase", {})
 	GlobalSingleton.ultima_cena_por_fase = {
 		1: "res://scenes/fase1/zoom_pc.tscn",
-		2: "",
+		2: "res://scenes/fase1/ParedeNorte.tscn",
 		3: "",
 		4: ""
 	}
 	if salvo_por_fase is Dictionary:
 		for chave in salvo_por_fase.keys():
 			var numero := int(chave)
-			GlobalSingleton.ultima_cena_por_fase[numero] = salvo_por_fase[chave]
+			var caminho_salvo := str(salvo_por_fase[chave])
+			if ResourceLoader.exists(caminho_salvo):
+				GlobalSingleton.ultima_cena_por_fase[numero] = caminho_salvo
+			elif numero == 2:
+				GlobalSingleton.ultima_cena_por_fase[numero] = "res://scenes/fase1/ParedeNorte.tscn"
 
 	# Restauramento do inventário
 	var drop_area = Inventario.get_node("WordDropArea")
@@ -164,7 +168,7 @@ func resetar_global() -> void:
 
 	GlobalSingleton.ultima_cena_por_fase = {
 		1: "res://scenes/fase1/zoom_pc.tscn",
-		2: "",
+		2: "res://scenes/fase1/ParedeNorte.tscn",
 		3: "",
 		4: ""
 	}

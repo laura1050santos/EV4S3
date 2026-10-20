@@ -26,6 +26,18 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if item_para_dropar == null:
 		return
 
+	# Permite instalar itens diretamente nos alvos do cenário, sem exigir que
+	# o jogador primeiro os solte no mundo e depois tente acertar a colisão.
+	var alvo = alvo_de_item_sob_mouse()
+	var cena_atual = get_tree().current_scene
+	if alvo != null and cena_atual.has_method("receber_item_drop"):
+		if cena_atual.receber_item_drop(item_para_dropar, alvo):
+			data.item = null
+			data.update_ui()
+			if GlobalSingleton.item_mao == item_para_dropar:
+				GlobalSingleton.item_mao = null
+			return
+
 	print("word_drop -> Item dropado")
 
 
@@ -81,6 +93,21 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 
 	data.item = null
 	data.update_ui()
+
+
+func alvo_de_item_sob_mouse() -> Area2D:
+	var params := PhysicsPointQueryParameters2D.new()
+	params.position = get_global_mouse_position()
+	params.collide_with_areas = true
+
+	for resultado in get_world_2d().direct_space_state.intersect_point(params):
+		var area = resultado.collider
+		if area is Area2D and (
+			area.is_in_group("slots_componentes")
+			or area.is_in_group("item_drop_targets")
+		):
+			return area
+	return null
 
 
 # =========================================================
@@ -157,11 +184,28 @@ func usar_item(
 				item,
 				node
 			)
+			_deixar_item_na_sala(item, node)
 
 
 	for info in GlobalSingleton.itens_no_mundo:
 		if info["data"] == item.resource_path:
 			item.item_ativo = item.item_ativo
+
+
+func _deixar_item_na_sala(item: itemData, node: Node) -> void:
+	var sala_atual := get_tree().current_scene
+	if sala_atual == null or node == null or not node is Node2D:
+		return
+
+	var item_visual := node as Node2D
+	var posicao := item_visual.global_position
+	if item_visual.get_parent() != sala_atual:
+		item_visual.reparent(sala_atual)
+		item_visual.global_position = posicao
+
+	# O item foi marcado como coletado ao ser equipado. Ao desativá-lo,
+	# devolvemos a lanterna ao registro da sala onde ela foi deixada.
+	Objetos.soltar_por_recurso(item.resource_path, posicao, sala_atual.name)
 
 
 # =========================================================

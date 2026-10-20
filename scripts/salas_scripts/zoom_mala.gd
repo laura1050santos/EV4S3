@@ -4,42 +4,39 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 @onready var ponto_roteador: Node2D = $pontoroteador
 
 var mala_aberta: bool = false
+const ID_ROTEADOR := "res://recursos/roteador.tres"
+const IMAGEM_MALA_ABERTA := "res://assets/itens/malaAberta.jpeg.jpeg"
 
 func _ready():
 	GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)
-	
-	# Descomenta a linha abaixo APENAS para resetar o teste, depois remove-a
-	# GlobalSingleton.roteador_coletado = false
+	Objetos.garantir_padrao(name)
+	var roteador_no_mundo := Objetos.get_objetos_cena(name)
+	mala_aberta = GlobalSingleton.roteador_coletado or not roteador_no_mundo.is_empty()
+	mala_sprite.texture = load(IMAGEM_MALA_ABERTA if mala_aberta else "res://assets/itens/malagrande.png")
+	if not roteador_no_mundo.is_empty():
+		iniciar_itens_cena(name, roteador_no_mundo)
 
-	# Lógica corrigida:
-	if GlobalSingleton.roteador_coletado:
-		mala_aberta = true
-		mala_sprite.texture = load("res://assets/itens/malaAberta.jpeg.jpeg") # Mala aberta quando já coletado
-	else:
-		mala_aberta = false
-		mala_sprite.texture = load("res://assets/itens/malagrande.png") # Mala fechada no início!
+
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if not (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
+		return
+	if mala_aberta:
+		return
+
+	mala_aberta = true
+	mala_sprite.texture = load(IMAGEM_MALA_ABERTA)
+	if not GlobalSingleton.roteador_coletado:
+		_gerar_roteador_no_mundo()
 # Clique na Mala para abrir
-func _on_mala_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if not mala_aberta:
-			mala_aberta = true
-			mala_sprite.texture = load("res://assets/cenarios/mala_aberta.png")
-			
-			# Se ainda não foi recolhido, faz aparecer o Roteador como item no mundo
-			if not GlobalSingleton.roteador_coletado:
-				_gerar_roteador_no_mundo()
-
 func _gerar_roteador_no_mundo() -> void:
-	var recurso_roteador = preload("res://recursos/roteador.tres") # Ajusta o teu caminho
-	
-	# Usa a tua própria função do salas_manager.gd para criar o item na cena
-	adicionar_item_na_sala(recurso_roteador, ponto_roteador.global_position)
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if not mala_aberta:
-			mala_aberta = true
-			mala_sprite.texture = load("res://assets/itens/malaAberta.jpeg.jpeg")
-			
-			if not GlobalSingleton.roteador_coletado:
-				_gerar_roteador_no_mundo()
-	pass # Replace with function body.
+	var recurso_roteador = load(ID_ROTEADOR)
+	var posicao := ponto_roteador.global_position
+	var registro = Objetos.get_por_recurso(ID_ROTEADOR)
+	if registro == null:
+		Objetos.salvar_objetos("roteador", ID_ROTEADOR,
+			Objetos.pos_para_json(int(posicao.x), int(posicao.y)), name)
+	else:
+		if int(registro["coletado"]) != 0:
+			return
+		Objetos.soltar_por_recurso(ID_ROTEADOR, posicao, name)
+	spawnar_itens(recurso_roteador, posicao)

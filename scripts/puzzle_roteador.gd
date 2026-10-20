@@ -37,6 +37,10 @@ var fios_conectados = {
 }
 
 func _ready():
+	if GlobalSingleton.pc_conectado:
+		get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")
+		return
+
 	# Limpa qualquer Line2D estática sobressalente do editor
 	for node in get_children():
 		if node is Line2D:
@@ -120,5 +124,6 @@ func _verificar_vitoria():
 	if conexoes_feitas >= TOTAL_CONEXOES:
 		print("TODOS OS FIOS CONECTADOS!")
 		GlobalSingleton.pc_conectado = true
+		SaveManager.salvar()
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")

@@ -30,6 +30,7 @@ func criar_tabelas() -> void:
 
 func inicializar_dados() -> void:
 	Objetos.iniciar_objetos()
+	Objetos.migrar_roteador_para_mala()
 	Arrays.iniciar_array()
 	Enigmas.iniciar_enigmas()
 	Cenarios.iniciar_cenarios()

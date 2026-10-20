@@ -1,6 +1,6 @@
 extends SubViewportContainer
 
-@export var forcar_ligado_debug := true
+@export var forcar_ligado_debug := false
 @onready var tela_computador: SubViewportContainer = $"."
 
 func _ready() -> void:

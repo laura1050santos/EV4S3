@@ -1,10 +1,11 @@
 extends SalasManager
 
-@onready var mala_area = $Mala/Area2D 
 @onready var parede_roteador_area: Area2D = $ParedeRoteador
 @onready var roteador_parede_sprite: Sprite2D = $roteadorParede
 
 func _ready():
+	_exibir_dica_inicial()
+	parede_roteador_area.add_to_group("item_drop_targets")
 	GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)
 	GlobalSingleton.ultima_cena = get_tree().current_scene.scene_file_path
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
@@ -28,6 +29,43 @@ func _ready():
 		roteador_parede_sprite.visible = true
 	else:
 		roteador_parede_sprite.visible = false
+
+
+func _exibir_dica_inicial() -> void:
+	if GlobalSingleton.fase_liberada != 1 or GlobalSingleton.dica_inicio_fase1_exibida:
+		return
+	GlobalSingleton.dica_inicio_fase1_exibida = true
+
+	var camada := CanvasLayer.new()
+	camada.name = "DicaInicioFase1"
+	camada.layer = 20
+	add_child(camada)
+
+	var painel := PanelContainer.new()
+	painel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	painel.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	painel.offset_left = -230
+	painel.offset_top = 18
+	painel.offset_right = 230
+	painel.offset_bottom = 70
+	var estilo := StyleBoxFlat.new()
+	estilo.bg_color = Color(0.04, 0.04, 0.04, 0.72)
+	estilo.set_corner_radius_all(6)
+	estilo.set_content_margin_all(8)
+	painel.add_theme_stylebox_override("panel", estilo)
+	camada.add_child(painel)
+
+	var texto := Label.new()
+	texto.text = "Está muito escuro. Procure a lanterna e clique com o botão direito para acendê-la."
+	texto.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	texto.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	texto.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	texto.add_theme_color_override("font_color", Color.WHITE)
+	texto.add_theme_font_size_override("font_size", 16)
+	texto.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	painel.add_child(texto)
+
+	get_tree().create_timer(5.0).timeout.connect(camada.queue_free)
 
 func interruptor_ativar():
 	GlobalSingleton.alternar_lampada()
@@ -70,6 +108,18 @@ func _on_parede_roteador_input_event(viewport: Node, event: InputEvent, shape_id
 					print("O roteador já está com os fios conectados!")
 
 
+func receber_item_drop(item: itemData, alvo: Area2D) -> bool:
+	if alvo != parede_roteador_area or item == null:
+		return false
+	if GlobalSingleton.fase_liberada < 2 or item.resource_path != "res://recursos/roteador.tres":
+		return false
+	if GlobalSingleton.roteador_instalado:
+		return false
+	GlobalSingleton.item_mao = item
+	instalar_roteador()
+	return true
+
+
 func _on_area_interruptor_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		var lampada = Enigmas.get_nome("lampada")
@@ -78,19 +128,20 @@ func _on_area_interruptor_input_event(viewport: Node, event: InputEvent, shape_i
 			
 
 func instalar_roteador():
-	# 1. Define as flags lógicas globais
+	if GlobalSingleton.roteador_instalado:
+		return
+
 	GlobalSingleton.roteador_instalado = true
+	Objetos.marcar_instalado_por_recurso("res://recursos/roteador.tres")
 	
-	if GlobalSingleton.has_method("remover_item_da_mao"):
-		GlobalSingleton.remover_item_da_mao()
-	else:
-		GlobalSingleton.item_mao = null
+	GlobalSingleton.item_mao = null
 
 	# 2. Remove da árvore de cena o Sprite2D/worldItem que está na mão
 	_destruir_item_visual_da_mao()
 
 	# 3. Exibe o roteador fixado na parede
 	roteador_parede_sprite.visible = true
+	SaveManager.salvar()
 	print("Roteador instalado na parede com sucesso!")
 
 

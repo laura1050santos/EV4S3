@@ -13,7 +13,9 @@ func _on_entrar(texto: String) -> void:
 	if texto == "LBD-3451":
 		barra_senha.clear()
 		aviso_senha.hide()
-		get_parent().get_parent().get_node("Tela_Senha").hide()
+		var telas = get_parent().get_parent()
+		telas.get_node("Tela_Senha").hide()
+		telas.get_node("Tela_Inicial").show()
 	else:
 		barra_senha.clear()
 		aviso_senha.text = "Senha incorreta."

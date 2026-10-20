@@ -64,6 +64,7 @@ func _clique_esquerdo(event: InputEvent) -> bool:
 	)
 
 func _atualizar_estado_fase() -> void:
+	telaSemConexao.visible = GlobalSingleton.fase_liberada >= 2
 	if GlobalSingleton.fase_liberada >= 2:
 		print("Sala do PC configurada para a Fase 2")
 
@@ -81,7 +82,7 @@ func _on_monitor_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if GlobalSingleton.fase_liberada == 1:
 		get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")
 	elif GlobalSingleton.fase_liberada == 2:
-		get_tree().change_scene_to_file("res://scenes/fase2/zoom_monitor_fase2.tscn")
+		get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
