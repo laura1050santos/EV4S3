@@ -8,5 +8,7 @@ func _ready() -> void:
 		if tela is CanvasItem:
 			tela.hide()
 
-	if GlobalSingleton.pc_conectado:
+	if get_tree().current_scene == get_parent().get_parent() or get_tree().current_scene == self:
+		$Telas/Tela_Inicial.show()
+	elif GlobalSingleton.pc_conectado:
 		$Telas/Tela_Senha.show()

@@ -8,7 +8,9 @@ extends Control
 var executando := false
 
 func iniciar() -> void:
-	if executando:
+	if executando or GlobalSingleton.fases_concluidas[0]:
+		return
+	if not bool(Progresso.carregar("pc_consertado", false)):
 		return
 
 	executando = true
@@ -51,6 +53,9 @@ func _carregar() -> void:
 	await tween.finished
 
 func _finalizar_boot() -> void:
+	if GlobalSingleton.fases_concluidas[0]:
+		return
+	GlobalSingleton.ultima_cena_por_fase[2] = "res://scenes/fase1/zoom_monitor.tscn"
 	GlobalSingleton.concluir_fase(1)
 	TransicaoFase.show_phase_complete(
 		"res://scenes/telaInicial/selecao_fases.tscn"

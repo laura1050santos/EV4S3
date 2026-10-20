@@ -16,16 +16,6 @@ offset_right = 1815.0
 offset_bottom = 932.0
 color = Color(0.37638173, 0.43683, 0.5514186, 1)
 
-[node name="BackupsLog_txt" type="Button" parent="Tela" unique_id=385912064 groups=["botoes_computador"]]
-layout_mode = 0
-offset_left = 1009.38403
-offset_top = 62.500244
-offset_right = 1529.384
-offset_bottom = 582.50024
-scale = Vector2(0.33059737, 0.33059737)
-icon = ExtResource("1_ohppg")
-flat = true
-
 [node name="Procedimentos_txt" type="Button" parent="Tela" unique_id=182522556 groups=["botoes_computador"]]
 layout_mode = 0
 offset_left = 810.8399

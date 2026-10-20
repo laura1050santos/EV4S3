@@ -1,6 +1,5 @@
 [gd_resource type="Resource" script_class="itemData" format=3 uid="uid://df30wishxki7q"]
 
-[ext_resource type="Texture2D" uid="uid://bh8bo6ufjg6le" path="res://assets/itens/placamaeperspectivamenor.png" id="1_bytji"]
 [ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_qtasf"]
 [ext_resource type="Texture2D" uid="uid://8f8l1hur621y" path="res://assets/itens/placamae.png" id="2_pwx0f"]
 
@@ -9,5 +8,4 @@ script = ExtResource("1_qtasf")
 item_name = "placa"
 icon = ExtResource("2_pwx0f")
 inventory_icon = ExtResource("2_pwx0f")
-ativo_icon = ExtResource("1_bytji")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

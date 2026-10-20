@@ -4,7 +4,8 @@ extends SubViewportContainer
 @onready var tela_computador: SubViewportContainer = $"."
 
 func _ready() -> void:
-	visible = GlobalSingleton.pc_conectado or forcar_ligado_debug
+	var boot_pendente: bool = not GlobalSingleton.fases_concluidas[0] and bool(Progresso.carregar("pc_consertado", false))
+	visible = get_tree().current_scene == self or GlobalSingleton.pc_conectado or boot_pendente or forcar_ligado_debug
 
 func _on_entrou_na_tela() -> void:
 	if visible:

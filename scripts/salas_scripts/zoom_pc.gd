@@ -17,8 +17,6 @@ const POS_PLACA_MAE := Vector2(632.3792, 166.3087)
 const POS_GPU_ANTIGA := Vector2(406, 377)
 const POS_PROCESSADOR_ANTIGA := Vector2(524, 395)
 const POS_PLACA_MAE_ANTIGA := Vector2(362, 366)
-const FASE2_INICIAL := "res://scenes/fase1/ParedeNorte.tscn"
-const SELECAO_FASES := "res://scenes/telaInicial/selecao_fases.tscn"
 
 # =========================================================
 # RECURSOS
@@ -27,6 +25,11 @@ const SELECAO_FASES := "res://scenes/telaInicial/selecao_fases.tscn"
 const RECURSO_GPU := "res://recursos/gpu.tres"
 const RECURSO_PROCESSADOR := "res://recursos/processador.tres"
 const RECURSO_PLACA_MAE := "res://recursos/placaMae.tres"
+const VISUAIS_INSTALADOS := {
+	"gpu": preload("res://assets/itens/GPU_Feito.png"),
+	"processador": preload("res://assets/itens/Processador_Feito.png"),
+	"placa mae": preload("res://assets/itens/PlacaMae_Feito.png")
+}
 
 # =========================================================
 # ESTADO DO GABINETE
@@ -35,6 +38,7 @@ const RECURSO_PLACA_MAE := "res://recursos/placaMae.tres"
 var gpu_instalada: bool = false
 var processador_instalado: bool = false
 var placa_mae_instalada: bool = false
+var gabinete_aberto: bool = false
 
 # =========================================================
 # MONITOR
@@ -55,8 +59,7 @@ func _ready() -> void:
 
 	# Estado visual do gabinete
 	var img_gabinete = Cenarios.get_cena("GabineteAberto")
-	if img_gabinete:
-		$GabinetePc.texture = load("res://assets/cenarios/pcvazio.png")
+	_definir_gabinete_aberto(img_gabinete != null, false)
 
 	# Registrar cena atual
 	GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)
@@ -68,7 +71,13 @@ func _ready() -> void:
 
 	# Restaurar estado das peças e spawnar itens
 	_restaurar_estado_gabinete(objetos)
-	iniciar_itens_cena(CENA_ID, objetos)
+	var itens_soltos: Array = objetos.filter(func(info):
+		var nome := str(info["nome"])
+		return not ((nome == "gpu" and gpu_instalada)
+			or (nome == "processador" and processador_instalado)
+			or (nome == "placa mae" and placa_mae_instalada))
+	)
+	iniciar_itens_cena(CENA_ID, itens_soltos)
 
 	# Tela e verificação de fase
 	atualizar_estado_da_tela()
@@ -130,10 +139,29 @@ func _restaurar_estado_gabinete(objetos: Array) -> void:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if gabinete_aberto:
+			return
 		var chave = get_node_or_null("chave")
-		if chave:
-			$GabinetePc.texture = load("res://assets/cenarios/pcvazio.png")
+		var item_mao: itemData = GlobalSingleton.item_mao
+		if (chave != null and _objeto_tem_recurso(chave, "res://recursos/chaveDeFenda.tres")) or (item_mao != null and item_mao.resource_path == "res://recursos/chaveDeFenda.tres"):
+			_definir_gabinete_aberto(true)
+
+func _definir_gabinete_aberto(aberto: bool, persistir: bool = true) -> void:
+	gabinete_aberto = aberto
+	$GabinetePc.texture = load("res://assets/cenarios/pcvazio.png" if aberto else "res://assets/cenarios/pcfechado.png")
+	for visual in $GabinetePc.get_children():
+		if visual is Sprite2D and str(visual.name).begins_with("Instalado_"):
+			visual.visible = aberto
+	for nome_slot in ["slotGPU", "slotProcessador", "slotPlacaMae"]:
+		get_node(nome_slot).set_deferred("monitoring", aberto)
+		get_node(nome_slot).set_deferred("monitorable", aberto)
+	if not persistir:
+		return
+	if aberto:
+		if Cenarios.get_cena("GabineteAberto") == null:
 			Cenarios.salvar_cenarios("GabineteAberto", "res://assets/cenarios/pcvazio.png")
+	else:
+		Cenarios.delete_cena("GabineteAberto")
 
 
 # =========================================================
@@ -153,7 +181,7 @@ func _on_slot_placa_mae_area_entered(area: Area2D) -> void:
 
 
 func receber_item_drop(item: itemData, slot: Area2D) -> bool:
-	if item == null or not slot.is_in_group("slots_componentes"):
+	if not gabinete_aberto or item == null or not slot.is_in_group("slots_componentes"):
 		return false
 
 	var esperado := ""
@@ -181,6 +209,8 @@ func receber_item_drop(item: itemData, slot: Area2D) -> bool:
 
 
 func _instalar_componente_no_slot(objeto: Node, nome_slot: String) -> void:
+	if not gabinete_aberto:
+		return
 	if not objeto is Sprite2D or not objeto.has_meta("item_data"):
 		return
 	var item: itemData = objeto.get_meta("item_data")
@@ -218,7 +248,11 @@ func _instalar_componente_no_slot(objeto: Node, nome_slot: String) -> void:
 		Objetos.pos_para_json(int(posicao.x), int(posicao.y)),
 		CENA_ID
 	)
+	# O drop direto vem do inventário: também precisa persistir como item na cena.
+	Objetos.soltar_por_recurso(recurso_esperado, posicao, CENA_ID)
 	_marcar_componente_instalado(nome_objeto)
+	objeto.hide()
+	objeto.queue_free()
 	print(item.item_name, " instalado.")
 	_verificar_conclusao_gabinete()
 
@@ -228,6 +262,22 @@ func _marcar_componente_instalado(nome_objeto: String) -> void:
 		"gpu": gpu_instalada = true
 		"processador": processador_instalado = true
 		"placa mae": placa_mae_instalada = true
+	_mostrar_componente_instalado(nome_objeto)
+
+func _mostrar_componente_instalado(nome_objeto: String) -> void:
+	if not VISUAIS_INSTALADOS.has(nome_objeto):
+		return
+	var nome_visual := "Instalado_" + nome_objeto.replace(" ", "_")
+	if $GabinetePc.has_node(NodePath(nome_visual)):
+		return
+	# As imagens _Feito usam a mesma tela de 1920x1080 do gabinete.
+	# Herdar seu transform mantém a posição, a escala e a perspectiva da arte.
+	var visual := Sprite2D.new()
+	visual.name = nome_visual
+	visual.texture = VISUAIS_INSTALADOS[nome_objeto]
+	visual.visible = gabinete_aberto
+	visual.z_index = 2 if nome_objeto == "gpu" else (1 if nome_objeto == "processador" else 0)
+	$GabinetePc.add_child(visual)
 
 
 # =========================================================
@@ -250,13 +300,9 @@ func _objeto_tem_recurso(objeto: Node, caminho_recurso: String) -> bool:
 func _verificar_conclusao_gabinete() -> void:
 	if not gpu_instalada or not processador_instalado or not placa_mae_instalada:
 		return
-	if GlobalSingleton.fases_concluidas.size() > 0 and GlobalSingleton.fases_concluidas[0]:
-		return
-
-	print("Gabinete completo! Concluindo Fase 1 e liberando Fase 2...")
-	GlobalSingleton.ultima_cena_por_fase[2] = FASE2_INICIAL
-	GlobalSingleton.concluir_fase(1)
-	TransicaoFase.show_phase_complete(SELECAO_FASES)
+	Progresso.salvar("pc_consertado", true)
+	_definir_gabinete_aberto(false)
+	print("Gabinete completo! Acesse o monitor para iniciar o computador.")
 
 
 # =========================================================

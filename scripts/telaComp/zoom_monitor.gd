@@ -4,9 +4,11 @@ extends Node2D
 @onready var telaSemConexao = $"sem conexão"
 func _ready():
 	if sub_viewport_container:
-		sub_viewport_container.visible = GlobalSingleton.pc_conectado
-		# Mantém o aviso no zoom sempre que o computador ainda está desconectado.
-		telaSemConexao.visible = not GlobalSingleton.pc_conectado
+		var boot_pendente: bool = not GlobalSingleton.fases_concluidas[0] and bool(Progresso.carregar("pc_consertado", false))
+		sub_viewport_container.visible = GlobalSingleton.pc_conectado or boot_pendente
+		telaSemConexao.visible = GlobalSingleton.fases_concluidas[0] and not GlobalSingleton.pc_conectado
+		if boot_pendente:
+			sub_viewport_container.get_node("SubViewport/pcControl/Telas/Tela_Boot").iniciar.call_deferred()
 
 		# Conecta os sinais do mouse
 		sub_viewport_container.mouse_entered.connect(_on_entrou_na_tela)

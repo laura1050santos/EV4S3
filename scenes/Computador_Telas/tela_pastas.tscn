@@ -1,25 +1,29 @@
 [gd_scene format=3 uid="uid://dx4yl4c7rl03g"]
 
+[ext_resource type="Script" uid="uid://c8o3210e8bfkf" path="res://scenes/Computador_Telas/tela_pastas.gd" id="1_6t550"]
 [ext_resource type="Texture2D" uid="uid://p8076ajx5qi5" path="res://assets/computador_telas/pasta_haha.png" id="1_aambw"]
 [ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="1_phlro"]
 [ext_resource type="Texture2D" uid="uid://def6bnrcq8tq3" path="res://assets/computador_telas/zip_haha.png" id="2_mja4o"]
 
-[node name="Tela_Pastas" type="Control" unique_id=1948911442]
+[node name="Tela_Pastas" type="Control" unique_id=1559431694]
+visible = false
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6t550")
 
-[node name="Tela" type="ColorRect" parent="." unique_id=338225499]
+[node name="Tela" type="ColorRect" parent="." unique_id=871031614]
 z_index = -1
 layout_mode = 0
 offset_right = 1815.0
 offset_bottom = 932.0
 color = Color(0.69467324, 0.6946736, 0.69467336, 1)
 
-[node name="Guias" type="ColorRect" parent="Tela" unique_id=2102273233]
+[node name="Guias" type="ColorRect" parent="Tela" unique_id=1774316154]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 56.0
@@ -27,7 +31,7 @@ offset_right = 344.0
 offset_bottom = 920.0
 color = Color(0.88453144, 0.88453114, 0.88453114, 1)
 
-[node name="P1" type="Button" parent="Tela" unique_id=1663656933]
+[node name="P1" type="Button" parent="Tela" unique_id=1774793485]
 layout_mode = 0
 offset_left = 399.99997
 offset_top = 56.000008
@@ -37,7 +41,7 @@ scale = Vector2(0.3868433, 0.3868433)
 icon = ExtResource("1_aambw")
 flat = true
 
-[node name="P2" type="Button" parent="Tela" unique_id=2093935653]
+[node name="P2" type="Button" parent="Tela" unique_id=1303130966]
 layout_mode = 0
 offset_left = 664.0
 offset_top = 55.999992
@@ -47,7 +51,7 @@ scale = Vector2(0.3868433, 0.3868433)
 icon = ExtResource("1_aambw")
 flat = true
 
-[node name="Zip" type="Button" parent="Tela" unique_id=2033235111]
+[node name="Zip" type="Button" parent="Tela" unique_id=1674523746]
 layout_mode = 0
 offset_left = 904.0
 offset_top = 63.999992

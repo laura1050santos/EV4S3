@@ -52,4 +52,7 @@ offset_bottom = 41.0
 text = "Voltar"
 
 [connection signal="pressed" from="Fase1Botao" to="." method="_on_fase_1_botao_pressed"]
+[connection signal="pressed" from="Fase2Botao" to="." method="_on_fase_2_botao_pressed"]
+[connection signal="pressed" from="Fase3Botao" to="." method="_on_fase_3_botao_pressed"]
+[connection signal="pressed" from="Fase4Botao" to="." method="_on_fase_4_botao_pressed"]
 [connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]

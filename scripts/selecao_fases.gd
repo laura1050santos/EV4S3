@@ -31,7 +31,7 @@ func atualizar_botoes():
 # Dicionário definindo o ponto de partida padrão/inicial de cada fase
 const CENAS_INICIAIS = {
 	1: "res://scenes/fase1/ParedeNorte.tscn", # Ajuste o caminho exato da sua cena inicial da Fase 1
-	2: "res://scenes/fase1/ParedeNorte.tscn",
+	2: "res://scenes/fase1/ParedeLeste.tscn",
 	3: "res://scenes/fase3/parede_norte.tscn",
 	4: "res://scenes/fase4/parede_norte.tscn"
 }

@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://cpvqjkku6qldk"]
 
 [ext_resource type="Texture2D" uid="uid://k4cipkhsrbel" path="res://assets/computador_telas/arquivos/aniversarios.png" id="1_6ucci"]
+[ext_resource type="Texture2D" uid="uid://ihkc23edd7nj" path="res://assets/computador_telas/arquivos/contatos.png" id="2_05r0h"]
+[ext_resource type="Texture2D" uid="uid://uri5sfijn2i1" path="res://assets/computador_telas/arquivos/procedimentos.png" id="3_nm7av"]
+[ext_resource type="Texture2D" uid="uid://bt7kf52tmf2t7" path="res://assets/computador_telas/arquivos/registro.png" id="4_tliar"]
+[ext_resource type="Texture2D" uid="uid://d045nrjbcsetm" path="res://assets/computador_telas/arquivos/rascunho.png" id="5_hprjj"]
 
-[node name="Node2D" type="Node2D" unique_id=949933252]
+[node name="txt" type="Node2D" unique_id=949933252]
 
 [node name="aniverarios" type="Sprite2D" parent="." unique_id=2047292381]
 texture = ExtResource("1_6ucci")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=613689443]
+[node name="contatos" type="Sprite2D" parent="." unique_id=613689443]
+texture = ExtResource("2_05r0h")
+
+[node name="procedimentos" type="Sprite2D" parent="." unique_id=1859712915]
+texture = ExtResource("3_nm7av")
+
+[node name="registro" type="Sprite2D" parent="." unique_id=1013791674]
+texture = ExtResource("4_tliar")
+
+[node name="rascunho" type="Sprite2D" parent="." unique_id=2009273131]
+texture = ExtResource("5_hprjj")

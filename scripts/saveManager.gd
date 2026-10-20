@@ -132,6 +132,10 @@ func novo_jogo() -> void:
 	drop_area.limpar_inventario()
 
 	Database.novo_jogo()
+	Progresso.salvar("emails_sorteados", [])
+	Progresso.salvar("emails_respostas", {})
+	Progresso.salvar("emails_concluidos", false)
+	Progresso.salvar("emails_lidos", [])
 	resetar_global()
 	Progresso.marcar_partida_criada()
 	salvar()

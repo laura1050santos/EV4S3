@@ -17,7 +17,7 @@ offset_right = 1815.0
 offset_bottom = 932.0
 color = Color(0.4622721, 0.4358266, 0.38368964, 1)
 
-[node name="ferias_jpeg" type="Button" parent="Tela" unique_id=1883648837 groups=["botoes_computador"]]
+[node name="Ferias_jpeg" type="Button" parent="Tela" unique_id=1883648837 groups=["botoes_computador"]]
 layout_mode = 0
 offset_left = 1009.3839
 offset_top = 62.50026
@@ -27,7 +27,7 @@ scale = Vector2(0.33059737, 0.33059737)
 icon = ExtResource("1_o7boi")
 flat = true
 
-[node name="Rascunhos_txt" type="Button" parent="Tela" unique_id=561629545 groups=["botoes_computador"]]
+[node name="Rascunho_txt" type="Button" parent="Tela" unique_id=561629545 groups=["botoes_computador"]]
 layout_mode = 0
 offset_left = 810.8399
 offset_top = 62.500267
