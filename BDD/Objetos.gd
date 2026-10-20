@@ -11,6 +11,7 @@ const PADRAO := {
 		{"nome": "lanterna", "recurso": "res://recursos/lanterna.tres", "pos": Vector2(500, 550), "container_id": ""},
 	],
 	"Sul": [
+		{"nome": "fio decodificador", "recurso": "res://recursos/FioDecodificador.tres", "pos": Vector2(730, 425), "container_id": "sul_gvt_1"},
 		{"nome": "processador", "recurso": "res://recursos/processador.tres", "pos": Vector2(600, 550), "container_id": ""},
 		{"nome": "papel morse alcapao", "recurso": "res://recursos/PapelMorseAlcapao.tres", "pos": Vector2(727, 387), "container_id": "sul_gvt_2"},
 	],
@@ -19,7 +20,7 @@ const PADRAO := {
 	],
 	"CenaTeto": [
 		{"nome": "lampada quebrada", "recurso": "res://recursos/LampadaQuebrada.tres", "pos": Vector2(575, 273), "container_id": ""},
-		{"nome": "flan", "recurso": "res://recursos/flan.tres", "pos": Vector2(750, 550), "container_id": ""},
+		{"nome": "flan", "recurso": "res://recursos/flan.tres", "pos": Vector2(575, 273), "container_id": ""},
 	],
 	"CenaChao": [
 		{"nome": "placa mae", "recurso": "res://recursos/placaMae.tres", "pos": Vector2(600, 400), "container_id": ""},
@@ -93,6 +94,8 @@ static func garantir_padrao(cena: String):
 static func iniciar_objetos():
 	for cena in PADRAO.keys():
 		garantir_padrao(cena)
+	# Inclui o item em partidas existentes, mesmo se a sala já foi visitada.
+	salvar_objetos("fio decodificador", "res://recursos/FioDecodificador.tres", pos_para_json(730, 425), "Sul", "sul_gvt_1")
 
 
 static func migrar_roteador_para_mala() -> void:

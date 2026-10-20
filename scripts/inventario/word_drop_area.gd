@@ -448,6 +448,12 @@ func limpar_inventario() -> void:
 		"Inventário limpo."
 	)
 
+func remover_item_por_recurso(caminho: String) -> void:
+	for slot in %GridContainer.get_children():
+		if slot.item != null and slot.item.resource_path == caminho:
+			slot.item = null
+			slot.update_ui()
+
 
 # =========================================================
 # CARREGAR INVENTÁRIO DO SQLITE

@@ -23,7 +23,7 @@ texture = ExtResource("2_3ag6q")
 
 [node name="BotaoConfig" parent="." unique_id=1476302398 instance=ExtResource("5_26nkf")]
 
-[node name="AreaLampada" type="Area2D" parent="." unique_id=1508346842]
+[node name="AreaLampada" type="Area2D" parent="." unique_id=1508346842 groups=["item_drop_targets"]]
 position = Vector2(581, 249)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLampada" unique_id=47445340]

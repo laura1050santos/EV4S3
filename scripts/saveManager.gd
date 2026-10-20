@@ -21,6 +21,7 @@ func salvar() -> void:
 	Progresso.salvar("fase_liberada", GlobalSingleton.fase_liberada)
 	Progresso.salvar("fases_concluidas", GlobalSingleton.fases_concluidas)
 	Progresso.salvar("pc_conectado", GlobalSingleton.pc_conectado)
+	Progresso.salvar("lampada_ligada", GlobalSingleton.lampada_ligada)
 	Progresso.salvar("roteador_coletado", GlobalSingleton.roteador_coletado)
 	Progresso.salvar("roteador_instalado", GlobalSingleton.roteador_instalado)
 	Progresso.salvar("cont_enigma_som", GlobalSingleton.cont_enigma_som)
@@ -69,6 +70,7 @@ func carregar() -> void:
 	GlobalSingleton.fases_concluidas = fases
 
 	GlobalSingleton.pc_conectado = Progresso.carregar("pc_conectado", false)
+	GlobalSingleton.lampada_ligada = bool(Progresso.carregar("lampada_ligada", true))
 	GlobalSingleton.roteador_coletado = Progresso.carregar("roteador_coletado", false)
 	GlobalSingleton.roteador_instalado = Progresso.carregar("roteador_instalado", false)
 	GlobalSingleton.cont_enigma_som = int(Progresso.carregar("cont_enigma_som", 0))
@@ -169,6 +171,7 @@ func resetar_global() -> void:
 	GlobalSingleton.fases_concluidas = [false, false, false, false]
 
 	GlobalSingleton.pc_conectado = false
+	GlobalSingleton.lampada_ligada = true
 
 	GlobalSingleton.ultima_cena_por_fase = {
 		1: "res://scenes/fase1/zoom_pc.tscn",

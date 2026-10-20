@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="itemData" format=3 uid="uid://dewx5ay7stw7l"]
+
+[ext_resource type="Texture2D" uid="uid://dbgjp3yx6cr5g" path="res://assets/itens/fio-telegrafo.png" id="1_sfk1o"]
+[ext_resource type="Texture2D" uid="uid://bk2ko8ljadanl" path="res://assets/itens/fio-telegrafo-zoom.png" id="2_b03pc"]
+[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="3_uw130"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fio"]
+atlas = ExtResource("1_sfk1o")
+region = Rect2(760, 505, 330, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inventario"]
+atlas = ExtResource("2_b03pc")
+region = Rect2(625, 484, 694, 80)
+
+[resource]
+script = ExtResource("3_uw130")
+item_name = "Fio do Decodificador"
+icon = SubResource("AtlasTexture_fio")
+inventory_icon = SubResource("AtlasTexture_inventario")
+metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

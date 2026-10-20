@@ -64,8 +64,6 @@ z_index = -1
 layout_mode = 0
 
 [node name="Tela_Pastas" parent="SubViewport/pcControl/Telas" unique_id=1948911442 instance=ExtResource("9_0gxb3")]
-visible = false
-z_index = 2
 layout_mode = 1
 
 [node name="Pasta_Pessoal" parent="SubViewport/pcControl/Telas" unique_id=844825480 instance=ExtResource("10_b47ss")]
