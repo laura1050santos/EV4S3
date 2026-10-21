@@ -1,6 +1,6 @@
 extends Control
 
-@export var correct_password: Array[int] = [1, 2, 3, 4] #senha aqui
+@export var correct_password: Array[int] = [1, 9, 8, 7] #senha aqui
 @onready var digit_buttons: Array[TextureButton] = [$Digito1, $Digito2, $Digito3, $Digito4]
 
 func _ready() -> void:

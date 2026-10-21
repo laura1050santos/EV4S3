@@ -9,8 +9,12 @@ const IMAGEM_MALA_ABERTA := "res://assets/itens/malaAberta.jpeg.jpeg"
 
 func _ready():
 	GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)
-	Objetos.garantir_padrao(name)
-	var roteador_no_mundo := Objetos.get_objetos_cena(name)
+	GlobalSingleton.ultima_cena = get_tree().current_scene.scene_file_path
+	var nome_desta_cena = self.name # O nome do nó raiz desta cena
+	Objetos.garantir_padrao(nome_desta_cena)
+	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
+	iniciar_itens_cena(nome_desta_cena, objetos)	
+	var roteador_no_mundo = Objetos.get_objetos_cena(nome_desta_cena)
 	mala_aberta = GlobalSingleton.roteador_coletado or not roteador_no_mundo.is_empty()
 	mala_sprite.texture = load(IMAGEM_MALA_ABERTA if mala_aberta else "res://assets/itens/malagrande.png")
 	if not roteador_no_mundo.is_empty():
