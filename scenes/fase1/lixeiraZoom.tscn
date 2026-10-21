@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://boephgblmcbri" path="res://assets/itens/lixeiraperto.png" id="1_68gv6"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_f6m85"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="3_u3ttn"]
-[ext_resource type="Texture2D" uid="uid://cewmc5jdegb7p" path="res://assets/itens/lixeirapertoaberta.png" id="4_f6m85"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="5_u3ttn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u3ttn"]
+load_path = "res://.godot/imported/lixeirapertoaberta.png-d630a11c06feada02e9e9d878739aeec.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bx6j"]
 size = Vector2(434.5, 219)
@@ -26,7 +28,7 @@ destino_cena = "uid://cxhjpnc7drrok"
 visible = false
 position = Vector2(575.5, 326.5)
 scale = Vector2(0.59739584, 0.6064815)
-texture = ExtResource("4_f6m85")
+texture = SubResource("CompressedTexture2D_u3ttn")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2005439593]
 
