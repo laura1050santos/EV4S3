@@ -76,6 +76,8 @@ func _fixar_conserto() -> void:
 		return info["data"] not in [RECURSO_LAMPADA, RECURSO_FLAN, "res://recursos/LampadaQuebrada.tres"]
 	)
 	Objetos.delete_objeto("lampada quebrada")
+	Objetos.delete_objeto("lanterna")
+
 	for filho in get_children():
 		if _eh_lampada_quebrada(filho):
 			filho.hide()
