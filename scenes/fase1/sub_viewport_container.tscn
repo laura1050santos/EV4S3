@@ -43,6 +43,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Tela_Inicial" parent="SubViewport/pcControl/Telas" unique_id=619355515 instance=ExtResource("3_utot3")]
+visible = false
 z_index = 0
 layout_mode = 0
 
@@ -53,9 +54,9 @@ layout_mode = 0
 [node name="Tela_Navegador" parent="SubViewport/pcControl/Telas" unique_id=1346634533 instance=ExtResource("5_of56o")]
 visible = false
 layout_mode = 0
+script = null
 
 [node name="Tela_Email" parent="SubViewport/pcControl/Telas" unique_id=1090878199 instance=ExtResource("6_2mry1")]
-visible = false
 layout_mode = 0
 
 [node name="Tela_Boot" parent="SubViewport/pcControl/Telas" unique_id=1391405876 instance=ExtResource("8_qrm8x")]

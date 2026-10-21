@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://dudsayc35f54n"]
 
-[ext_resource type="Texture2D" uid="uid://dqirdg0g6cuty" path="res://assets/computador_telas/navegador.png" id="1_dusd7"]
+[ext_resource type="Texture2D" uid="uid://c3gxp56yoh5r2" path="res://assets/computador_telas/navegador.png" id="1_dusd7"]
 [ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="2_13qop"]
+[ext_resource type="Script" uid="uid://clrq20va3m74p" path="res://scripts/telaComp/tela_navegador.gd" id="3_pesquisa"]
+[ext_resource type="PackedScene" path="res://scenes/Computador_Telas/pagina_artigo.tscn" id="4_artigo"]
 
 [node name="Tela_Navegador" type="Control" unique_id=1346634533]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("3_pesquisa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=540446062]
 position = Vector2(-892, -235)
@@ -28,7 +31,8 @@ offset_left = 581.0
 offset_top = 498.0
 offset_right = 1296.0
 offset_bottom = 561.0
-theme_override_colors/font_placeholder_color = Color(0.648407, 0.65114325, 0.92975765, 0.6)
+theme_override_colors/font_color = Color(0.1373269, 0.060638167, 0.3592331, 1)
+theme_override_colors/font_placeholder_color = Color(0.26438868, 0.26438928, 0.2643888, 0.6)
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Pesquisar..."
 flat = true
@@ -44,8 +48,29 @@ text = "O"
 flat = true
 
 [node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("2_13qop")]
+z_index = 2
 layout_mode = 0
 offset_left = 1632.0001
 offset_right = 2640.0
 scale = Vector2(0.1498459, 0.12717399)
 flat = true
+
+[node name="Resultado" type="Label" parent="." unique_id=1685395640]
+visible = false
+layout_mode = 0
+offset_left = 500.0
+offset_top = 590.0
+offset_right = 1470.0
+offset_bottom = 650.0
+theme_override_colors/font_color = Color(0.2, 0.2, 0.25, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="PaginaArtigo" parent="." unique_id=1112986282 instance=ExtResource("4_artigo")]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 215.0
+offset_right = 1807.0
+offset_bottom = 924.0
