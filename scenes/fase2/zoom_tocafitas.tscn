@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://hcl2ptyd13qe" path="res://assets/Sons/audio_fita_cassete.mp3" id="5_12td3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(640.00037, 293.3334)
+size = Vector2(279.70496, 199.96725)
 
 [node name="ZoomTocafitas" type="Node2D" unique_id=872383766]
 
@@ -18,8 +18,8 @@ size = Vector2(640.00037, 293.3334)
 destino_cena = "uid://du3u5e5blrq5k"
 
 [node name="ZoomTocafitas" type="Sprite2D" parent="." unique_id=1999192275]
-position = Vector2(575.00037, 324.00006)
-scale = Vector2(0.59999985, 0.59999996)
+position = Vector2(575, 324)
+scale = Vector2(1.6052631, 1.6052631)
 texture = ExtResource("2_r45ts")
 
 [node name="Estacao" type="Area2D" parent="ZoomTocafitas" unique_id=416391494]
@@ -27,7 +27,7 @@ script = ExtResource("4_f3bcf")
 item_aceito = ExtResource("5_04wbe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoomTocafitas/Estacao" unique_id=1586119932]
-position = Vector2(1.6660767, 33.333252)
+position = Vector2(0.9344177, -10.901642)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_g4v7s")
 
