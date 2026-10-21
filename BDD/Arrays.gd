@@ -3,6 +3,7 @@ class_name Arrays
 # Called when the node enters the scene tree for the first time.
 
 static func criar_tabela():
+
 	var sql_arrays = """
 	CREATE TABLE IF NOT EXISTS Arrays (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -67,9 +68,7 @@ static func delete_array(nome):
 	print("Array deletado: ", nome)
 	
 static func iniciar_array():
+	
 	salvar_arrays("itens_no_mundo","") 
 	salvar_arrays("cenasVisitadas","")
 	salvar_arrays("historico_cenas","")
-
-static func deletarTabela():
-	Database.db.query("DELETE FROM Arrays;")

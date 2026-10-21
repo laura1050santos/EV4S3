@@ -78,5 +78,3 @@ static func iniciar_cenarios():
 	salvar_cenarios("zoomTele","res://assets/cenarios/cena-telegrafo-inicial.png")
 	salvar_cenarios("zoomLixeira","res://assets/cenarios/lixeiraperto.png")
 	salvar_cenarios("ZoomTocafitas", "res://scripts/salas_scripts/zoom_tocafitas.gd")
-static func deletarTabela():
-	Database.db.query("DELETE FROM Cenarios;")

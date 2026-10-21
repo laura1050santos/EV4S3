@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://xtu7nn6q5b5v" path="res://scripts/puzzle_roteador.gd" id="1_vnrup"]
 [ext_resource type="Texture2D" uid="uid://cdupn8a02d676" path="res://assets/itens/caixafios.png" id="2_0dkf4"]
-[ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_0dkf4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_is5g8"]
 radius = 12.477173
@@ -118,6 +117,3 @@ position = Vector2(-6, 14)
 rotation = 1.5872487
 shape = SubResource("CapsuleShape2D_keh4x")
 debug_color = Color(0.9967428, 0, 0.18973592, 0.41960785)
-
-[node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_0dkf4")]
-destino_cena = "uid://djryii8ewlak6"
