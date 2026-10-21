@@ -81,7 +81,7 @@ func _on_mala_2d_2_input_event(viewport: Node, event: InputEvent, shape_idx: int
 		if GlobalSingleton.fase_liberada == 1:
 			print("A mala está trancada / não há motivo para mexer nela agora.")
 		elif GlobalSingleton.fase_liberada >= 2:
-			get_tree().change_scene_to_file("res://scenes/fase2/zoom_mala.tscn")
+			get_tree().change_scene_to_file("res://scenes/fase2/zoomMala.tscn")
 
 
 # Evento de interação com a área da Parede do Roteador ($ParedeRoteador)

@@ -6,7 +6,7 @@ extends Node
 # =========================================================
 
 func salvar() -> void:
-	# Se houver uma cena atual válida, irá registrar
+	itemData.desativar_item_global(get_tree())	
 	var cena_atual = get_tree().current_scene
 	if cena_atual != null:
 		if not cena_atual.scene_file_path.is_empty():

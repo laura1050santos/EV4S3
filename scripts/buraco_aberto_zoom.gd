@@ -2,15 +2,9 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 
 func _ready():
 	
+	GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)
+	GlobalSingleton.ultima_cena = get_tree().current_scene.scene_file_path
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
-
-	var itens_iniciais=[
-
-{
-"item": preload("res://recursos/lampada.tres"),
-"pos": Vector2(570, 380),
-"cena": nome_desta_cena
-},
-#itens que começam na cena
-]
-	iniciar_itens_cena(nome_desta_cena, itens_iniciais)
+	Objetos.garantir_padrao(nome_desta_cena)
+	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
+	iniciar_itens_cena(nome_desta_cena, objetos)

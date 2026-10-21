@@ -9,11 +9,6 @@
 [node name="BuracoAberto" type="Node2D" unique_id=492878253]
 script = ExtResource("1_x2tlq")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142052247]
-position = Vector2(578.5, 334.75)
-scale = Vector2(0.59739584, 0.6060185)
-texture = ExtResource("2_2npeh")
-
 [node name="Escuro" parent="." unique_id=1886569735 instance=ExtResource("2_84tal")]
 
 [node name="SetaEsquerda" parent="." unique_id=616059842 instance=ExtResource("3_jowjx")]
@@ -25,3 +20,8 @@ offset_left = -142.0
 offset_top = -163.0
 offset_right = 3024.6665
 offset_bottom = 1505.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142052247]
+position = Vector2(578.5, 334.75)
+scale = Vector2(0.59739584, 0.6060185)
+texture = ExtResource("2_2npeh")
