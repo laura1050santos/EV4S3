@@ -1,36 +1,38 @@
 [gd_scene format=3 uid="uid://gesit7wnl14t"]
 
 [ext_resource type="Script" uid="uid://xtu7nn6q5b5v" path="res://scripts/puzzle_roteador.gd" id="1_vnrup"]
-[ext_resource type="Texture2D" uid="uid://cdupn8a02d676" path="res://assets/itens/caixafios.png" id="2_0dkf4"]
+[ext_resource type="Texture2D" uid="uid://bryw77kyqor2w" path="res://assets/cenarios/fios.png" id="2_vnrup"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_is5g8"]
-radius = 12.477173
+radius = 18.996002
 height = 67.90231
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ak76"]
-radius = 12.379852
+radius = 18.629913
 height = 77.83099
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3fj2y"]
+radius = 18.714844
 height = 74.45996
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7s212"]
-radius = 10.86116
+radius = 20.223541
 height = 67.308716
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_keh4x"]
+radius = 14.047455
 height = 64.089966
 
 [node name="fios" type="Node2D" unique_id=814926556]
 script = ExtResource("1_vnrup")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=409879107]
-position = Vector2(534, 320)
-scale = Vector2(1.9509997, 1.6539998)
-texture = ExtResource("2_0dkf4")
+[node name="Fios" type="Sprite2D" parent="." unique_id=538113187]
+position = Vector2(583, 335.25)
+scale = Vector2(1.9523809, 1.9712123)
+texture = ExtResource("2_vnrup")
 
 [node name="fioVerde" type="Line2D" parent="." unique_id=446559013]
-points = PackedVector2Array(257, 333, 812, 440)
+points = PackedVector2Array(372, 287, 812, 395)
 default_color = Color(0, 0.5549464, 0.30304995, 1)
 
 [node name="fioVerde_Esquerda" type="Area2D" parent="." unique_id=369562949]
@@ -39,25 +41,26 @@ rotation = 2.6512334
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fioVerde_Esquerda" unique_id=1356973261]
-position = Vector2(-170.8881, 99.16052)
+position = Vector2(-286.1206, 92.05544)
 rotation = 2.0407236
 shape = SubResource("CapsuleShape2D_is5g8")
 debug_color = Color(3.6338718e-06, 0.64689106, 0.23348927, 0.41960785)
 
 [node name="fioVermelho" type="Line2D" parent="." unique_id=2062796465]
-points = PackedVector2Array(267, 220, 803, 327)
+position = Vector2(104, -47)
+points = PackedVector2Array(267, 220, 695, 334)
 default_color = Color(0.71868926, 0.14169246, 0.0022533855, 1)
 
 [node name="fioVermelho_Esquerda" type="Area2D" parent="." unique_id=223345394]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fioVermelho_Esquerda" unique_id=1415737355]
-position = Vector2(265, 219.99998)
+position = Vector2(362, 165)
 rotation = 1.5766739
 shape = SubResource("CapsuleShape2D_is5g8")
 debug_color = Color(0.98039216, 0, 0, 0.41960785)
 
 [node name="fioAmarelo" type="Line2D" parent="." unique_id=536987601]
-points = PackedVector2Array(278, 442, 803, 507)
+points = PackedVector2Array(361, 386, 803, 507)
 default_color = Color(1, 1, 0.101960786, 1)
 
 [node name="fioAmarelo_Esquerda" type="Area2D" parent="." unique_id=1180344848]
@@ -65,7 +68,7 @@ position = Vector2(540, 316)
 scale = Vector2(1.9509997, 1.6539998)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fioAmarelo_Esquerda" unique_id=209348851]
-position = Vector2(-138.90315, 76.78356)
+position = Vector2(-95.33574, 45.34462)
 rotation = 1.5964592
 scale = Vector2(0.5125606, 0.60459256)
 skew = 0.001778841
@@ -79,7 +82,7 @@ default_color = Color(0, 0.10980392, 1, 1)
 [node name="fioAzul_ESquerda" type="Area2D" parent="." unique_id=1425666393]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fioAzul_ESquerda" unique_id=748123426]
-position = Vector2(271.63116, 513.82654)
+position = Vector2(357, 499)
 rotation = 1.5569209
 shape = SubResource("CapsuleShape2D_is5g8")
 debug_color = Color(0, 0.53438336, 0.9791085, 0.41960785)
@@ -87,7 +90,7 @@ debug_color = Color(0, 0.53438336, 0.9791085, 0.41960785)
 [node name="FioAzul_Direita" type="Area2D" parent="." unique_id=1660595966]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FioAzul_Direita" unique_id=2099912198]
-position = Vector2(810, 217.99991)
+position = Vector2(825.99994, 168.00002)
 rotation = -1.6366173
 shape = SubResource("CapsuleShape2D_3ak76")
 
@@ -104,7 +107,7 @@ debug_color = Color(0.60376686, 0.54224706, 0, 0.41960785)
 position = Vector2(-124, 230)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FioVerde_Direita" unique_id=435953125]
-position = Vector2(947, 206)
+position = Vector2(936.99994, 163.00003)
 rotation = 1.5035493
 shape = SubResource("CapsuleShape2D_7s212")
 debug_color = Color(0, 0.6, 0.11764706, 0.41960785)
@@ -113,7 +116,7 @@ debug_color = Color(0, 0.6, 0.11764706, 0.41960785)
 position = Vector2(823, 310)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4fioVermelho_Direita" unique_id=1729174090]
-position = Vector2(-6, 14)
+position = Vector2(-2, -31)
 rotation = 1.5872487
 shape = SubResource("CapsuleShape2D_keh4x")
 debug_color = Color(0.9967428, 0, 0.18973592, 0.41960785)

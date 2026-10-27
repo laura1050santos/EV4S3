@@ -44,7 +44,10 @@ func _mostrar_placa_mae() -> void:
 
 	if int(info["coletado"]) != 0:
 		return
-
+		
+	if info["cena"] != "CenaChao":
+		return
+		
 	var recurso = load(info["recurso"])
 	var posicao = JSON.parse_string(info["pos"])
 

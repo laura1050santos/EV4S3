@@ -173,7 +173,6 @@ func _procurar_e_remover_no_mao(no_atual: Node):
 	for filho in no_atual.get_children():
 		_procurar_e_remover_no_mao(filho)
 
-
 func _varrer_e_remover_world_item(no_atual: Node):
 	if no_atual == null:
 		return
@@ -190,3 +189,8 @@ func _varrer_e_remover_world_item(no_atual: Node):
 
 	for filho in no_atual.get_children():
 		_varrer_e_remover_world_item(filho)
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if roteador_parede_sprite.visible == true:
+			abrir_puzzle_fios()
