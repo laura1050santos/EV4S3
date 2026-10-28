@@ -1,11 +1,14 @@
 extends Control
 
 const WORLD_ITEM = preload("res://scenes/inventario/worldItem.tscn")
+var inspecao_item: CanvasLayer
 
 
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_to_group("world_drop_area")
+	inspecao_item = preload("res://scenes/inventario/inspecao_item.tscn").instantiate()
+	get_parent().add_child.call_deferred(inspecao_item)
 
 
 func _notification(what):
@@ -120,6 +123,9 @@ func usar_item(
 ):
 	if item == null:
 		return
+	if item.resource_path == "res://recursos/PapelMorseAlcapao.tres":
+		inspecionar_papel(item, node)
+		return
 
 
 	print(
@@ -192,6 +198,16 @@ func usar_item(
 			item.item_ativo = item.item_ativo
 
 
+func inspecionar_papel(item: itemData, visual: Node = null) -> void:
+	if item == null or item.resource_path != "res://recursos/PapelMorseAlcapao.tres":
+		return
+	if item.item_ativo and visual is Sprite2D:
+		visual.texture = item.icon
+	item.item_ativo = false
+	if GlobalSingleton.item_mao == item:
+		GlobalSingleton.item_mao = null
+	inspecao_item.abrir(item)
+
 func _deixar_item_na_sala(item: itemData, node: Node) -> void:
 	var sala_atual := get_tree().current_scene
 	if sala_atual == null or node == null or not node is Node2D:
@@ -213,6 +229,8 @@ func _deixar_item_na_sala(item: itemData, node: Node) -> void:
 # =========================================================
 
 func _input(event: InputEvent) -> void:
+	if is_instance_valid(inspecao_item) and inspecao_item.bloqueia_interacao():
+		return
 
 	if (
 		event is InputEventMouseButton

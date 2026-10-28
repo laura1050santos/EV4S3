@@ -10,6 +10,8 @@ func _ready():
 	GlobalSingleton.ultima_cena = get_tree().current_scene.scene_file_path
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena
 	Objetos.garantir_padrao(nome_desta_cena)
+	if GlobalSingleton.fase_liberada >= 2:
+		Objetos.disponibilizar_chave_mala()
 	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
 	iniciar_itens_cena(nome_desta_cena, objetos)
 	
@@ -78,10 +80,19 @@ func aplicar_estado_lampada():
 # Evento de clique na Mala no cenário
 func _on_mala_2d_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if GlobalSingleton.fase_liberada == 1:
-			print("A mala está trancada / não há motivo para mexer nela agora.")
-		elif GlobalSingleton.fase_liberada >= 2:
-			get_tree().change_scene_to_file("res://scenes/fase2/zoomMala.tscn")
+		get_tree().change_scene_to_file("res://scenes/fase2/zoomMala.tscn")
+
+func spawnar_itens(item_ou_caminho, posicao):
+	var visual = super.spawnar_itens(item_ou_caminho, posicao)
+	if visual != null and visual.has_meta("item_data"):
+		var item: itemData = visual.get_meta("item_data")
+		if item.resource_path == "res://recursos/ChaveMala.tres":
+			visual.scale = Vector2(0.3, 0.3)
+			visual.rotation_degrees = -8.0
+			var forma := RectangleShape2D.new()
+			forma.size = Vector2(264, 100)
+			visual.get_node("Area2D/CollisionShape2D").shape = forma
+	return visual
 
 
 # Evento de interação com a área da Parede do Roteador ($ParedeRoteador)

@@ -116,9 +116,8 @@ position = Vector2(586.5, 466.5)
 shape = SubResource("RectangleShape2D_etvgb")
 
 [node name="monitorLigado" type="Sprite2D" parent="." unique_id=1031921177]
-visible = false
-position = Vector2(478.71936, 346.0139)
-scale = Vector2(0.3206337, 0.2885615)
+position = Vector2(575.3386, 324.00003)
+scale = Vector2(0.6006889, 0.6)
 texture = ExtResource("13_pvpgn")
 
 [node name="postit" type="Sprite2D" parent="." unique_id=1548971824]

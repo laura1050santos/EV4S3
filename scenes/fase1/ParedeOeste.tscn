@@ -21,7 +21,7 @@ size = Vector2(90.5, 48)
 size = Vector2(72.17839, 49.18225)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(34.234364, 21.428217)
+size = Vector2(1920, 1200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j0j"]
 size = Vector2(149.5, 104)
@@ -76,15 +76,13 @@ rotation = -0.08943273
 scale = Vector2(0.2553935, 0.2553935)
 texture = ExtResource("11_x71yn")
 
-[node name="Area2D" type="Area2D" parent="Node" unique_id=1633289000]
-visible = false
+[node name="Area2D" type="Area2D" parent="Node/carta_relogio2" unique_id=1633289000]
+input_pickable = false
 script = ExtResource("12_k4gre")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D" unique_id=865280199]
-position = Vector2(572.74854, 339.18814)
-rotation = -0.09379309
-scale = Vector2(14.224794, 14.224794)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/carta_relogio2/Area2D" unique_id=865280199]
 shape = SubResource("RectangleShape2D_yf5fn")
+disabled = true
 debug_color = Color(0.9058082, 0.058740504, 0.7258143, 0.41960785)
 
 [node name="toca_fitas" type="Area2D" parent="." unique_id=1539130923]

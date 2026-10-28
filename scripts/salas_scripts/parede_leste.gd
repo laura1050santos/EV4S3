@@ -79,13 +79,9 @@ func _on_pc_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> 
 func _on_monitor_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if not _clique_esquerdo(event):
 		return
-	if GlobalSingleton.fase_liberada == 1:
-		get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")
-	elif GlobalSingleton.fase_liberada == 2:
-		get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")
+	get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if not _clique_esquerdo(event):
 		return
-	if GlobalSingleton.fase_liberada == 1:
-		get_tree().change_scene_to_file("res://scenes/fase2/zoom_postIt.tscn")
+	get_tree().change_scene_to_file("res://scenes/fase2/zoom_postIt.tscn")

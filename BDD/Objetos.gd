@@ -97,6 +97,10 @@ static func iniciar_objetos():
 	# Inclui o item em partidas existentes, mesmo se a sala já foi visitada.
 	salvar_objetos("fio decodificador", "res://recursos/FioDecodificador.tres", pos_para_json(730, 425), "Sul", "sul_gvt_1")
 
+static func disponibilizar_chave_mala() -> void:
+	if get_por_recurso("res://recursos/ChaveMala.tres") == null:
+		salvar_objetos("chave mala", "res://recursos/ChaveMala.tres", pos_para_json(625, 597), "Norte")
+
 
 static func migrar_roteador_para_mala() -> void:
 	if not Database.db.query_with_bindings(

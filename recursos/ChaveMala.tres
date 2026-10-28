@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="itemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/inventario/item_data.gd" id="1_item"]
+[ext_resource type="Texture2D" path="res://assets/itens/chave_mala.png" id="2_imagem"]
+
+[sub_resource type="AtlasTexture" id="Atlas_chave"]
+atlas = ExtResource("2_imagem")
+region = Rect2(816, 502, 264, 82)
+
+[resource]
+script = ExtResource("1_item")
+item_name = "chave mala"
+icon = SubResource("Atlas_chave")
+inventory_icon = SubResource("Atlas_chave")
+ativo_icon = SubResource("Atlas_chave")

@@ -13,7 +13,7 @@ script = ExtResource("1_kjaa4")
 [node name="pontoroteador" type="Marker2D" parent="." unique_id=129519319]
 position = Vector2(693, 471)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1217307611]
+[node name="Area2D" type="Area2D" parent="." unique_id=1217307611 groups=["item_drop_targets"]]
 position = Vector2(758.00006, 436)
 scale = Vector2(1.2822917, 1.2842592)
 

@@ -31,16 +31,21 @@ func _ready() -> void:
 	botao_voltar.pressed.connect(voltar)
 	botao_confirmar.pressed.connect(confirmar_classificacoes)
 	todos_classificados.connect(_on_todos_classificados)
+	popup_conclusao.finalizado.connect(_on_notificacoes_finalizadas)
+	visibility_changed.connect(_retomar_notificacoes)
 
 	_carregar_progresso()
 	_criar_lista()
 	voltar()
+	_retomar_notificacoes.call_deferred()
 
 func _carregar_progresso() -> void:
 	var salvos = Progresso.carregar("emails_sorteados", [])
 	var respostas_salvas = Progresso.carregar("emails_respostas", {})
 	var lidos_salvos = Progresso.carregar("emails_lidos", [])
 	concluido = bool(Progresso.carregar("emails_concluidos", false))
+	if concluido:
+		Progresso.salvar("secreto_dat_desbloqueado", true)
 
 	respostas = respostas_salvas if respostas_salvas is Dictionary else {}
 	lidos.clear()
@@ -207,6 +212,8 @@ func confirmar_classificacoes() -> void:
 	if concluido:
 		print("Puzzle já concluído anteriormente.")
 		return
+	if sorteados.size() != 3:
+		return
 
 	for indice in sorteados:
 		if not respostas.has(str(indice)):
@@ -227,6 +234,7 @@ func confirmar_classificacoes() -> void:
 
 	concluido = true
 	Progresso.salvar("emails_concluidos", true)
+	Progresso.salvar("secreto_dat_desbloqueado", true)
 	_atualizar_status()
 	print("SUCESSO: Todos os e-mails classificados corretamente!")
 	todos_classificados.emit()
@@ -234,3 +242,18 @@ func confirmar_classificacoes() -> void:
 func _on_todos_classificados() -> void:
 	print("Abrindo notificação de conclusão...")
 	popup_conclusao.iniciar()
+
+func _retomar_notificacoes() -> void:
+	if is_visible_in_tree() and concluido and not GlobalSingleton.fases_concluidas[1] and not popup_conclusao.visible:
+		popup_conclusao.iniciar()
+
+func _on_notificacoes_finalizadas() -> void:
+	if not concluido or GlobalSingleton.fases_concluidas[1]:
+		return
+	var telas = get_parent()
+	if telas.has_node("Tela_Inicial"):
+		telas.get_node("Tela_Inicial").show()
+	hide()
+	GlobalSingleton.ultima_cena_por_fase[3] = "res://scenes/fase1/zoom_monitor.tscn"
+	GlobalSingleton.concluir_fase(2)
+	TransicaoFase.show_phase_complete("res://scenes/telaInicial/selecao_fases.tscn")

@@ -37,6 +37,15 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	icon.hide()
 	return self
 
+func _gui_input(event: InputEvent) -> void:
+	if item == null or item.resource_path != "res://recursos/PapelMorseAlcapao.tres":
+		return
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		var drop_area = get_tree().get_first_node_in_group("world_drop_area")
+		if drop_area != null:
+			drop_area.inspecionar_papel(item)
+			accept_event()
+
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	#avalia se o lugar onde o item foi solto é valido. Pode ser usado para validação
 	return true
