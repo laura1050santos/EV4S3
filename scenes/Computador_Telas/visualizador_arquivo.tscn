@@ -1,0 +1,43 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/telaComp/visualizador_arquivo.gd" id="1_script"]
+
+[node name="VisualizadorArquivo" type="Control"]
+visible = false
+z_index = 20
+offset_right = 1815.0
+offset_bottom = 932.0
+script = ExtResource("1_script")
+
+[node name="Fundo" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.14, 0.16, 0.19, 1)
+
+[node name="Titulo" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 35.0
+offset_right = 1465.0
+offset_bottom = 90.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
+[node name="Voltar" type="Button" parent="." groups=["botoes_computador"]]
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 315.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 28
+text = "← Voltar à pasta"
+
+[node name="Imagem" type="TextureRect" parent="."]
+offset_left = 450.0
+offset_top = 120.0
+offset_right = 1365.0
+offset_bottom = 910.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5

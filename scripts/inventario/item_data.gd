@@ -31,14 +31,12 @@ static func ativar_luz(item: itemData, cena: Node, pos: Vector2):
 		if root.has_node("LuzDaLanterna"):
 			return
 			
-		var luz = preload("res://assets/itens/luzLanterna.png")
 		var node = PointLight2D.new()
+		node.set_script(preload("res://scripts/inventario/luz_lanterna.gd"))
 		node.name = "LuzDaLanterna"
-		node.texture = luz
 		
 		# Adiciona direto na raiz do jogo
 		root.add_child(node)
-		node.global_position = Vector2(650, 325)
 	
 		
 static func desligar_luz(item: itemData, cena: Node):

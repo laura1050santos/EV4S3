@@ -14,6 +14,11 @@ func _ready():
 		Objetos.disponibilizar_chave_mala()
 	var objetos = Objetos.get_objetos_cena(nome_desta_cena)
 	iniciar_itens_cena(nome_desta_cena, objetos)
+	if GlobalSingleton.fase_liberada == 2:
+		for info in objetos:
+			if info["item"].resource_path == "res://recursos/ChaveMala.tres":
+				GlobalSingleton.get_node("EventoPortaFase2").registrar_porta_vista()
+				break
 	
 	for o in objetos:
 		print(o)

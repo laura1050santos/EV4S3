@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dshk8xkdf6e7b" path="res://assets/computador_telas/botaoFechar.png" id="1_wryw7"]
 
 [node name="Button" type="Button" unique_id=1701383731]
-offset_right = 1008.0
-offset_bottom = 1008.0
+offset_right = 385.43747
+offset_bottom = 377.43567
 scale = Vector2(0.12717399, 0.12717399)
 icon = ExtResource("1_wryw7")
+flat = true
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_0jtfc")

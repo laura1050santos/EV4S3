@@ -133,6 +133,8 @@ position = Vector2(-47.414063, -27.78534)
 scale = Vector2(1.0000002, 1)
 shape = SubResource("RectangleShape2D_eq0go")
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=327897654]
+
 [connection signal="input_event" from="Pc/Pc" to="." method="_on_pc_input_event"]
 [connection signal="input_event" from="Pc/Monitor" to="." method="_on_monitor_input_event"]
 [connection signal="input_event" from="postit/Area2D" to="." method="_on_area_2d_input_event"]

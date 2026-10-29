@@ -1,13 +1,20 @@
 [gd_scene format=3 uid="uid://cgsl4vmsu53kt"]
 
 [ext_resource type="Texture2D" uid="uid://bh5qu6w5bea85" path="res://assets/computador_telas/documento.png" id="1_ohppg"]
+[ext_resource type="Texture2D" uid="uid://bip0qtf3rmq4p" path="res://assets/computador_telas/arquivos_tecnico.png" id="2_0sb6d"]
 [ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="2_3qv3v"]
+
+[ext_resource type="Script" path="res://scripts/telaComp/pasta_documentos.gd" id="8_documentos"]
+[ext_resource type="PackedScene" path="res://scenes/Computador_Telas/visualizador_arquivo.tscn" id="9_visualizador"]
 
 [node name="Pasta_Tecnico" type="Control" unique_id=876146448]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+script = ExtResource("8_documentos")
+arquivos = {"RegistroEquip_txt": "res://assets/computador_telas/arquivos/registro.png", "Contatos_txt": "res://assets/computador_telas/arquivos/contatos.png", "Procedimentos_txt": "res://assets/computador_telas/arquivos/procedimentos.png"}
 
 [node name="Tela" type="ColorRect" parent="." unique_id=1175068278]
 z_index = -1
@@ -16,47 +23,101 @@ offset_right = 1815.0
 offset_bottom = 932.0
 color = Color(0.37638173, 0.43683, 0.5514186, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="Tela" unique_id=1821313912]
+position = Vector2(916, 688)
+scale = Vector2(2.3125, 1.9188845)
+texture = ExtResource("2_0sb6d")
+
 [node name="Procedimentos_txt" type="Button" parent="Tela" unique_id=182522556 groups=["botoes_computador"]]
 layout_mode = 0
 offset_left = 810.8399
-offset_top = 62.500267
+offset_top = 208.00003
 offset_right = 1330.8398
-offset_bottom = 582.50024
+offset_bottom = 728.0
 scale = Vector2(0.33059737, 0.33059737)
 icon = ExtResource("1_ohppg")
 flat = true
+
+metadata/nome_arquivo = "procedimentos.txt"
 
 [node name="Contatos_txt" type="Button" parent="Tela" unique_id=303760573 groups=["botoes_computador"]]
 layout_mode = 0
 offset_left = 609.3804
-offset_top = 62.500244
+offset_top = 208.0
 offset_right = 1129.3804
-offset_bottom = 582.50024
+offset_bottom = 728.0
 scale = Vector2(0.33059737, 0.33059737)
 icon = ExtResource("1_ohppg")
 flat = true
+
+metadata/nome_arquivo = "contatos.txt"
 
 [node name="RegistroEquip_txt" type="Button" parent="Tela" unique_id=870648915 groups=["botoes_computador"]]
 layout_mode = 0
 offset_left = 409.37863
-offset_top = 62.50025
+offset_top = 208.0
 offset_right = 929.37866
-offset_bottom = 582.50024
+offset_bottom = 728.0
 scale = Vector2(0.33059737, 0.33059737)
 icon = ExtResource("1_ohppg")
 flat = true
 
-[node name="Guias" type="ColorRect" parent="Tela" unique_id=328114986]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 344.0
-offset_bottom = 920.0
-color = Color(0.88453144, 0.88453114, 0.88453114, 1)
+metadata/nome_arquivo = "registro_equipamentos.txt"
 
 [node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("2_3qv3v")]
 layout_mode = 0
-offset_left = 1632.0001
-offset_right = 2640.0
+offset_left = 1726.1967
+offset_top = 8.0
+offset_right = 2184.1633
+offset_bottom = 448.3416
 scale = Vector2(0.1498459, 0.12717399)
-flat = true
+
+[node name="Nome_RegistroEquip_txt" type="Label" parent="Tela"]
+z_index = 1
+layout_mode = 0
+offset_left = 405.379
+offset_top = 389.911
+offset_right = 585.379
+offset_bottom = 479.911
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.08, 0.08, 0.1, 1)
+theme_override_font_sizes/font_size = 22
+text = "registro_equipamentos.txt"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+clip_text = true
+
+[node name="Nome_Contatos_txt" type="Label" parent="Tela"]
+z_index = 1
+layout_mode = 0
+offset_left = 605.380
+offset_top = 389.911
+offset_right = 785.380
+offset_bottom = 479.911
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.08, 0.08, 0.1, 1)
+theme_override_font_sizes/font_size = 22
+text = "contatos.txt"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+clip_text = true
+
+[node name="Nome_Procedimentos_txt" type="Label" parent="Tela"]
+z_index = 1
+layout_mode = 0
+offset_left = 806.840
+offset_top = 389.911
+offset_right = 986.840
+offset_bottom = 479.911
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.08, 0.08, 0.1, 1)
+theme_override_font_sizes/font_size = 22
+text = "procedimentos.txt"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+clip_text = true
+
+[node name="VisualizadorArquivo" parent="." instance=ExtResource("9_visualizador")]

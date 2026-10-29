@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _pessoal() -> void:
-	$"../Pasta_Pessoal".show()
+	$"../Pasta_Pessoal".abrir(self)
 	
 func _tecnico() -> void:
-	$"../Pasta_Tecnico".show()	
+	$"../Pasta_Tecnico".abrir(self)

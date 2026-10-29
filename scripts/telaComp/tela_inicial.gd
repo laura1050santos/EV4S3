@@ -26,9 +26,9 @@ func _pastas() -> void:
 	$menu.hide()
 	
 func _p1_pessoal() -> void:
-	$"../Pasta_Pessoal".show()
+	$"../Pasta_Pessoal".abrir()
 	$menu.hide()
 
 func _p2_tecnico() -> void:
-	$"../Pasta_Tecnico".show()
+	$"../Pasta_Tecnico".abrir()
 	$menu.hide()

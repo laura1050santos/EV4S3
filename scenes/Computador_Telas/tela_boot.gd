@@ -55,7 +55,7 @@ func _carregar() -> void:
 func _finalizar_boot() -> void:
 	if GlobalSingleton.fases_concluidas[0]:
 		return
-	GlobalSingleton.ultima_cena_por_fase[2] = "res://scenes/fase1/zoom_monitor.tscn"
+	GlobalSingleton.ultima_cena_por_fase[2] = "res://scenes/fase1/ParedeLeste.tscn"
 	GlobalSingleton.concluir_fase(1)
 	TransicaoFase.show_phase_complete(
 		"res://scenes/telaInicial/selecao_fases.tscn"

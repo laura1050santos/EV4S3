@@ -64,6 +64,7 @@ z_index = -1
 layout_mode = 0
 
 [node name="Tela_Pastas" parent="SubViewport/pcControl/Telas" unique_id=1948911442 instance=ExtResource("9_0gxb3")]
+visible = false
 layout_mode = 1
 
 [node name="Pasta_Pessoal" parent="SubViewport/pcControl/Telas" unique_id=844825480 instance=ExtResource("10_b47ss")]
@@ -89,7 +90,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="CursorPc" type="Sprite2D" parent="SubViewport/pcControl" unique_id=1620216982]
-z_index = 5
+z_index = 200
 position = Vector2(-164.06308, -161.25024)
 scale = Vector2(0.17968464, 0.19374874)
 texture = ExtResource("2_f0u6h")

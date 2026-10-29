@@ -10,6 +10,7 @@ region = Rect2(816, 502, 264, 82)
 [resource]
 script = ExtResource("1_item")
 item_name = "chave mala"
+world_scale = Vector2(0.3, 0.3)
 icon = SubResource("Atlas_chave")
 inventory_icon = SubResource("Atlas_chave")
 ativo_icon = SubResource("Atlas_chave")

@@ -1,4 +1,5 @@
 extends CanvasLayer
+var em_transicao: bool = false
 
 @onready var fade_rect: ColorRect = $ColorRect
 @onready var completed_label: Control = $Label
@@ -11,6 +12,7 @@ func _ready():
 
 # Chamar quando o objetivo da fase for concluído
 func show_phase_complete(next_scene_path: String, hold_time: float = 1.5):
+	em_transicao = true
 	completed_label.visible = true
 
 	var tween = create_tween()
@@ -35,6 +37,7 @@ func _fade_to_scene(next_scene_path: String):
 	)
 	# Fade IN (direciona a seleção de fases)
 	tween.tween_property(fade_rect, "color:a", 0.0, 0.6)
+	tween.tween_callback(func(): em_transicao = false)
 	
 # ==== TESTE COM ENTER ====
 #func _input(event):

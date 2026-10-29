@@ -38,6 +38,10 @@ var ultima_cena_por_fase: Dictionary = {
 func _ready():
 	holder.name = "PersistentItems"
 	get_tree().root.call_deferred("add_child", holder)
+	var evento_porta := Node.new()
+	evento_porta.name = "EventoPortaFase2"
+	evento_porta.set_script(preload("res://scripts/evento_porta_fase2.gd"))
+	add_child(evento_porta)
 	
 func registrar_item(item_resource, posicao,nome_da_cena):
 	
