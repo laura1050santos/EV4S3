@@ -47,3 +47,9 @@ func _on_sair_pressed() -> void:
 
 func _on_salvar_pressed() -> void:
 	SaveManager.salvar()
+
+
+func _on_selecao_fases_pressed() -> void:
+	SaveManager.salvar()
+	get_tree().change_scene_to_file("res://scenes/telaInicial/selecao_fases.tscn")
+	pass # Replace with function body.

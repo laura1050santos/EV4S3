@@ -126,4 +126,4 @@ func _verificar_vitoria():
 		GlobalSingleton.pc_conectado = true
 		SaveManager.salvar()
 		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://scenes/fase1/zoom_monitor.tscn")
+		get_tree().change_scene_to_file("res://scenes/fase1/ParedeNorte.tscn")

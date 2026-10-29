@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="email_data" format=3 uid="uid://nnbchdn3nn1h"]
+
+[ext_resource type="Script" uid="uid://byo5yx7fdb7ms" path="res://scripts/telaComp/email_data.gd" id="1_irbeb"]
+[ext_resource type="Texture2D" uid="uid://dklskxarpsimy" path="res://assets/computador_telas/email_phishing_exemplo.jpg" id="1_np6uy"]
+
+[resource]
+script = ExtResource("1_irbeb")
+imagem = ExtResource("1_np6uy")
+eh_phishing = true
+titulo_na_caixa = "Exemplo de phishing"
+metadata/_custom_type_script = "uid://byo5yx7fdb7ms"

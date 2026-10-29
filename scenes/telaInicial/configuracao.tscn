@@ -9,7 +9,6 @@ oversampling_override = 1.0
 mode = 3
 initial_position = 1
 size = Vector2i(400, 300)
-visible = false
 script = ExtResource("1_m4k1a")
 
 [node name="Panel" type="Panel" parent="." unique_id=1576951739]
@@ -77,21 +76,30 @@ text = "1"
 horizontal_alignment = 1
 
 [node name="Sair" type="Button" parent="." unique_id=1979457658]
-offset_left = 116.0
-offset_top = 209.0
-offset_right = 288.0
-offset_bottom = 260.0
+offset_left = 115.0
+offset_top = 238.0
+offset_right = 287.0
+offset_bottom = 289.0
 theme_override_fonts/font = ExtResource("2_n81e7")
 text = "Salvar
 e sair"
 
 [node name="Salvar" type="Button" parent="." unique_id=1149597525]
-offset_left = 117.0
-offset_top = 138.0
-offset_right = 289.0
-offset_bottom = 189.0
+offset_left = 115.0
+offset_top = 183.0
+offset_right = 287.0
+offset_bottom = 234.0
 theme_override_fonts/font = ExtResource("2_n81e7")
 text = "Salvar
+"
+
+[node name="Selecao_fases" type="Button" parent="." unique_id=1545131476]
+offset_left = 114.0
+offset_top = 126.0
+offset_right = 286.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("2_n81e7")
+text = "Selecionar fase
 "
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
@@ -99,3 +107,4 @@ text = "Salvar
 [connection signal="value_changed" from="Brilho" to="." method="_on_brilho_value_changed"]
 [connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="Salvar" to="." method="_on_salvar_pressed"]
+[connection signal="pressed" from="Selecao_fases" to="." method="_on_selecao_fases_pressed"]

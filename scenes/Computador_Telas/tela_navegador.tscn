@@ -62,6 +62,10 @@ horizontal_alignment = 1
 visible = false
 z_index = 1
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1799.0
+offset_bottom = 709.0
 
 [node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("2_13qop")]
 layout_mode = 0
