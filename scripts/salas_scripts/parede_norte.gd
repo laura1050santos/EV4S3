@@ -2,6 +2,8 @@ extends SalasManager
 
 @onready var parede_roteador_area: Area2D = $ParedeRoteador
 @onready var roteador_parede_sprite: Sprite2D = $roteadorParede
+@onready var som_Porta = $PortaTrancada
+@onready var som_Interruptor = $Interruptor
 
 func _ready():
 	_exibir_dica_inicial()
@@ -76,7 +78,7 @@ func _exibir_dica_inicial() -> void:
 
 func interruptor_ativar():
 	GlobalSingleton.alternar_lampada()
-
+	
 func aplicar_estado_lampada():
 	var luz = $Escuro/LuzLampada
 	luz.visible = GlobalSingleton.lampada_ligada
@@ -138,6 +140,8 @@ func receber_item_drop(item: itemData, alvo: Area2D) -> bool:
 
 func _on_area_interruptor_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		som_Interruptor.play()
+
 		var lampada = Enigmas.get_nome("lampada")
 		if lampada["resolvido"] == 1:
 			interruptor_ativar()
@@ -210,3 +214,9 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if event is InputEventMouseButton and event.pressed:
 		if roteador_parede_sprite.visible == true:
 			abrir_puzzle_fios()
+
+
+func _on_area_porta_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		som_Porta.play()
+  # Replace with function body.

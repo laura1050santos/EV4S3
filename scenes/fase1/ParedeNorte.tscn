@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_y3a53"]
 [ext_resource type="Texture2D" uid="uid://db0bt3c3aekr2" path="res://assets/itens/roteadorParede.png" id="9_p2jjl"]
 [ext_resource type="Texture2D" uid="uid://mjnfhckmhoal" path="res://assets/itens/objeto-mala-sala.png" id="10_v0sle"]
+[ext_resource type="AudioStream" uid="uid://bfo3n4ragulof" path="res://assets/Sons/portaTrancada.mp3" id="11_nq1fa"]
+[ext_resource type="AudioStream" uid="uid://cplaexteu1j2g" path="res://assets/Sons/interruptor.mp3" id="12_txlfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
 size = Vector2(107.03837, 58.909073)
@@ -19,6 +21,9 @@ size = Vector2(59.651093, 84.857635)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ak76"]
 size = Vector2(121, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq0go"]
+size = Vector2(238, 490)
 
 [node name="Norte" type="Node2D" unique_id=295984050]
 script = ExtResource("1_fqgx5")
@@ -77,6 +82,19 @@ position = Vector2(-777, -575)
 position = Vector2(765.5, 553)
 shape = SubResource("RectangleShape2D_3ak76")
 
+[node name="AreaPorta" type="Area2D" parent="." unique_id=1582373286]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPorta" unique_id=1097499328]
+position = Vector2(588, 344)
+shape = SubResource("RectangleShape2D_eq0go")
+
+[node name="PortaTrancada" type="AudioStreamPlayer2D" parent="." unique_id=694899554]
+stream = ExtResource("11_nq1fa")
+
+[node name="Interruptor" type="AudioStreamPlayer2D" parent="." unique_id=216021419]
+stream = ExtResource("12_txlfo")
+
 [connection signal="input_event" from="ParedeRoteador" to="." method="_on_area_2d_input_event"]
 [connection signal="input_event" from="AreaInterruptor" to="." method="_on_area_interruptor_input_event"]
 [connection signal="input_event" from="ObjetoMalaSala/Area2D2" to="." method="_on_mala_2d_2_input_event"]
+[connection signal="input_event" from="AreaPorta" to="." method="_on_area_porta_input_event"]

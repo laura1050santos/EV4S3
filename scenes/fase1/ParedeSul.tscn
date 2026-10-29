@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ay7iu76t0ls" path="res://assets/cenarios/gavetas/gaveta2_aquario.png" id="12_htmuf"]
 [ext_resource type="Texture2D" uid="uid://dyk1hlvw8bxjg" path="res://assets/cenarios/gavetas/gaveta3_aquario.png" id="13_nfbrq"]
 [ext_resource type="Script" uid="uid://bj13gcn4b2xmb" path="res://scripts/lixeiraZoom.gd" id="14_isxgw"]
-[ext_resource type="AudioStream" uid="uid://cfcc6i5pfgs65" path="res://assets/Sons/freesound_community-glass-break-001-103000.mp3" id="15_m8iw3"]
+[ext_resource type="AudioStream" uid="uid://cfcc6i5pfgs65" path="res://assets/Sons/vidroQuebrando.mp3" id="15_m8iw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8iw3"]
 size = Vector2(250.5, 116)
