@@ -5,6 +5,22 @@ class_name itemData
 @export var inventory_icon: Texture2D
 @export var ativo_icon: Texture2D
 @export var item_ativo: bool
+@export var world_scale: Vector2 = Vector2.ONE
+@export var fill_inventory_slot: bool = false
+
+
+func configurar_visual_mundo(node: Sprite2D) -> void:
+	node.set_meta("item_data", self)
+	node.texture = ativo_icon if item_ativo else icon
+	node.scale = world_scale
+	if world_scale == Vector2.ONE or node.texture == null:
+		return
+
+	var hitbox := node.get_node_or_null("Area2D/CollisionShape2D") as CollisionShape2D
+	if hitbox != null and hitbox.shape is RectangleShape2D:
+		var hitbox_shape := hitbox.shape.duplicate() as RectangleShape2D
+		hitbox_shape.size = Vector2(node.texture.get_size())
+		hitbox.shape = hitbox_shape
 
 
 static func ativar_luz(item: itemData, cena: Node, pos: Vector2):

@@ -16,7 +16,7 @@ const PADRAO := {
 		{"nome": "papel morse alcapao", "recurso": "res://recursos/PapelMorseAlcapao.tres", "pos": Vector2(727, 387), "container_id": "sul_gvt_2"},
 	],
 	"Oeste": [
-		{"nome": "fita cassete", "recurso": "res://recursos/FitaCassete.tres", "pos": Vector2(500, 550), "container_id": ""},
+		{"nome": "fita cassete", "recurso": "res://recursos/FitaCassete.tres", "pos": Vector2(375, 194), "container_id": ""},
 	],
 	"CenaTeto": [
 		{"nome": "lampada quebrada", "recurso": "res://recursos/LampadaQuebrada.tres", "pos": Vector2(575, 273), "container_id": ""},
@@ -96,6 +96,29 @@ static func iniciar_objetos():
 		garantir_padrao(cena)
 	# Inclui o item em partidas existentes, mesmo se a sala já foi visitada.
 	salvar_objetos("fio decodificador", "res://recursos/FioDecodificador.tres", pos_para_json(730, 425), "Sul", "sul_gvt_1")
+	migrar_fita_para_prateleira()
+
+
+static func migrar_fita_para_prateleira() -> void:
+	# Move saves que ainda guardam a posição padrão antiga, preservando itens
+	# coletados e fitas que o jogador já reposicionou manualmente.
+	if not Database.db.query_with_bindings(
+		"""
+		UPDATE Objetos
+		SET pos = ?
+		WHERE recurso = ?
+		  AND cena = 'Oeste'
+		  AND coletado = 0
+		  AND container_id = ''
+		  AND pos = ?;
+		""",
+		[
+			pos_para_json(375, 194),
+			"res://recursos/FitaCassete.tres",
+			pos_para_json(500, 550)
+		]
+	):
+		push_error("Erro ao migrar a posição da fita cassete: " + Database.db.error_message)
 
 static func disponibilizar_chave_mala() -> void:
 	if get_por_recurso("res://recursos/ChaveMala.tres") == null:

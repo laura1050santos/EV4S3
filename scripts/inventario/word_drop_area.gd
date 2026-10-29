@@ -62,19 +62,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	# =====================================================
 
 	var node = WORLD_ITEM.instantiate()
-
-	node.set_meta(
-		"item_data",
-		item_para_dropar
-	)
-
 	node.name = item_para_dropar.item_name
-
-
-	if item_para_dropar.item_ativo:
-		node.texture = item_para_dropar.ativo_icon
-	else:
-		node.texture = item_para_dropar.icon
+	item_para_dropar.configurar_visual_mundo(node)
 
 
 	get_tree().current_scene.add_child(node)

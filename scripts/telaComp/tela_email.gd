@@ -24,6 +24,7 @@ var lidos: Array[int] = []
 var itens_por_email: Dictionary = {}
 var email_atual_id: int = -1
 var concluido: bool = false
+var alerta_phishing: ColorRect
 
 func _ready() -> void:
 	botao_phishing.pressed.connect(func(): responder(true))
@@ -161,11 +162,64 @@ func responder(marcou_como_phishing: bool) -> void:
 	if email_atual_id == -1 or concluido:
 		return
 
+	if not marcou_como_phishing and emails[email_atual_id].eh_phishing:
+		_mostrar_alerta_phishing()
+
 	respostas[str(email_atual_id)] = marcou_como_phishing
 	Progresso.salvar("emails_respostas", respostas)
 	_atualizar_feedback()
 
 	print("E-mail ", email_atual_id, " classificado como: ", "Phishing" if marcou_como_phishing else "Legítimo")
+
+func _mostrar_alerta_phishing() -> void:
+	if is_instance_valid(alerta_phishing):
+		alerta_phishing.queue_free()
+
+	alerta_phishing = ColorRect.new()
+	alerta_phishing.name = "AlertaPhishing"
+	alerta_phishing.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	alerta_phishing.color = Color(0.78, 0.015, 0.04, 0.34)
+	alerta_phishing.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	alerta_phishing.z_index = 100
+	add_child(alerta_phishing)
+
+	var painel := PanelContainer.new()
+	painel.anchor_left = 0.5
+	painel.anchor_top = 0.5
+	painel.anchor_right = 0.5
+	painel.anchor_bottom = 0.5
+	painel.offset_left = -470.0
+	painel.offset_top = -115.0
+	painel.offset_right = 470.0
+	painel.offset_bottom = 115.0
+	painel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var estilo := StyleBoxFlat.new()
+	estilo.bg_color = Color("#280006")
+	estilo.border_color = Color("#ff3948")
+	estilo.set_border_width_all(5)
+	estilo.set_corner_radius_all(12)
+	estilo.content_margin_left = 28.0
+	estilo.content_margin_right = 28.0
+	estilo.content_margin_top = 22.0
+	estilo.content_margin_bottom = 22.0
+	painel.add_theme_stylebox_override("panel", estilo)
+	alerta_phishing.add_child(painel)
+
+	var mensagem := Label.new()
+	mensagem.text = "PERIGO CIBERNÉTICO\nEste e-mail de phishing foi marcado como legítimo."
+	mensagem.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	mensagem.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	mensagem.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	mensagem.add_theme_color_override("font_color", Color.WHITE)
+	mensagem.add_theme_font_size_override("font_size", 32)
+	mensagem.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	painel.add_child(mensagem)
+
+	var tween := create_tween()
+	tween.tween_property(alerta_phishing, "modulate:a", 0.55, 0.12)
+	tween.tween_property(alerta_phishing, "modulate:a", 1.0, 0.12)
+	tween.tween_property(alerta_phishing, "modulate:a", 0.0, 0.9)
+	tween.tween_callback(alerta_phishing.queue_free)
 
 func _atualizar_feedback() -> void:
 	var resposta = respostas.get(str(email_atual_id), null)

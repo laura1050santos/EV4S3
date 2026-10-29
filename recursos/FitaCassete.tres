@@ -9,4 +9,6 @@ item_name = "Fita Cassete"
 icon = ExtResource("1_b2nlu")
 inventory_icon = ExtResource("1_b2nlu")
 ativo_icon = ExtResource("1_b2nlu")
+world_scale = Vector2(0.18, 0.18)
+fill_inventory_slot = true
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"

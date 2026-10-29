@@ -1,6 +1,16 @@
 extends Panel
 
 @onready var icon: TextureRect = $icon
+var _default_expand_mode: int
+var _default_stretch_mode: int
+
+
+func _ready() -> void:
+	_default_expand_mode = icon.expand_mode
+	_default_stretch_mode = icon.stretch_mode
+	update_ui()
+
+
 @export var item: itemData:
 	set(value):
 		item = value
@@ -12,9 +22,17 @@ func update_ui():
 	#atualiza a iinterface do slote e do item no mundo
 	if not item: 
 		icon.texture = null
+		icon.expand_mode = _default_expand_mode
+		icon.stretch_mode = _default_stretch_mode
 		icon.hide()
 		return
 	icon.texture = item.inventory_icon
+	if item.fill_inventory_slot:
+		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		icon.stretch_mode = TextureRect.STRETCH_SCALE
+	else:
+		icon.expand_mode = _default_expand_mode
+		icon.stretch_mode = _default_stretch_mode
 	tooltip_text = item.item_name
 	icon.show()
 		
@@ -25,8 +43,10 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	# Efeito visual enquanto o item é arrastado
 	var preview = TextureRect.new()
 	preview.texture = item.inventory_icon
-	preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	preview.custom_minimum_size = icon.size # Copia o tamanho do seu ícone atual
+	preview.expand_mode = icon.expand_mode
+	preview.stretch_mode = icon.stretch_mode
+	preview.custom_minimum_size = icon.size * icon.scale
+	preview.size = preview.custom_minimum_size
 	
 	var c = Control.new()
 	c.add_child(preview)
