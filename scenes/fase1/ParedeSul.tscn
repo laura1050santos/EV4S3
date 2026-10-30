@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://b4ay7iu76t0ls" path="res://assets/cenarios/gavetas/gaveta2_aquario.png" id="12_htmuf"]
 [ext_resource type="Texture2D" uid="uid://dyk1hlvw8bxjg" path="res://assets/cenarios/gavetas/gaveta3_aquario.png" id="13_nfbrq"]
 [ext_resource type="Script" uid="uid://bj13gcn4b2xmb" path="res://scripts/lixeiraZoom.gd" id="14_isxgw"]
+[ext_resource type="AudioStream" uid="uid://14orecjqh1u0" path="res://assets/Sons/abrindo_gaveta.mp3" id="14_tu704"]
+[ext_resource type="AudioStream" uid="uid://coidfqjod0tyw" path="res://assets/Sons/fechando_gaveta.mp3" id="15_5px3v"]
 [ext_resource type="AudioStream" uid="uid://cfcc6i5pfgs65" path="res://assets/Sons/vidroQuebrando.mp3" id="15_m8iw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8iw3"]
@@ -129,6 +131,14 @@ shape = SubResource("RectangleShape2D_isxgw")
 
 [node name="SomVidroQuebrando" type="AudioStreamPlayer2D" parent="." unique_id=1509413935]
 stream = ExtResource("15_m8iw3")
+volume_db = -4.815
+
+[node name="abrindoGaveta" type="AudioStreamPlayer2D" parent="." unique_id=284092029]
+stream = ExtResource("14_tu704")
+volume_db = -4.815
+
+[node name="fechandoGaveta" type="AudioStreamPlayer2D" parent="." unique_id=989012202]
+stream = ExtResource("15_5px3v")
 volume_db = -4.815
 
 [node name="BotaoConfig" parent="." unique_id=413660545 instance=ExtResource("11_uf1xn")]

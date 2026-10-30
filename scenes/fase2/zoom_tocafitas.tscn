@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_r45ts"]
 [ext_resource type="Script" uid="uid://ca8wwitga4rnm" path="res://scripts/salas_scripts/toca_fitas.gd" id="4_f3bcf"]
 [ext_resource type="Resource" uid="uid://t448chq5te6t" path="res://recursos/FitaCassete.tres" id="5_04wbe"]
-[ext_resource type="AudioStream" uid="uid://hcl2ptyd13qe" path="res://assets/Sons/audio_fita_cassete.mp3" id="5_12td3"]
+[ext_resource type="AudioStream" uid="uid://hcl2ptyd13qe" path="res://assets/Sons/fita.mp3" id="5_12td3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(652.76685, 319.99994)

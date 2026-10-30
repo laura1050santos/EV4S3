@@ -23,6 +23,8 @@ var node = preload("res://scenes/inventario/worldItem.tscn")
 	"3": $Area2D3
 }
 
+@onready var som_gaveta_abrindo = $abrindoGaveta
+@onready var som_gaveta_fechando = $fechandoGaveta
 
 func _ready() -> void:
 	var cena = Cenarios.get_cena("sul")
@@ -80,9 +82,10 @@ func spawnar_itens(item_ou_caminho, posicao):
 func _on_gaveta_alterada(id: String, aberta: bool) -> void:
 	if aberta:
 		_mostrar_itens_gaveta(id)
+		som_gaveta_abrindo.play()
 	else:
 		_esconder_itens_gaveta(id)
-
+		som_gaveta_fechando.play()
 func _container_id(id: String) -> String:
 	return ID_SALA + "_gvt_" + id
 

@@ -3,6 +3,8 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 const ID_SALA := "leste"
 @onready var telaSemConexao := $monitorLigado
 var gavetas_controller: GavetasController
+@onready var som_gaveta_abrindo = $abrindoGaveta
+@onready var som_gaveta_fechando = $fechandoGaveta
 
 @onready var gavetas_sprites := {
 	"1": $Gaveta1Pc,
@@ -38,8 +40,11 @@ func _ready() -> void:
 func _on_gaveta_alterada(id: String, aberta: bool) -> void:
 	if aberta:
 		_mostrar_itens_gaveta(id)
+		som_gaveta_abrindo.play()
+		
 	else:
 		_esconder_itens_gaveta(id)
+		som_gaveta_fechando.play()
 
 func _container_id(id: String) -> String:
 	return ID_SALA + "_gvt_" + id

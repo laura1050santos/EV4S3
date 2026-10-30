@@ -42,4 +42,6 @@ offset_top = 12.999999
 offset_right = 3231.6665
 offset_bottom = 1681.0
 
+[node name="som_lixeira_abrindo" type="AudioStreamPlayer2D" parent="." unique_id=1276559445]
+
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
