@@ -17,4 +17,5 @@ script = ExtResource("3_uw130")
 item_name = "Fio do Decodificador"
 icon = SubResource("AtlasTexture_fio")
 inventory_icon = SubResource("AtlasTexture_inventario")
+ativo_icon = ExtResource("1_sfk1o")
 metadata/_custom_type_script = "uid://bwi2jwocwo7qv"
