@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c3l7rktm7r55f"]
+
+[ext_resource type="Script" uid="uid://b6h3kq8jqbhw2" path="res://scripts/calendario_fisico.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://co5h2vj432ph4" path="res://assets/itens/calendario.png" id="2_imagem"]
+
+[sub_resource type="RectangleShape2D" id="Forma"]
+size = Vector2(70, 76.108086)
+
+[sub_resource type="RectangleShape2D" id="FormaFotos"]
+size = Vector2(225, 40)
+
+[node name="Calendario" type="Area2D" unique_id=312931522]
+script = ExtResource("1_script")
+
+[node name="Desenho" type="Sprite2D" parent="." unique_id=1942157665]
+position = Vector2(-11.347763, 4.652237)
+scale = Vector2(0.024732538, 0.024732538)
+texture = ExtResource("2_imagem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1153121420]
+position = Vector2(-11.347763, 7.05866)
+scale = Vector2(1.236627, 1.236627)
+shape = SubResource("Forma")
+
+[node name="FotosFixadas" type="Area2D" parent="." unique_id=1227191629]
+position = Vector2(-10, -60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FotosFixadas" unique_id=179271707]
+shape = SubResource("FormaFotos")

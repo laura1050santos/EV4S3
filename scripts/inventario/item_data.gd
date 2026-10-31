@@ -7,6 +7,11 @@ class_name itemData
 @export var item_ativo: bool
 @export var world_scale: Vector2 = Vector2.ONE
 @export var fill_inventory_slot: bool = false
+@export var nome_fotografado: String = ""
+@export var letra_violeta: String = ""
+
+func pode_inspecionar() -> bool:
+	return not nome_fotografado.is_empty() or resource_path == "res://recursos/PapelMorseAlcapao.tres"
 
 
 func configurar_visual_mundo(node: Sprite2D) -> void:

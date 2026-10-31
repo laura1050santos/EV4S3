@@ -20,10 +20,12 @@ func _notification(what):
 
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-	return true
+	return not (data is Dictionary and data.has("quadro_foto"))
 
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
+	if data is Dictionary and data.has("quadro_foto"):
+		return
 	var item_para_dropar = data.item
 
 	if item_para_dropar == null:
@@ -112,7 +114,7 @@ func usar_item(
 ):
 	if item == null:
 		return
-	if item.resource_path == "res://recursos/PapelMorseAlcapao.tres":
+	if item.pode_inspecionar():
 		inspecionar_papel(item, node)
 		return
 
@@ -188,7 +190,7 @@ func usar_item(
 
 
 func inspecionar_papel(item: itemData, visual: Node = null) -> void:
-	if item == null or item.resource_path != "res://recursos/PapelMorseAlcapao.tres":
+	if item == null or not item.pode_inspecionar():
 		return
 	if item.item_ativo and visual is Sprite2D:
 		visual.texture = item.icon

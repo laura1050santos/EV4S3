@@ -58,7 +58,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	return self
 
 func _gui_input(event: InputEvent) -> void:
-	if item == null or item.resource_path != "res://recursos/PapelMorseAlcapao.tres":
+	if item == null or not item.pode_inspecionar():
 		return
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		var drop_area = get_tree().get_first_node_in_group("world_drop_area")
@@ -67,10 +67,16 @@ func _gui_input(event: InputEvent) -> void:
 			accept_event()
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
+	if data is Dictionary and data.has("quadro_foto"):
+		return item == null and is_instance_valid(data.quadro)
 	#avalia se o lugar onde o item foi solto é valido. Pode ser usado para validação
 	return true
 	
 func _drop_data(at_position: Vector2, data: Variant) -> void:
+	if data is Dictionary and data.has("quadro_foto"):
+		if item == null and is_instance_valid(data.quadro):
+			data.quadro.retirar_foto(int(data.quadro_foto), self)
+		return
 	# ativada quando um item é solto pelo mouse, se o local for valido
 	var tmp = item
 	item = data.item

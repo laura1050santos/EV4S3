@@ -82,6 +82,7 @@ func _ready() -> void:
 	# Tela e verificação de fase
 	atualizar_estado_da_tela()
 	_verificar_conclusao_gabinete()
+	_atualizar_guias()
 
 
 # =========================================================
@@ -148,6 +149,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 func _definir_gabinete_aberto(aberto: bool, persistir: bool = true) -> void:
 	gabinete_aberto = aberto
+	_atualizar_guias()
 	$GabinetePc.texture = load("res://assets/cenarios/pcvazio.png" if aberto else "res://assets/cenarios/pcfechado.png")
 	for visual in $GabinetePc.get_children():
 		if visual is Sprite2D and str(visual.name).begins_with("Instalado_"):
@@ -263,6 +265,12 @@ func _marcar_componente_instalado(nome_objeto: String) -> void:
 		"processador": processador_instalado = true
 		"placa mae": placa_mae_instalada = true
 	_mostrar_componente_instalado(nome_objeto)
+	_atualizar_guias()
+
+func _atualizar_guias() -> void:
+	$GabinetePc/GuiaGPU.visible = gabinete_aberto and not gpu_instalada
+	$GabinetePc/GuiaProcessador.visible = gabinete_aberto and not processador_instalado
+	$GabinetePc/GuiaPlacaMae.visible = gabinete_aberto and not placa_mae_instalada
 
 func _mostrar_componente_instalado(nome_objeto: String) -> void:
 	if not VISUAIS_INSTALADOS.has(nome_objeto):

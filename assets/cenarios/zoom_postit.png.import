@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi3hy00v5uemt"
-path="res://.godot/imported/puzzleFios.png-7756b5749dc80b12de7354c4275c74ed.ctex"
+uid="uid://fldrxhh4gflk"
+path="res://.godot/imported/zoom_postit.png-2aec3631f80d336f3788f92c3e60d771.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/puzzleFios.png"
-dest_files=["res://.godot/imported/puzzleFios.png-7756b5749dc80b12de7354c4275c74ed.ctex"]
+source_file="res://assets/cenarios/zoom_postit.png"
+dest_files=["res://.godot/imported/zoom_postit.png-2aec3631f80d336f3788f92c3e60d771.ctex"]
 
 [params]
 

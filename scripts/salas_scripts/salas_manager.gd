@@ -35,6 +35,8 @@ func spawnar_itens(item_ou_caminho, posicao):
 	var node = preload("res://scenes/inventario/worldItem.tscn").instantiate()
 	node.name = recurso.item_name
 	recurso.configurar_visual_mundo(node)
+	if recurso is itemData and not recurso.nome_fotografado.is_empty():
+		node.z_index = 5
 
 	add_child(node)
 	node.global_position = posicao

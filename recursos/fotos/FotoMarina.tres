@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="itemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/inventario/item_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/itens/foto_3.png" id="2_foto"]
+
+[resource]
+script = ExtResource("1_script")
+item_name = "foto marina"
+icon = ExtResource("2_foto")
+inventory_icon = ExtResource("2_foto")
+world_scale = Vector2(0.1, 0.1)
+nome_fotografado = "Marina Lin Barde"
+letra_violeta = "X"

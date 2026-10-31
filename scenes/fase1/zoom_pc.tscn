@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cqdfu8ejxfdl4" path="res://scripts/salas_scripts/zoom_pc.gd" id="1_ya232"]
 [ext_resource type="Texture2D" uid="uid://10ks54qoe15d" path="res://assets/cenarios/pcfechado.png" id="2_ya232"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_78eci"]
+[ext_resource type="Texture2D" path="res://assets/cenarios/gabinetePC_serrilhadoguia.png" id="4_guias"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nt5hf"]
 size = Vector2(1055.7505, 1055)
@@ -33,6 +34,27 @@ scale = Vector2(0.60052085, 0.5935185)
 position = Vector2(576.00006, 326.99997)
 scale = Vector2(0.6005208, 0.59999996)
 texture = ExtResource("2_ya232")
+
+[node name="GuiaPlacaMae" type="Polygon2D" parent="GabinetePc"]
+visible = false
+offset = Vector2(-960, -540)
+texture = ExtResource("4_guias")
+polygon = PackedVector2Array(760, 100, 1420, 100, 1420, 354.4, 760, 440.2)
+uv = PackedVector2Array(760, 100, 1420, 100, 1420, 354.4, 760, 440.2)
+
+[node name="GuiaGPU" type="Polygon2D" parent="GabinetePc"]
+visible = false
+offset = Vector2(-960, -540)
+texture = ExtResource("4_guias")
+polygon = PackedVector2Array(760, 440.2, 1420, 354.4, 1420, 550, 760, 550)
+uv = PackedVector2Array(760, 440.2, 1420, 354.4, 1420, 550, 760, 550)
+
+[node name="GuiaProcessador" type="Polygon2D" parent="GabinetePc"]
+visible = false
+offset = Vector2(-960, -540)
+texture = ExtResource("4_guias")
+polygon = PackedVector2Array(760, 550, 910, 550, 910, 710, 760, 710)
+uv = PackedVector2Array(760, 550, 910, 550, 910, 710, 760, 710)
 
 [node name="AreaPC" type="Area2D" parent="." unique_id=2043775888]
 position = Vector2(581.00006, 327)

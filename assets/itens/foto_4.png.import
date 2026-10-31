@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csr76qhcefp0p"
-path="res://.godot/imported/morse.png-5ef551c41f509ea08fd0fecb51bd6535.ctex"
+uid="uid://b20jn488av781"
+path="res://.godot/imported/foto_4.png-f5611cd5eef51ca9d4495b6e1c066432.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cartas/morse.png"
-dest_files=["res://.godot/imported/morse.png-5ef551c41f509ea08fd0fecb51bd6535.ctex"]
+source_file="res://assets/itens/foto_4.png"
+dest_files=["res://.godot/imported/foto_4.png-f5611cd5eef51ca9d4495b6e1c066432.ctex"]
 
 [params]
 

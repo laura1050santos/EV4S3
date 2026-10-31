@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl1w72e785u6g"
-path="res://.godot/imported/codigo_morse.png-0655bf451636c9bad29ca69149a38b71.ctex"
+uid="uid://cjifn7b8tby7h"
+path="res://.godot/imported/dica_enigmasomLuzVioleta.png-d0ef23e599fddd415d7daf42edc322ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cartas/codigo_morse.png"
-dest_files=["res://.godot/imported/codigo_morse.png-0655bf451636c9bad29ca69149a38b71.ctex"]
+source_file="res://assets/cenarios/dica_enigmasomLuzVioleta.png"
+dest_files=["res://.godot/imported/dica_enigmasomLuzVioleta.png-d0ef23e599fddd415d7daf42edc322ec.ctex"]
 
 [params]
 

@@ -63,3 +63,58 @@ offset_top = 12.0
 offset_right = -12.0
 offset_bottom = 44.0
 text = "Fechar"
+
+[node name="Identidade" type="Label" parent="Painel"]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -94.0
+offset_right = -22.0
+offset_bottom = -58.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.15, 0.12, 0.09, 1)
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+
+[node name="Virar" type="Button" parent="Painel"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -50.0
+offset_right = 174.0
+offset_bottom = -16.0
+text = "Virar foto"
+
+[node name="Verso" type="Label" parent="Painel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 65.0
+offset_right = -24.0
+offset_bottom = -105.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.15, 0.12, 0.09, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CalendarioTexto" type="Label" parent="Painel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 65.0
+offset_right = -32.0
+offset_bottom = -30.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.16, 0.1, 0.07, 1)
+theme_override_font_sizes/font_size = 24
+text = "JULHO\n\nAniversários marcados\n\n07/07       12/07\n\n18/07       24/07\n\nDo mais velho\npara o mais novo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

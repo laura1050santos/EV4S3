@@ -1,6 +1,7 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 
 @onready var mala_sprite: Sprite2D = $Malagrande
+@onready var cenario_fechado: Sprite2D = $CenarioFechado
 @onready var ponto_roteador: Node2D = $pontoroteador
 
 var mala_aberta: bool = false
@@ -19,7 +20,7 @@ func _ready():
 		if info["item"].resource_path == ID_ROTEADOR:
 			aberta_anteriormente = true
 	mala_aberta = GlobalSingleton.fase_liberada >= 2 and (bool(Progresso.carregar("mala_aberta", false)) or aberta_anteriormente)
-	mala_sprite.texture = load(IMAGEM_MALA_ABERTA if mala_aberta else "res://assets/itens/malagrande.png")
+	_atualizar_visual()
 	var itens_visiveis: Array = objetos.filter(func(info): return mala_aberta or info["item"].resource_path != ID_ROTEADOR)
 	iniciar_itens_cena(name, itens_visiveis)
 
@@ -49,11 +50,18 @@ func _abrir_com_chave() -> bool:
 		drop_area.remover_item_por_recurso(ID_CHAVE)
 	if GlobalSingleton.item_mao != null and GlobalSingleton.item_mao.resource_path == ID_CHAVE:
 		GlobalSingleton.item_mao = null
-	mala_sprite.texture = load(IMAGEM_MALA_ABERTA)
+	_atualizar_visual()
 	if not GlobalSingleton.roteador_coletado and not GlobalSingleton.roteador_instalado:
 		_gerar_roteador_no_mundo()
 	SaveManager.salvar()
 	return true
+
+func _atualizar_visual() -> void:
+	cenario_fechado.visible = not mala_aberta
+	mala_sprite.visible = mala_aberta
+	if mala_aberta:
+		mala_sprite.texture = load(IMAGEM_MALA_ABERTA)
+
 # Clique na Mala para abrir
 func _gerar_roteador_no_mundo() -> void:
 	var recurso_roteador = load(ID_ROTEADOR)

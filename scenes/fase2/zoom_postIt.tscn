@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsle4unofk862"]
 
-[ext_resource type="Texture2D" uid="uid://c70o4sfo2kx3s" path="res://assets/itens/postit.png" id="1_g56lm"]
+[ext_resource type="Texture2D" path="res://assets/cenarios/zoom_postit.png" id="1_g56lm"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_6e8ii"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_14fik"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="4_14fik"]
@@ -8,8 +8,8 @@
 [node name="ZoomPostIt" type="Node2D" unique_id=1972248754]
 
 [node name="postit" type="Sprite2D" parent="." unique_id=1061828539]
-position = Vector2(650.00006, 360)
-scale = Vector2(1.7429585, 1.4783332)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_g56lm")
 
 [node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_6e8ii")]

@@ -4,14 +4,15 @@ extends Control
 signal todos_classificados
 
 @export var emails: Array[email_data] = []
+@export_range(1, 6) var limite_emails: int = 6
 
 @onready var lista_inbox: VBoxContainer = $ListaEmails
 @onready var visualizador: Control = $VisualizadorEmail
 @onready var imagem_email: TextureRect = $VisualizadorEmail/ImagemEmail
-@onready var botao_phishing: Button = $VisualizadorEmail/BotaoPhishing
-@onready var botao_legitimo: Button = $VisualizadorEmail/BotaoLegitimo
+@onready var botao_phishing: TextureButton = $VisualizadorEmail/BotaoPhishing
+@onready var botao_legitimo: TextureButton = $VisualizadorEmail/BotaoLegitimo
 @onready var botao_voltar: Button = $VisualizadorEmail/BotaoVoltar
-@onready var botao_confirmar: Button = $BotaoConfirmar
+@onready var botao_confirmar: TextureButton = $BotaoConfirmar
 @onready var label_feedback: Label = $VisualizadorEmail/LabelFeedback
 @onready var label_status: Label = $LabelStatus
 
@@ -55,7 +56,8 @@ func _carregar_progresso() -> void:
 		for indice in lidos_salvos:
 			lidos.append(int(indice))
 
-	if salvos is Array and salvos.size() == 3:
+	var quantidade: int = mini(limite_emails, emails.size())
+	if salvos is Array and not salvos.is_empty():
 		var validos := true
 		for indice in salvos:
 			var id = int(indice)
@@ -64,15 +66,26 @@ func _carregar_progresso() -> void:
 				break
 			sorteados.append(id)
 		if validos:
+			sorteados.resize(mini(sorteados.size(), quantidade))
+			var restantes: Array[int] = []
+			for id in range(emails.size()):
+				if not sorteados.has(id):
+					restantes.append(id)
+			restantes.shuffle()
+			while sorteados.size() < quantidade:
+				sorteados.append(restantes.pop_back())
+			Progresso.salvar("emails_sorteados", sorteados)
 			return
 		sorteados.clear()
 
 	_sortear_emails()
 
 func _sortear_emails() -> void:
-	if emails.size() < 3:
-		push_error("Cadastre pelo menos 3 e-mails no Inspector.")
+	var quantidade: int = mini(limite_emails, emails.size())
+	if quantidade == 0:
+		push_error("Cadastre os e-mails no Inspector.")
 		return
+	sorteados.clear()
 
 	var phishing: Array[int] = []
 	var legitimos: Array[int] = []
@@ -85,14 +98,14 @@ func _sortear_emails() -> void:
 		else:
 			legitimos.append(i)
 
-	if not phishing.is_empty() and not legitimos.is_empty():
+	if quantidade >= 2 and not phishing.is_empty() and not legitimos.is_empty():
 		sorteados.append(phishing.pick_random())
 		sorteados.append(legitimos.pick_random())
 		disponiveis.erase(sorteados[0])
 		disponiveis.erase(sorteados[1])
 
 	disponiveis.shuffle()
-	while sorteados.size() < 3:
+	while sorteados.size() < quantidade:
 		sorteados.append(disponiveis.pop_back())
 
 	sorteados.shuffle()
@@ -114,7 +127,17 @@ func _criar_lista() -> void:
 	for indice in sorteados:
 		var email = emails[indice]
 		var item: Button = item_cena.instantiate()
-		item.get_node("Label").text = email.titulo_na_caixa
+		item.custom_minimum_size.y = minf(95.0, lista_inbox.size.y / maxf(sorteados.size(), 1))
+		var titulo: Label = item.get_node("Label")
+		titulo.text = email.titulo_na_caixa
+		titulo.custom_minimum_size = Vector2.ZERO
+		titulo.scale = Vector2.ONE
+		titulo.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		titulo.offset_left = 15
+		titulo.offset_right = -15
+		titulo.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		titulo.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		titulo.add_theme_font_size_override("font_size", 32)
 		item.pressed.connect(abrir_email.bind(indice))
 		lista_inbox.add_child(item)
 		itens_por_email[indice] = item
@@ -266,7 +289,7 @@ func confirmar_classificacoes() -> void:
 	if concluido:
 		print("Puzzle já concluído anteriormente.")
 		return
-	if sorteados.size() != 3:
+	if sorteados.is_empty() or sorteados.size() != mini(limite_emails, emails.size()):
 		return
 
 	for indice in sorteados:

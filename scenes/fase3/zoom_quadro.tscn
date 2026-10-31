@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/zoom_quadro.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/setas/SetaEsquerda.tscn" id="2_voltar"]
+[ext_resource type="PackedScene" path="res://scenes/escuro.tscn" id="3_escuro"]
+[ext_resource type="PackedScene" path="res://scenes/setas/botaoConfig.tscn" id="4_config"]
+[ext_resource type="Texture2D" path="res://assets/cenarios/zoom_calendario.png" id="5_cenario"]
+
+[node name="ZoomQuadro" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Cenario" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_cenario")
+
+[node name="Conteudo" type="Node2D" parent="."]
+
+[node name="AreaFotos" type="Node2D" parent="Conteudo"]
+position = Vector2(318, 115)
+
+[node name="Escuro" parent="." instance=ExtResource("3_escuro")]
+
+[node name="SetaEsquerda" parent="." instance=ExtResource("2_voltar")]
+destino_cena = "res://scenes/fase1/ParedeLeste.tscn"
+
+[node name="BotaoConfig" parent="." instance=ExtResource("4_config")]

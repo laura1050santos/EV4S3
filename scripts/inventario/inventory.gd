@@ -17,6 +17,8 @@ func _notification(what: int) -> void:
 
 		if not is_drag_successful():
 
-			if data_bk:
-				data_bk.icon.show()
-				data_bk = null
+			if data_bk is Object and is_instance_valid(data_bk):
+				var icone = data_bk.get("icon")
+				if icone is CanvasItem:
+					icone.show()
+		data_bk = null

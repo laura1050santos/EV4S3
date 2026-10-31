@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://d3j2t58cko362" path="res://scripts/telaComp/postit.gd" id="15_566lb"]
 [ext_resource type="AudioStream" uid="uid://14orecjqh1u0" path="res://assets/Sons/abrindo_gaveta.mp3" id="16_uwmm3"]
 [ext_resource type="AudioStream" uid="uid://coidfqjod0tyw" path="res://assets/Sons/fechando_gaveta.mp3" id="17_i16fw"]
+[ext_resource type="PackedScene" uid="uid://c3l7rktm7r55f" path="res://scenes/fase3/calendario_fisico.tscn" id="18_calendario"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j0j"]
 size = Vector2(62, 138.5)
@@ -34,6 +35,9 @@ script = ExtResource("1_2litd")
 position = Vector2(575.5, 324)
 scale = Vector2(0.60156244, 0.6009259)
 texture = ExtResource("2_k8ayk")
+
+[node name="Calendario" parent="." unique_id=386738860 instance=ExtResource("18_calendario")]
+position = Vector2(704, 296)
 
 [node name="SetaDireita" parent="." unique_id=302656548 instance=ExtResource("1_nd5rm")]
 destino_cena = "uid://cxhjpnc7drrok"

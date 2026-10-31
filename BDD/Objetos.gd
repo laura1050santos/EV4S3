@@ -1,5 +1,11 @@
 class_name Objetos
 
+const FOTOS_FAMILIA := {
+	"leste": {"nome": "foto augusto", "recurso": "res://recursos/fotos/FotoAugusto.tres", "pos": Vector2(582, 493), "container_id": "leste_gvt_2"},
+	"Sul": {"nome": "foto helena", "recurso": "res://recursos/fotos/FotoHelena.tres", "pos": Vector2(733, 513), "container_id": "sul_gvt_3"},
+	"Oeste": {"nome": "foto marina", "recurso": "res://recursos/fotos/FotoMarina.tres", "pos": Vector2(375, 425), "container_id": ""},
+	"Norte": {"nome": "foto lucas", "recurso": "res://recursos/fotos/FotoLucas.tres", "pos": Vector2(431, 590), "container_id": ""},
+}
 
 const PADRAO := {
 	"Norte": [],
@@ -81,6 +87,11 @@ static func marcar_cena_visitada(cena: String):
 # =========================================================
 
 static func garantir_padrao(cena: String):
+	# INSERT OR IGNORE também inclui as fotos em salas já visitadas,
+	# preservando coleta, posição e gaveta dos registros existentes.
+	if FOTOS_FAMILIA.has(cena):
+		var foto: Dictionary = FOTOS_FAMILIA[cena]
+		salvar_objetos(foto.nome, foto.recurso, pos_para_json(int(foto.pos.x), int(foto.pos.y)), cena, foto.container_id)
 	if cena_ja_visitada(cena):
 		return
 	for o in PADRAO.get(cena, []):

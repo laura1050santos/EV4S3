@@ -7,27 +7,21 @@
 [ext_resource type="Resource" uid="uid://2uu1cgdc2y84" path="res://recursos/emails/email_2.tres" id="4_3s1ob"]
 [ext_resource type="Resource" uid="uid://bu45gv3supxw" path="res://recursos/emails/email_3.tres" id="5_3s1ob"]
 [ext_resource type="Script" uid="uid://tkav200dune0" path="res://scenes/Computador_Telas/enviados.gd" id="6_skfp5"]
+[ext_resource type="Resource" uid="uid://nnbchdn3nn1h" path="res://recursos/emails/exemplo_phishing.tres" id="6_wguv2"]
 [ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="7_fi8ha"]
 [ext_resource type="Texture2D" uid="uid://c6utxardyeg2s" path="res://assets/computador_telas/botaoSetaemail.png" id="8_vuk7s"]
 [ext_resource type="Script" uid="uid://3k4pg0ld7j2y" path="res://scenes/Computador_Telas/popup_conclusao.gd" id="9_jv4bm"]
 [ext_resource type="Texture2D" uid="uid://dcodrwqbnvkwc" path="res://assets/computador_telas/secreto.png" id="10_secreto"]
 [ext_resource type="Texture2D" uid="uid://dww1twmdk1uc3" path="res://assets/computador_telas/alerta criptografia.png" id="11_criptografia"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsmqo"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(1, 0.4862745, 0.49411765, 1)
+[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoDenunciar.png" id="12_denunciar"]
+[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoDenunciarHover.png" id="13_denunciar_hover"]
+[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoLegitimo.png" id="14_legitimo"]
+[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoLegitimoHover.png" id="15_legitimo_hover"]
+[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoConfirmarLigado.png" id="16_confirmar"]
+[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoConfirmarDesligado.png" id="17_confirmar_desligado"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud4wo"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(4.764944e-06, 0.7998089, 0.18998468, 1)
+
 
 [node name="Tela_Email" type="Control" unique_id=1114813363]
 z_index = 2
@@ -36,7 +30,7 @@ anchors_preset = 0
 offset_right = 1813.0
 offset_bottom = 934.0
 script = ExtResource("1_lp1dp")
-emails = Array[ExtResource("2_skfp5")]([ExtResource("3_fi8ha"), ExtResource("4_3s1ob"), ExtResource("5_3s1ob")])
+emails = Array[ExtResource("2_skfp5")]([ExtResource("3_fi8ha"), ExtResource("4_3s1ob"), ExtResource("5_3s1ob"), ExtResource("6_wguv2")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=87687327]
 z_index = -2
@@ -89,27 +83,33 @@ offset_top = 140.0
 offset_right = 1176.0
 offset_bottom = 574.0
 
-[node name="BotaoPhishing" type="Button" parent="VisualizadorEmail" unique_id=329080045]
+[node name="BotaoPhishing" type="TextureButton" parent="VisualizadorEmail" unique_id=329080045 groups=["botoes_computador"]]
 layout_mode = 0
-offset_left = 621.0
-offset_top = 775.0
-offset_right = 1085.0
-offset_bottom = 888.0
-theme_override_colors/font_color = Color(1, 0.4862745, 0.49411765, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_lsmqo")
-text = "Denunciar como phishing"
+offset_left = 40.0
+offset_top = 510.0
+offset_right = 410.0
+offset_bottom = 637.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("12_denunciar")
+texture_pressed = ExtResource("13_denunciar_hover")
+texture_hover = ExtResource("13_denunciar_hover")
+texture_disabled = ExtResource("12_denunciar")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="BotaoLegitimo" type="Button" parent="VisualizadorEmail" unique_id=1511736210]
+[node name="BotaoLegitimo" type="TextureButton" parent="VisualizadorEmail" unique_id=1511736210 groups=["botoes_computador"]]
 layout_mode = 0
-offset_left = 1181.0
-offset_top = 775.0
-offset_right = 1639.0
-offset_bottom = 888.0
-theme_override_colors/font_color = Color(4.764944e-06, 0.7998089, 0.18998468, 1)
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_ud4wo")
-text = "Legítimo"
+offset_left = 40.0
+offset_top = 650.0
+offset_right = 410.0
+offset_bottom = 777.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_legitimo")
+texture_pressed = ExtResource("15_legitimo_hover")
+texture_hover = ExtResource("15_legitimo_hover")
+texture_disabled = ExtResource("14_legitimo")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="LabelFeedback" type="Label" parent="VisualizadorEmail" unique_id=16364955]
 layout_mode = 0
@@ -146,14 +146,19 @@ offset_right = 2184.1633
 offset_bottom = 448.3416
 scale = Vector2(0.1498459, 0.12717399)
 
-[node name="BotaoConfirmar" type="Button" parent="." unique_id=1055308427]
+[node name="BotaoConfirmar" type="TextureButton" parent="." unique_id=1055308427 groups=["botoes_computador"]]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 784.0
-offset_right = 143.0
-offset_bottom = 815.0
-scale = Vector2(3.68, 3.68)
-text = "Confirmar"
+offset_left = 40.0
+offset_top = 790.0
+offset_right = 410.0
+offset_bottom = 917.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("16_confirmar")
+texture_pressed = ExtResource("16_confirmar")
+texture_hover = ExtResource("16_confirmar")
+texture_disabled = ExtResource("17_confirmar_desligado")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="LabelStatus" type="Label" parent="." unique_id=438931164]
 layout_mode = 0

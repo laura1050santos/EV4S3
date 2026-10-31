@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://br7k0n78k5ayn"]
 
+[ext_resource type="PackedScene" path="res://scenes/Computador_Telas/arquivo_secreto.tscn" id="12_secreto"]
+[ext_resource type="PackedScene" path="res://scenes/Computador_Telas/arquivo_zip.tscn" id="13_zip"]
+
 [ext_resource type="Script" uid="uid://dhd26671kyo85" path="res://scripts/telaComp/TelaDoComputador.gd" id="1_f0u6h"]
 [ext_resource type="Script" uid="uid://bgnlvsvgp2la1" path="res://scripts/telaComp/sub_viewport_container.gd" id="1_mn5u1"]
 [ext_resource type="Texture2D" uid="uid://bya08stkc7h5h" path="res://assets/cursor_normal.png" id="2_f0u6h"]
@@ -77,17 +80,11 @@ visible = false
 z_index = 2
 layout_mode = 0
 
-[node name="Arquivo_ZIP" type="Control" parent="SubViewport/pcControl/Telas" unique_id=1644035925]
+[node name="Arquivo_ZIP" parent="SubViewport/pcControl/Telas" unique_id=1644035925 instance=ExtResource("13_zip")]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
-[node name="Arquivo_DAT" type="Control" parent="SubViewport/pcControl/Telas" unique_id=1952448933]
+[node name="Arquivo_DAT" parent="SubViewport/pcControl/Telas" unique_id=1952448933 instance=ExtResource("12_secreto")]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="CursorPc" type="Sprite2D" parent="SubViewport/pcControl" unique_id=1620216982]
 z_index = 200
