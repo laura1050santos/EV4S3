@@ -16,8 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://14orecjqh1u0" path="res://assets/Sons/abrindo_gaveta.mp3" id="14_tu704"]
 [ext_resource type="AudioStream" uid="uid://coidfqjod0tyw" path="res://assets/Sons/fechando_gaveta.mp3" id="15_5px3v"]
 [ext_resource type="AudioStream" uid="uid://cfcc6i5pfgs65" path="res://assets/Sons/vidroQuebrando.mp3" id="15_m8iw3"]
-[ext_resource type="Texture2D" path="res://assets/cenarios/dica_enigmasomLuzVioleta.png" id="16_dica"]
-[ext_resource type="Script" path="res://scripts/imagem_violeta.gd" id="17_violeta"]
+[ext_resource type="Texture2D" uid="uid://cjifn7b8tby7h" path="res://assets/cenarios/dica_enigmasomLuzVioleta.png" id="16_dica"]
+[ext_resource type="Script" uid="uid://d0q78i8ybyyq2" path="res://scripts/imagem_violeta.gd" id="17_violeta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8iw3"]
 size = Vector2(250.5, 116)
@@ -79,7 +79,7 @@ position = Vector2(575.50006, 323.00003)
 scale = Vector2(0.60052085, 0.6018519)
 texture = ExtResource("2_3wuve")
 
-[node name="DicaSomVioleta" type="Sprite2D" parent="."]
+[node name="DicaSomVioleta" type="Sprite2D" parent="." unique_id=1418206601]
 visible = false
 z_index = 1
 position = Vector2(575.50006, 323.00003)

@@ -141,7 +141,6 @@ func receber_item_drop(item: itemData, alvo: Area2D) -> bool:
 func _on_area_interruptor_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		som_Interruptor.play()
-
 		var lampada = Enigmas.get_nome("lampada")
 		if lampada["resolvido"] == 1:
 			interruptor_ativar()
