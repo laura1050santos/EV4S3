@@ -17,6 +17,7 @@ signal todos_classificados
 @onready var label_status: Label = $LabelStatus
 
 @onready var popup_conclusao: Control = $PopupConclusao
+@onready var som_alerta=$AlertaPhishing
 
 var item_cena = preload("res://scenes/Computador_Telas/item_email.tscn")
 var sorteados: Array[int] = []
@@ -187,6 +188,7 @@ func responder(marcou_como_phishing: bool) -> void:
 
 	if not marcou_como_phishing and emails[email_atual_id].eh_phishing:
 		_mostrar_alerta_phishing()
+		
 
 	respostas[str(email_atual_id)] = marcou_como_phishing
 	Progresso.salvar("emails_respostas", respostas)
@@ -195,7 +197,11 @@ func responder(marcou_como_phishing: bool) -> void:
 	print("E-mail ", email_atual_id, " classificado como: ", "Phishing" if marcou_como_phishing else "Legítimo")
 
 func _mostrar_alerta_phishing() -> void:
+	if som_alerta:
+		print("ALERTA PHISHING TOCANDO")
+
 	if is_instance_valid(alerta_phishing):
+		
 		alerta_phishing.queue_free()
 
 	alerta_phishing = ColorRect.new()
@@ -204,6 +210,7 @@ func _mostrar_alerta_phishing() -> void:
 	alerta_phishing.color = Color(0.78, 0.015, 0.04, 0.34)
 	alerta_phishing.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	alerta_phishing.z_index = 100
+	
 	add_child(alerta_phishing)
 
 	var painel := PanelContainer.new()
@@ -216,6 +223,7 @@ func _mostrar_alerta_phishing() -> void:
 	painel.offset_right = 470.0
 	painel.offset_bottom = 115.0
 	painel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
 	var estilo := StyleBoxFlat.new()
 	estilo.bg_color = Color("#280006")
 	estilo.border_color = Color("#ff3948")
@@ -243,6 +251,7 @@ func _mostrar_alerta_phishing() -> void:
 	tween.tween_property(alerta_phishing, "modulate:a", 1.0, 0.12)
 	tween.tween_property(alerta_phishing, "modulate:a", 0.0, 0.9)
 	tween.tween_callback(alerta_phishing.queue_free)
+	
 
 func _atualizar_feedback() -> void:
 	var resposta = respostas.get(str(email_atual_id), null)

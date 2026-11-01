@@ -13,15 +13,13 @@
 [ext_resource type="Script" uid="uid://3k4pg0ld7j2y" path="res://scenes/Computador_Telas/popup_conclusao.gd" id="9_jv4bm"]
 [ext_resource type="Texture2D" uid="uid://dcodrwqbnvkwc" path="res://assets/computador_telas/secreto.png" id="10_secreto"]
 [ext_resource type="Texture2D" uid="uid://dww1twmdk1uc3" path="res://assets/computador_telas/alerta criptografia.png" id="11_criptografia"]
-
-[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoDenunciar.png" id="12_denunciar"]
-[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoDenunciarHover.png" id="13_denunciar_hover"]
-[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoLegitimo.png" id="14_legitimo"]
-[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoLegitimoHover.png" id="15_legitimo_hover"]
-[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoConfirmarLigado.png" id="16_confirmar"]
-[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoConfirmarDesligado.png" id="17_confirmar_desligado"]
-
-
+[ext_resource type="Texture2D" uid="uid://fci76rapmy8w" path="res://assets/computador_telas/botaoDenunciar.png" id="12_denunciar"]
+[ext_resource type="Texture2D" uid="uid://bqrbmdmuv5j5a" path="res://assets/computador_telas/botaoDenunciarHover.png" id="13_denunciar_hover"]
+[ext_resource type="Texture2D" uid="uid://rhamr2y4ai3s" path="res://assets/computador_telas/botaoLegitimo.png" id="14_legitimo"]
+[ext_resource type="Texture2D" uid="uid://x0ali8d4waa1" path="res://assets/computador_telas/botaoLegitimoHover.png" id="15_legitimo_hover"]
+[ext_resource type="Texture2D" uid="uid://ipr237udjn1b" path="res://assets/computador_telas/botaoConfirmarLigado.png" id="16_confirmar"]
+[ext_resource type="Texture2D" uid="uid://dkhb1yabky737" path="res://assets/computador_telas/botaoConfirmarDesligado.png" id="17_confirmar_desligado"]
+[ext_resource type="AudioStream" uid="uid://b32njth18trvc" path="res://assets/Sons/alerta_phishing.mp3" id="20_lpxyt"]
 
 [node name="Tela_Email" type="Control" unique_id=1114813363]
 z_index = 2
@@ -201,5 +199,8 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_criptografia")
+
+[node name="AlertaPhishing" type="AudioStreamPlayer2D" parent="." unique_id=1685815491]
+stream = ExtResource("20_lpxyt")
 
 [connection signal="pressed" from="VisualizadorEmail/Enviados" to="." method="voltar"]

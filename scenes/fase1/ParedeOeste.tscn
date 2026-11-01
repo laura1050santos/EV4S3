@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://du3u5e5blrq5k"]
 
-[ext_resource type="PackedScene" path="res://scenes/inscricao_violeta.tscn" id="14_violeta"]
-
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="1_gm2vv"]
 [ext_resource type="Script" uid="uid://4h5mibudxj5i" path="res://scripts/salas_scripts/parede_oeste.gd" id="1_r4qe8"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="2_02577"]
@@ -15,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cp0lqyeo6ei2v" path="res://assets/cartas/carta_relogio.png" id="11_x71yn"]
 [ext_resource type="Script" uid="uid://lu8c4l2fgrpq" path="res://scripts/viewDifCartaRelogio.gd" id="12_k4gre"]
 [ext_resource type="Script" uid="uid://c3i501botd0q0" path="res://scripts/salas_scripts/zoom_tocafitas.gd" id="13_uxxvl"]
+[ext_resource type="PackedScene" path="res://scenes/inscricao_violeta.tscn" id="14_violeta"]
+[ext_resource type="AudioStream" uid="uid://bvo3jo3x8srm1" path="res://assets/Sons/cuckoo.mp3" id="15_ghfs7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4mq"]
 size = Vector2(90.5, 48)
@@ -31,9 +31,9 @@ size = Vector2(149.5, 104)
 [node name="Oeste" type="Node2D" unique_id=1991184608]
 script = ExtResource("1_r4qe8")
 
-[node name="InscricaoVioleta" parent="." instance=ExtResource("14_violeta")]
-position = Vector2(510, 195)
+[node name="InscricaoVioleta" parent="." unique_id=2005472218 instance=ExtResource("14_violeta")]
 z_index = 2
+position = Vector2(510, 195)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=348728898]
 position = Vector2(576.0161, 325.12503)
@@ -73,20 +73,20 @@ rotation = -0.19249408
 scale = Vector2(1.2408752, 1.1820033)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Node" type="Node" parent="." unique_id=1704967578]
+[node name="carta" type="Node" parent="." unique_id=1704967578]
 
-[node name="carta_relogio2" type="Sprite2D" parent="Node" unique_id=168693858]
+[node name="carta_relogio2" type="Sprite2D" parent="carta" unique_id=168693858]
 visible = false
 position = Vector2(572, 339.52142)
 rotation = -0.08943273
 scale = Vector2(0.2553935, 0.2553935)
 texture = ExtResource("11_x71yn")
 
-[node name="Area2D" type="Area2D" parent="Node/carta_relogio2" unique_id=1633289000]
+[node name="Area2D" type="Area2D" parent="carta/carta_relogio2" unique_id=1633289000]
 input_pickable = false
 script = ExtResource("12_k4gre")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/carta_relogio2/Area2D" unique_id=865280199]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta/carta_relogio2/Area2D" unique_id=865280199]
 shape = SubResource("RectangleShape2D_yf5fn")
 disabled = true
 debug_color = Color(0.9058082, 0.058740504, 0.7258143, 0.41960785)
@@ -98,3 +98,16 @@ destino_cena = "uid://d1mfunmrykn8r"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="toca_fitas" unique_id=1913434416]
 position = Vector2(373.25, 280)
 shape = SubResource("RectangleShape2D_x2j0j")
+
+[node name="cuckoo" type="Area2D" parent="." unique_id=1248776151]
+position = Vector2(604, 179)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="cuckoo" unique_id=1846655533]
+position = Vector2(-38, 54)
+polygon = PackedVector2Array(45, 52, 62, -5, 68, -3, 73, -10, 15, -67, -45, -14, -38, -5, -32, -3, -18, 53, -23, 57, -22, 65, 49, 63, 49, 55, 44, 51)
+
+[node name="Cuckoo" type="AudioStreamPlayer2D" parent="cuckoo" unique_id=1487290578]
+position = Vector2(-604, -179)
+stream = ExtResource("15_ghfs7")
+
+[connection signal="input_event" from="cuckoo" to="." method="_on_cuckoo_input_event"]

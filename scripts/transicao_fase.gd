@@ -5,6 +5,7 @@ var em_transicao: bool = false
 @onready var completed_label: Control = $Label
 
 func _ready():
+	itemData.desativar_item_global(get_tree())
 	layer = 128
 	fade_rect.color = Color(0, 0, 0, 0)
 	completed_label.modulate.a = 0

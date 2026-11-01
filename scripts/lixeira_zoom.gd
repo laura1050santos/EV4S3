@@ -1,6 +1,6 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
 @onready var som_lixeira_abrindo = $som_lixeira_abrindo
-
+@onready var sprite_lixo = $lixeiraAberta
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalSingleton.ultima_cena = get_tree().current_scene.scene_file_path
@@ -19,9 +19,9 @@ func _ready() -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if InputEventMouseButton and event.is_pressed():		
 		var chave =  get_node_or_null("chave")
-		if chave:
+		if chave and sprite_lixo.visible == false:
 			$lixeiraAberta.visible= true
-			som_lixeira_abrindo.play()
+			som_lixeira_abrindo.play(0.5)
 			var gpu = get_node_or_null("gpu")
 			if gpu:
 				gpu.visible = true

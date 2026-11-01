@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="3_u3ttn"]
 [ext_resource type="Texture2D" uid="uid://cewmc5jdegb7p" path="res://assets/itens/lixeirapertoaberta.png" id="4_f6m85"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="5_u3ttn"]
+[ext_resource type="AudioStream" uid="uid://bhnfy1memmeoq" path="res://assets/Sons/som_lixeira_abrindo.mp3" id="7_ppgjm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bx6j"]
 size = Vector2(434.5, 219)
@@ -43,5 +44,6 @@ offset_right = 3231.6665
 offset_bottom = 1681.0
 
 [node name="som_lixeira_abrindo" type="AudioStreamPlayer2D" parent="." unique_id=1276559445]
+stream = ExtResource("7_ppgjm")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var sub_viewport_container: SubViewportContainer = $SubViewportContainer
 @onready var telaSemConexao = $"sem conexão"
+
 func _ready():
 	if sub_viewport_container:
 		var boot_pendente: bool = not GlobalSingleton.fases_concluidas[0] and bool(Progresso.carregar("pc_consertado", false))
