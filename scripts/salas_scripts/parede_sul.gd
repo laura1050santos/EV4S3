@@ -10,6 +10,7 @@ var node = preload("res://scenes/inventario/worldItem.tscn")
 
 @onready var lanterna: Node = get_tree().root.get_node_or_null("lanterna")
 @onready var processador
+@onready var SomVidroQuebrando: AudioStreamPlayer2D = $SomVidroQuebrado/SomVidroQuebrando
 
 @onready var gavetas_sprites := {
 	"1": $Gaveta1Aquario,
@@ -23,8 +24,8 @@ var node = preload("res://scenes/inventario/worldItem.tscn")
 	"3": $Area2D3
 }
 
-@onready var som_gaveta_abrindo = $abrindoGaveta
-@onready var som_gaveta_fechando = $fechandoGaveta
+@onready var som_gaveta_abrindo = $ListenAbrindoGaveta/abrindoGaveta
+@onready var som_gaveta_fechando = $ListenFechandoGaveta/fechandoGaveta
 
 func _ready() -> void:
 	var cena = Cenarios.get_cena("sul")
@@ -129,7 +130,7 @@ func ativar_enigma_som() -> void:
 		return
 	if aquario["resolvido"] == 0:
 		Enigmas.atualizar_enigma("aquario", 1)
-		$SomVidroQuebrando.play()
+		SomVidroQuebrando.play()
 		Cenarios.atualizar_cenario("sul", "res://assets/cenarios/aquarioquebrado(1).png")
 		$cena.texture = preload("res://assets/cenarios/aquarioquebrado(1).png")
 

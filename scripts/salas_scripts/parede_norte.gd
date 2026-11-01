@@ -2,9 +2,9 @@ extends SalasManager
 
 @onready var parede_roteador_area: Area2D = $ParedeRoteador
 @onready var roteador_parede_sprite: Sprite2D = $roteadorParede
-@onready var som_Porta = $PortaTrancada
-@onready var som_Interruptor = $Interruptor
+@onready var som_Porta = $ListenerPorta/PortaTrancada
 
+@onready var som_Interruptor = $ListenerInterruptor/Interruptor
 func _ready():
 	_exibir_dica_inicial()
 	parede_roteador_area.add_to_group("item_drop_targets")

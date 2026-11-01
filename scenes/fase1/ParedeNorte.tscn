@@ -88,10 +88,18 @@ shape = SubResource("RectangleShape2D_3ak76")
 position = Vector2(588, 344)
 shape = SubResource("RectangleShape2D_eq0go")
 
-[node name="PortaTrancada" type="AudioStreamPlayer2D" parent="." unique_id=694899554]
+[node name="ListenerPorta" type="AudioListener2D" parent="." unique_id=1842641048]
+position = Vector2(512, 356)
+
+[node name="PortaTrancada" type="AudioStreamPlayer2D" parent="ListenerPorta" unique_id=694899554]
+position = Vector2(-2, 6)
 stream = ExtResource("11_nq1fa")
 
-[node name="Interruptor" type="AudioStreamPlayer2D" parent="." unique_id=216021419]
+[node name="ListenerInterruptor" type="AudioListener2D" parent="." unique_id=2099187958]
+position = Vector2(365, 322)
+
+[node name="Interruptor" type="AudioStreamPlayer2D" parent="ListenerInterruptor" unique_id=216021419]
+position = Vector2(-3, 7)
 stream = ExtResource("12_txlfo")
 
 [connection signal="input_event" from="ParedeRoteador" to="." method="_on_area_2d_input_event"]

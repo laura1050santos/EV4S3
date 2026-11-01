@@ -139,18 +139,6 @@ position = Vector2(259.9591, 374.56006)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_isxgw")
 
-[node name="SomVidroQuebrando" type="AudioStreamPlayer2D" parent="." unique_id=1509413935]
-stream = ExtResource("15_m8iw3")
-volume_db = -4.815
-
-[node name="abrindoGaveta" type="AudioStreamPlayer2D" parent="." unique_id=284092029]
-stream = ExtResource("14_tu704")
-volume_db = -4.815
-
-[node name="fechandoGaveta" type="AudioStreamPlayer2D" parent="." unique_id=989012202]
-stream = ExtResource("15_5px3v")
-volume_db = -4.815
-
 [node name="BotaoConfig" parent="." unique_id=413660545 instance=ExtResource("11_uf1xn")]
 
 [node name="areaCabecaQuebrada" type="Area2D" parent="." unique_id=1536043975]
@@ -160,6 +148,30 @@ position = Vector2(600, 548)
 rotation = -1.5265174
 shape = SubResource("CapsuleShape2D_eq0go")
 disabled = true
+
+[node name="SomVidroQuebrado" type="AudioListener2D" parent="." unique_id=590944608]
+position = Vector2(728, 316)
+
+[node name="SomVidroQuebrando" type="AudioStreamPlayer2D" parent="SomVidroQuebrado" unique_id=1509413935]
+position = Vector2(18, 13)
+stream = ExtResource("15_m8iw3")
+volume_db = -4.815
+
+[node name="ListenAbrindoGaveta" type="AudioListener2D" parent="." unique_id=2138453444]
+position = Vector2(725, 486)
+
+[node name="abrindoGaveta" type="AudioStreamPlayer2D" parent="ListenAbrindoGaveta" unique_id=284092029]
+position = Vector2(8, -8)
+stream = ExtResource("14_tu704")
+volume_db = -4.815
+
+[node name="ListenFechandoGaveta" type="AudioListener2D" parent="." unique_id=2008359284]
+position = Vector2(734, 483)
+
+[node name="fechandoGaveta" type="AudioStreamPlayer2D" parent="ListenFechandoGaveta" unique_id=989012202]
+position = Vector2(-16, 12)
+stream = ExtResource("15_5px3v")
+volume_db = -4.815
 
 [connection signal="pressed" from="BotaoConfig" to="." method="_on_botao_config_pressed"]
 [connection signal="input_event" from="areaCabecaQuebrada" to="." method="_on_area_cabeca_quebrada_input_event"]

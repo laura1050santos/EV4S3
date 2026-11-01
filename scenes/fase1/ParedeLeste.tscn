@@ -141,10 +141,13 @@ shape = SubResource("RectangleShape2D_eq0go")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=327897654]
 
-[node name="abrindoGaveta" type="AudioStreamPlayer2D" parent="." unique_id=1358671603]
+[node name="gavetaListener" type="AudioListener2D" parent="." unique_id=663773724]
+
+[node name="abrindoGaveta" type="AudioStreamPlayer2D" parent="gavetaListener" unique_id=1358671603]
 stream = ExtResource("16_uwmm3")
 
-[node name="fechandoGaveta" type="AudioStreamPlayer2D" parent="." unique_id=441107339]
+[node name="fechandoGaveta" type="AudioStreamPlayer2D" parent="gavetaListener" unique_id=441107339]
+position = Vector2(590, 519)
 stream = ExtResource("17_i16fw")
 
 [connection signal="input_event" from="Pc/Pc" to="." method="_on_pc_input_event"]

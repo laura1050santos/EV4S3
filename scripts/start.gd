@@ -3,7 +3,7 @@ extends Control
 
 @onready var canvas = Inventario.get_node("canvasLayer")
 @onready var label = get_node("Label")
-
+ 
 const CENA_SELECAO_FASES := "res://scenes/telaInicial/selecao_fases.tscn"
 
 func _ready() -> void:
@@ -14,6 +14,7 @@ func _ready() -> void:
 # =========================================================
 
 func _on_jogar_pressed() -> void:
+	
 	SaveManager.novo_jogo()
 	get_tree().change_scene_to_file(CENA_SELECAO_FASES)
 

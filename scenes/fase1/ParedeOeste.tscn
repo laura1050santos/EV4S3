@@ -106,7 +106,9 @@ position = Vector2(604, 179)
 position = Vector2(-38, 54)
 polygon = PackedVector2Array(45, 52, 62, -5, 68, -3, 73, -10, 15, -67, -45, -14, -38, -5, -32, -3, -18, 53, -23, 57, -22, 65, 49, 63, 49, 55, 44, 51)
 
-[node name="Cuckoo" type="AudioStreamPlayer2D" parent="cuckoo" unique_id=1487290578]
+[node name="listenerCuckoo" type="AudioListener2D" parent="cuckoo" unique_id=1712455571]
+
+[node name="Cuckoo" type="AudioStreamPlayer2D" parent="cuckoo/listenerCuckoo" unique_id=1487290578]
 position = Vector2(-604, -179)
 stream = ExtResource("15_ghfs7")
 
