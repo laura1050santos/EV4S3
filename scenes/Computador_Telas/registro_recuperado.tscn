@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/Computador_Telas/janela_arquivo.tscn" id="1_base"]
+[ext_resource type="Script" path="res://scripts/telaComp/registro_recuperado.gd" id="2_script"]
+
+[node name="RegistroRecuperado" instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+
+[node name="Voltar" parent="." index="1"]
+text = "Fechar documento"
+
+[node name="Titulo" parent="." index="2"]
+text = "registro_excluido.dat"
+
+[node name="Texto" type="RichTextLabel" parent="Corpo"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.12, 0.12, 0.16, 1)
+theme_override_font_sizes/normal_font_size = 30
+selection_enabled = true

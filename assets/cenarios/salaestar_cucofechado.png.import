@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rbsyhrtqva43"
-path="res://.godot/imported/roteadorFeio.webp-90e7e3bd3364e0246073923990335152.ctex"
+uid="uid://dtdiewe8q3fua"
+path="res://.godot/imported/salaestar_cucofechado.png-16fa5541dfca334b2e974736a09444e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/roteadorFeio.webp"
-dest_files=["res://.godot/imported/roteadorFeio.webp-90e7e3bd3364e0246073923990335152.ctex"]
+source_file="res://assets/cenarios/salaestar_cucofechado.png"
+dest_files=["res://.godot/imported/salaestar_cucofechado.png-16fa5541dfca334b2e974736a09444e1.ctex"]
 
 [params]
 

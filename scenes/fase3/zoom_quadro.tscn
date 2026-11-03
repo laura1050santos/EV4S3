@@ -25,3 +25,4 @@ position = Vector2(318, 115)
 destino_cena = "res://scenes/fase1/ParedeLeste.tscn"
 
 [node name="BotaoConfig" parent="." instance=ExtResource("4_config")]
+z_index = 100

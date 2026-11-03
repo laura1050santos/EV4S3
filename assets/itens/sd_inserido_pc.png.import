@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcp4i38fxfsfl"
-path="res://.godot/imported/email_template1.jpg-ce076da4410f8817675c27926e821530.ctex"
+uid="uid://gs55a71rvtdf"
+path="res://.godot/imported/sd_inserido_pc.png-3da1f5ef6a912b1404dcf12b89cc204e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/computador_telas/email_template1.jpg"
-dest_files=["res://.godot/imported/email_template1.jpg-ce076da4410f8817675c27926e821530.ctex"]
+source_file="res://assets/itens/sd_inserido_pc.png"
+dest_files=["res://.godot/imported/sd_inserido_pc.png-3da1f5ef6a912b1404dcf12b89cc204e.ctex"]
 
 [params]
 

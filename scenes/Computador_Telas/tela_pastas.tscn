@@ -123,6 +123,29 @@ text = "pessoal"
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="Recuperados" type="Button" parent="Tela" groups=["botoes_computador"]]
+visible = false
+offset_left = 424.0
+offset_top = 570.0
+offset_right = 944.0
+offset_bottom = 1090.0
+scale = Vector2(0.3868433, 0.3868433)
+icon = ExtResource("1_aambw")
+flat = true
+
+[node name="Nome_Recuperados" type="Label" parent="Tela"]
+visible = false
+z_index = 1
+offset_left = 399.0
+offset_top = 780.0
+offset_right = 650.0
+offset_bottom = 850.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.08, 0.08, 0.1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Recuperados"
+horizontal_alignment = 1
+
 [node name="Nome_P2" type="Label" parent="Tela"]
 z_index = 1
 layout_mode = 0

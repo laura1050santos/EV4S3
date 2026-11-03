@@ -53,6 +53,9 @@ func _run() -> void:
 		conferir(visual != null, "Foto aparece no local real: " + salas[indice])
 		if visual == null:
 			continue
+		if indice < 2:
+			var id: String = "2" if indice == 0 else "3"
+			conferir(visual.z_index < sala.gavetas_sprites[id].z_index, "Foto fica atrás da frente da gaveta")
 		var foto = visual.get_meta("item_data")
 		conferir(foto.icon != null and foto.pode_inspecionar(), "Imagem e exame disponíveis")
 		conferir(visual.scale == Vector2(0.1, 0.1), "Escala da foto no mundo")

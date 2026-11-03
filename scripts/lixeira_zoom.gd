@@ -1,5 +1,5 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
-@onready var som_lixeira_abrindo = $AudioListener2D/som_lixeira_abrindo
+@onready var som_lixeira_abrindo = $som_lixeira_abrindo
 @onready var sprite_lixo = $lixeiraAberta
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

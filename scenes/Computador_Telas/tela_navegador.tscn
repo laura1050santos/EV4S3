@@ -8,8 +8,8 @@
 [node name="Tela_Navegador" type="Control" unique_id=1346634533]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1815.0
+offset_bottom = 932.0
 script = ExtResource("3_pesquisa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=540446062]
@@ -62,10 +62,10 @@ horizontal_alignment = 1
 visible = false
 z_index = 1
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 1799.0
-offset_bottom = 709.0
+offset_left = 8.0
+offset_top = 215.0
+offset_right = 1807.0
+offset_bottom = 924.0
 
 [node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("2_13qop")]
 layout_mode = 0

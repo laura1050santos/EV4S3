@@ -2,12 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/telaComp/arquivo_zip.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://scenes/Computador_Telas/visualizador_arquivo.tscn" id="2_visualizador"]
-[ext_resource type="Texture2D" path="res://assets/cenarios/salaestar.png" id="3_sala"]
+[ext_resource type="Texture2D" path="res://assets/computador_telas/foto_cuco_antiga.png" id="3_sala"]
 [ext_resource type="Texture2D" path="res://assets/computador_telas/foto.png" id="4_icone"]
-
-[sub_resource type="AtlasTexture" id="DetalheRelogio"]
-atlas = ExtResource("3_sala")
-region = Rect2(868, 273, 200, 226)
 
 [sub_resource type="StyleBoxFlat" id="Campo"]
 bg_color = Color(1, 1, 0.98, 1)
@@ -27,7 +23,7 @@ z_index = 10
 offset_right = 1815.0
 offset_bottom = 932.0
 script = ExtResource("1_script")
-imagem = SubResource("DetalheRelogio")
+imagem = ExtResource("3_sala")
 
 [node name="Fundo" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -103,7 +99,7 @@ offset_bottom = 65.0
 mouse_filter = 2
 theme_override_colors/font_color = Color(0.16, 0.12, 0.24, 1)
 theme_override_font_sizes/font_size = 30
-text = "Conteúdo de arquivo.zip — 1 arquivo"
+text = "Conteúdo de arquivo.zip — 2 arquivos"
 
 [node name="Imagem" type="Button" parent="Conteudo" groups=["botoes_computador"]]
 offset_top = 100.0
@@ -113,5 +109,13 @@ theme_override_font_sizes/font_size = 28
 text = "imagem.png"
 icon = ExtResource("4_icone")
 expand_icon = true
+
+[node name="Recuperador" type="Button" parent="Conteudo" groups=["botoes_computador"]]
+offset_left = 500.0
+offset_top = 100.0
+offset_right = 980.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 28
+text = "recuperador.exe"
 
 [node name="VisualizadorArquivo" parent="." instance=ExtResource("2_visualizador")]

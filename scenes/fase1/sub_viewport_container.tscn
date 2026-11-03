@@ -14,6 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://cgsl4vmsu53kt" path="res://scenes/Computador_Telas/pasta_tecnico.tscn" id="11_f74yq"]
 [ext_resource type="PackedScene" path="res://scenes/Computador_Telas/arquivo_secreto.tscn" id="12_secreto"]
 [ext_resource type="PackedScene" path="res://scenes/Computador_Telas/arquivo_zip.tscn" id="13_zip"]
+[ext_resource type="PackedScene" path="res://scenes/Computador_Telas/recuperador.tscn" id="14_recuperador"]
+[ext_resource type="PackedScene" path="res://scenes/Computador_Telas/pasta_recuperados.tscn" id="15_recuperados"]
+[ext_resource type="PackedScene" path="res://scenes/Computador_Telas/registro_recuperado.tscn" id="16_registro"]
+[ext_resource type="PackedScene" path="res://scenes/Computador_Telas/mensageiro.tscn" id="17_mensageiro"]
 
 [node name="SubViewportContainerPC" type="SubViewportContainer" unique_id=1791322923]
 offset_left = 285.0
@@ -84,6 +88,14 @@ anchors_preset = 0
 
 [node name="Arquivo_DAT" parent="SubViewport/pcControl/Telas" unique_id=1952448933 instance=ExtResource("12_secreto")]
 anchors_preset = 0
+
+[node name="Recuperador" parent="SubViewport/pcControl/Telas" instance=ExtResource("14_recuperador")]
+
+[node name="PastaRecuperados" parent="SubViewport/pcControl/Telas" instance=ExtResource("15_recuperados")]
+
+[node name="RegistroRecuperado" parent="SubViewport/pcControl/Telas" instance=ExtResource("16_registro")]
+
+[node name="Mensageiro" parent="SubViewport/pcControl/Telas" instance=ExtResource("17_mensageiro")]
 
 [node name="CursorPc" type="Sprite2D" parent="SubViewport/pcControl" unique_id=1620216982]
 z_index = 200

@@ -12,16 +12,12 @@ script = ExtResource("1_x2tlq")
 [node name="Escuro" parent="." unique_id=1886569735 instance=ExtResource("2_84tal")]
 
 [node name="SetaEsquerda" parent="." unique_id=616059842 instance=ExtResource("3_jowjx")]
-position = Vector2(217, 183)
-destino_cena = "uid://cxhjpnc7drrok"
+destino_cena = "res://scenes/fase1/ParedeSul.tscn"
 
-[node name="BotaoConfig" parent="SetaEsquerda" unique_id=1223313343 instance=ExtResource("5_2npeh")]
-offset_left = -142.0
-offset_top = -163.0
-offset_right = 3024.6665
-offset_bottom = 1505.0
+[node name="BotaoConfig" parent="." unique_id=1223313343 instance=ExtResource("5_2npeh")]
+z_index = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142052247]
-position = Vector2(578.5, 334.75)
-scale = Vector2(0.59739584, 0.6060185)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_2npeh")

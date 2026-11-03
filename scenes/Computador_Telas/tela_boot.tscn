@@ -6,8 +6,8 @@
 [node name="Tela_Boot" type="Control" unique_id=1391405876]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1815.0
+offset_bottom = 932.0
 script = ExtResource("1_mhtem")
 
 [node name="Fundo" type="ColorRect" parent="." unique_id=208394179]

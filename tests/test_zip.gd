@@ -51,7 +51,7 @@ func _run() -> void:
 	var visualizador = zip.get_node("VisualizadorArquivo")
 	conferir(visualizador.visible and visualizador.get_node("Titulo").text.contains("imagem.png"), "Arquivo interno abre no visualizador existente")
 	var textura = visualizador.get_node("Imagem").texture
-	conferir(textura is AtlasTexture and textura.get_size() == Vector2(200, 226), "Imagem mostra detalhe do relógio do cenário")
+	conferir(textura.resource_path == "res://assets/computador_telas/foto_cuco_antiga.png", "Imagem usa nova foto do relógio às 12h")
 	conferir(textura.get_image() != null, "Imagem interna possui pixels carregados")
 	visualizador.get_node("Voltar").pressed.emit()
 	conferir(not visualizador.visible and zip.get_node("Conteudo").visible, "Voltar da imagem mantém ZIP aberto")

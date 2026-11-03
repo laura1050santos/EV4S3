@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="itemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/inventario/item_data.gd" id="1_item"]
+[ext_resource type="Texture2D" path="res://assets/itens/sd.png" id="2_sd"]
+
+[sub_resource type="AtlasTexture" id="Cartao"]
+atlas = ExtResource("2_sd")
+region = Rect2(882, 386, 126, 162)
+
+[resource]
+script = ExtResource("1_item")
+item_name = "BACKUP-03"
+icon = SubResource("Cartao")
+inventory_icon = SubResource("Cartao")
+world_scale = Vector2(0.4, 0.4)

@@ -52,7 +52,9 @@ func _container_id(id: String) -> String:
 func _mostrar_itens_gaveta(id: String) -> void:
 	var objetos = Objetos.get_objetos_container(self.name, _container_id(id))
 	for info in objetos:
-		spawnar_itens(info["item"], info["pos"])
+		var visual = spawnar_itens(info["item"], info["pos"])
+		if visual != null and not info["item"].nome_fotografado.is_empty():
+			visual.z_index = gavetas_sprites[id].z_index - 1
 
 func _esconder_itens_gaveta(id: String) -> void:
 	var objetos = Objetos.get_objetos_container(self.name, _container_id(id))
@@ -76,11 +78,7 @@ func _atualizar_estado_fase() -> void:
 func _on_pc_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if not _clique_esquerdo(event):
 		return
-	if GlobalSingleton.fase_liberada == 1:
-		get_tree().change_scene_to_file("res://scenes/fase1/zoom_pc.tscn")
-	else:
-		print("O gabinete já está montado com todas as peças.")
-		_atualizar_estado_fase()
+	get_tree().change_scene_to_file("res://scenes/fase1/zoom_pc.tscn")
 func _on_monitor_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if not _clique_esquerdo(event):
 		return

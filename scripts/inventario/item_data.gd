@@ -11,7 +11,7 @@ class_name itemData
 @export var letra_violeta: String = ""
 
 func pode_inspecionar() -> bool:
-	return not nome_fotografado.is_empty() or resource_path == "res://recursos/PapelMorseAlcapao.tres"
+	return not nome_fotografado.is_empty() or resource_path in ["res://recursos/PapelMorseAlcapao.tres", "res://recursos/Backup03.tres"]
 
 
 func configurar_visual_mundo(node: Sprite2D) -> void:

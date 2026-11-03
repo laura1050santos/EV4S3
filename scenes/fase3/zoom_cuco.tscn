@@ -1,0 +1,56 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/zoom_cuco.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/cenarios/zoom_cuco.png" id="2_cenario"]
+[ext_resource type="Texture2D" path="res://assets/cenarios/cuco_fechado_zoom.png" id="3_fechado"]
+[ext_resource type="Texture2D" path="res://assets/cenarios/seta_horas.png" id="4_maior"]
+[ext_resource type="Texture2D" path="res://assets/cenarios/seta_minutos.png" id="5_menor"]
+[ext_resource type="AudioStream" path="res://assets/Sons/cuckoo.mp3" id="6_som"]
+[ext_resource type="PackedScene" path="res://scenes/setas/SetaEsquerda.tscn" id="7_voltar"]
+[ext_resource type="PackedScene" path="res://scenes/escuro.tscn" id="8_escuro"]
+[ext_resource type="PackedScene" path="res://scenes/setas/botaoConfig.tscn" id="9_config"]
+
+[sub_resource type="RectangleShape2D" id="FormaCartao"]
+size = Vector2(96, 120)
+
+[node name="ZoomCuco" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Arte" type="Node2D" parent="."]
+scale = Vector2(0.6, 0.6)
+
+[node name="Cenario" type="Sprite2D" parent="Arte"]
+position = Vector2(960, 540)
+texture = ExtResource("2_cenario")
+
+[node name="Relogio" type="Sprite2D" parent="Arte"]
+position = Vector2(960, 540)
+texture = ExtResource("3_fechado")
+
+[node name="PonteiroHoras" type="Sprite2D" parent="Arte"]
+position = Vector2(936, 525)
+offset = Vector2(24, 25)
+texture = ExtResource("5_menor")
+
+[node name="PonteiroMinutos" type="Sprite2D" parent="Arte"]
+position = Vector2(936, 525)
+offset = Vector2(24, 26)
+texture = ExtResource("4_maior")
+
+[node name="AreaCartao" type="Area2D" parent="Arte"]
+position = Vector2(982, 300)
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arte/AreaCartao"]
+shape = SubResource("FormaCartao")
+
+[node name="SomCuco" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_som")
+
+[node name="Escuro" parent="." instance=ExtResource("8_escuro")]
+
+[node name="SetaEsquerda" parent="." instance=ExtResource("7_voltar")]
+destino_cena = "res://scenes/fase1/ParedeOeste.tscn"
+
+[node name="BotaoConfig" parent="." instance=ExtResource("9_config")]
+z_index = 100

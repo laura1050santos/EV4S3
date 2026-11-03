@@ -16,7 +16,7 @@ func _notification(what):
 		mouse_filter = Control.MOUSE_FILTER_STOP
 
 	elif what == NOTIFICATION_DRAG_END:
-		mouse_filter = Control.MOUSE_FILTER_PASS
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:

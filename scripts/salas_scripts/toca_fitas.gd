@@ -5,6 +5,7 @@ extends Area2D
 @onready var toca_fitas: AudioStreamPlayer2D = $"../../AudioListener2D/TocaFitas"
 
 var item_guardado: itemData = null
+var operacao_som: int = 0
 
 @onready var som: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -51,12 +52,17 @@ func _coletar() -> void:
 	var drop_area = get_tree().get_first_node_in_group("world_drop_area")
 	if drop_area == null or not drop_area.guardar_no_inventario(item_guardado):
 		return   # inventário cheio: o som continua e o item fica na estação
+	operacao_som += 1
 	som.stop()
+	toca_fitas.stop()
 	Objetos.marcar_coletado_por_recurso(item_guardado.resource_path)
 	item_guardado = null
 	get_viewport().set_input_as_handled()
 	
 func tocar_sons_com_delay() -> void:
+	operacao_som += 1
+	var tentativa: int = operacao_som
 	toca_fitas.play() # Toca o primeiro som imediatamente
 	await get_tree().create_timer(2.5).timeout 
-	som.play() # Toca o segundo som após o tempo acabar
+	if tentativa == operacao_som and item_guardado != null and is_inside_tree():
+		som.play()

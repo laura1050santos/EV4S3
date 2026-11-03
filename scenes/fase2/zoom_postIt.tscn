@@ -13,8 +13,9 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_g56lm")
 
 [node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_6e8ii")]
-destino_cena = "uid://dqttd76hew5ag"
+destino_cena = "res://scenes/fase1/ParedeLeste.tscn"
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_14fik")]
 
 [node name="BotaoConfig" parent="." unique_id=2081255353 instance=ExtResource("4_14fik")]
+z_index = 100

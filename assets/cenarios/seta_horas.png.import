@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djrn1oi7usjem"
-path="res://.godot/imported/roteadorParede.webp-2648d6c99b15d34efe2cebdd83741a8a.ctex"
+uid="uid://cmxxkjoq17m7n"
+path="res://.godot/imported/seta_horas.png-1ffe3a9e2d75ed915601e15777c47c35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/roteadorParede.webp"
-dest_files=["res://.godot/imported/roteadorParede.webp-2648d6c99b15d34efe2cebdd83741a8a.ctex"]
+source_file="res://assets/cenarios/seta_horas.png"
+dest_files=["res://.godot/imported/seta_horas.png-1ffe3a9e2d75ed915601e15777c47c35.ctex"]
 
 [params]
 

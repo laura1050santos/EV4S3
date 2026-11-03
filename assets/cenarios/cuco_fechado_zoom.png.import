@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnjst40yujquk"
-path="res://.godot/imported/email_template.jpg-926cd73c91e00dd5a87f7e1c17b6d600.ctex"
+uid="uid://dn75td7mg6mfd"
+path="res://.godot/imported/cuco_fechado_zoom.png-25b666cb435c348baad418357c077937.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/computador_telas/email_template.jpg"
-dest_files=["res://.godot/imported/email_template.jpg-926cd73c91e00dd5a87f7e1c17b6d600.ctex"]
+source_file="res://assets/cenarios/cuco_fechado_zoom.png"
+dest_files=["res://.godot/imported/cuco_fechado_zoom.png-25b666cb435c348baad418357c077937.ctex"]
 
 [params]
 

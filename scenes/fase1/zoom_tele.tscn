@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://br6b2is54xx2x" path="res://assets/Sons/tecla_telegrafo.mp3" id="8_det3c"]
 [ext_resource type="Texture2D" uid="uid://bq2ax6qq0mp5v" path="res://assets/cenarios/cena-telegrafo-fio-objeto-posicionado.png" id="17_fio"]
 
+[ext_resource type="PackedScene" path="res://scenes/setas/botaoConfig.tscn" id="99_config"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fio"]
 size = Vector2(100, 170)
 
@@ -16,34 +18,34 @@ size = Vector2(100, 170)
 script = ExtResource("1_vvp0m")
 
 [node name="CenaTelegrafoInicial" type="Sprite2D" parent="." unique_id=1434136291]
-position = Vector2(572, 306)
-scale = Vector2(0.5958333, 0.6055556)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_xysmm")
 
 [node name="TelaDecodificador" type="Sprite2D" parent="." unique_id=1462649391]
-position = Vector2(572, 306)
-scale = Vector2(0.5958333, 0.6055556)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_jkw12")
 
 [node name="SetaEsquerda" parent="." unique_id=1570841104 instance=ExtResource("2_f1w1o")]
-destino_cena = "uid://du3u5e5blrq5k"
+destino_cena = "res://scenes/fase1/ParedeOeste.tscn"
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_0qusy")]
 
 [node name="Label" type="Label" parent="." unique_id=760950537]
-offset_left = 350.0
-offset_top = 253.0
-offset_right = 550.0
-offset_bottom = 353.0
+offset_left = 352.44754
+offset_top = 271.48624
+offset_right = 553.84615
+offset_bottom = 370.56880
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ponto" type="Button" parent="." unique_id=1634992566]
-offset_left = 709.0
-offset_top = 393.0
-offset_right = 762.0
-offset_bottom = 424.0
+offset_left = 713.95805
+offset_top = 410.20183
+offset_right = 767.32868
+offset_bottom = 440.91742
 theme_override_font_sizes/font_size = 16
 text = "Ponto"
 
@@ -65,10 +67,10 @@ ignore_texture_size = true
 stretch_mode = 3
 
 [node name="reset" type="Button" parent="." unique_id=1513992318]
-offset_left = 710.0
-offset_top = 427.0
-offset_right = 790.0
-offset_bottom = 457.0
+offset_left = 714.96504
+offset_top = 443.88990
+offset_right = 795.52449
+offset_bottom = 473.61467
 theme_override_font_sizes/font_size = 16
 text = "Limpar"
 
@@ -90,10 +92,10 @@ ignore_texture_size = true
 stretch_mode = 3
 
 [node name="traco" type="Button" parent="." unique_id=1320605433]
-offset_left = 626.0
-offset_top = 392.0
-offset_right = 679.0
-offset_bottom = 423.0
+offset_left = 630.37763
+offset_top = 409.21100
+offset_right = 683.74826
+offset_bottom = 439.92660
 theme_override_font_sizes/font_size = 16
 text = "Traço"
 
@@ -116,51 +118,54 @@ stretch_mode = 3
 
 [node name="FioInstalado" type="Sprite2D" parent="." unique_id=1946386694]
 visible = false
-position = Vector2(572, 306)
-scale = Vector2(0.5958333, 0.6055556)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("17_fio")
 
 [node name="SlotFio" type="Area2D" parent="." unique_id=52197290 groups=["item_drop_targets"]]
-position = Vector2(572, 355)
+position = Vector2(576.00000, 372.55046)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlotFio" unique_id=1914230934]
 shape = SubResource("RectangleShape2D_fio")
 
 [node name="MorseAtual" type="Label" parent="." unique_id=1781006368]
-offset_left = 347.0
-offset_top = 328.0
-offset_right = 553.0
-offset_bottom = 358.0
+offset_left = 349.42656
+offset_top = 345.79816
+offset_right = 556.86713
+offset_bottom = 375.52293
 text = "Morse: —"
 horizontal_alignment = 1
 
 [node name="Status" type="Label" parent="." unique_id=1558817258]
-offset_left = 350.0
-offset_top = 110.0
-offset_right = 785.0
-offset_bottom = 140.0
+offset_left = 352.44754
+offset_top = 129.79818
+offset_right = 790.48952
+offset_bottom = 159.52295
 theme_override_fonts/font = ExtResource("7_kc0pe")
 theme_override_font_sizes/font_size = 19
 horizontal_alignment = 1
 
 [node name="Confirmar" type="Button" parent="." unique_id=642655935]
-offset_left = 620.0
-offset_top = 460.0
-offset_right = 790.0
-offset_bottom = 490.0
+offset_left = 624.33567
+offset_top = 476.58714
+offset_right = 795.52449
+offset_bottom = 506.31191
 text = "Confirmar caractere"
 
 [node name="Apagar" type="Button" parent="." unique_id=1611916997]
-offset_left = 620.0
-offset_top = 427.0
-offset_right = 700.0
-offset_bottom = 457.0
+offset_left = 624.33567
+offset_top = 443.88990
+offset_right = 704.89511
+offset_bottom = 473.61467
 text = "Apagar"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=645972151]
 
 [node name="somTele" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=311090517]
 stream = ExtResource("8_det3c")
+
+[node name="BotaoConfig" parent="." instance=ExtResource("99_config")]
+z_index = 100
 
 [connection signal="pressed" from="ponto" to="." method="_on_ponto_pressed"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]

@@ -1,13 +1,9 @@
 extends Panel
 
 @onready var icon: TextureRect = $icon
-var _default_expand_mode: int
-var _default_stretch_mode: int
 
 
 func _ready() -> void:
-	_default_expand_mode = icon.expand_mode
-	_default_stretch_mode = icon.stretch_mode
 	update_ui()
 
 
@@ -19,20 +15,16 @@ func _ready() -> void:
 			update_ui()
 
 func update_ui():
+	icon.scale = Vector2.ONE
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	#atualiza a iinterface do slote e do item no mundo
 	if not item: 
 		icon.texture = null
-		icon.expand_mode = _default_expand_mode
-		icon.stretch_mode = _default_stretch_mode
+		tooltip_text = ""
 		icon.hide()
 		return
 	icon.texture = item.inventory_icon
-	if item.fill_inventory_slot:
-		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		icon.stretch_mode = TextureRect.STRETCH_SCALE
-	else:
-		icon.expand_mode = _default_expand_mode
-		icon.stretch_mode = _default_stretch_mode
 	tooltip_text = item.item_name
 	icon.show()
 		

@@ -3,8 +3,11 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 const POS_LAMPADA := Vector2(575, 273)
 const RECURSO_LAMPADA := "res://recursos/lampada.tres"
 const RECURSO_FLAN := "res://recursos/flan.tres"
+const CAMERA_DESLIGADA = preload("res://assets/cenarios/camera_teto_deslig.png")
+const CAMERA_LIGADA = preload("res://assets/cenarios/camera_teto_lig.png")
 
 func _ready() -> void:
+	$Sprite2D/Camera.texture = CAMERA_LIGADA if bool(Progresso.carregar("pc_consertado", false)) else CAMERA_DESLIGADA
 	GlobalSingleton.registrar_cena_atual(scene_file_path)
 	Objetos.garantir_padrao(name)
 	iniciar_itens_cena(name, Objetos.get_objetos_cena(name))

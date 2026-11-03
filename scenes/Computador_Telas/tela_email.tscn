@@ -21,14 +21,17 @@
 [ext_resource type="Texture2D" uid="uid://dkhb1yabky737" path="res://assets/computador_telas/botaoConfirmarDesligado.png" id="17_confirmar_desligado"]
 [ext_resource type="AudioStream" uid="uid://b32njth18trvc" path="res://assets/Sons/alerta_phishing.mp3" id="20_lpxyt"]
 
+[ext_resource type="Resource" path="res://recursos/emails/email_5.tres" id="21_email"]
+[ext_resource type="Resource" path="res://recursos/emails/email_6.tres" id="22_email"]
+
 [node name="Tela_Email" type="Control" unique_id=1114813363]
 z_index = 2
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1813.0
-offset_bottom = 934.0
+offset_right = 1815.0
+offset_bottom = 932.0
 script = ExtResource("1_lp1dp")
-emails = Array[ExtResource("2_skfp5")]([ExtResource("3_fi8ha"), ExtResource("4_3s1ob"), ExtResource("5_3s1ob"), ExtResource("6_wguv2")])
+emails = Array[ExtResource("2_skfp5")]([ExtResource("3_fi8ha"), ExtResource("4_3s1ob"), ExtResource("5_3s1ob"), ExtResource("6_wguv2"), ExtResource("21_email"), ExtResource("22_email")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=87687327]
 z_index = -2
@@ -74,12 +77,44 @@ offset_bottom = 361.0
 flat = true
 script = ExtResource("6_skfp5")
 
-[node name="ImagemEmail" type="TextureRect" parent="VisualizadorEmail" unique_id=1961453323]
+[node name="Leitura" type="ScrollContainer" parent="VisualizadorEmail"]
 layout_mode = 0
-offset_left = 450.0
-offset_top = 140.0
-offset_right = 1176.0
-offset_bottom = 574.0
+offset_left = 460.0
+offset_top = 240.0
+offset_right = 1780.0
+offset_bottom = 895.0
+
+[node name="ImagemEmail" type="TextureRect" parent="VisualizadorEmail/Leitura"]
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Menos" type="Button" parent="VisualizadorEmail" groups=["botoes_computador"]]
+offset_left = 1200.0
+offset_top = 145.0
+offset_right = 1290.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 32
+text = "−"
+tooltip_text = "Diminuir e-mail"
+
+[node name="Mais" type="Button" parent="VisualizadorEmail" groups=["botoes_computador"]]
+offset_left = 1305.0
+offset_top = 145.0
+offset_right = 1395.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 32
+text = "+"
+tooltip_text = "Ampliar e-mail"
+
+[node name="Ajustar" type="Button" parent="VisualizadorEmail" groups=["botoes_computador"]]
+offset_left = 1410.0
+offset_top = 145.0
+offset_right = 1770.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 28
+text = "Ver e-mail inteiro"
 
 [node name="BotaoPhishing" type="TextureButton" parent="VisualizadorEmail" unique_id=329080045 groups=["botoes_computador"]]
 layout_mode = 0
@@ -111,11 +146,15 @@ stretch_mode = 0
 
 [node name="LabelFeedback" type="Label" parent="VisualizadorEmail" unique_id=16364955]
 layout_mode = 0
-offset_left = 943.0
-offset_top = 711.0
-offset_right = 983.0
-offset_bottom = 760.0
-theme_override_font_sizes/font_size = 35
+offset_left = 40.0
+offset_top = 795.0
+offset_right = 410.0
+offset_bottom = 910.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 27
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="BotaoVoltar" type="Button" parent="VisualizadorEmail" unique_id=1756716582]
 layout_mode = 0
@@ -200,7 +239,7 @@ offset_bottom = 1080.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_criptografia")
 
-[node name="AlertaPhishing" type="AudioStreamPlayer2D" parent="." unique_id=1685815491]
+[node name="AlertaPhishing" type="AudioStreamPlayer" parent="." unique_id=1685815491]
 stream = ExtResource("20_lpxyt")
 
 [connection signal="pressed" from="VisualizadorEmail/Enviados" to="." method="voltar"]

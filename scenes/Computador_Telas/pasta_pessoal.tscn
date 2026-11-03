@@ -11,8 +11,8 @@
 [node name="Pasta_Pessoal" type="Control" unique_id=844825480]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1815.0
+offset_bottom = 932.0
 
 script = ExtResource("8_documentos")
 arquivos = {"Agenda_txt": "", "Aniversarios_txt": "res://assets/computador_telas/arquivos/aniversarios.png", "Rascunho_txt": "res://assets/computador_telas/arquivos/rascunho.png", "Ferias_jpeg": ""}

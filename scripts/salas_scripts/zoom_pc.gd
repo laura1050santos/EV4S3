@@ -25,6 +25,8 @@ const POS_PLACA_MAE_ANTIGA := Vector2(362, 366)
 const RECURSO_GPU := "res://recursos/gpu.tres"
 const RECURSO_PROCESSADOR := "res://recursos/processador.tres"
 const RECURSO_PLACA_MAE := "res://recursos/placaMae.tres"
+const RECURSO_SD := "res://recursos/Backup03.tres"
+const ESTACAO_SD := "leitor_sd_pc"
 const VISUAIS_INSTALADOS := {
 	"gpu": preload("res://assets/itens/GPU_Feito.png"),
 	"processador": preload("res://assets/itens/Processador_Feito.png"),
@@ -83,6 +85,7 @@ func _ready() -> void:
 	atualizar_estado_da_tela()
 	_verificar_conclusao_gabinete()
 	_atualizar_guias()
+	_atualizar_sd()
 
 
 # =========================================================
@@ -140,6 +143,8 @@ func _restaurar_estado_gabinete(objetos: Array) -> void:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if Rect2(Vector2(-60, -30), Vector2(120, 60)).has_point($GabinetePc/slotSD.get_local_mouse_position()):
+			return
 		if gabinete_aberto:
 			return
 		var chave = get_node_or_null("chave")
@@ -183,6 +188,8 @@ func _on_slot_placa_mae_area_entered(area: Area2D) -> void:
 
 
 func receber_item_drop(item: itemData, slot: Area2D) -> bool:
+	if slot == $GabinetePc/slotSD:
+		return inserir_sd(item)
 	if not gabinete_aberto or item == null or not slot.is_in_group("slots_componentes"):
 		return false
 
@@ -208,6 +215,36 @@ func receber_item_drop(item: itemData, slot: Area2D) -> bool:
 	add_child(visual)
 	_instalar_componente_no_slot(visual, slot.name)
 	return true
+
+func sd_inserido() -> bool:
+	return Objetos.get_recurso_em_estacao(ESTACAO_SD) == RECURSO_SD
+
+func inserir_sd(item: itemData) -> bool:
+	if item == null or item.resource_path != RECURSO_SD or sd_inserido():
+		return false
+	if not Objetos.esta_coletado(RECURSO_SD):
+		return false
+	Objetos.guardar_em_estacao(RECURSO_SD, ESTACAO_SD)
+	_atualizar_sd()
+	return true
+
+func retirar_sd() -> bool:
+	if not sd_inserido():
+		return false
+	var inventario = get_tree().get_first_node_in_group("world_drop_area")
+	if inventario == null or not inventario.guardar_no_inventario(load(RECURSO_SD)):
+		return false
+	Objetos.marcar_coletado_por_recurso(RECURSO_SD)
+	_atualizar_sd()
+	return true
+
+func _atualizar_sd() -> void:
+	$GabinetePc/CartaoSD.visible = sd_inserido()
+
+func _on_sd_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		retirar_sd()
+		get_viewport().set_input_as_handled()
 
 
 func _instalar_componente_no_slot(objeto: Node, nome_slot: String) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dklskxarpsimy"
-path="res://.godot/imported/email_phishing_exemplo.jpg-b43a3fd81d22efc2a2631b306c8f238e.ctex"
+uid="uid://cuc6v5u85jcuo"
+path="res://.godot/imported/zoom_cuco.png-af1fb8002a9c8ad6d552c112cfac85c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/computador_telas/email_phishing_exemplo.jpg"
-dest_files=["res://.godot/imported/email_phishing_exemplo.jpg-b43a3fd81d22efc2a2631b306c8f238e.ctex"]
+source_file="res://assets/cenarios/zoom_cuco.png"
+dest_files=["res://.godot/imported/zoom_cuco.png-af1fb8002a9c8ad6d552c112cfac85c5.ctex"]
 
 [params]
 

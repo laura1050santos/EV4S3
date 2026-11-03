@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1")
+termos = PackedStringArray("Arquivo Particular Lin Barde", "Arquivo Lin Barde", "Lin Barde", "Arquivo e documentação", "Arquivo e documentacao")
 titulo = "Arquivo Particular Lin Barde"
 endereco = "https://acervo-linbarde.local/apresentacao"
 conteudo = "O Arquivo Particular Lin Barde reúne documentos, fotografias e registros preservados pela família. A organização do acervo procura manter a relação entre cada documento e o conjunto ao qual ele pertence.

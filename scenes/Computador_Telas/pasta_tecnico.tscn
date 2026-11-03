@@ -10,8 +10,8 @@
 [node name="Pasta_Tecnico" type="Control" unique_id=876146448]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1815.0
+offset_bottom = 932.0
 
 script = ExtResource("8_documentos")
 arquivos = {"RegistroEquip_txt": "res://assets/computador_telas/arquivos/registro.png", "Contatos_txt": "res://assets/computador_telas/arquivos/contatos.png", "Procedimentos_txt": "res://assets/computador_telas/arquivos/procedimentos.png"}

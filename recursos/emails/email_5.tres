@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="email_data" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/computador_telas/06_premio_aniversario.png" id="1_imagem"]
+[ext_resource type="Script" path="res://scripts/telaComp/email_data.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+imagem = ExtResource("1_imagem")
+eh_phishing = true
+titulo_na_caixa = "Parabéns! Você foi selecionado para resgatar seu prêmio de aniversário"

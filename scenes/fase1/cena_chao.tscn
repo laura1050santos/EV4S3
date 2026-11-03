@@ -28,6 +28,7 @@ script = ExtResource("1_33jt1")
 [node name="Escuro" parent="." unique_id=436822312 instance=ExtResource("4_p12nd")]
 
 [node name="BotaoConfig" parent="." unique_id=550755177 instance=ExtResource("5_61tdm")]
+z_index = 100
 
 [node name="Mensagem" type="Area2D" parent="." unique_id=1131996901]
 script = ExtResource("9_vl7g8")
@@ -60,8 +61,8 @@ shape = SubResource("RectangleShape2D_k4gre")
 debug_color = Color(0.90259814, 0.13965777, 0.67729354, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=331265735]
-position = Vector2(580.00006, 326.00003)
-scale = Vector2(0.6074074, 0.6074074)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_61tdm")
 
 [node name="PainelSenha" type="Control" parent="Sprite2D" unique_id=1174604882]

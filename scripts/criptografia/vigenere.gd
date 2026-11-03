@@ -9,7 +9,8 @@ const SEM_ACENTOS := {
 # Regra do jogo: letras maiúsculas sem acentos; outros símbolos são preservados.
 # Espaços, números e pontuação não consomem uma posição da palavra-chave.
 static func normalizar(texto: String) -> String:
-	var resultado: String = texto.to_upper()
+	# Recursos editados no Windows e no Linux devem produzir o mesmo hash.
+	var resultado: String = texto.replace("\r\n", "\n").replace("\r", "\n").to_upper()
 	for letra in SEM_ACENTOS:
 		for variante in SEM_ACENTOS[letra]:
 			resultado = resultado.replace(variante, letra)

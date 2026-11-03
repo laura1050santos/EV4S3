@@ -32,28 +32,29 @@ size = Vector2(108.70543, 108.72484)
 script = ExtResource("1_2litd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=781144196]
-position = Vector2(575.5, 324)
-scale = Vector2(0.60156244, 0.6009259)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_k8ayk")
 
 [node name="Calendario" parent="." unique_id=386738860 instance=ExtResource("18_calendario")]
 position = Vector2(704, 296)
 
 [node name="SetaDireita" parent="." unique_id=302656548 instance=ExtResource("1_nd5rm")]
-destino_cena = "uid://cxhjpnc7drrok"
+destino_cena = "res://scenes/fase1/ParedeSul.tscn"
 
 [node name="SetaEsquerda" parent="." unique_id=963256756 instance=ExtResource("2_vkmgy")]
-destino_cena = "uid://djryii8ewlak6"
+destino_cena = "res://scenes/fase1/ParedeNorte.tscn"
 
 [node name="setaCima" parent="." unique_id=267161862 instance=ExtResource("5_xd0od")]
-destino_cena = "uid://dcjm6p1qyhtmg"
+destino_cena = "res://scenes/fase1/cena_teto.tscn"
 
 [node name="SetaBaixo" parent="." unique_id=306388407 instance=ExtResource("6_k8ayk")]
-destino_cena = "uid://dmhce3kfm14ep"
+destino_cena = "res://scenes/fase1/cena_chao.tscn"
 
 [node name="Escuro" parent="." unique_id=1251797757 instance=ExtResource("7_7nwwv")]
 
 [node name="BotaoConfig" parent="." unique_id=2122993620 instance=ExtResource("8_cvcdw")]
+z_index = 100
 
 [node name="LixoPc" type="Sprite2D" parent="." unique_id=533287465]
 position = Vector2(774.99994, 530.49994)
@@ -78,21 +79,21 @@ polygon = PackedVector2Array(62.601196, -124.70264, 62.601196, 165.2019, -33.187
 [node name="Gaveta1Pc" type="Sprite2D" parent="." unique_id=1644758883]
 visible = false
 z_index = 3
-position = Vector2(576.00006, 324.00003)
-scale = Vector2(0.6, 0.6000001)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("10_etvgb")
 
 [node name="Gaveta2Pc" type="Sprite2D" parent="." unique_id=1231947391]
 z_index = 2
-position = Vector2(576.00006, 324)
-scale = Vector2(0.6, 0.6000001)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("11_pvpgn")
 
 [node name="Gaveta3Pc" type="Sprite2D" parent="." unique_id=1252266127]
 visible = false
 z_index = 1
-position = Vector2(576, 323.99997)
-scale = Vector2(0.6000001, 0.59999996)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_35a4w")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=402879579]
@@ -122,8 +123,8 @@ position = Vector2(586.5, 466.5)
 shape = SubResource("RectangleShape2D_etvgb")
 
 [node name="monitorLigado" type="Sprite2D" parent="." unique_id=1031921177]
-position = Vector2(575.3386, 324.00003)
-scale = Vector2(0.6006889, 0.6)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("13_pvpgn")
 
 [node name="postit" type="Sprite2D" parent="." unique_id=1548971824]

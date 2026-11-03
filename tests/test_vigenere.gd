@@ -12,6 +12,7 @@ func _initialize() -> void:
 	_igual(Cifra.decifrar("NEXO", "NEXO"), "AAAA", "Deslocamentos inversos")
 	_igual(Cifra.normalizar("À ação, órgão, café, açúcar e maçã!"), "A ACAO, ORGAO, CAFE, ACUCAR E MACA!", "Acentos")
 	_igual(Cifra.normalizar("ac\u0327a\u0303o"), "ACAO", "Acentos decompostos")
+	_igual(Cifra.normalizar("LINHA 1\r\nLINHA 2\r"), "LINHA 1\nLINHA 2\n", "Quebras de linha Windows e Linux equivalentes")
 	for texto in ["", "Mensagem confidencial.", "Chave do ZIP: 24091998", "Ação e memória: julho/1998.\nNEXO", "0123!?\n", "Um registro — com símbolos 🙂."]:
 		var cifrado: String = Cifra.cifrar(texto, "NEXO")
 		_igual(Cifra.decifrar(cifrado, "NEXO"), Cifra.normalizar(texto), "Ida e volta: " + texto)

@@ -7,8 +7,8 @@
 [node name="Tela_Senha" type="Control" unique_id=760084489]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1815.0
+offset_bottom = 932.0
 
 [node name="Tela" type="ColorRect" parent="." unique_id=511493874]
 layout_mode = 0

@@ -8,7 +8,9 @@ signal todos_classificados
 
 @onready var lista_inbox: VBoxContainer = $ListaEmails
 @onready var visualizador: Control = $VisualizadorEmail
-@onready var imagem_email: TextureRect = $VisualizadorEmail/ImagemEmail
+@onready var imagem_email: TextureRect = $VisualizadorEmail/Leitura/ImagemEmail
+@onready var leitura: ScrollContainer = $VisualizadorEmail/Leitura
+var zoom_leitura: float = 1.6
 @onready var botao_phishing: TextureButton = $VisualizadorEmail/BotaoPhishing
 @onready var botao_legitimo: TextureButton = $VisualizadorEmail/BotaoLegitimo
 @onready var botao_voltar: Button = $VisualizadorEmail/BotaoVoltar
@@ -29,6 +31,9 @@ var concluido: bool = false
 var alerta_phishing: ColorRect
 
 func _ready() -> void:
+	$VisualizadorEmail/Menos.pressed.connect(func(): _ajustar_zoom(zoom_leitura - 0.2))
+	$VisualizadorEmail/Mais.pressed.connect(func(): _ajustar_zoom(zoom_leitura + 0.2))
+	$VisualizadorEmail/Ajustar.pressed.connect(_encaixar_email)
 	botao_phishing.pressed.connect(func(): responder(true))
 	botao_legitimo.pressed.connect(func(): responder(false))
 	botao_voltar.pressed.connect(voltar)
@@ -138,6 +143,7 @@ func _criar_lista() -> void:
 		titulo.offset_right = -15
 		titulo.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		titulo.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		titulo.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		titulo.add_theme_font_size_override("font_size", 32)
 		item.pressed.connect(abrir_email.bind(indice))
 		lista_inbox.add_child(item)
@@ -167,6 +173,9 @@ func _atualizar_cor_email(indice: int) -> void:
 func abrir_email(indice: int) -> void:
 	email_atual_id = indice
 	imagem_email.texture = emails[indice].imagem
+	_encaixar_email()
+	leitura.scroll_horizontal = 0
+	leitura.scroll_vertical = 0
 
 	if not lidos.has(indice):
 		lidos.append(indice)
@@ -181,6 +190,15 @@ func abrir_email(indice: int) -> void:
 	botao_phishing.disabled = concluido
 	botao_legitimo.disabled = concluido
 	_atualizar_feedback()
+
+func _ajustar_zoom(valor: float) -> void:
+	zoom_leitura = clampf(valor, 0.5, 2.4)
+	if imagem_email.texture:
+		imagem_email.custom_minimum_size = imagem_email.texture.get_size() * zoom_leitura
+
+func _encaixar_email() -> void:
+	if imagem_email.texture:
+		_ajustar_zoom((leitura.size.x - 20.0) / imagem_email.texture.get_width())
 
 func responder(marcou_como_phishing: bool) -> void:
 	if email_atual_id == -1 or concluido:
@@ -198,7 +216,7 @@ func responder(marcou_como_phishing: bool) -> void:
 
 func _mostrar_alerta_phishing() -> void:
 	if som_alerta:
-		print("ALERTA PHISHING TOCANDO")
+		som_alerta.play()
 
 	if is_instance_valid(alerta_phishing):
 		

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://xtu7nn6q5b5v" path="res://scripts/puzzle_roteador.gd" id="1_vnrup"]
 [ext_resource type="Texture2D" uid="uid://bryw77kyqor2w" path="res://assets/cenarios/fios.png" id="2_vnrup"]
 
+[ext_resource type="PackedScene" path="res://scenes/setas/botaoConfig.tscn" id="99_config"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_is5g8"]
 radius = 18.996002
 height = 67.90231
@@ -27,8 +29,8 @@ height = 64.089966
 script = ExtResource("1_vnrup")
 
 [node name="Fios" type="Sprite2D" parent="." unique_id=538113187]
-position = Vector2(583, 335.25)
-scale = Vector2(1.9523809, 1.9712123)
+position = Vector2(576, 324)
+scale = Vector2(1.9591837, 1.9636364)
 texture = ExtResource("2_vnrup")
 
 [node name="fioVerde" type="Line2D" parent="." unique_id=446559013]
@@ -120,3 +122,5 @@ position = Vector2(-2, -31)
 rotation = 1.5872487
 shape = SubResource("CapsuleShape2D_keh4x")
 debug_color = Color(0.9967428, 0, 0.18973592, 0.41960785)
+[node name="BotaoConfig" parent="." instance=ExtResource("99_config")]
+z_index = 100

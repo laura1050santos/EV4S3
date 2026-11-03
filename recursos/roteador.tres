@@ -1,13 +1,18 @@
 [gd_resource type="Resource" script_class="itemData" format=3 uid="uid://ddbcf7i3msare"]
 
-[ext_resource type="Texture2D" uid="uid://rbsyhrtqva43" path="res://assets/itens/roteadorFeio.webp" id="1_11sw5"]
-[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_o1gs7"]
-[ext_resource type="Texture2D" uid="uid://db0bt3c3aekr2" path="res://assets/itens/roteadorParede.png" id="1_rnke8"]
+[ext_resource type="Texture2D" path="res://assets/itens/roteadordefrente.png" id="1_frente"]
+[ext_resource type="Script" path="res://scripts/inventario/item_data.gd" id="2_item"]
+[ext_resource type="Texture2D" path="res://assets/itens/roteadorParede.png" id="3_parede"]
+
+[sub_resource type="AtlasTexture" id="RoteadorFrente"]
+atlas = ExtResource("1_frente")
+region = Rect2(491, 171, 488, 386)
 
 [resource]
 resource_name = "roteador"
-script = ExtResource("1_o1gs7")
+script = ExtResource("2_item")
 item_name = "roteador"
-icon = ExtResource("1_11sw5")
-inventory_icon = ExtResource("1_11sw5")
-ativo_icon = ExtResource("1_rnke8")
+world_scale = Vector2(0.25, 0.25)
+icon = SubResource("RoteadorFrente")
+inventory_icon = SubResource("RoteadorFrente")
+ativo_icon = ExtResource("3_parede")

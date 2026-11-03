@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1")
+termos = PackedStringArray("Vigia Residencial", "Vigia", "Segurança", "Seguranca")
 titulo = "Vigia Residencial"
 endereco = "https://vigia.local/residencias/lin-barde"
 conteudo = "A família Lin Barde mantém a Vigia Residencial entre seus contatos de segurança da propriedade. O atendimento envolve orientações sobre controle de acesso e acompanhamento dos equipamentos de vigilância.

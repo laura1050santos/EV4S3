@@ -1,11 +1,10 @@
 [gd_resource type="Resource" script_class="email_data" format=3 uid="uid://bu45gv3supxw"]
 
-[ext_resource type="Texture2D" uid="uid://b7gpsyedjd1od" path="res://assets/computador_telas/foto.png" id="1_kcyrr"]
-[ext_resource type="Script" uid="uid://byo5yx7fdb7ms" path="res://scripts/telaComp/email_data.gd" id="2_ta3ll"]
+[ext_resource type="Texture2D" path="res://assets/computador_telas/04_acao_na_conta.png" id="1_imagem"]
+[ext_resource type="Script" path="res://scripts/telaComp/email_data.gd" id="2_script"]
 
 [resource]
-script = ExtResource("2_ta3ll")
-imagem = ExtResource("1_kcyrr")
+script = ExtResource("2_script")
+imagem = ExtResource("1_imagem")
 eh_phishing = true
-titulo_na_caixa = "Documento solicitado"
-metadata/_custom_type_script = "uid://byo5yx7fdb7ms"
+titulo_na_caixa = "Sua conta precisa de uma ação"

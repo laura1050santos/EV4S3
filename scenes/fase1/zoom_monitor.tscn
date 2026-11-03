@@ -7,28 +7,32 @@
 [ext_resource type="PackedScene" uid="uid://br7k0n78k5ayn" path="res://scenes/fase1/sub_viewport_container.tscn" id="5_lsmqo"]
 [ext_resource type="Texture2D" uid="uid://dpwrhdwynlybq" path="res://assets/itens/alerta.png" id="5_ud4wo"]
 
+[ext_resource type="PackedScene" path="res://scenes/setas/botaoConfig.tscn" id="99_config"]
+
 [node name="ZoomMonitor" type="Node2D" unique_id=1296814580]
 script = ExtResource("1_ud4wo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1049587466]
 position = Vector2(576, 324)
-scale = Vector2(0.6, 0.59999996)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_p43dj")
 
 [node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("2_p43dj")]
-destino_cena = "uid://dqttd76hew5ag"
+destino_cena = "res://scenes/fase1/ParedeLeste.tscn"
 
 [node name="Escuro" parent="." unique_id=693554654 instance=ExtResource("3_0ucrh")]
 
 [node name="SubViewportContainer" parent="." unique_id=1791322923 instance=ExtResource("5_lsmqo")]
 z_index = 1
-offset_left = 287.0
-offset_top = 86.0
-offset_right = 2080.1248
-offset_bottom = 1008.5038
+offset_left = 285.0
+offset_top = 87.0
+offset_right = 2100.0
+offset_bottom = 1019.0
 
 [node name="sem conexão" type="Sprite2D" parent="." unique_id=21905937]
 visible = false
-position = Vector2(581, 412.59753)
-scale = Vector2(1.1496733, 1.1692637)
+position = Vector2(505.202553, 305.127660)
+scale = Vector2(0.79319149, 0.79319149)
 texture = ExtResource("5_ud4wo")
+[node name="BotaoConfig" parent="." instance=ExtResource("99_config")]
+z_index = 100

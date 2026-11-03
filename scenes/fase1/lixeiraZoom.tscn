@@ -15,18 +15,18 @@ size = Vector2(434.5, 219)
 script = ExtResource("1_8bx6j")
 
 [node name="back" type="Sprite2D" parent="." unique_id=983804472]
-position = Vector2(575.5, 326.5)
-scale = Vector2(0.59739584, 0.6064815)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_68gv6")
 
 [node name="SetaEsquerda" parent="." unique_id=1512138693 instance=ExtResource("2_f6m85")]
 position = Vector2(215, 142)
-destino_cena = "uid://cxhjpnc7drrok"
+destino_cena = "res://scenes/fase1/ParedeSul.tscn"
 
 [node name="lixeiraAberta" type="Sprite2D" parent="." unique_id=435469066]
 visible = false
-position = Vector2(575.5, 326.5)
-scale = Vector2(0.59739584, 0.6064815)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_f6m85")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2005439593]
@@ -38,10 +38,7 @@ shape = SubResource("RectangleShape2D_8bx6j")
 [node name="Escuro" parent="." unique_id=1322762046 instance=ExtResource("5_u3ttn")]
 
 [node name="BotaoConfig" parent="." unique_id=126855068 instance=ExtResource("3_u3ttn")]
-offset_left = 65.0
-offset_top = 12.999999
-offset_right = 3231.6665
-offset_bottom = 1681.0
+z_index = 100
 
 [node name="som_lixeira_abrindo" type="AudioStreamPlayer2D" parent="." unique_id=1276559445]
 stream = ExtResource("7_ppgjm")

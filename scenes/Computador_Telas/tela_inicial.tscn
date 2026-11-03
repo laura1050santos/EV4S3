@@ -8,8 +8,8 @@
 z_index = -1
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1815.0
+offset_bottom = 932.0
 script = ExtResource("1_hcb5x")
 
 [node name="Tela" type="ColorRect" parent="." unique_id=1202767578]
@@ -112,6 +112,14 @@ offset_bottom = -14.691994
 scale = Vector2(3.605083, 1.6622539)
 text = "
 "
+flat = true
+
+[node name="Messenger" type="Button" parent="menu" groups=["botoes_computador"]]
+offset_left = -476.0
+offset_top = -110.0
+offset_right = -281.0
+offset_bottom = -56.0
+tooltip_text = "Abrir Messenger"
 flat = true
 
 [node name="Nome_Pasta" type="Label" parent="."]

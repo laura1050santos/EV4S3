@@ -97,6 +97,8 @@ func _mostrar_itens_gaveta(id: String) -> void:
 		if visual == null:
 			continue
 		var item: itemData = info["item"]
+		if not item.nome_fotografado.is_empty():
+			visual.z_index = gavetas_sprites[id].z_index - 1
 		match item.resource_path:
 			"res://recursos/FioDecodificador.tres":
 				visual.position = posicao_fio_gaveta

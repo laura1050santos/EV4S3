@@ -9,6 +9,11 @@ func _ready() -> void:
 	$Pasta.pressed.connect(_p1_pessoal)
 	$Pasta2.pressed.connect(_p2_tecnico)
 	$Pastas.pressed.connect(_pastas)
+	$menu/Messenger.pressed.connect(_messenger)
+
+func _messenger() -> void:
+	$menu.hide()
+	$"../Mensageiro".abrir_aplicativo(self)
 
 func _nav() -> void:
 	$"../Tela_Navegador".show()

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/telaComp/documento_recuperado.gd" id="1_documento"]
+
+[resource]
+script = ExtResource("1_documento")
+titulo = "registro_excluido.dat"
+texto = "REGISTRO RECUPERADO — BACKUP-03
+
+[DOCUMENTO PROVISÓRIO DE DESENVOLVIMENTO — TEXTO NARRATIVO EM REVISÃO]
+
+[Inserir aqui a revelação aprovada sobre o motivo do sequestro.]
+
+[Inserir aqui o motivo aprovado para a urgência de fugir.]
+
+O computador fornece energia ao sistema da porta. A alimentação elétrica, por si só, não destranca a fechadura: o acesso continua exigindo autenticação.
+
+O painel à direita da saída controla esse acesso. Há sinais de uso no dispositivo e anotações antigas nesta sala que podem ganhar outro significado quando você o examinar.
+
+FIM DO REGISTRO"

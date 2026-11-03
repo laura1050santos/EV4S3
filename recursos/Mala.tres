@@ -1,13 +1,16 @@
 [gd_resource type="Resource" script_class="itemData" format=3 uid="uid://cdd5k3wmce43f"]
 
-[ext_resource type="Texture2D" uid="uid://c4wof56f5vx32" path="res://assets/itens/malagrande.png" id="1_3ptfa"]
-[ext_resource type="Script" uid="uid://bwi2jwocwo7qv" path="res://scripts/inventario/item_data.gd" id="1_pdaop"]
-[ext_resource type="Texture2D" uid="uid://mjnfhckmhoal" path="res://assets/itens/objeto-mala-sala.png" id="1_ub7uk"]
+[ext_resource type="Texture2D" path="res://assets/cenarios/maletazoomfechada.png" id="1_mala"]
+[ext_resource type="Script" path="res://scripts/inventario/item_data.gd" id="2_item"]
+
+[sub_resource type="AtlasTexture" id="Mala"]
+atlas = ExtResource("1_mala")
+region = Rect2(480, 115, 570, 510)
 
 [resource]
-script = ExtResource("1_pdaop")
+script = ExtResource("2_item")
 item_name = "Mala"
-icon = ExtResource("1_ub7uk")
-inventory_icon = ExtResource("1_3ptfa")
-ativo_icon = ExtResource("1_ub7uk")
-metadata/_custom_type_script = "uid://bwi2jwocwo7qv"
+world_scale = Vector2(0.3, 0.3)
+icon = SubResource("Mala")
+inventory_icon = SubResource("Mala")
+ativo_icon = SubResource("Mala")

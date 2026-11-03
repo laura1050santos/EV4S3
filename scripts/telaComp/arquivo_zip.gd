@@ -10,6 +10,7 @@ func _ready() -> void:
 	$Bloqueado/Abrir.pressed.connect(tentar_abrir)
 	$Bloqueado/Senha.text_submitted.connect(func(_texto: String): tentar_abrir())
 	$Conteudo/Imagem.pressed.connect(visualizar_imagem)
+	$Conteudo/Recuperador.pressed.connect(abrir_recuperador)
 
 func abrir(pasta_origem: Control = null) -> void:
 	origem = pasta_origem
@@ -42,6 +43,10 @@ func tentar_abrir() -> void:
 func visualizar_imagem() -> void:
 	if desbloqueado:
 		$VisualizadorArquivo.abrir("arquivo.zip → imagem.png", imagem)
+
+func abrir_recuperador() -> void:
+	if desbloqueado and bool(Progresso.carregar("zip_aberto", false)):
+		$"../Recuperador".abrir(self)
 
 func _atualizar() -> void:
 	$Bloqueado.visible = not desbloqueado
