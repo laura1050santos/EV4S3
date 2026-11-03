@@ -2,6 +2,7 @@ extends Area2D
 
 @export var estacao_id: String = ""
 @export var item_aceito: itemData
+@onready var toca_fitas: AudioStreamPlayer2D = $"../../AudioListener2D/TocaFitas"
 
 var item_guardado: itemData = null
 
@@ -18,7 +19,7 @@ func _ready() -> void:
 	var caminho := Objetos.get_recurso_em_estacao(estacao_id)
 	if caminho != "":
 		item_guardado = load(caminho)
-		som.play()
+		tocar_sons_com_delay()
 
 func _on_som_terminou() -> void:
 	# loop; se o stream já estiver com Loop marcado, isso nunca dispara
@@ -35,7 +36,7 @@ func colocar_item(item: itemData) -> bool:
 		return false
 	item_guardado = item
 	Objetos.guardar_em_estacao(item.resource_path, estacao_id)
-	som.play()
+	tocar_sons_com_delay()
 	return true
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
@@ -54,3 +55,8 @@ func _coletar() -> void:
 	Objetos.marcar_coletado_por_recurso(item_guardado.resource_path)
 	item_guardado = null
 	get_viewport().set_input_as_handled()
+	
+func tocar_sons_com_delay() -> void:
+	toca_fitas.play() # Toca o primeiro som imediatamente
+	await get_tree().create_timer(2.5).timeout 
+	som.play() # Toca o segundo som após o tempo acabar

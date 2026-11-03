@@ -83,7 +83,7 @@ func spawnar_itens(item_ou_caminho, posicao):
 func _on_gaveta_alterada(id: String, aberta: bool) -> void:
 	if aberta:
 		_mostrar_itens_gaveta(id)
-		som_gaveta_abrindo.play()
+		som_gaveta_abrindo.play(0.5)
 	else:
 		_esconder_itens_gaveta(id)
 		som_gaveta_fechando.play(0.5)

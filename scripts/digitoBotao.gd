@@ -1,4 +1,5 @@
 extends TextureButton
+@onready var som_senha: AudioStreamPlayer2D = $"../AudioListener2D/somSenha"
 
 @export var digit_textures: Array[Texture2D] = [preload("res://assets/numeros/0.png"),
 		preload("res://assets/numeros/1.png"),
@@ -18,6 +19,7 @@ func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 func _on_pressed() -> void:
+	som_senha.play(0.1)
 	current_digit = (current_digit + 1) % 10  # vai de 0 a 9 e volta pra 0
 	update_texture()
 

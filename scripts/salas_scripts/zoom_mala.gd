@@ -3,6 +3,7 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 @onready var mala_sprite: Sprite2D = $Malagrande
 @onready var cenario_fechado: Sprite2D = $CenarioFechado
 @onready var ponto_roteador: Node2D = $pontoroteador
+@onready var som_abrindo_mala: AudioStreamPlayer2D = $AudioListener2D/SomAbrindoMala
 
 var mala_aberta: bool = false
 const ID_ROTEADOR := "res://recursos/roteador.tres"
@@ -32,6 +33,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 		return
 	var drop_area = get_tree().get_first_node_in_group("world_drop_area")
 	if drop_area != null and drop_area.inventario_possui_item(load(ID_CHAVE)):
+		som_abrindo_mala.play()
 		_abrir_com_chave()
 
 func receber_item_drop(item: itemData, alvo: Area2D) -> bool:

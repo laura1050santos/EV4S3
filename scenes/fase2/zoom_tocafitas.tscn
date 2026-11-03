@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ca8wwitga4rnm" path="res://scripts/salas_scripts/toca_fitas.gd" id="4_f3bcf"]
 [ext_resource type="Resource" uid="uid://t448chq5te6t" path="res://recursos/FitaCassete.tres" id="5_04wbe"]
 [ext_resource type="AudioStream" uid="uid://hcl2ptyd13qe" path="res://assets/Sons/fita.mp3" id="5_12td3"]
+[ext_resource type="AudioStream" uid="uid://dau12woupuwjw" path="res://assets/Sons/ColocandofitaCassete.mp3" id="8_g6br5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(652.76685, 319.99994)
@@ -38,3 +39,8 @@ stream = ExtResource("5_12td3")
 volume_db = -5.0
 playback_type = 1
 parameters/looping = false
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=34864469]
+
+[node name="TocaFitas" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1091302587]
+stream = ExtResource("8_g6br5")

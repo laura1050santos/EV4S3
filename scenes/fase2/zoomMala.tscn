@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="2_8ma5l"]
 [ext_resource type="Texture2D" uid="uid://xvuobb104n60" path="res://assets/cenarios/zoom_malafechada.png" id="2_b6euy"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_nmnx3"]
+[ext_resource type="AudioStream" uid="uid://8twithjmw1rn" path="res://assets/Sons/chave.mp3" id="5_6rm16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ak76"]
 size = Vector2(370, 330)
@@ -34,5 +35,10 @@ scale = Vector2(1.2822917, 1.2842592)
 
 [node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_nmnx3")]
 destino_cena = "uid://djryii8ewlak6"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=322316040]
+
+[node name="SomAbrindoMala" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=881246891]
+stream = ExtResource("5_6rm16")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

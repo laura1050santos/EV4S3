@@ -68,7 +68,6 @@ func _on_apagar_pressed() -> void:
 
 func _on_reset_pressed() -> void:
 	som_tele.play()
-
 	codigo_atual = ""
 	mensagem = ""
 	_atualizar_visor()
