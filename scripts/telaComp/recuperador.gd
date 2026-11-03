@@ -62,14 +62,14 @@ func abrir_registro() -> void:
 func _atualizar() -> void:
 	var recuperado: bool = bool(Progresso.carregar("registro_excluido_recuperado", false))
 	var conectado: bool = cartao_conectado()
-	$Corpo/Midia.text = "Mídia: BACKUP-03 conectado" if conectado else "Mídia: nenhum cartão detectado"
+	$Corpo/Midia.text = "Mídia: BACKUP-03 conectado" if conectado else "Mídia: indisponível"
 	$Corpo/Recuperar.disabled = recuperado or not conectado or not bool(Progresso.carregar("zip_aberto", false))
 	$Corpo/AbrirRegistro.disabled = not recuperado
 	if recuperado:
 		$Corpo/Progresso.value = 100
 		$Corpo/Status.text = "Registro recuperado. Salvo em Arquivos → Recuperados → registro_excluido.dat."
 	else:
-		$Corpo/Status.text = "Pronto para recuperar os dados do cartão." if conectado else "Encaixe BACKUP-03 no leitor do gabinete e reabra o recuperador."
+		$Corpo/Status.text = "Pronto para recuperar os dados do cartão." if conectado else "Nenhuma unidade disponível para análise."
 
 func fechar() -> void:
 	hide()

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="6_2l4tn"]
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="6_26mac"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_y3a53"]
-[ext_resource type="Texture2D" uid="uid://db0bt3c3aekr2" path="res://assets/itens/roteadorParede.png" id="9_p2jjl"]
+[ext_resource type="Texture2D" path="res://assets/itens/roteadordefrente.png" id="9_p2jjl"]
 [ext_resource type="Texture2D" path="res://assets/cenarios/maletazoomfechada.png" id="10_v0sle"]
 
 [ext_resource type="AudioStream" uid="uid://bfo3n4ragulof" path="res://assets/Sons/portaTrancada.mp3" id="11_nq1fa"]
@@ -17,6 +17,10 @@
 [sub_resource type="AtlasTexture" id="MalaNova"]
 atlas = ExtResource("10_v0sle")
 region = Rect2(480, 115, 570, 510)
+
+[sub_resource type="AtlasTexture" id="RoteadorNovo"]
+atlas = ExtResource("9_p2jjl")
+region = Rect2(491, 171, 488, 386)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
 size = Vector2(107.03837, 58.909073)
@@ -73,9 +77,9 @@ scale = Vector2(1, 1.0000001)
 shape = SubResource("RectangleShape2D_y3a53")
 
 [node name="roteadorParede" type="Sprite2D" parent="." unique_id=485452880]
-position = Vector2(359, 448.99997)
-scale = Vector2(0.2349857, 0.2216174)
-texture = ExtResource("9_p2jjl")
+position = Vector2(356, 443)
+scale = Vector2(0.14, 0.14)
+texture = SubResource("RoteadorNovo")
 
 [node name="ObjetoMalaSala" type="Sprite2D" parent="." unique_id=1324784849]
 position = Vector2(777, 545)

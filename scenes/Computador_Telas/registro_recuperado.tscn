@@ -7,7 +7,7 @@
 script = ExtResource("2_script")
 
 [node name="Voltar" parent="." index="1"]
-text = "Fechar documento"
+tooltip_text = "Fechar documento"
 
 [node name="Titulo" parent="." index="2"]
 text = "registro_excluido.dat"

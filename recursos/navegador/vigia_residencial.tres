@@ -5,11 +5,27 @@
 [resource]
 script = ExtResource("1")
 termos = PackedStringArray("Vigia Residencial", "Vigia", "Segurança", "Seguranca")
-titulo = "Vigia Residencial"
+titulo = "VIGIA RESIDENCIAL — MONITORAMENTO E CONTROLE DE ACESSO"
 endereco = "https://vigia.local/residencias/lin-barde"
-conteudo = "A família Lin Barde mantém a Vigia Residencial entre seus contatos de segurança da propriedade. O atendimento envolve orientações sobre controle de acesso e acompanhamento dos equipamentos de vigilância.
+conteudo = "A Vigia Residencial oferece soluções para monitoramento de propriedades e gerenciamento de dispositivos de segurança.
 
-A autorização de visitantes e prestadores de serviço continua sob responsabilidade dos moradores. Um contato registrado na agenda da residência não substitui uma autorização de entrada.
+Nossos serviços incluem orientação sobre equipamentos de vigilância, controle de acesso e armazenamento de registros de ocorrências.
 
-Registros de ocorrências, imagens e listas de acesso são de consulta restrita ao contratante. Nenhum desses registros é disponibilizado nesta página pública."
+Residência Lin’Barde
+
+A propriedade Lin’Barde utiliza equipamentos de monitoramento e autenticação eletrônica integrados à infraestrutura da residência.
+
+O controle de acesso pode permanecer ativo mesmo quando outros equipamentos apresentam falhas ou são desligados.
+
+A autorização de visitantes e prestadores de serviço continua sendo responsabilidade dos moradores.
+
+Privacidade
+
+Imagens, históricos de acesso e registros de ocorrências são destinados exclusivamente aos responsáveis autorizados.
+
+O acesso remoto depende das configurações e permissões estabelecidas pelo contratante.
+
+ATENÇÃO
+
+A existência de um dispositivo de vigilância ativo não garante que ele esteja sendo monitorado continuamente."
 estilo = 2

@@ -5,14 +5,24 @@
 [resource]
 script = ExtResource("1_artigo")
 termos = PackedStringArray("Vigenère", "Vigenere", "Cifra de Vigenère", "Cifra de Vigenere", "Cifra polialfabética", "Cifra polialfabetica")
-titulo = "Cifra de Vigenère: mensagens protegidas por uma palavra-chave"
+titulo = "CIFRA DE VIGENÈRE — CRIPTOGRAFIA CLÁSSICA"
 endereco = "https://arquivo.local/criptografia/vigenere"
-conteudo = "A Cifra de Vigenère é um método histórico de criptografia polialfabética. Ela utiliza uma palavra-chave para transformar as letras de uma mensagem.
+conteudo = "A Cifra de Vigenère é um método histórico de criptografia por substituição polialfabética.
 
-A palavra-chave é repetida ao longo do texto. Cada letra da chave determina um deslocamento no alfabeto, fazendo com que uma mesma letra da mensagem possa ser cifrada de maneiras diferentes.
+Diferentemente de cifras que utilizam um deslocamento fixo, ela emprega uma palavra-chave para determinar como as letras da mensagem serão transformadas.
 
-Para decifrar a mensagem, é necessário conhecer a palavra-chave e inverter esses deslocamentos. Saber o nome da cifra não basta para recuperar o conteúdo.
+A palavra-chave é repetida ao longo do texto, permitindo que uma mesma letra seja representada de maneiras diferentes.
 
-Em registros antigos, referências associadas ao documento podem indicar onde investigar a palavra-chave. Elas não fazem parte do nome do método.
+Para recuperar uma mensagem, é necessário conhecer a palavra-chave utilizada originalmente.
 
-Embora tenha importância histórica, a Cifra de Vigenère não oferece segurança adequada para proteger informações em sistemas modernos."
+COMO ENCONTRAR A CHAVE?
+
+A cifra não determina onde uma palavra-chave deve ser armazenada.
+
+Em sistemas antigos ou arquivos particulares, referências anexadas ao documento podem indicar onde procurar informações relacionadas à chave.
+
+Essas referências pertencem à organização do arquivo, não ao funcionamento da cifra.
+
+IMPORTANTE
+
+A Cifra de Vigenère possui relevância histórica e educacional, mas não é considerada segura para proteger informações em sistemas modernos."

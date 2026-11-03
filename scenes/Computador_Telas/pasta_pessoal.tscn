@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://idq4lk7mir2j"]
 
-[ext_resource type="Texture2D" uid="uid://b7gpsyedjd1od" path="res://assets/computador_telas/foto.png" id="1_o7boi"]
 [ext_resource type="Texture2D" uid="uid://dfgdel3dmtjwg" path="res://assets/computador_telas/arquivos_pessoal.png" id="1_y2d2q"]
-[ext_resource type="Texture2D" uid="uid://bh5qu6w5bea85" path="res://assets/computador_telas/documento.png" id="2_ombxv"]
+[ext_resource type="Texture2D" path="res://recursos/icones_computador/txt.tres" id="2_ombxv"]
 [ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="3_ombxv"]
 
 [ext_resource type="Script" path="res://scripts/telaComp/pasta_documentos.gd" id="8_documentos"]
@@ -15,7 +14,7 @@ offset_right = 1815.0
 offset_bottom = 932.0
 
 script = ExtResource("8_documentos")
-arquivos = {"Agenda_txt": "", "Aniversarios_txt": "res://assets/computador_telas/arquivos/aniversarios.png", "Rascunho_txt": "res://assets/computador_telas/arquivos/rascunho.png", "Ferias_jpeg": ""}
+arquivos = {"Aniversarios_txt": "res://assets/computador_telas/arquivos/aniversarios.png", "Rascunho_txt": "res://assets/computador_telas/arquivos/rascunho.png"}
 
 [node name="Tela" type="ColorRect" parent="." unique_id=885502383]
 z_index = -1
@@ -29,53 +28,31 @@ position = Vector2(915.99994, 687.2331)
 scale = Vector2(2.3208334, 1.9125315)
 texture = ExtResource("1_y2d2q")
 
-[node name="Ferias_jpeg" type="Button" parent="Tela" unique_id=1883648837 groups=["botoes_computador"]]
-layout_mode = 0
-offset_left = 1009.3839
-offset_top = 200.00002
-offset_right = 1529.3839
-offset_bottom = 720.0
-scale = Vector2(0.33059737, 0.33059737)
-icon = ExtResource("1_o7boi")
-flat = true
-
-metadata/nome_arquivo = "férias.jpeg"
-
 [node name="Rascunho_txt" type="Button" parent="Tela" unique_id=561629545 groups=["botoes_computador"]]
 layout_mode = 0
-offset_left = 810.8399
+offset_left = 610.8399
 offset_top = 200.00003
-offset_right = 1330.8398
+offset_right = 1130.8398
 offset_bottom = 720.0
 scale = Vector2(0.33059737, 0.33059737)
 icon = ExtResource("2_ombxv")
 flat = true
 
 metadata/nome_arquivo = "rascunho.txt"
+expand_icon = true
 
 [node name="Aniversarios_txt" type="Button" parent="Tela" unique_id=552302692 groups=["botoes_computador"]]
 layout_mode = 0
-offset_left = 609.3804
+offset_left = 409.3804
 offset_top = 200.0
-offset_right = 1129.3804
+offset_right = 929.3804
 offset_bottom = 720.0
 scale = Vector2(0.33059737, 0.33059737)
 icon = ExtResource("2_ombxv")
 flat = true
 
 metadata/nome_arquivo = "aniversarios.txt"
-
-[node name="Agenda_txt" type="Button" parent="Tela" unique_id=283396930 groups=["botoes_computador"]]
-layout_mode = 0
-offset_left = 409.37863
-offset_top = 200.0
-offset_right = 929.37866
-offset_bottom = 720.0
-scale = Vector2(0.33059737, 0.33059737)
-icon = ExtResource("2_ombxv")
-flat = true
-
-metadata/nome_arquivo = "agenda.txt"
+expand_icon = true
 
 [node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("3_ombxv")]
 layout_mode = 0
@@ -85,28 +62,12 @@ offset_right = 2184.1633
 offset_bottom = 448.3416
 scale = Vector2(0.1498459, 0.12717399)
 
-[node name="Nome_Agenda_txt" type="Label" parent="Tela"]
-z_index = 1
-layout_mode = 0
-offset_left = 405.379
-offset_top = 381.911
-offset_right = 585.379
-offset_bottom = 471.911
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.08, 0.08, 0.1, 1)
-theme_override_font_sizes/font_size = 22
-text = "agenda.txt"
-horizontal_alignment = 1
-autowrap_mode = 3
-
-clip_text = true
-
 [node name="Nome_Aniversarios_txt" type="Label" parent="Tela"]
 z_index = 1
 layout_mode = 0
-offset_left = 605.380
+offset_left = 405.38
 offset_top = 381.911
-offset_right = 785.380
+offset_right = 585.38
 offset_bottom = 471.911
 mouse_filter = 2
 theme_override_colors/font_color = Color(0.08, 0.08, 0.1, 1)
@@ -120,30 +81,14 @@ clip_text = true
 [node name="Nome_Rascunho_txt" type="Label" parent="Tela"]
 z_index = 1
 layout_mode = 0
-offset_left = 806.840
+offset_left = 606.84
 offset_top = 381.911
-offset_right = 986.840
+offset_right = 786.84
 offset_bottom = 471.911
 mouse_filter = 2
 theme_override_colors/font_color = Color(0.08, 0.08, 0.1, 1)
 theme_override_font_sizes/font_size = 22
 text = "rascunho.txt"
-horizontal_alignment = 1
-autowrap_mode = 3
-
-clip_text = true
-
-[node name="Nome_Ferias_jpeg" type="Label" parent="Tela"]
-z_index = 1
-layout_mode = 0
-offset_left = 1005.384
-offset_top = 381.911
-offset_right = 1185.384
-offset_bottom = 471.911
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.08, 0.08, 0.1, 1)
-theme_override_font_sizes/font_size = 22
-text = "férias.jpeg"
 horizontal_alignment = 1
 autowrap_mode = 3
 

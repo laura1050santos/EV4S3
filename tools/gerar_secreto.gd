@@ -2,7 +2,7 @@ extends SceneTree
 
 const Cifra = preload("res://scripts/criptografia/vigenere.gd")
 const Documento = preload("res://scripts/criptografia/documento_cifrado.gd")
-const CHAVE_DE_EDICAO := "NEXO"
+const CHAVE_DE_EDICAO := "GWJK"
 const FONTE := "res://conteudo/secreto_fonte.txt"
 const DESTINO := "res://recursos/documentos/secreto.tres"
 

@@ -1,4 +1,6 @@
 extends Node
+const SOM_PORTA = preload("res://assets/Sons/toc-toc.mp3")
+const SomCompativel = preload("res://scripts/audio/audio_compativel.gd")
 
 @export var atraso: float = 3.0
 @export var volume: float = -14.0
@@ -9,10 +11,8 @@ var som: AudioStreamPlayer
 
 func _ready() -> void:
 	som = AudioStreamPlayer.new()
-	var audio := AudioStreamMP3.new()
-	audio.data = FileAccess.get_file_as_bytes("res://assets/Sons/toc-toc.mp3")
-	audio.loop = false
-	som.stream = audio
+	som.stream = SOM_PORTA
+	SomCompativel.configurar(som)
 	som.volume_db = volume
 	add_child(som)
 	som.finished.connect(func(): Progresso.salvar("toc_porta_fase2_exibido", true))

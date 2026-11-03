@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dx4yl4c7rl03g"]
 
-[ext_resource type="Texture2D" path="res://assets/computador_telas/documento.png" id="6_secreto"]
+[ext_resource type="Texture2D" path="res://recursos/icones_computador/dat.tres" id="6_secreto"]
 
 [ext_resource type="Script" uid="uid://c8o3210e8bfkf" path="res://scenes/Computador_Telas/tela_pastas.gd" id="1_6t550"]
-[ext_resource type="Texture2D" uid="uid://p8076ajx5qi5" path="res://assets/computador_telas/pasta_haha.png" id="1_aambw"]
+[ext_resource type="Texture2D" path="res://recursos/icones_computador/pasta.tres" id="1_aambw"]
 [ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="1_phlro"]
-[ext_resource type="Texture2D" uid="uid://def6bnrcq8tq3" path="res://assets/computador_telas/zip_haha.png" id="2_mja4o"]
+[ext_resource type="Texture2D" path="res://recursos/icones_computador/zip.tres" id="2_mja4o"]
 [ext_resource type="Texture2D" uid="uid://dihmrylyaygcm" path="res://assets/computador_telas/arquivos.png" id="2_q2opw"]
 
 [node name="Tela_Pastas" type="Control" unique_id=1559431694]
@@ -50,6 +50,7 @@ flat = true
 icon_alignment = 1
 
 metadata/nome_arquivo = "pessoal"
+expand_icon = true
 
 [node name="P2" type="Button" parent="Tela" unique_id=1303130966]
 layout_mode = 0
@@ -62,18 +63,19 @@ icon = ExtResource("1_aambw")
 flat = true
 
 metadata/nome_arquivo = "técnico"
+expand_icon = true
 
 [node name="Zip" type="Button" parent="Tela" unique_id=1674523746]
 layout_mode = 0
 offset_left = 928.0
 offset_top = 224.0
-offset_right = 1000.0
-offset_bottom = 296.0
-scale = Vector2(2.4643385, 2.4643385)
+offset_right = 1128.0
+offset_bottom = 400.0
 icon = ExtResource("2_mja4o")
 flat = true
 
 metadata/nome_arquivo = "arquivo.zip"
+expand_icon = true
 
 [node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("1_phlro")]
 layout_mode = 0
@@ -94,6 +96,7 @@ scale = Vector2(0.33059737, 0.33059737)
 icon = ExtResource("6_secreto")
 flat = true
 tooltip_text = "secreto.dat"
+expand_icon = true
 
 [node name="Nome_Secreto" type="Label" parent="Tela"]
 visible = false
@@ -132,6 +135,7 @@ offset_bottom = 1090.0
 scale = Vector2(0.3868433, 0.3868433)
 icon = ExtResource("1_aambw")
 flat = true
+expand_icon = true
 
 [node name="Nome_Recuperados" type="Label" parent="Tela"]
 visible = false

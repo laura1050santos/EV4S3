@@ -49,13 +49,13 @@ func _run() -> void:
 	secreto.decifrar()
 	conferir(not secreto.recuperado, "Chave incorreta não revela conteúdo")
 	conferir(not bool(progresso.carregar("secreto_dat_decifrado", false)), "Erro não persiste sucesso")
-	secreto.campo.text = "NEXO"
+	secreto.campo.text = "GWJK"
 	secreto.decifrar()
 	secreto.fechar()
 	await create_timer(1.2).timeout
 	conferir(not bool(progresso.carregar("secreto_dat_decifrado", false)), "Fechar cancela decifragem pendente")
 	secreto.abrir(pasta)
-	secreto.campo.text = " nexo "
+	secreto.campo.text = " gwjk "
 	secreto.campo.text_submitted.emit(secreto.campo.text)
 	conferir(secreto.decifrando, "Enter inicia animação")
 	await create_timer(1.2).timeout
@@ -64,7 +64,7 @@ func _run() -> void:
 	conferir(secreto.get_node("Coluna/Mensagem").text == esperado, "Conteúdo exibido é a decifragem real")
 	conferir(esperado.contains("24091998"), "Documento contém senha do ZIP")
 	conferir(bool(progresso.carregar("secreto_dat_decifrado", false)), "Sucesso salvo no SQLite")
-	conferir(progresso.carregar("secreto_dat_chave", "") == "NEXO", "Chave normalizada persistida")
+	conferir(progresso.carregar("secreto_dat_chave", "") == "GWJK", "Chave normalizada persistida")
 	secreto.fechar()
 	secreto.abrir(pasta)
 	conferir(secreto.recuperado and not secreto.decifrando, "Releitura imediata")

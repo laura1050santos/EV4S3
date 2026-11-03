@@ -1,5 +1,7 @@
 [gd_scene format=3]
 
+[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoFechar.png" id="99_fechar"]
+
 [node name="JanelaArquivo" type="Control"]
 visible = false
 z_index = 10
@@ -13,12 +15,14 @@ mouse_filter = 2
 color = Color(0.94, 0.94, 0.91, 1)
 
 [node name="Voltar" type="Button" parent="." groups=["botoes_computador"]]
-offset_left = 40.0
-offset_top = 26.0
-offset_right = 340.0
-offset_bottom = 90.0
-theme_override_font_sizes/font_size = 28
-text = "← Voltar"
+offset_left = 1715.0
+offset_top = 20.0
+offset_right = 1795.0
+offset_bottom = 100.0
+tooltip_text = "Fechar"
+icon = ExtResource("99_fechar")
+expand_icon = true
+flat = true
 
 [node name="Titulo" type="Label" parent="."]
 offset_left = 410.0

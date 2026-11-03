@@ -11,16 +11,13 @@ script = ExtResource("1_tv3b6")
 [node name="fase1" type="AudioStreamPlayer" parent="." unique_id=1066771018]
 stream = ExtResource("1_r1srg")
 volume_db = 1.845
-parameters/looping = true
 
 [node name="fase2" type="AudioStreamPlayer" parent="." unique_id=436463528]
 stream = ExtResource("2_cyqu4")
 volume_db = 3.429
-parameters/looping = true
 
 [node name="fase3" type="AudioStreamPlayer" parent="." unique_id=2107332607]
 stream = ExtResource("2_cyqu4")
-parameters/looping = true
 
 [node name="som_ Lanterna" type="AudioStreamPlayer2D" parent="." unique_id=17956390]
 stream = ExtResource("4_yg0am")

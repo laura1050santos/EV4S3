@@ -10,4 +10,4 @@ icon = ExtResource("2_foto")
 inventory_icon = ExtResource("2_foto")
 world_scale = Vector2(0.1, 0.1)
 nome_fotografado = "Helena Lin Barde"
-letra_violeta = "E"
+letra_violeta = "W"

@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://scripts/telaComp/mensageiro.gd" id="1_script"]
 [ext_resource type="AudioStream" path="res://assets/Sons/click_mouse.mp3" id="2_som"]
 
+[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoFechar.png" id="3_fechar"]
+
 [sub_resource type="StyleBoxFlat" id="Contato"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 1
@@ -68,7 +70,7 @@ offset_bottom = 175.0
 mouse_filter = 2
 theme_override_colors/font_color = Color(0.08, 0.4, 0.18, 1)
 theme_override_font_sizes/font_size = 26
-text = "Você · Disponível"
+text = "Helena · Disponível"
 
 [node name="TituloContatos" type="Label" parent="Lateral"]
 offset_left = 28.0
@@ -82,9 +84,9 @@ text = "CONTATOS · 1"
 
 [node name="Contato" type="Panel" parent="Lateral"]
 offset_left = 20.0
-offset_top = 270.0
+offset_top = 714.0
 offset_right = 420.0
-offset_bottom = 400.0
+offset_bottom = 844.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("Contato")
 
@@ -119,6 +121,19 @@ theme_override_colors/font_color = Color(0.27, 0.35, 0.43, 1)
 theme_override_font_sizes/font_size = 24
 text = "Online"
 
+[node name="Abrir" type="Button" parent="Lateral/Contato" groups=["botoes_computador"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+tooltip_text = "Abrir conversa com Desconhecido"
+
+[node name="Conversas" type="VBoxContainer" parent="Lateral"]
+offset_left = 20.0
+offset_top = 270.0
+offset_right = 420.0
+offset_bottom = 696.0
+theme_override_constants/separation = 18
+
 [node name="Cabecalho" type="ColorRect" parent="."]
 offset_left = 440.0
 offset_right = 1815.0
@@ -136,23 +151,15 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Conversa com Desconhecido"
 
-[node name="Minimizar" type="Button" parent="." groups=["botoes_computador"]]
-offset_left = 1370.0
-offset_top = 20.0
-offset_right = 1520.0
-offset_bottom = 80.0
-theme_override_font_sizes/font_size = 26
-text = "—"
-tooltip_text = "Minimizar para a barra de tarefas"
-
 [node name="Voltar" type="Button" parent="." groups=["botoes_computador"]]
-offset_left = 1540.0
-offset_top = 20.0
-offset_right = 1785.0
-offset_bottom = 80.0
-theme_override_font_sizes/font_size = 26
-text = "Fechar"
-disabled = true
+offset_left = 1715.0
+offset_top = 16.0
+offset_right = 1795.0
+offset_bottom = 88.0
+icon = ExtResource("3_fechar")
+expand_icon = true
+flat = true
+tooltip_text = "Fechar"
 
 [node name="Corpo" type="Control" parent="."]
 offset_left = 440.0

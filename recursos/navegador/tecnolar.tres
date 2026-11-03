@@ -5,11 +5,25 @@
 [resource]
 script = ExtResource("1")
 termos = PackedStringArray("TecnoLar", "Tecno Lar", "Assistência técnica", "Assistencia tecnica", "Manutenção de rede", "Manutencao de rede")
-titulo = "TecnoLar"
+titulo = "TECNOLAR — ASSISTÊNCIA E MANUTENÇÃO TECNOLÓGICA"
 endereco = "https://tecnolar.local/atendimento-residencial"
-conteudo = "A residência Lin Barde faz parte de nossa carteira de atendimento residencial. A família utiliza a TecnoLar como referência tanto para assistência aos computadores quanto para manutenção da rede da casa.
+conteudo = "A TecnoLar oferece serviços de manutenção de computadores, equipamentos eletrônicos e infraestrutura de redes residenciais.
 
-Os chamados de equipamentos e os chamados de conectividade são registrados separadamente, mesmo quando pertencem ao mesmo endereço. Por isso, nosso nome pode aparecer em mais de uma categoria na agenda de contatos.
+Nossa equipe realiza diagnósticos, substituição de componentes, configuração de dispositivos e suporte técnico.
 
-Relatórios de atendimento e dados dos equipamentos são entregues ao responsável pela residência. Este site apresenta apenas informações gerais dos serviços."
+Clientes residenciais
+
+A residência Lin’Barde faz parte de nossa carteira de atendimento.
+
+Os serviços prestados à propriedade incluem manutenção de computadores, verificação da rede local e suporte à comunicação entre equipamentos.
+
+Por questões de organização, os chamados de informática e conectividade são registrados separadamente, mesmo quando pertencem ao mesmo endereço.
+
+Segurança das informações
+
+Os relatórios técnicos são entregues exclusivamente aos responsáveis autorizados pela residência.
+
+A TecnoLar não disponibiliza publicamente senhas, documentos pessoais ou informações de acesso aos equipamentos de seus clientes.
+
+Aviso: intervenções na rede local podem afetar temporariamente a comunicação entre computadores e dispositivos conectados."
 estilo = 1

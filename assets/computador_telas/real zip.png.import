@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7gpsyedjd1od"
-path="res://.godot/imported/foto.png-286d886061ee463df8a706acc3d7fcf9.ctex"
+uid="uid://e3sgf4cl2vqu"
+path="res://.godot/imported/real zip.png-334c8b012d6acd40eb0aeda2c2d277a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/computador_telas/foto.png"
-dest_files=["res://.godot/imported/foto.png-286d886061ee463df8a706acc3d7fcf9.ctex"]
+source_file="res://assets/computador_telas/real zip.png"
+dest_files=["res://.godot/imported/real zip.png-334c8b012d6acd40eb0aeda2c2d277a8.ctex"]
 
 [params]
 

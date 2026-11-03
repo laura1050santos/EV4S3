@@ -72,6 +72,15 @@ func _run() -> void:
 	conferir(cuco.compartimento_aberto and cuco.minutos == 0.0, "Último clique chega a meio-dia e abre compartimento")
 	conferir(cuco.cartao_disponivel and cuco.get_node("Arte/AreaCartao").input_pickable, "Revela cartão na portinha")
 	conferir(cuco.get_node("SomCuco").playing, "Cuco toca ao abrir")
+	var som_cuco = cuco.get_node("SomCuco")
+	conferir(cuco.toques_restantes == 2, "Primeira abertura inicia sequência de três toques")
+	for restantes in [1, 0]:
+		som_cuco.stop()
+		som_cuco.finished.emit()
+		conferir(som_cuco.playing and cuco.toques_restantes == restantes, "Fim do toque inicia o próximo sem sobreposição")
+	som_cuco.stop()
+	som_cuco.finished.emit()
+	conferir(not som_cuco.playing and cuco.toques_restantes == 0, "Sequência termina após o terceiro toque")
 	conferir(bool(progresso.carregar("cuco_compartimento_aberto", false)), "Abertura persistida")
 	var lanterna = load("res://recursos/lanterna.tres")
 	for slot in slots:

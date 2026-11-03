@@ -3,11 +3,32 @@
 [ext_resource type="PackedScene" path="res://scenes/Computador_Telas/janela_arquivo.tscn" id="1_base"]
 [ext_resource type="Script" path="res://scripts/telaComp/recuperador.gd" id="2_script"]
 
+[ext_resource type="Texture2D" path="res://recursos/icones_computador/recuperador_fundo.tres" id="3_fundo"]
+
 [node name="Recuperador" instance=ExtResource("1_base")]
 script = ExtResource("2_script")
 
+[node name="Fundo" parent="." index="0"]
+color = Color(0, 0, 0, 0)
+
+[node name="Arte" type="TextureRect" parent="Fundo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("3_fundo")
+expand_mode = 1
+
+[node name="CobrirSeta" type="ColorRect" parent="Fundo"]
+offset_right = 245.0
+offset_bottom = 118.0
+mouse_filter = 2
+color = Color(0.556863, 0.721569, 1, 1)
+
 [node name="Titulo" parent="." index="2"]
-text = "recuperador.exe"
+visible = false
+
+[node name="Corpo" parent="." index="3"]
+offset_top = 165.0
 
 [node name="Midia" type="Label" parent="Corpo"]
 layout_mode = 2

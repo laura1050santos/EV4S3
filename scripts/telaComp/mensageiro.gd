@@ -1,6 +1,7 @@
 extends Control
 
 signal conversa_concluida
+const CONVERSAS = preload("res://conteudo/conversas_familia.gd")
 const MENSAGENS: Array[String] = [
 	"Desconhecido: Você conseguiu abrir o registro.",
 	"Desconhecido: Então já sabe por que está aí.",
@@ -16,9 +17,60 @@ var indice: int = 0
 var consulta: bool = false
 
 func _ready() -> void:
-	$Voltar.pressed.connect(finalizar)
+	$Voltar.pressed.connect(_fechar_janela)
 	$Corpo/Avancar.pressed.connect(avancar)
-	$Minimizar.pressed.connect(minimizar)
+	$Lateral/Contato/Abrir.pressed.connect(_abrir_contato_desconhecido)
+	for nome in CONVERSAS.HISTORICOS:
+		var cartao: Panel = $Lateral/Contato.duplicate(0)
+		cartao.name = str(nome)
+		cartao.position = Vector2.ZERO
+		cartao.custom_minimum_size = Vector2(400, 130)
+		cartao.get_node("Avatar").text = str(nome).left(1)
+		cartao.get_node("Nome").text = str(nome)
+		cartao.get_node("Status").text = "Conversa salva"
+		var botao: Button = cartao.get_node("Abrir")
+		botao.tooltip_text = "Ler conversa com " + str(nome)
+		botao.add_to_group("botoes_computador")
+		botao.pressed.connect(abrir_historico.bind(str(nome)))
+		$Lateral/Conversas.add_child(cartao)
+	_atualizar_contato()
+
+func _atualizar_contato() -> void:
+	$Lateral/Contato.show()
+	var ativo: bool = bool(Progresso.carregar("mensageiro_pendente", false)) and not bool(Progresso.carregar("mensageiro_concluido", false))
+	$Lateral/Contato/Status.text = "Online" if ativo else "Offline"
+	$Lateral/TituloContatos.text = "CONVERSAS SALVAS"
+
+func _abrir_contato_desconhecido() -> void:
+	if abrir(origem):
+		return
+	consulta = true
+	var concluida: bool = bool(Progresso.carregar("mensageiro_concluido", false))
+	indice = MENSAGENS.size() if concluida else 0
+	_mostrar()
+	$Lateral/Contato/Status.text = "Offline"
+	$Corpo/Estado.text = "Desconhecido ficou offline." if concluida else "Desconhecido está offline."
+	$Corpo/Estado.add_theme_color_override("font_color", Color(0.4, 0.4, 0.4))
+	$Corpo/Rodape/Texto.text = "Desconhecido · Offline"
+	$Corpo/Resposta/Texto.text = "O contato encerrou a conversa." if concluida else "Nenhuma mensagem recebida."
+	$Corpo/Avancar.hide()
+	show()
+
+func abrir_historico(nome: String) -> void:
+	if not CONVERSAS.HISTORICOS.has(nome):
+		return
+	consulta = true
+	_atualizar_contato()
+	$Cabecalho/Titulo.text = "Conversa com " + nome
+	$Corpo/Estado.text = "Histórico de conversa"
+	$Corpo/Estado.add_theme_color_override("font_color", Color(0.4, 0.4, 0.4))
+	$Corpo/Rodape/Texto.text = "Conversa salva · Somente leitura"
+	$Corpo/Resposta/Texto.text = "Esta conversa está arquivada."
+	$Corpo/Avancar.hide()
+	$Voltar.disabled = false
+	var mensagens: Array = CONVERSAS.HISTORICOS[nome]
+	_montar_historico(mensagens, mensagens.size(), "Helena", false)
+	show()
 
 func abrir_aplicativo(tela_origem: Control) -> void:
 	if abrir(tela_origem):
@@ -26,6 +78,11 @@ func abrir_aplicativo(tela_origem: Control) -> void:
 	origem = tela_origem
 	consulta = true
 	var concluida: bool = bool(Progresso.carregar("mensageiro_concluido", false))
+	if not concluida:
+		if is_instance_valid(origem):
+			origem.hide()
+		abrir_historico("Augusto")
+		return
 	indice = MENSAGENS.size() if concluida else 0
 	_mostrar()
 	$Corpo/Estado.text = "Desconhecido ficou offline." if concluida else "Nenhuma conversa no momento."
@@ -36,6 +93,12 @@ func abrir_aplicativo(tela_origem: Control) -> void:
 	$Voltar.disabled = false
 	origem.hide()
 	show()
+
+func _fechar_janela() -> void:
+	if consulta or indice < MENSAGENS.size():
+		minimizar()
+	else:
+		finalizar()
 
 func minimizar() -> void:
 	hide()
@@ -69,7 +132,7 @@ func abrir(tela_origem: Control = null) -> bool:
 	return true
 
 func avancar() -> void:
-	if not is_visible_in_tree() or bool(Progresso.carregar("mensageiro_concluido", false)):
+	if consulta or not is_visible_in_tree() or bool(Progresso.carregar("mensageiro_concluido", false)):
 		return
 	if indice >= MENSAGENS.size():
 		finalizar()
@@ -79,25 +142,27 @@ func avancar() -> void:
 	_mostrar()
 
 func _mostrar() -> void:
+	_atualizar_contato()
+	$Cabecalho/Titulo.text = "Conversa com Desconhecido"
 	var offline: bool = indice >= MENSAGENS.size()
 	$Corpo/Estado.text = "Desconhecido ficou offline." if offline else "Desconhecido está online."
 	$Corpo/Estado.add_theme_color_override("font_color", Color(0.4, 0.4, 0.4) if offline else Color(0.05, 0.4, 0.16))
 	$Lateral/Contato/Status.text = "Offline" if offline else "Online"
 	$Corpo/Rodape/Texto.text = "Desconhecido · Offline" if offline else "Desconhecido · Online"
 	_montar_historico()
-	$Voltar.disabled = not offline
+	$Voltar.disabled = false
 	var resposta: bool = not offline and MENSAGENS[indice].begins_with("Você: ")
 	$Corpo/Resposta/Texto.text = MENSAGENS[indice].trim_prefix("Você: ") if resposta else ("O contato encerrou a conversa." if offline else "Aguardando mensagem…")
 	$Corpo/Avancar.text = "Encerrar conversa" if offline else ("Enviar" if resposta else "Continuar")
 
-func _montar_historico() -> void:
+func _montar_historico(mensagens: Array = MENSAGENS, quantidade: int = -1, autor_enviado: String = "Você", rolar_fim: bool = true) -> void:
 	var lista: VBoxContainer = $Corpo/Historico/Baloes
 	for filho in lista.get_children():
 		lista.remove_child(filho)
 		filho.queue_free()
-	for numero in range(indice):
-		var partes: PackedStringArray = MENSAGENS[numero].split(": ", true, 1)
-		var enviada: bool = partes[0] == "Você"
+	for numero in range(indice if quantidade < 0 else quantidade):
+		var partes: PackedStringArray = str(mensagens[numero]).split(": ", true, 1)
+		var enviada: bool = partes[0] == autor_enviado
 		var linha := HBoxContainer.new()
 		linha.name = "Mensagem_" + str(numero)
 		linha.set_meta("autor", partes[0])
@@ -126,7 +191,7 @@ func _montar_historico() -> void:
 		coluna.add_theme_constant_override("separation", 8)
 		balao.add_child(coluna)
 		var autor := Label.new()
-		autor.text = partes[0] + ":"
+		autor.text = ("Helena" if partes[0] == "Você" else partes[0]) + ":"
 		autor.add_theme_font_size_override("font_size", 26)
 		autor.add_theme_color_override("font_color", Color(0.08, 0.3, 0.52))
 		autor.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -138,7 +203,13 @@ func _montar_historico() -> void:
 		texto.add_theme_color_override("font_color", Color(0.1, 0.12, 0.15))
 		texto.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		coluna.add_child(texto)
-	_rolar_ao_fim.call_deferred()
+	if rolar_fim:
+		_rolar_ao_fim.call_deferred()
+	else:
+		_rolar_ao_inicio.call_deferred()
+
+func _rolar_ao_inicio() -> void:
+	$Corpo/Historico.scroll_vertical = 0
 
 func _rolar_ao_fim() -> void:
 	$Corpo/Historico.scroll_vertical = int($Corpo/Historico.get_v_scroll_bar().max_value)

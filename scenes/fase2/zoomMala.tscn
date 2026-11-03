@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b3vsr72swlocd" path="res://scripts/salas_scripts/zoom_mala.gd" id="1_kjaa4"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="2_8ma5l"]
-[ext_resource type="Texture2D" path="res://assets/cenarios/zoom_malafechada.png" id="2_b6euy"]
-[ext_resource type="Texture2D" path="res://assets/cenarios/maletazoomfechada.png" id="6_mala"]
+[ext_resource type="Texture2D" uid="uid://xvuobb104n60" path="res://assets/cenarios/zoom_malafechada.png" id="2_b6euy"]
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="3_nmnx3"]
 [ext_resource type="AudioStream" uid="uid://8twithjmw1rn" path="res://assets/Sons/chave.mp3" id="5_6rm16"]
-
-[ext_resource type="PackedScene" path="res://scenes/setas/botaoConfig.tscn" id="99_config"]
+[ext_resource type="Texture2D" uid="uid://cmq7csa5xcc62" path="res://assets/cenarios/maletazoomfechada.png" id="6_mala"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="99_config"]
 
 [sub_resource type="AtlasTexture" id="FaixaParedeChao"]
 atlas = ExtResource("2_b6euy")
@@ -34,7 +33,7 @@ position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_b6euy")
 
-[node name="FundoParedeChao" type="TextureRect" parent="CenarioFechado"]
+[node name="FundoParedeChao" type="TextureRect" parent="CenarioFechado" unique_id=1184903332]
 offset_left = -200.0
 offset_top = -100.0
 offset_right = 360.0
@@ -42,9 +41,8 @@ offset_bottom = 490.0
 mouse_filter = 2
 texture = SubResource("FaixaParedeChao")
 expand_mode = 1
-stretch_mode = 0
 
-[node name="FundoPorta" type="TextureRect" parent="CenarioFechado"]
+[node name="FundoPorta" type="TextureRect" parent="CenarioFechado" unique_id=1114598699]
 offset_left = -280.0
 offset_top = -100.0
 offset_right = -200.0
@@ -52,9 +50,8 @@ offset_bottom = 320.0
 mouse_filter = 2
 texture = SubResource("FaixaPorta")
 expand_mode = 1
-stretch_mode = 0
 
-[node name="FundoChao" type="TextureRect" parent="CenarioFechado"]
+[node name="FundoChao" type="TextureRect" parent="CenarioFechado" unique_id=1676619666]
 offset_left = -280.0
 offset_top = 320.0
 offset_right = -200.0
@@ -62,9 +59,8 @@ offset_bottom = 490.0
 mouse_filter = 2
 texture = SubResource("FaixaChao")
 expand_mode = 1
-stretch_mode = 0
 
-[node name="MalaFechada" type="Sprite2D" parent="."]
+[node name="MalaFechada" type="Sprite2D" parent="." unique_id=1222069197]
 position = Vector2(610, 500)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("6_mala")
@@ -78,8 +74,10 @@ position = Vector2(586, 444)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1424485446]
 shape = SubResource("RectangleShape2D_3ak76")
 
-[node name="RecorteMala" type="Control" parent="."]
+[node name="RecorteMala" type="Control" parent="." unique_id=1817480461]
 clip_contents = true
+layout_mode = 3
+anchors_preset = 0
 offset_left = 270.0
 offset_top = 18.0
 offset_right = 872.0
@@ -88,6 +86,7 @@ mouse_filter = 2
 
 [node name="Malagrande" type="TextureRect" parent="RecorteMala" unique_id=2110221623]
 visible = false
+layout_mode = 0
 offset_left = -180.0
 offset_top = 189.5
 offset_right = 860.0
@@ -99,7 +98,7 @@ stretch_mode = 5
 [node name="SetaEsquerda" parent="." unique_id=1927550638 instance=ExtResource("3_nmnx3")]
 destino_cena = "res://scenes/fase1/ParedeNorte.tscn"
 
-[node name="BotaoConfig" parent="." instance=ExtResource("99_config")]
+[node name="BotaoConfig" parent="." unique_id=1809125324 instance=ExtResource("99_config")]
 z_index = 100
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=322316040]

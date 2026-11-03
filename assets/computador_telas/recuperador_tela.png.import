@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p8076ajx5qi5"
-path="res://.godot/imported/pasta_haha.png-1a09cad9a9478362f4a3834630d9231a.ctex"
+uid="uid://d1jpabui3soem"
+path="res://.godot/imported/recuperador_tela.png-9cf36936b3ad3fdb32acb9ece0f850ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/computador_telas/pasta_haha.png"
-dest_files=["res://.godot/imported/pasta_haha.png-1a09cad9a9478362f4a3834630d9231a.ctex"]
+source_file="res://assets/computador_telas/recuperador_tela.png"
+dest_files=["res://.godot/imported/recuperador_tela.png-9cf36936b3ad3fdb32acb9ece0f850ac.ctex"]
 
 [params]
 

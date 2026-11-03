@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/fita.mp3-aa949d2288d51a53beec6ea3a219dace.mp3
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

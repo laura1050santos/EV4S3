@@ -3,7 +3,11 @@
 [ext_resource type="Script" path="res://scripts/telaComp/arquivo_zip.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://scenes/Computador_Telas/visualizador_arquivo.tscn" id="2_visualizador"]
 [ext_resource type="Texture2D" path="res://assets/computador_telas/foto_cuco_antiga.png" id="3_sala"]
-[ext_resource type="Texture2D" path="res://assets/computador_telas/foto.png" id="4_icone"]
+[ext_resource type="Texture2D" path="res://recursos/icones_computador/img.tres" id="4_icone"]
+
+[ext_resource type="Texture2D" path="res://recursos/icones_computador/recuperador.tres" id="5_recuperador"]
+
+[ext_resource type="Texture2D" path="res://assets/computador_telas/botaoFechar.png" id="99_fechar"]
 
 [sub_resource type="StyleBoxFlat" id="Campo"]
 bg_color = Color(1, 1, 0.98, 1)
@@ -32,12 +36,14 @@ mouse_filter = 2
 color = Color(0.94, 0.94, 0.91, 1)
 
 [node name="Voltar" type="Button" parent="." groups=["botoes_computador"]]
-offset_left = 40.0
-offset_top = 26.0
-offset_right = 340.0
-offset_bottom = 90.0
-theme_override_font_sizes/font_size = 28
-text = "← Voltar aos arquivos"
+offset_left = 1715.0
+offset_top = 20.0
+offset_right = 1795.0
+offset_bottom = 100.0
+tooltip_text = "Fechar"
+icon = ExtResource("99_fechar")
+expand_icon = true
+flat = true
 
 [node name="Titulo" type="Label" parent="."]
 offset_left = 410.0
@@ -117,5 +123,7 @@ offset_right = 980.0
 offset_bottom = 300.0
 theme_override_font_sizes/font_size = 28
 text = "recuperador.exe"
+icon = ExtResource("5_recuperador")
+expand_icon = true
 
 [node name="VisualizadorArquivo" parent="." instance=ExtResource("2_visualizador")]

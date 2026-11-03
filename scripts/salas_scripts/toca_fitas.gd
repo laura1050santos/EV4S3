@@ -1,4 +1,5 @@
 extends Area2D
+const SomCompativel = preload("res://scripts/audio/audio_compativel.gd")
 
 @export var estacao_id: String = ""
 @export var item_aceito: itemData
@@ -7,25 +8,20 @@ extends Area2D
 var item_guardado: itemData = null
 var operacao_som: int = 0
 
-@onready var som: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var som: AudioStreamPlayer = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	if estacao_id == "":
 		estacao_id = name
 	add_to_group("estacao")
 	input_pickable = true
-	som.finished.connect(_on_som_terminou)
+	SomCompativel.configurar(som, true)
 
 	# Restaura se o jogador saiu da cena e voltou (ou carregou o jogo)
 	var caminho := Objetos.get_recurso_em_estacao(estacao_id)
 	if caminho != "":
 		item_guardado = load(caminho)
 		tocar_sons_com_delay()
-
-func _on_som_terminou() -> void:
-	# loop; se o stream já estiver com Loop marcado, isso nunca dispara
-	if item_guardado != null:
-		som.play()
 
 func esta_vazia() -> bool:
 	return item_guardado == null

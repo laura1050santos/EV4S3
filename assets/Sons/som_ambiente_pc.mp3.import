@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/som_ambiente_pc.mp3-fdfd598b9ca0a1d302e3b2a7f
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

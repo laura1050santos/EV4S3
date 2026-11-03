@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://def6bnrcq8tq3"
-path="res://.godot/imported/zip_haha.png-a7e5b6e6a8cc3737aaaff6e79da98d24.ctex"
+uid="uid://cww25c2qehf7f"
+path="res://.godot/imported/recuperador.png-539971d3b48bfafdace788e0f95da691.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/computador_telas/zip_haha.png"
-dest_files=["res://.godot/imported/zip_haha.png-a7e5b6e6a8cc3737aaaff6e79da98d24.ctex"]
+source_file="res://assets/computador_telas/recuperador.png"
+dest_files=["res://.godot/imported/recuperador.png-539971d3b48bfafdace788e0f95da691.ctex"]
 
 [params]
 

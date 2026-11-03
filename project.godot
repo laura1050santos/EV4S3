@@ -19,6 +19,10 @@ run/main_scene="uid://dc8wxs18e8dcc"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+general/default_playback_type.web=2
+
 [autoload]
 
 Inventario="*res://scenes/inventario/inventario.tscn"
@@ -31,10 +35,12 @@ AudioManager="*uid://nqmn58xtacm4"
 
 [display]
 
-window/size/viewport_width=1152
-window/size/viewport_height=648
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/sarac/Videos/Godot/Evase.avi"
+movie_writer/fps=30
 
 [file_customization]
 
@@ -53,3 +59,7 @@ click={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 , null]
 }
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

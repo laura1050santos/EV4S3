@@ -1,11 +1,15 @@
 extends SalasManager
 
+const FUNDO_PAINEL_DESLIGADO = preload("res://assets/cenarios/tela porta.png")
+const FUNDO_PAINEL_LIGADO = preload("res://assets/cenarios/tela porta painel ligado.png")
+
 @onready var parede_roteador_area: Area2D = $ParedeRoteador
 @onready var roteador_parede_sprite: Sprite2D = $roteadorParede
 @onready var som_Porta = $ListenerPorta/PortaTrancada
 
 @onready var som_Interruptor = $ListenerInterruptor/Interruptor
 func _ready():
+	$Sprite2D.texture = FUNDO_PAINEL_LIGADO if GlobalSingleton.fase_liberada >= 4 else FUNDO_PAINEL_DESLIGADO
 	_exibir_dica_inicial()
 	parede_roteador_area.add_to_group("item_drop_targets")
 	GlobalSingleton.registrar_cena_atual(get_tree().current_scene.scene_file_path)

@@ -5,14 +5,20 @@ const FECHADO = preload("res://assets/cenarios/cuco_fechado_zoom.png")
 const ABERTO_COM_CARTAO = preload("res://assets/cenarios/cuco_aberto_sd.png")
 const ABERTO_SEM_CARTAO = preload("res://assets/cenarios/cuco_aberto.png")
 const CENTRO := Vector2(936, 525)
+const AUDIO = preload("res://scripts/audio/audio_compativel.gd")
+const TOQUES_CUCO: int = 3
+const INICIO_SOM_CUCO: float = 2.75
 @export_range(0, 719, 1) var minutos_iniciais: float = 180.0
 @export_range(1, 60, 1) var minutos_por_clique: int = 15
 @export_range(0.05, 1.0, 0.05) var tolerancia_meio_dia: float = 0.5
 var minutos: float = 180.0
 var compartimento_aberto: bool = false
 var cartao_disponivel: bool = false
+var toques_restantes: int = 0
 
 func _ready() -> void:
+	AUDIO.configurar($SomCuco, false)
+	$SomCuco.finished.connect(_ao_terminar_som_cuco)
 	GlobalSingleton.registrar_cena_atual(scene_file_path)
 	Objetos.salvar_objetos(BACKUP.item_name, BACKUP.resource_path,
 		Objetos.pos_para_json(589, 180), name, "compartimento_cuco")
@@ -37,11 +43,21 @@ func avancar_minutos(quantidade: float, persistir: bool = true) -> void:
 		minutos = 0.0
 		compartimento_aberto = true
 		Progresso.salvar("cuco_compartimento_aberto", true)
-		$SomCuco.play(2.75)
+		toques_restantes = TOQUES_CUCO
+		_tocar_cuco()
 		persistir = true
 	_atualizar_visual()
 	if persistir:
 		_salvar_ponteiros()
+
+func _tocar_cuco() -> void:
+	if toques_restantes <= 0:
+		return
+	toques_restantes -= 1
+	$SomCuco.play(INICIO_SOM_CUCO)
+
+func _ao_terminar_som_cuco() -> void:
+	_tocar_cuco()
 
 func _atualizar_visual() -> void:
 	$Arte/PonteiroMinutos.rotation = fposmod(minutos, 60.0) / 60.0 * TAU

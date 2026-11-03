@@ -5,11 +5,41 @@
 [resource]
 script = ExtResource("1")
 termos = PackedStringArray("Arquivo Particular Lin Barde", "Arquivo Lin Barde", "Lin Barde", "Arquivo e documentação", "Arquivo e documentacao")
-titulo = "Arquivo Particular Lin Barde"
+titulo = "ARQUIVO PARTICULAR LIN’BARDE"
 endereco = "https://acervo-linbarde.local/apresentacao"
-conteudo = "O Arquivo Particular Lin Barde reúne documentos, fotografias e registros preservados pela família. A organização do acervo procura manter a relação entre cada documento e o conjunto ao qual ele pertence.
+conteudo = "Preservar o passado é preservar aquilo que somos.
 
-Parte do material possui cópias digitais para consulta doméstica. Essas cópias não substituem os originais: anotações no verso, marcas e outros detalhes físicos podem não aparecer na versão digital.
+O Arquivo Particular Lin’Barde reúne documentos históricos, correspondências, fotografias e registros genealógicos preservados por diferentes gerações da família.
 
-O acesso ao acervo completo depende de autorização da família. Esta página apresenta o arquivo e suas categorias, sem disponibilizar documentos particulares para download."
+O acervo foi organizado com o objetivo de conservar a memória familiar e facilitar a consulta doméstica.
+
+Organização do acervo
+
+Os documentos são divididos em categorias:
+
+Genealogia: registros de nascimento, parentesco e descendência.
+
+Correspondências: cartas, mensagens e comunicações particulares.
+
+Fotografias: retratos individuais, registros de reuniões e acontecimentos familiares.
+
+Documentos administrativos: registros relacionados à residência, ao patrimônio e à manutenção dos equipamentos.
+
+Documentos físicos e digitais
+
+Parte do acervo possui cópias digitalizadas.
+
+Entretanto, nem todos os detalhes presentes nos documentos originais são preservados durante a digitalização.
+
+Anotações no verso de fotografias, inscrições manuscritas e marcas de identificação podem estar ausentes das cópias eletrônicas.
+
+Acesso restrito
+
+Determinadas categorias exigem autorização familiar para consulta.
+
+Documentos retirados do catálogo público não são necessariamente destruídos. Alguns podem permanecer preservados em arquivos históricos ou cópias de segurança.
+
+NOTA DO ARQUIVO
+
+A ausência de um nome em um registro não significa, necessariamente, que essa pessoa nunca tenha pertencido à família."
 estilo = 3

@@ -95,7 +95,7 @@ func _run() -> void:
 			conferir(ResourceLoader.exists("res://scenes/fase3/zoom_quadro.tscn"), "Calendário tem zoom do quadro")
 		sala.queue_free()
 		await process_frame
-	conferir(letras == "NEXO", "Identidades ordenadas produzem NEXO")
+	conferir(letras == "GWJK", "Identidades ordenadas produzem GWJK")
 	conferir(not global.fases_concluidas[2] and global.fase_liberada == 3, "Pistas não concluem a Fase 3")
 	# Regressão do visualizador de papel, sem virar foto nem modo calendário.
 	inspecao.abrir(load("res://recursos/PapelMorseAlcapao.tres"))

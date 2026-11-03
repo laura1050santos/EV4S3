@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cgsl4vmsu53kt"]
 
-[ext_resource type="Texture2D" uid="uid://bh5qu6w5bea85" path="res://assets/computador_telas/documento.png" id="1_ohppg"]
+[ext_resource type="Texture2D" path="res://recursos/icones_computador/txt.tres" id="1_ohppg"]
 [ext_resource type="Texture2D" uid="uid://bip0qtf3rmq4p" path="res://assets/computador_telas/arquivos_tecnico.png" id="2_0sb6d"]
 [ext_resource type="PackedScene" uid="uid://beg2asfcj1fqs" path="res://scenes/Computador_Telas/botão_fechar.tscn" id="2_3qv3v"]
 
@@ -39,6 +39,7 @@ icon = ExtResource("1_ohppg")
 flat = true
 
 metadata/nome_arquivo = "procedimentos.txt"
+expand_icon = true
 
 [node name="Contatos_txt" type="Button" parent="Tela" unique_id=303760573 groups=["botoes_computador"]]
 layout_mode = 0
@@ -51,6 +52,7 @@ icon = ExtResource("1_ohppg")
 flat = true
 
 metadata/nome_arquivo = "contatos.txt"
+expand_icon = true
 
 [node name="RegistroEquip_txt" type="Button" parent="Tela" unique_id=870648915 groups=["botoes_computador"]]
 layout_mode = 0
@@ -63,6 +65,7 @@ icon = ExtResource("1_ohppg")
 flat = true
 
 metadata/nome_arquivo = "registro_equipamentos.txt"
+expand_icon = true
 
 [node name="BotaoFechar" parent="." unique_id=1701383731 instance=ExtResource("2_3qv3v")]
 layout_mode = 0
