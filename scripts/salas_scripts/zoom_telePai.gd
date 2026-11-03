@@ -15,6 +15,7 @@ var fio_instalado: bool = false
 var codigo_atual: String = ""
 var mensagem: String = ""
 @onready var label: Label = $Label
+@onready var som_tele: AudioStreamPlayer2D = $AudioListener2D/somTele
 
 func _ready() -> void:
 	GlobalSingleton.registrar_cena_atual(scene_file_path)
@@ -31,9 +32,13 @@ func receber_item_drop(item: itemData, slot: Area2D) -> bool:
 	return true
 
 func _on_ponto_pressed() -> void:
+	som_tele.play()
 	_adicionar_sinal(".")
+	
 
 func _on_traco_pressed() -> void:
+	som_tele.play()
+
 	_adicionar_sinal("-")
 
 func _adicionar_sinal(sinal: String) -> void:
@@ -43,13 +48,18 @@ func _adicionar_sinal(sinal: String) -> void:
 	_atualizar_visor()
 
 func _on_confirmar_pressed() -> void:
+	som_tele.play()
+
 	if mensagem.length() >= 4 or not MORSE.has(codigo_atual):
 		return
 	mensagem += str(MORSE[codigo_atual])
 	codigo_atual = ""
+	
 	_atualizar_visor()
 
 func _on_apagar_pressed() -> void:
+	som_tele.play()
+
 	if not codigo_atual.is_empty():
 		codigo_atual = codigo_atual.left(-1)
 	elif not mensagem.is_empty():
@@ -57,6 +67,8 @@ func _on_apagar_pressed() -> void:
 	_atualizar_visor()
 
 func _on_reset_pressed() -> void:
+	som_tele.play()
+
 	codigo_atual = ""
 	mensagem = ""
 	_atualizar_visor()

@@ -58,9 +58,11 @@ func ir_para_fase(numero_fase: int):
 	canvas.show()
 
 func _on_fase_1_botao_pressed():
+	AudioManager.tocar_musica_fase1()
 	ir_para_fase(1)
 
 func _on_fase_2_botao_pressed():
+	AudioManager.tocar_musica_fase2()
 	ir_para_fase(2)
 
 func _on_fase_3_botao_pressed():

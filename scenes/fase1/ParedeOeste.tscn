@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://du3u5e5blrq5k"]
+[gd_scene format=3 uid="uid://gg14a6yawqob"]
 
 [ext_resource type="PackedScene" uid="uid://b502itwqs4700" path="res://scenes/setas/SetaDireita.tscn" id="1_gm2vv"]
 [ext_resource type="Script" uid="uid://4h5mibudxj5i" path="res://scripts/salas_scripts/parede_oeste.gd" id="1_r4qe8"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://c3i501botd0q0" path="res://scripts/salas_scripts/zoom_tocafitas.gd" id="13_uxxvl"]
 [ext_resource type="PackedScene" path="res://scenes/inscricao_violeta.tscn" id="14_violeta"]
 [ext_resource type="AudioStream" uid="uid://bvo3jo3x8srm1" path="res://assets/Sons/cuckoo.mp3" id="15_ghfs7"]
+[ext_resource type="AudioStream" uid="uid://doddgcy8tpneg" path="res://assets/Sons/pegando_papel.mp3" id="16_5frb8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4mq"]
 size = Vector2(90.5, 48)
@@ -111,5 +112,10 @@ polygon = PackedVector2Array(45, 52, 62, -5, 68, -3, 73, -10, 15, -67, -45, -14,
 [node name="Cuckoo" type="AudioStreamPlayer2D" parent="cuckoo/listenerCuckoo" unique_id=1487290578]
 position = Vector2(-604, -179)
 stream = ExtResource("15_ghfs7")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1034031025]
+
+[node name="somCarta" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1732738138]
+stream = ExtResource("16_5frb8")
 
 [connection signal="input_event" from="cuckoo" to="." method="_on_cuckoo_input_event"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://nqmn58xtacm4"]
+
+[ext_resource type="AudioStream" uid="uid://cv1ajstuafvho" path="res://assets/Sons/som_ambiente].mp3" id="1_r1srg"]
+[ext_resource type="Script" uid="uid://cjijhqkmnfkof" path="res://scripts/audio/audioManager.gd" id="1_tv3b6"]
+[ext_resource type="AudioStream" uid="uid://bu538pylyhr2t" path="res://assets/Sons/som_ambiente_pc.mp3" id="2_cyqu4"]
+[ext_resource type="AudioStream" uid="uid://cmhd714mk4xtq" path="res://assets/Sons/ligando_lanterna.mp3" id="4_yg0am"]
+
+[node name="AudioManager" type="Node2D" unique_id=956550775]
+script = ExtResource("1_tv3b6")
+
+[node name="fase1" type="AudioStreamPlayer" parent="." unique_id=1066771018]
+stream = ExtResource("1_r1srg")
+volume_db = 3.184
+parameters/looping = true
+
+[node name="fase2" type="AudioStreamPlayer" parent="." unique_id=436463528]
+stream = ExtResource("2_cyqu4")
+volume_db = 7.429
+parameters/looping = true
+
+[node name="fase3" type="AudioStreamPlayer" parent="." unique_id=2107332607]
+stream = ExtResource("2_cyqu4")
+parameters/looping = true
+
+[node name="som_ Lanterna" type="AudioStreamPlayer2D" parent="." unique_id=17956390]
+stream = ExtResource("4_yg0am")
+volume_db = 8.798

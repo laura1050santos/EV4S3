@@ -43,11 +43,15 @@ offset_top = 12.999999
 offset_right = 3231.6665
 offset_bottom = 1681.0
 
+<<<<<<< HEAD
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1205802650]
 position = Vector2(10, 0)
 
 [node name="som_lixeira_abrindo" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=1276559445]
 position = Vector2(559, 345)
+=======
+[node name="som_lixeira_abrindo" type="AudioStreamPlayer2D" parent="." unique_id=1276559445]
+>>>>>>> 8ea93a56b5a755c4cb0c9c8e40b5d6453d557d1a
 stream = ExtResource("7_ppgjm")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

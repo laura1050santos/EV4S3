@@ -28,6 +28,20 @@ func _on_close_requested() -> void:
 func _on_som_value_changed(value: float) -> void:
 	Config.atualizar_configuracao("volume", str(value))
 	$Som/Label2.text = str(value)
+	
+	# 1. Pega o índice do canal Master (Global)
+	var bus_index = AudioServer.get_bus_index("Master")
+	
+	# 2. Transforma a escala de 0-100 para 0.0-1.0
+	var valor_linear = value / 100.0 
+	
+	# 3. Converte para Decibéis e aplica no Godot
+	var volume_db = linear_to_db(valor_linear)
+	AudioServer.set_bus_volume_db(bus_index, volume_db)
+	
+	# 4. Se o volume for muito baixo (ex: zero), muta o canal para evitar ruídos
+	AudioServer.set_bus_mute(bus_index, valor_linear <= 0.01)
+
 	if value == 100.0:
 		print("volume mais alto atingido")
 		volMax.emit()

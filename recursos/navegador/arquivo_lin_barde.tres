@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="ArtigoNavegador" format=3]
-[ext_resource type="Script" path="res://scripts/telaComp/artigo_navegador.gd" id="1"]
+[gd_resource type="Resource" script_class="ArtigoNavegador" format=3 uid="uid://xn1kyymk1u4l"]
+
+[ext_resource type="Script" uid="uid://bm1524kffnwv5" path="res://scripts/telaComp/artigo_navegador.gd" id="1"]
+
 [resource]
 script = ExtResource("1")
-termos = PackedStringArray("Arquivo Particular Lin Barde", "Arquivo Lin Barde", "Lin Barde", "Arquivo e documentação", "Arquivo e documentacao")
 titulo = "Arquivo Particular Lin Barde"
 endereco = "https://acervo-linbarde.local/apresentacao"
-estilo = 3
 conteudo = "O Arquivo Particular Lin Barde reúne documentos, fotografias e registros preservados pela família. A organização do acervo procura manter a relação entre cada documento e o conjunto ao qual ele pertence.
 
 Parte do material possui cópias digitais para consulta doméstica. Essas cópias não substituem os originais: anotações no verso, marcas e outros detalhes físicos podem não aparecer na versão digital.
 
 O acesso ao acervo completo depende de autorização da família. Esta página apresenta o arquivo e suas categorias, sem disponibilizar documentos particulares para download."
+estilo = 3

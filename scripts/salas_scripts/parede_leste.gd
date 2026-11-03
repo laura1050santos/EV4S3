@@ -3,9 +3,9 @@ extends "res://scripts/salas_scripts/salas_manager.gd"
 const ID_SALA := "leste"
 @onready var telaSemConexao := $monitorLigado
 var gavetas_controller: GavetasController
-@onready var som_gaveta_abrindo = $abrindoGaveta
-@onready var som_gaveta_fechando = $fechandoGaveta
+@onready var som_gaveta_abrindo = $gavetaListener/abrindoGaveta
 
+@onready var som_gaveta_fechando = $gavetaListener/fechandoGaveta
 @onready var gavetas_sprites := {
 	"1": $Gaveta1Pc,
 	"2": $Gaveta2Pc,

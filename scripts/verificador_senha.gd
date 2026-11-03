@@ -2,6 +2,7 @@ extends Control
 
 @export var correct_password: Array[int] = [1, 9, 8, 7] #senha aqui
 @onready var digit_buttons: Array[TextureButton] = [$Digito1, $Digito2, $Digito3, $Digito4]
+@onready var alçapao_abrindo: AudioStreamPlayer2D = $"../../AudioListener2D/alçapaoAbrindo"
 
 func _ready() -> void:
 	var alcapao = Enigmas.get_nome("alcapao")
@@ -22,7 +23,8 @@ func _check_password() -> void:
 
 func open_door() -> void:
 	Enigmas.atualizar_enigma("alcapao", 1)
-
+	alçapao_abrindo.play()
 	var cena = get_tree().current_scene
 	if cena.has_method("_atualizar_estado_alcapao"):
 		cena._atualizar_estado_alcapao()
+		

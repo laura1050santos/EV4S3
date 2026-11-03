@@ -1,5 +1,6 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
-@onready var som_cuckoo = $cuckoo/listenerCuckoo
+@onready var som_cuckoo = $cuckoo/listenerCuckoo/Cuckoo
+
 func _ready():
 	GlobalSingleton.ultima_cena =  get_tree().current_scene.scene_file_path
 	var nome_desta_cena = self.name # O nome do nó raiz desta cena

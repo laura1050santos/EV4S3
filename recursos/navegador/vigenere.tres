@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="ArtigoNavegador" format=3]
+[gd_resource type="Resource" script_class="ArtigoNavegador" format=3 uid="uid://ylnfi46n1uij"]
 
-[ext_resource type="Script" path="res://scripts/telaComp/artigo_navegador.gd" id="1_artigo"]
+[ext_resource type="Script" uid="uid://bm1524kffnwv5" path="res://scripts/telaComp/artigo_navegador.gd" id="1_artigo"]
 
 [resource]
 script = ExtResource("1_artigo")
-termos = PackedStringArray("Vigenère", "Vigenere", "Cifra de Vigenère", "Cifra de Vigenere", "Cifra polialfabética", "Cifra polialfabetica")
 titulo = "Cifra de Vigenère: mensagens protegidas por uma palavra-chave"
 endereco = "https://arquivo.local/criptografia/vigenere"
 conteudo = "A Cifra de Vigenère é um método histórico de criptografia polialfabética. Ela utiliza uma palavra-chave para transformar as letras de uma mensagem.

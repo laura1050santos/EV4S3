@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="3_0qusy"]
 [ext_resource type="Texture2D" uid="uid://bcogi4dyihr0v" path="res://assets/cenarios/cena-telegrafo-tela-objeto-posicionado.png" id="4_jkw12"]
 [ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="7_kc0pe"]
+[ext_resource type="AudioStream" uid="uid://br6b2is54xx2x" path="res://assets/Sons/tecla_telegrafo.mp3" id="8_det3c"]
 [ext_resource type="Texture2D" uid="uid://bq2ax6qq0mp5v" path="res://assets/cenarios/cena-telegrafo-fio-objeto-posicionado.png" id="17_fio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fio"]
@@ -155,6 +156,11 @@ offset_top = 427.0
 offset_right = 700.0
 offset_bottom = 457.0
 text = "Apagar"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=645972151]
+
+[node name="somTele" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=311090517]
+stream = ExtResource("8_det3c")
 
 [connection signal="pressed" from="ponto" to="." method="_on_ponto_pressed"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]

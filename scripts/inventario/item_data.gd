@@ -39,7 +39,7 @@ static func ativar_luz(item: itemData, cena: Node, pos: Vector2):
 		var node = PointLight2D.new()
 		node.set_script(preload("res://scripts/inventario/luz_lanterna.gd"))
 		node.name = "LuzDaLanterna"
-		
+		AudioManager.tocar_som_lanterna()
 		# Adiciona direto na raiz do jogo
 		root.add_child(node)
 	

@@ -1,5 +1,5 @@
 extends "res://scripts/salas_scripts/salas_manager.gd"
-@onready var som_lixeira_abrindo = $som_lixeira_abrindo
+@onready var som_lixeira_abrindo = $AudioListener2D/som_lixeira_abrindo
 @onready var sprite_lixo = $lixeiraAberta
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +20,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if InputEventMouseButton and event.is_pressed():		
 		var chave =  get_node_or_null("chave")
 		if chave and sprite_lixo.visible == false:
+
 			$lixeiraAberta.visible= true
 			som_lixeira_abrindo.play(0.5)
 			var gpu = get_node_or_null("gpu")
@@ -28,4 +29,3 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				var collision = gpu.get_node("Area2D/CollisionShape2D")
 				collision.disabled = false
 				Cenarios.atualizar_cenario("zoomLixeira","res://assets/itens/lixeirapertoaberta.png")
-		

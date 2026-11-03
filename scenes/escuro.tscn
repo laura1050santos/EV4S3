@@ -7,4 +7,5 @@ script = ExtResource("1_k38jg")
 
 [node name="LuzLampada" type="CanvasModulate" parent="." unique_id=2100295126]
 unique_name_in_owner = true
+visible = false
 color = Color(0.19793716, 0.19793725, 0.19793722, 1)

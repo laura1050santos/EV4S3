@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c81pj0ipgvja1" path="res://scripts/digitoBotao.gd" id="4_l3lf0"]
 [ext_resource type="PackedScene" uid="uid://bwytanyxh8aqr" path="res://scenes/escuro.tscn" id="4_p12nd"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="5_61tdm"]
+[ext_resource type="AudioStream" uid="uid://doddgcy8tpneg" path="res://assets/Sons/pegando_papel.mp3" id="6_03j3h"]
 [ext_resource type="Texture2D" uid="uid://22662h0m8fq2" path="res://assets/cartas/mensagem_alcapao.png" id="8_la3ws"]
 [ext_resource type="Script" uid="uid://ce00dwtgkmavc" path="res://scripts/viewMensagem.gd" id="9_vl7g8"]
 [ext_resource type="Script" uid="uid://by0kllm5dyvw" path="res://scripts/viewDifMensagem.gd" id="10_rooau"]
@@ -34,6 +35,9 @@ script = ExtResource("9_vl7g8")
 position = Vector2(750, 107.00002)
 rotation = -0.79219186
 shape = SubResource("CapsuleShape2D_57qmd")
+
+[node name="SomCarta" type="AudioStreamPlayer2D" parent="Mensagem" unique_id=1492472687]
+stream = ExtResource("6_03j3h")
 
 [node name="Node" type="Node" parent="." unique_id=624238607]
 
@@ -112,3 +116,7 @@ scale = Vector2(1.3586309, 1.3586309)
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_l3lf0")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=113498652]
+
+[node name="alçapaoAbrindo" type="AudioStreamPlayer2D" parent="AudioListener2D" unique_id=304635451]
