@@ -45,40 +45,9 @@ func _ready():
 
 
 func _exibir_dica_inicial() -> void:
-	if GlobalSingleton.fase_liberada != 1 or GlobalSingleton.dica_inicio_fase1_exibida:
-		return
-	GlobalSingleton.dica_inicio_fase1_exibida = true
+	if GlobalSingleton.fase_liberada == 1:
+		GlobalSingleton.get_node("TutorialLanterna").iniciar()
 
-	var camada := CanvasLayer.new()
-	camada.name = "DicaInicioFase1"
-	camada.layer = 20
-	add_child(camada)
-
-	var painel := PanelContainer.new()
-	painel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	painel.set_anchors_preset(Control.PRESET_CENTER_TOP)
-	painel.offset_left = -230
-	painel.offset_top = 18
-	painel.offset_right = 230
-	painel.offset_bottom = 70
-	var estilo := StyleBoxFlat.new()
-	estilo.bg_color = Color(0.04, 0.04, 0.04, 0.72)
-	estilo.set_corner_radius_all(6)
-	estilo.set_content_margin_all(8)
-	painel.add_theme_stylebox_override("panel", estilo)
-	camada.add_child(painel)
-
-	var texto := Label.new()
-	texto.text = "Está muito escuro. Procure a lanterna e clique com o botão direito para acendê-la."
-	texto.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	texto.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	texto.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	texto.add_theme_color_override("font_color", Color.WHITE)
-	texto.add_theme_font_size_override("font_size", 16)
-	texto.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	painel.add_child(texto)
-
-	get_tree().create_timer(5.0).timeout.connect(camada.queue_free)
 
 func interruptor_ativar():
 	GlobalSingleton.alternar_lampada()

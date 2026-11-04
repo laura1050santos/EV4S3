@@ -50,9 +50,16 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	return self
 
 func _gui_input(event: InputEvent) -> void:
-	if item == null or not item.pode_inspecionar():
+	if item == null or not (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT):
 		return
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+	if item.item_name == "lanterna":
+		item.item_ativo = not item.item_ativo
+		if item.item_ativo:
+			itemData.ativar_luz(item, self, Vector2.ZERO)
+		else:
+			itemData.desligar_luz(item, self)
+		accept_event()
+	elif item.pode_inspecionar():
 		var drop_area = get_tree().get_first_node_in_group("world_drop_area")
 		if drop_area != null:
 			drop_area.inspecionar_papel(item)

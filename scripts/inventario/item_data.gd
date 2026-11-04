@@ -42,6 +42,7 @@ static func ativar_luz(item: itemData, cena: Node, pos: Vector2):
 		AudioManager.tocar_som_lanterna()
 		# Adiciona direto na raiz do jogo
 		root.add_child(node)
+		GlobalSingleton.get_node("TutorialLanterna").registrar_uso()
 	
 		
 static func desligar_luz(item: itemData, cena: Node):

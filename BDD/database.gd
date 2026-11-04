@@ -77,3 +77,4 @@ func novo_jogo() -> void:
 	Cenarios.iniciar_cenarios()
 
 	print("Banco resetado para novo jogo.")
+	GlobalSingleton.get_node("TutorialLanterna").restaurar()

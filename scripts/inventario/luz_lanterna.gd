@@ -12,6 +12,7 @@ func _ready() -> void:
 func alternar_modo() -> void:
 	modo_violeta = not modo_violeta
 	_aplicar_modo()
+	GlobalSingleton.get_node("TutorialLanterna").aprender_modo()
 
 func _aplicar_modo() -> void:
 	color = Color(0.65, 0.3, 1.0) if modo_violeta else Color.WHITE

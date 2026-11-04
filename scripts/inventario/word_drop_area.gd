@@ -87,6 +87,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 
 	data.item = null
 	data.update_ui()
+	if item_para_dropar.item_name == "lanterna":
+		GlobalSingleton.get_node("TutorialLanterna").registrar_devolucao()
 
 
 func alvo_de_item_sob_mouse() -> Area2D:
@@ -392,6 +394,8 @@ func guardar_no_inventario(
 		if slot.item == null:
 			slot.item = item
 			slot.update_ui()
+			if item.item_name == "lanterna":
+				GlobalSingleton.get_node("TutorialLanterna").registrar_coleta()
 
 			return true
 

@@ -42,6 +42,10 @@ func _ready():
 	evento_porta.name = "EventoPortaFase2"
 	evento_porta.set_script(preload("res://scripts/evento_porta_fase2.gd"))
 	add_child(evento_porta)
+	var tutorial_lanterna := CanvasLayer.new()
+	tutorial_lanterna.name = "TutorialLanterna"
+	tutorial_lanterna.set_script(preload("res://scripts/inventario/tutorial_lanterna.gd"))
+	add_child(tutorial_lanterna)
 	
 func registrar_item(item_resource, posicao,nome_da_cena):
 	
@@ -65,6 +69,8 @@ func registrar_cena_visitada(nome_da_cena):
 #Função para remover quando for coletado
 func remover_item(item_data):
 	var caminho_item = item_data.resource_path
+	if item_data.item_name == "lanterna":
+		get_node("TutorialLanterna").registrar_coleta()
 
 	if item_data.item_name == "roteador" or "roteador" in caminho_item.to_lower():
 		roteador_coletado = true
