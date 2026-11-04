@@ -1,37 +1,38 @@
 [gd_scene format=3 uid="uid://dfp06xrw618th"]
 
 [ext_resource type="Script" uid="uid://dsumdbt8qqcbc" path="res://scripts/selecao_fases.gd" id="1_722qd"]
+[ext_resource type="Texture2D" uid="uid://ocuc805qgbj0" path="res://scenes/telaInicial/fases.png" id="2_4fo4m"]
 
 [sub_resource type="StyleBoxFlat" id="Branco"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
-corner_radius_bottom_left = 4
 corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="Hover"]
 bg_color = Color(0.88, 0.88, 0.88, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
-corner_radius_bottom_left = 4
 corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="Pressionado"]
 bg_color = Color(0.74, 0.74, 0.74, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
-corner_radius_bottom_left = 4
 corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="Theme" id="TemaFases"]
 Button/colors/font_color = Color(0.06, 0.06, 0.06, 1)
+Button/colors/font_disabled_color = Color(0.45, 0.45, 0.45, 1)
+Button/colors/font_focus_color = Color(0.06, 0.06, 0.06, 1)
 Button/colors/font_hover_color = Color(0.06, 0.06, 0.06, 1)
 Button/colors/font_pressed_color = Color(0.06, 0.06, 0.06, 1)
-Button/colors/font_focus_color = Color(0.06, 0.06, 0.06, 1)
-Button/colors/font_disabled_color = Color(0.45, 0.45, 0.45, 1)
-Button/styles/normal = SubResource("Branco")
 Button/styles/disabled = SubResource("Branco")
 Button/styles/hover = SubResource("Hover")
+Button/styles/normal = SubResource("Branco")
 Button/styles/pressed = SubResource("Pressionado")
 
 [node name="SelecaoFases" type="Control" unique_id=1822430563]
@@ -41,10 +42,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_722qd")
 theme = SubResource("TemaFases")
+script = ExtResource("1_722qd")
 
-[node name="Fundo" type="ColorRect" parent="."]
+[node name="Fundo" type="ColorRect" parent="." unique_id=2146021882]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,37 +58,51 @@ color = Color(0, 0, 0, 1)
 
 [node name="Fase1Botao" type="Button" parent="." unique_id=492688043]
 layout_mode = 0
-offset_left = 458.0
-offset_top = 56.0
-offset_right = 623.4839
-offset_bottom = 151.0
+offset_left = 113.0
+offset_top = 388.0
+offset_right = 278.4839
+offset_bottom = 483.0
 text = "fase 1"
 
 [node name="Fase2Botao" type="Button" parent="." unique_id=1760343905]
 layout_mode = 0
-offset_left = 458.0
-offset_top = 172.0
-offset_right = 623.4839
-offset_bottom = 267.0
+offset_left = 377.0
+offset_top = 390.0
+offset_right = 542.4839
+offset_bottom = 485.0
 text = "fase 2"
 
 [node name="Fase3Botao" type="Button" parent="." unique_id=400243502]
 layout_mode = 0
-offset_left = 458.0
-offset_top = 296.0
-offset_right = 623.4839
-offset_bottom = 391.0
+offset_left = 643.0
+offset_top = 388.0
+offset_right = 808.4839
+offset_bottom = 483.0
 text = "fase 3"
 
 [node name="Fase4Botao" type="Button" parent="." unique_id=1864798616]
-modulate = Color(1, 1, 1, 0.12)
-disabled = true
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 458.0
-offset_top = 422.0
-offset_right = 623.4839
-offset_bottom = 517.0
+offset_left = 907.0
+offset_top = 387.0
+offset_right = 1072.4839
+offset_bottom = 482.0
+disabled = true
 text = "fase 4"
+
+[node name="branco" type="ColorRect" parent="." unique_id=1677164298]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 889.0
+offset_top = 225.0
+offset_right = -68.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.10980392, 0.10980392, 0.10980392, 0.7921569)
 
 [node name="sair" type="Button" parent="." unique_id=1883915870]
 layout_mode = 0
@@ -95,6 +111,12 @@ offset_top = 16.0
 offset_right = 66.0
 offset_bottom = 41.0
 text = "Voltar"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=36597383]
+z_index = -4
+position = Vector2(584.00006, 356)
+scale = Vector2(0.60339385, 0.60339385)
+texture = ExtResource("2_4fo4m")
 
 [connection signal="pressed" from="Fase1Botao" to="." method="_on_fase_1_botao_pressed"]
 [connection signal="pressed" from="Fase2Botao" to="." method="_on_fase_2_botao_pressed"]
