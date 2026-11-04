@@ -8,25 +8,24 @@
 [ext_resource type="PackedScene" uid="uid://bs87yg6pua7jj" path="res://scenes/setas/SetaEsquerda.tscn" id="6_2l4tn"]
 [ext_resource type="PackedScene" uid="uid://c86fx5p8gclpc" path="res://scenes/setas/setaCima.tscn" id="6_26mac"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="8_y3a53"]
-[ext_resource type="Texture2D" path="res://assets/itens/roteadordefrente.png" id="9_p2jjl"]
-[ext_resource type="Texture2D" path="res://assets/cenarios/maletazoomfechada.png" id="10_v0sle"]
-
+[ext_resource type="Texture2D" uid="uid://bl0a8614x7d16" path="res://assets/itens/roteadordefrente.png" id="9_p2jjl"]
+[ext_resource type="Texture2D" uid="uid://cmq7csa5xcc62" path="res://assets/cenarios/maletazoomfechada.png" id="10_v0sle"]
 [ext_resource type="AudioStream" uid="uid://bfo3n4ragulof" path="res://assets/Sons/portaTrancada.mp3" id="11_nq1fa"]
 [ext_resource type="AudioStream" uid="uid://cplaexteu1j2g" path="res://assets/Sons/interruptor.mp3" id="12_txlfo"]
-
-[sub_resource type="AtlasTexture" id="MalaNova"]
-atlas = ExtResource("10_v0sle")
-region = Rect2(480, 115, 570, 510)
-
-[sub_resource type="AtlasTexture" id="RoteadorNovo"]
-atlas = ExtResource("9_p2jjl")
-region = Rect2(491, 171, 488, 386)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqgx5"]
 size = Vector2(107.03837, 58.909073)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3a53"]
 size = Vector2(59.651093, 84.857635)
+
+[sub_resource type="AtlasTexture" id="RoteadorNovo"]
+atlas = ExtResource("9_p2jjl")
+region = Rect2(491, 171, 488, 386)
+
+[sub_resource type="AtlasTexture" id="MalaNova"]
+atlas = ExtResource("10_v0sle")
+region = Rect2(480, 115, 570, 510)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ak76"]
 size = Vector2(570, 510)
@@ -51,7 +50,7 @@ position = Vector2(-367.9442, 189.81812)
 shape = SubResource("RectangleShape2D_fqgx5")
 
 [node name="SetaEsquerda" parent="." unique_id=1488709997 instance=ExtResource("6_2l4tn")]
-destino_cena = "res://scenes/fase1/ParedeOeste.tscn"
+destino_cena = "uid://dqttd76hew5ag"
 
 [node name="setaCima" parent="." unique_id=110505315 instance=ExtResource("6_26mac")]
 destino_cena = "res://scenes/fase1/cena_teto.tscn"
@@ -60,7 +59,7 @@ destino_cena = "res://scenes/fase1/cena_teto.tscn"
 destino_cena = "res://scenes/fase1/cena_chao.tscn"
 
 [node name="SetaDireita" parent="." unique_id=1539331774 instance=ExtResource("1_x2vm1")]
-destino_cena = "res://scenes/fase1/ParedeLeste.tscn"
+destino_cena = "uid://gg14a6yawqob"
 
 [node name="Escuro" parent="." unique_id=1612585862 instance=ExtResource("2_26mac")]
 
@@ -87,10 +86,8 @@ scale = Vector2(0.3, 0.3)
 texture = SubResource("MalaNova")
 
 [node name="Area2D2" type="Area2D" parent="ObjetoMalaSala" unique_id=1544547508]
-position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetoMalaSala/Area2D2" unique_id=525579883]
-position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_3ak76")
 
 [node name="AreaPorta" type="Area2D" parent="." unique_id=1582373286]

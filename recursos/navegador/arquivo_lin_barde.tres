@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1")
-termos = PackedStringArray("Arquivo Particular Lin Barde", "Arquivo Lin Barde", "Lin Barde", "Arquivo e documentação", "Arquivo e documentacao")
 titulo = "ARQUIVO PARTICULAR LIN’BARDE"
 endereco = "https://acervo-linbarde.local/apresentacao"
 conteudo = "Preservar o passado é preservar aquilo que somos.

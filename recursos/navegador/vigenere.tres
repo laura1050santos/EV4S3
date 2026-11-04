@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_artigo")
-termos = PackedStringArray("Vigenère", "Vigenere", "Cifra de Vigenère", "Cifra de Vigenere", "Cifra polialfabética", "Cifra polialfabetica")
 titulo = "CIFRA DE VIGENÈRE — CRIPTOGRAFIA CLÁSSICA"
 endereco = "https://arquivo.local/criptografia/vigenere"
 conteudo = "A Cifra de Vigenère é um método histórico de criptografia por substituição polialfabética.

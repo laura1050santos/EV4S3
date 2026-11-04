@@ -1,10 +1,9 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://dktxcy4sh5ok"]
 
-[ext_resource type="Script" path="res://scripts/telaComp/documento_recuperado.gd" id="1_documento"]
+[ext_resource type="Script" uid="uid://c0jiov7ph5dd3" path="res://scripts/telaComp/documento_recuperado.gd" id="1_documento"]
 
 [resource]
 script = ExtResource("1_documento")
-titulo = "registro_excluido.dat"
 texto = "REGISTRO RECUPERADO — BACKUP-03
 
 ORIGEM: ARQUIVO PARTICULAR LIN’BARDE

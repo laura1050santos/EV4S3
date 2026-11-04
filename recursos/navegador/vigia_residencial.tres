@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1")
-termos = PackedStringArray("Vigia Residencial", "Vigia", "Segurança", "Seguranca")
 titulo = "VIGIA RESIDENCIAL — MONITORAMENTO E CONTROLE DE ACESSO"
 endereco = "https://vigia.local/residencias/lin-barde"
 conteudo = "A Vigia Residencial oferece soluções para monitoramento de propriedades e gerenciamento de dispositivos de segurança.

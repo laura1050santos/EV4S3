@@ -42,10 +42,10 @@ height = 122.0
 script = ExtResource("1_ls4hi")
 
 [node name="SetaDireita" parent="." unique_id=1141201900 instance=ExtResource("1_1234l")]
-destino_cena = "res://scenes/fase1/ParedeOeste.tscn"
+destino_cena = "uid://dqttd76hew5ag"
 
 [node name="SetaEsquerda" parent="." unique_id=1482010499 instance=ExtResource("2_02bjx")]
-destino_cena = "res://scenes/fase1/ParedeLeste.tscn"
+destino_cena = "uid://gg14a6yawqob"
 
 [node name="setaCima" parent="." unique_id=1767603792 instance=ExtResource("5_vfh6l")]
 destino_cena = "res://scenes/fase1/cena_teto.tscn"

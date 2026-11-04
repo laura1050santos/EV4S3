@@ -40,10 +40,10 @@ texture = ExtResource("2_k8ayk")
 position = Vector2(704, 296)
 
 [node name="SetaDireita" parent="." unique_id=302656548 instance=ExtResource("1_nd5rm")]
-destino_cena = "res://scenes/fase1/ParedeSul.tscn"
+destino_cena = "uid://djryii8ewlak6"
 
 [node name="SetaEsquerda" parent="." unique_id=963256756 instance=ExtResource("2_vkmgy")]
-destino_cena = "res://scenes/fase1/ParedeNorte.tscn"
+destino_cena = "uid://cxhjpnc7drrok"
 
 [node name="setaCima" parent="." unique_id=267161862 instance=ExtResource("5_xd0od")]
 destino_cena = "res://scenes/fase1/cena_teto.tscn"

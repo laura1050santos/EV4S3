@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1")
-termos = PackedStringArray("TecnoLar", "Tecno Lar", "Assistência técnica", "Assistencia tecnica", "Manutenção de rede", "Manutencao de rede")
 titulo = "TECNOLAR — ASSISTÊNCIA E MANUTENÇÃO TECNOLÓGICA"
 endereco = "https://tecnolar.local/atendimento-residencial"
 conteudo = "A TecnoLar oferece serviços de manutenção de computadores, equipamentos eletrônicos e infraestrutura de redes residenciais.
