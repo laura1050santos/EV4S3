@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diie35hwh40r6"
-path="res://.godot/imported/foto_2.png-025ccd34e0c407adeea5e7ec1991da31.ctex"
+uid="uid://bpeogaeeaon5r"
+path="res://.godot/imported/augusto.png-f1d0149dcdf3bd77ec07cfe5ab9657d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/foto_2.png"
-dest_files=["res://.godot/imported/foto_2.png-025ccd34e0c407adeea5e7ec1991da31.ctex"]
+source_file="res://assets/itens/augusto.png"
+dest_files=["res://.godot/imported/augusto.png-f1d0149dcdf3bd77ec07cfe5ab9657d4.ctex"]
 
 [params]
 

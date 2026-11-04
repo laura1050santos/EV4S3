@@ -1,13 +1,17 @@
 [gd_resource type="Resource" script_class="itemData" format=3]
 
 [ext_resource type="Script" path="res://scripts/inventario/item_data.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://assets/itens/foto_2.png" id="2_foto"]
+[ext_resource type="Texture2D" path="res://assets/itens/helena.png" id="2_foto"]
+
+[sub_resource type="AtlasTexture" id="Retrato"]
+atlas = ExtResource("2_foto")
+region = Rect2(757, 198, 453, 497)
 
 [resource]
 script = ExtResource("1_script")
 item_name = "foto helena"
-icon = ExtResource("2_foto")
-inventory_icon = ExtResource("2_foto")
+icon = SubResource("Retrato")
+inventory_icon = SubResource("Retrato")
 world_scale = Vector2(0.1, 0.1)
 nome_fotografado = "Helena Lin Barde"
 letra_violeta = "W"

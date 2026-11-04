@@ -16,10 +16,11 @@ func atualizar_botoes():
 	for i in range(botoes.size()):
 		var numero_fase = i + 1
 		var botao = botoes[i]
-		var liberada = numero_fase <= GlobalSingleton.fase_liberada
+		var liberada = numero_fase <= GlobalSingleton.fase_liberada and numero_fase != 4
 		var concluida = GlobalSingleton.fases_concluidas[i]
 
 		botao.disabled = not liberada
+		botao.modulate = Color(1, 1, 1, 0.12 if numero_fase == 4 else 1.0)
 
 		if concluida:
 			botao.text = "Fase %d ✓" % numero_fase
@@ -37,7 +38,7 @@ const CENAS_INICIAIS = {
 }
 
 func ir_para_fase(numero_fase: int):
-	if numero_fase > GlobalSingleton.fase_liberada:
+	if numero_fase == 4 or numero_fase > GlobalSingleton.fase_liberada:
 		return
 
 	var caminho: String = ""

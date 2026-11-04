@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b20jn488av781"
-path="res://.godot/imported/foto_4.png-f5611cd5eef51ca9d4495b6e1c066432.ctex"
+uid="uid://u8lxgxxfskqt"
+path="res://.godot/imported/helena.png-8633c7f12637d996c6a3c0de21c920db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/itens/foto_4.png"
-dest_files=["res://.godot/imported/foto_4.png-f5611cd5eef51ca9d4495b6e1c066432.ctex"]
+source_file="res://assets/itens/helena.png"
+dest_files=["res://.godot/imported/helena.png-8633c7f12637d996c6a3c0de21c920db.ctex"]
 
 [params]
 

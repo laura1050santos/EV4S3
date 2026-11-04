@@ -4,6 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://bryw77kyqor2w" path="res://assets/cenarios/fios.png" id="2_vnrup"]
 
 [ext_resource type="PackedScene" path="res://scenes/setas/botaoConfig.tscn" id="99_config"]
+[ext_resource type="PackedScene" path="res://scenes/setas/SetaEsquerda.tscn" id="3_voltar"]
+[ext_resource type="Texture2D" path="res://assets/moldura_telas.png" id="4_moldura"]
+
+[sub_resource type="Shader" id="ShaderFundoTransparente"]
+code = "shader_type canvas_item;
+void fragment() {
+	vec4 pixel = texture(TEXTURE, UV);
+	float brilho = max(pixel.r, max(pixel.g, pixel.b));
+	COLOR = vec4(pixel.rgb, pixel.a * step(0.01, brilho));
+}
+"
+
+[sub_resource type="ShaderMaterial" id="MaterialFios"]
+shader = SubResource("ShaderFundoTransparente")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_is5g8"]
 radius = 18.996002
@@ -28,7 +42,25 @@ height = 64.089966
 [node name="fios" type="Node2D" unique_id=814926556]
 script = ExtResource("1_vnrup")
 
+[node name="Moldura" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+modulate = Color(0.48, 0.44, 0.36, 1)
+texture = ExtResource("4_moldura")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 324)
+scale = Vector2(0.588, 0.588)
+modulate = Color(0.15, 0.16, 0.18, 1)
+texture = ExtResource("4_moldura")
+
+[node name="SetaEsquerda" parent="." instance=ExtResource("3_voltar")]
+destino_cena = "res://scenes/fase1/ParedeNorte.tscn"
+
 [node name="Fios" type="Sprite2D" parent="." unique_id=538113187]
+material = SubResource("MaterialFios")
 position = Vector2(576, 324)
 scale = Vector2(1.9591837, 1.9636364)
 texture = ExtResource("2_vnrup")
