@@ -64,7 +64,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Personagem" type="ColorRect" parent="." unique_id=1285341420]
+[node name="Personagem" type="TextureRect" parent="." unique_id=284597683]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
