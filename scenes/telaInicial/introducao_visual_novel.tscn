@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://doir3la5b4ceu"]
+
+[ext_resource type="Script" uid="uid://cll41p8ie8rad" path="res://scripts/introducao_visual_novel.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="2_fonte"]
+[ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="3_config"]
+[ext_resource type="AudioStream" uid="uid://cmlljb108swyq" path="res://assets/Sons/somdesala-vn.mp3" id="4_ambiente"]
+[ext_resource type="AudioStream" uid="uid://cmb42b153xv6y" path="res://assets/Sons/respiracao-vn.mp3" id="5_respiracao"]
+[ext_resource type="AudioStream" uid="uid://b2h52y4lycma3" path="res://assets/Sons/subindodegraus-vn.mp3" id="6_escada"]
+[ext_resource type="AudioStream" uid="uid://chg4oj7lphits" path="res://assets/Sons/pancada-vn.mp3" id="7_pancada"]
+
+[sub_resource type="StyleBoxFlat" id="Caixa"]
+content_margin_left = 30.0
+content_margin_top = 18.0
+content_margin_right = 30.0
+content_margin_bottom = 18.0
+bg_color = Color(0.015, 0.015, 0.02, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="IntroducaoVisualNovel" type="Control" unique_id=36834442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="Preto" type="ColorRect" parent="." unique_id=1631970444]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Fundo" type="Control" parent="." unique_id=744998910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cenario" type="TextureRect" parent="Fundo" unique_id=1406432070]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Personagem" type="ColorRect" parent="." unique_id=1285341420]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 466.0
+offset_top = 105.0
+offset_right = -466.0
+offset_bottom = -208.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CaixaDialogo" type="Panel" parent="." unique_id=1649550786]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = -167.0
+offset_right = -42.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Caixa")
+
+[node name="Nome" type="Label" parent="CaixaDialogo" unique_id=2042100579]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 30.0
+offset_top = 14.0
+offset_right = -30.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.87, 0.5, 1)
+theme_override_fonts/font = ExtResource("2_fonte")
+theme_override_font_sizes/font_size = 26
+
+[node name="Fala" type="Label" parent="CaixaDialogo" unique_id=796985492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 45.0
+offset_right = -30.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_fonte")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 2
+
+[node name="Avancar" type="Label" parent="CaixaDialogo" unique_id=1694982245]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -218.0
+offset_top = -30.0
+offset_right = -18.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_fonts/font = ExtResource("2_fonte")
+theme_override_font_sizes/font_size = 15
+text = "Clique para avançar"
+horizontal_alignment = 2
+
+[node name="Flash" type="ColorRect" parent="." unique_id=782567461]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BotaoConfig" parent="." unique_id=4078591 instance=ExtResource("3_config")]
+z_index = 100
+layout_mode = 0
+
+[node name="SomAmbiente" type="AudioStreamPlayer" parent="." unique_id=1950203176]
+stream = ExtResource("4_ambiente")
+volume_db = -1.0
+
+[node name="SomRespiracao" type="AudioStreamPlayer" parent="." unique_id=1962235837]
+stream = ExtResource("5_respiracao")
+volume_db = -35.0
+
+[node name="SomEscada" type="AudioStreamPlayer" parent="." unique_id=31232058]
+stream = ExtResource("6_escada")
+volume_db = -8.0
+
+[node name="SomPancada" type="AudioStreamPlayer" parent="." unique_id=1756200766]
+stream = ExtResource("7_pancada")
+volume_db = -10.0

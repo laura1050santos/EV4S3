@@ -5,6 +5,7 @@ extends Control
 @onready var label = get_node("Label")
  
 const CENA_SELECAO_FASES := "res://scenes/telaInicial/selecao_fases.tscn"
+const CENA_INTRODUCAO := "res://scenes/telaInicial/introducao_visual_novel.tscn"
 
 func _ready() -> void:
 	canvas.hide()
@@ -16,7 +17,7 @@ func _ready() -> void:
 func _on_jogar_pressed() -> void:
 	
 	SaveManager.novo_jogo()
-	get_tree().change_scene_to_file(CENA_SELECAO_FASES)
+	get_tree().change_scene_to_file(CENA_INTRODUCAO)
 
 
 # =========================================================

@@ -147,7 +147,8 @@ func novo_jogo() -> void:
 # =========================================================
 
 func resetar_global() -> void:
-	GlobalSingleton.ultima_cena = "res://scenes/fase1/zoom_pc.tscn"
+	# O novo jogo começa após a introdução, na sala onde o tutorial da lanterna é iniciado.
+	GlobalSingleton.ultima_cena = "res://scenes/fase1/ParedeNorte.tscn"
 
 	GlobalSingleton.itens_no_mundo.clear()
 	GlobalSingleton.cenas_visitadas.clear()
@@ -173,7 +174,7 @@ func resetar_global() -> void:
 	GlobalSingleton.lampada_ligada = true
 
 	GlobalSingleton.ultima_cena_por_fase = {
-		1: "res://scenes/fase1/zoom_pc.tscn",
+		1: "res://scenes/fase1/ParedeNorte.tscn",
 		2: "res://scenes/fase1/ParedeNorte.tscn",
 		3: "",
 		4: ""

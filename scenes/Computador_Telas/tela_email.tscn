@@ -116,6 +116,16 @@ offset_bottom = 210.0
 theme_override_font_sizes/font_size = 28
 text = "Ver e-mail inteiro"
 
+[node name="Ajuda" type="Button" parent="." groups=["botoes_computador"]]
+layout_mode = 0
+offset_left = 1010.0
+offset_top = 145.0
+offset_right = 1178.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 25
+text = "? Ajuda"
+tooltip_text = "Como identificar phishing"
+
 [node name="BotaoPhishing" type="TextureButton" parent="VisualizadorEmail" unique_id=329080045 groups=["botoes_computador"]]
 layout_mode = 0
 offset_left = 40.0

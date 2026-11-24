@@ -3,6 +3,10 @@ extends Control
 
 signal todos_classificados
 
+const Ajuda = preload("res://scripts/ajuda_contextual.gd")
+const CHAVE_AJUDA := "tutorial_phishing_visto"
+const TEXTO_AJUDA := "Nem toda mensagem urgente é verdadeira. Observe o remetente, os links, pedidos de dados e o tom de urgência.\n\nUse DENUNCIAR para possíveis golpes e LEGÍTIMO para mensagens confiáveis. Leia cada e-mail antes de confirmar suas escolhas."
+
 @export var emails: Array[email_data] = []
 @export_range(1, 6) var limite_emails: int = 6
 
@@ -17,6 +21,7 @@ var zoom_leitura: float = 1.6
 @onready var botao_confirmar: TextureButton = $BotaoConfirmar
 @onready var label_feedback: Label = $VisualizadorEmail/LabelFeedback
 @onready var label_status: Label = $LabelStatus
+@onready var botao_ajuda: Button = $Ajuda
 
 @onready var popup_conclusao: Control = $PopupConclusao
 @onready var som_alerta=$AlertaPhishing
@@ -38,14 +43,26 @@ func _ready() -> void:
 	botao_legitimo.pressed.connect(func(): responder(false))
 	botao_voltar.pressed.connect(voltar)
 	botao_confirmar.pressed.connect(confirmar_classificacoes)
+	botao_ajuda.pressed.connect(mostrar_ajuda)
 	todos_classificados.connect(_on_todos_classificados)
 	popup_conclusao.finalizado.connect(_on_notificacoes_finalizadas)
 	visibility_changed.connect(_retomar_notificacoes)
+	visibility_changed.connect(_mostrar_ajuda_inicial)
 
 	_carregar_progresso()
 	_criar_lista()
 	voltar()
 	_retomar_notificacoes.call_deferred()
+	_mostrar_ajuda_inicial.call_deferred()
+
+func _mostrar_ajuda_inicial() -> void:
+	if not is_visible_in_tree() or bool(Progresso.carregar(CHAVE_AJUDA, false)):
+		return
+	Progresso.salvar(CHAVE_AJUDA, true)
+	mostrar_ajuda()
+
+func mostrar_ajuda() -> void:
+	Ajuda.exibir(self, "phishing", "COMO IDENTIFICAR PHISHING", TEXTO_AJUDA)
 
 func _carregar_progresso() -> void:
 	var salvos = Progresso.carregar("emails_sorteados", [])

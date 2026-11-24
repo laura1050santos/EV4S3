@@ -1,6 +1,9 @@
 extends Control
 
 const Cifra = preload("res://scripts/criptografia/vigenere.gd")
+const Ajuda = preload("res://scripts/ajuda_contextual.gd")
+const CHAVE_AJUDA := "tutorial_criptografia_visto"
+const TEXTO_AJUDA := "Mensagens criptografadas escondem um texto seguindo uma regra. Leia o método indicado e procure pistas sobre uma possível palavra-chave.\n\nNa Cifra de Vigenère, uma palavra-chave é repetida para transformar as letras. O nome da cifra ajuda a pesquisar, mas não revela a resposta sozinho."
 @export var documento: Resource = preload("res://recursos/documentos/secreto.tres")
 var origem: Control
 var decifrando: bool = false
@@ -9,9 +12,11 @@ var operacao: int = 0
 @onready var campo: LineEdit = $Coluna/Bloqueado/Chave
 @onready var botao: Button = $Coluna/Bloqueado/Decifrar
 @onready var status: Label = $Coluna/Status
+@onready var botao_ajuda: Button = $Ajuda
 
 func _ready() -> void:
 	$Voltar.pressed.connect(fechar)
+	botao_ajuda.pressed.connect(mostrar_ajuda)
 	botao.pressed.connect(decifrar)
 	campo.text_submitted.connect(func(_texto: String): decifrar())
 	visibility_changed.connect(_cancelar_se_oculto)
@@ -39,9 +44,19 @@ func abrir(pasta_origem: Control = null) -> bool:
 	if is_instance_valid(origem):
 		origem.hide()
 	show()
+	_mostrar_ajuda_inicial.call_deferred()
 	if not recuperado:
 		campo.grab_focus()
 	return true
+
+func _mostrar_ajuda_inicial() -> void:
+	if not is_visible_in_tree() or bool(Progresso.carregar(CHAVE_AJUDA, false)):
+		return
+	Progresso.salvar(CHAVE_AJUDA, true)
+	mostrar_ajuda()
+
+func mostrar_ajuda() -> void:
+	Ajuda.exibir(self, "criptografia", "COMO INVESTIGAR UMA CIFRA", TEXTO_AJUDA)
 
 func decifrar() -> void:
 	if decifrando or recuperado:
