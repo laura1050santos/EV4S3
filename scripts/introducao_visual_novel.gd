@@ -4,11 +4,14 @@ const CENA_JOGO := "res://scenes/fase1/ParedeNorte.tscn"
 const CASA := preload("res://assets/visualnovel/cenario-casa-flashback.png")
 const ESCADA := preload("res://assets/visualnovel/cenario-escada-flashback.png")
 const PAREDE := preload("res://assets/visualnovel/cenario-parede-flashback.png")
+const PIPI := preload("res://assets/visualnovel/pipi.png")
 const SomCompativel := preload("res://scripts/audio/audio_compativel.gd")
 
 # Sprites da Lilith (apenas os de teste)
-const SPRITE_TRISTE := preload("res://assets/visualnovel/triste.png")
-const SPRITE_FOGAO := preload("res://assets/visualnovel/fogao.png")
+const SPRITE_CABECA := preload("res://assets/visualnovel/cabeca.png")
+const SPRITE_PORTOLA := preload("res://assets/visualnovel/portola.png")
+const SPRITE_SAPECA := preload("res://assets/visualnovel/sapeca.png")
+const SPRITE_MAOMAO := preload("res://assets/visualnovel/maomao.png")
 
 @onready var fundo: TextureRect = $Fundo/Cenario
 @onready var personagem: TextureRect = $Personagem
@@ -43,19 +46,20 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _eventos_iniciais() -> void:
 	eventos = [
+		_cenario(PIPI),
 		_narracao("Primeiro, o calor. Um ar tão pesado que não deixa o suor secar."),
 		_narracao("Depois, o gosto de ferro na boca."),
 		_narracao("Por último, a lembrança de que eu não deveria estar aqui."),
-		_fala("Lilith", "Minha cabeça…", true, false, "respiracao", "triste"),
-		_fala("Lilith", "Sem janelas. A porta... trancada, mas é claro.", true, false, "", "triste"),
-		_fala("Lilith", "Distintivo, arma, celular. Tudo sumiu. Quem fez isso sabia o que estava fazendo.", true, false, "", "fogao"),
-		_fala("Lilith", "Mas isso não levaram. Meu precioso gravador.", true, false, "", "fogao"),
-		_fala("Lilith", "Registro pessoal da Investigadora Lilith Quill. Se alguém estiver ouvindo isso, eu provavelmente não estou bem.", true, false, "", "triste"),
-		_fala("Lilith", "Há três semanas, começaram a aparecer os corpos. Cada vítima era da mesma família. Cada morte era diferente, e todas eram bizarras demais para serem acaso.", true, false, "", "triste"),
-		_fala("Lilith", "Nada de arrombamento. Nada de pistas óbvias. Só um padrão: o assassino fazia questão de ser entendido. Ainda não sabemos o motivo.", true, false, "", "triste"),
-		_fala("Lilith", "Segui os registros, os nomes, as certidões. Tudo levava ao mesmo sobrenome.", true, false, "", "triste"),
-		_fala("Lilith", "Lin'Barde.", true, true, "", "triste"),
-		_fala("Lilith", "A última coisa de que me lembro é da casa deles, vazia.", true, false, "", "triste"),
+		_fala("Lilith", "Minha cabeça…", true, false, "respiracao", "cabeca"),
+		_fala("Lilith", "Sem janelas. A porta... trancada, mas é claro.", true, false, "", "portola"),
+		_fala("Lilith", "Distintivo, arma, celular. Tudo sumiu. Quem fez isso sabia o que estava fazendo.", true, false, "", ""),
+		_fala("Lilith", "Mas isso não levaram. Meu precioso gravador.", true, false, "", ""),
+		_fala("Lilith", "Registro pessoal da Investigadora Lilith Quill. Se alguém estiver ouvindo isso, eu provavelmente não estou bem.", true, false, "", "sapeca"),
+		_fala("Lilith", "Há três semanas, começaram a aparecer os corpos. Cada vítima era da mesma família. Cada morte era diferente, e todas eram bizarras demais para serem acaso.", true, false, "", "maomao"),
+		_fala("Lilith", "Nada de arrombamento. Nada de pistas óbvias. Só um padrão: o assassino fazia questão de ser entendido. Ainda não sabemos o motivo.", true, false, "", ""),
+		_fala("Lilith", "Segui os registros, os nomes, as certidões. Tudo levava ao mesmo sobrenome.", true, false, "", ""),
+		_fala("Lilith", "Lin'Barde.", true, true, "", ""),
+		_fala("Lilith", "A última coisa de que me lembro é da casa deles, vazia.", true, false, "", "sapeca"),
 		_cenario(CASA),
 		_fala("Lilith", "Entrei sozinha. Foi burrice, eu sei. Mas eu estava curiosa.", false),
 		_cenario(ESCADA),
@@ -63,10 +67,11 @@ func _eventos_iniciais() -> void:
 		_cenario(PAREDE, "escada"),
 		_fala("Lilith", "Depois, encontrei algo escrito na parede em alguma criptografia. Eu estava pensando em qual tipo seria, mas aí…", false),
 		_flash_preto(),
-		_fala("Lilith", "E agora estou aqui. Ele não me matou. Se quisesse, já teria feito.", true, false, "", "triste"),
-		_fala("Lilith", "Isso significa que quer algo de mim. Algo nesse lugar pode ser a chave para entender tudo.", true, false, "", "triste"),
-		_fala("Lilith", "Eu sou policial. Foi isso que me trouxe até aqui, e é isso que vai me tirar daqui.", true, false, "", "fogao"),
-		_fala("Lilith", "Vamos ver o que os Lin'Barde esconderam.", true, false, "", "fogao"),
+		_cenario(PIPI),
+		_fala("Lilith", "E agora estou aqui. Ele não me matou. Se quisesse, já teria feito.", true, false, "", "sapeca"),
+		_fala("Lilith", "Isso significa que quer algo de mim. Algo nesse lugar pode ser a chave para entender tudo.", true, false, "", "sapeca"),
+		_fala("Lilith", "Eu sou policial. Foi isso que me trouxe até aqui, e é isso que vai me tirar daqui.", true, false, "", "maomao"),
+		_fala("Lilith", "Vamos ver o que os Lin'Barde esconderam.", true, false, "", "sapeca"),
 	]
 
 func _narracao(texto: String) -> Dictionary:
@@ -127,8 +132,10 @@ func _aplicar_fala(evento: Dictionary) -> void:
 	# Troca de sprite (apenas os dois de teste)
 	var chave_sprite := str(evento.get("sprite", ""))
 	match chave_sprite:
-		"triste": _trocar_sprite(SPRITE_TRISTE)
-		"fogao":  _trocar_sprite(SPRITE_FOGAO)
+		"cabeca": _trocar_sprite(SPRITE_CABECA)
+		"portola":  _trocar_sprite(SPRITE_PORTOLA)
+		"sapeca":  _trocar_sprite(SPRITE_SAPECA)
+		"maomao":  _trocar_sprite(SPRITE_MAOMAO)
 		"":       pass  # sem sprite definido: mantém o atual
 
 	if bool(evento.get("destaque", false)):

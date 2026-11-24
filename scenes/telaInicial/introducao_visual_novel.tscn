@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://doir3la5b4ceu"]
 
 [ext_resource type="Script" uid="uid://cll41p8ie8rad" path="res://scripts/introducao_visual_novel.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bi1yorqymgg5i" path="res://assets/visualnovel/aaaaaaaaa.png" id="2_fk26g"]
 [ext_resource type="FontFile" uid="uid://bjg1a8qbjxe40" path="res://assets/Myfont-Regular.ttf" id="2_fonte"]
 [ext_resource type="PackedScene" uid="uid://dog5t48p535ke" path="res://scenes/setas/botaoConfig.tscn" id="3_config"]
 [ext_resource type="AudioStream" uid="uid://cmlljb108swyq" path="res://assets/Sons/somdesala-vn.mp3" id="4_ambiente"]
@@ -34,7 +35,8 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_script")
 
-[node name="Preto" type="ColorRect" parent="." unique_id=1631970444]
+[node name="Preto" type="ColorRect" parent="." unique_id=1875681119]
+z_index = -10
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,6 +47,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Fundo" type="Control" parent="." unique_id=744998910]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,20 +67,32 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Sprite2D" type="Sprite2D" parent="Fundo" unique_id=2072980179]
+z_index = 1
+position = Vector2(575.50006, 323.5)
+scale = Vector2(0.5994792, 0.6009259)
+texture = ExtResource("2_fk26g")
+
 [node name="Personagem" type="TextureRect" parent="." unique_id=284597683]
+z_index = -1
+propagate_maximum_size = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 466.0
-offset_top = 105.0
-offset_right = -466.0
-offset_bottom = -208.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1342.3333
+offset_bottom = 759.33325
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.6, 0.6)
 mouse_filter = 2
 
 [node name="CaixaDialogo" type="Panel" parent="." unique_id=1649550786]
+z_index = 5
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -154,6 +169,10 @@ color = Color(0, 0, 0, 1)
 [node name="BotaoConfig" parent="." unique_id=4078591 instance=ExtResource("3_config")]
 z_index = 100
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 3166.6665
+offset_bottom = 1668.0
 
 [node name="SomAmbiente" type="AudioStreamPlayer" parent="." unique_id=1950203176]
 stream = ExtResource("4_ambiente")
